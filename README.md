@@ -21,3 +21,5 @@ The objective of this assignment is to provide code and documentation to enable 
 The solution will utilise 3 panels: (pic below) – a top panel contains the navigational timeline, the left panel contains the viewer and a right panel contains the supplemental content. The navigational timeline is synchronised with the viewer in that it advances and retreats as the user navigates the document. A timeline-controller or similar apparatus consults a lookup object to determine the active timeline element based on the page number as supplied by the viewer. The lookup object associates a page-range with a discrete timeline element. Conversely, the timeline controller changes the viewer page to the first page in the range for any selected timeline element.
 
 The supplemental material comprises thumbnails, descriptions etc, (averaging three per page). These should appear in the RHS content window in response to user clicks of the paged content. This content links to IIIF media.
+
+![wireframe](images/viewer.png)
