@@ -1,6 +1,6 @@
 {
   "@context": "http://iiif.io/api/presentation/2/context.json", 
-  "@id": "http://library.nuigalway.ie/loris/srv/p135/manifest.json", 
+  "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/manifest-wip.json", 
   "@type": "sc:Manifest", 
   "label": "O' Shaughnessy memoir", 
   "metadata": [],
@@ -17,38 +17,32 @@
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r1",
           "@type": "sc:Range",
-          "label": "Early Life",
-          "dcterms:temporal": "1864-05-28/1879-04-20"
+          "label": "Early Life"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r2",
           "@type": "sc:Range",
-          "label": "Engineering studies",
-          "dcterms:temporal": "1879-12-01/1884-06-20"
+          "label": "Engineering studies"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r3",
           "@type": "sc:Range",
-          "label": "Early career in San Francisco",
-          "dcterms:temporal": "1885-01-31/1889-01-20"
+          "label": "Early career in San Francisco"
         },          
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r4",
           "@type": "sc:Range",
-          "label": "Hawaii",
-          "dcterms:temporal": "1889-02-01/1895-01-20"
+          "label": "Hawaii"
         },          
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r5",
           "@type": "sc:Range",
-          "label": "Private Practice",
-          "dcterms:temporal": "1895-06-01/1910-01-20"
+          "label": "Private Practice"
         },            
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r6",
           "@type": "sc:Range",
-          "label": "Hetch Hetchy project",
-          "dcterms:temporal": "1908-06-01/1932-01-20"
+          "label": "Hetch Hetchy project"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r7",
