@@ -23,3 +23,14 @@ The solution will utilise 3 panels: (pic below) – a top panel contains the nav
 The supplemental material comprises thumbnails, descriptions etc, (averaging three per page). These should appear in the RHS content window in response to user clicks of the paged content. This content links to IIIF media.
 
 ![wireframe](images/viewer.png)
+
+## Types of linked content
+
+Single image with fixed text - e.g., Photo, Chat/Drawing:
+
+![wireframe](images/single-image.png)
+
+Multiple image with fixed text - e.g., Letter, Book, Scrapbook
+
+![wireframe](images/multi-image.png)
+
