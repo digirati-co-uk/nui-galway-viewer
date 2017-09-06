@@ -156,6 +156,10 @@ var viewer = function(){
         $('#main').css('background-image', 'url(' + imageUrl + ')');
         $('#linkDump').empty();
         $('#linkDump').hide();        
+        $('#supplementalTitle').empty();
+        $('#supplementalImages').empty();
+        $('#supplementalDesc').empty();
+        $('#supplementalImages').scrollTop(0);
         $('#supplemental').css("width", "0%");
         if(canvas.otherContent){
             for(var ai=0; ai<canvas.otherContent.length; ai++){
@@ -238,18 +242,21 @@ var viewer = function(){
     function loadSupplemental(manifest, canvasId){
         $('#supplemental').css("width", "50%");
         $('#supplementalTitle').text(manifest.label);
-        $('#supplementalDesc').text(manifest.description);
+        $('#supplementalDesc').text(manifest.description || "(no description)");
         $supplementalImages = $("#supplementalImages");
         IIIF.wrap(manifest);
         canvasIndex = manifest.sequences[0].canvases.findIndexById(canvasId);
         if(canvasIndex < 0) canvasIndex = 0;
+        // TODO - only load an image when its pixels are on screen
         for(var ci=0; ci<manifest.sequences[0].canvases.length; ci++){
             var canvas = manifest.sequences[0].canvases[ci];
             var imageUrl = canvas.images[0].resource.service.id + "/full/!1000,1000/0/default.jpg";
             $supplementalImages.append("<img id='suppcv_" + ci + "' src='" + imageUrl + "' />");
         }
         var imageOfInterest = document.getElementById("suppcv_" + canvasIndex);
-        document.getElementById('supplementalImages').scrollTop = imageOfInterest.offsetTop;
+        $(imageOfInterest).on('load', function() {
+            document.getElementById('supplementalImages').scrollTop = imageOfInterest.offsetTop;
+        });
     }
 
     function getDisplayRanges(manifest){
