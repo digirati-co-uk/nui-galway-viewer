@@ -2,7 +2,7 @@
 // It might not work wth any old manifest.
 
 var viewer = function(){
-
+    var self = this;
     function load(manifestUri){
         $.ajax({
             dataType: "json",
@@ -17,8 +17,8 @@ var viewer = function(){
                     var displayRanges = getDisplayRanges(manifest);
                     makeCanvasNav(canvases, displayRanges);
                     makeRangeNav(canvases, displayRanges);
-                    this.canvases = canvases;
-                    this.displayRanges = displayRanges;   
+                    self.canvases = canvases;
+                    self.displayRanges = displayRanges;   
                     
                     $(".canvasSource").on('click', function(ev){
                         cvid = this.getAttribute("data-canvasid");
@@ -40,7 +40,7 @@ var viewer = function(){
                     });
                     
                     $('#ranges').hide();
-                    navigateToCanvas(this.canvases[0].id);
+                    navigateToCanvas(self.canvases[0].id);
 
                 } else {
                     console.log("need a top level range");
@@ -125,18 +125,27 @@ var viewer = function(){
     }
 
     function navigateToCanvas(canvasId){
-        $('.navCanvas').removeClass('selected');
-        canvasIndex = this.canvases.findIndexById(canvasId);
-        canvas = this.canvases[canvasIndex];
+        $('.canvasSource').removeClass('selected');
+        canvasIndex = self.canvases.findIndexById(canvasId);
+        canvas = self.canvases[canvasIndex];
         $("#main button").attr("data-canvasid", "");
         if(canvasIndex > 0){
-            $('#previous').attr("data-canvasid", this.canvases[canvasIndex - 1].id);
+            $('#previous').attr("data-canvasid", self.canvases[canvasIndex - 1].id);
         }
-        if(canvasIndex < this.canvases.length - 1){            
-            $('#next').attr("data-canvasid", this.canvases[canvasIndex + 1].id);
+        if(canvasIndex < self.canvases.length - 1){            
+            $('#next').attr("data-canvasid", self.canvases[canvasIndex + 1].id);
         }
+        // highlight active navigation element(s)
         $('.navCanvas').eq(canvasIndex).addClass('selected');
-        $('#position').text(canvasIndex + 1 + " of " + this.canvases.length);
+        for(var ri=0; ri<self.displayRanges.length; ri++){
+            var displayRange = self.displayRanges[ri];
+            for(var ci=0; ci<displayRange.canvases.length; ci++){
+                if(displayRange.canvases[ci].id == canvas.id){
+                    $(".navRange[data-rangeid='" + displayRange.id + "']").addClass('selected');
+                }
+            }
+        }
+        $('#position').text(canvasIndex + 1 + " of " + self.canvases.length);
         loadCanvas(canvas);
     }
 
@@ -145,8 +154,103 @@ var viewer = function(){
         // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
         var imageUrl = canvas.images[0].resource.service.id + "/full/!1600,1600/0/default.jpg";
         $('#main').css('background-image', 'url(' + imageUrl + ')');
+        $('#linkDump').empty();
+        $('#linkDump').hide();        
+        $('#supplemental').css("width", "0%");
+        if(canvas.otherContent){
+            for(var ai=0; ai<canvas.otherContent.length; ai++){
+                $.ajax({
+                    dataType: "json",
+                    url: canvas.otherContent[ai]["@id"],
+                    cache: true,
+                    success: function (annoList) {
+                        if(annoList.resources){
+                            for(var ri=0; ri<annoList.resources.length; ri++){
+                                // we're only interested in links to canvases in other manifests here.
+                                anno = annoList.resources[ri];
+                                if(anno.motivation == "oa:linking"){
+                                    parts = anno.on.split("#");
+                                    cvid = parts[0];
+                                    xywh = null;
+                                    if(parts.length > 1){
+                                        xywh = parts[1];
+                                    }
+                                    // will populate this object:
+                                    linkToManifest = {
+                                        xywh: xywh,
+                                        url: null,
+                                        canvasId: null,
+                                        label: null,
+                                        description: null
+                                    };
+                                    if(anno.resource["@type"] == "sc:Manifest"){
+                                        linkToManifest.url = anno.resource["@id"];
+                                        linkToManifest.label = anno.resource.label;
+                                        linkToManifest.description = anno.resource.description;
+                                    } else if (anno.resource["@type"] == "sc:Canvas"){
+                                        // we MUST be given a within otherwise we're stuffed
+                                        if(anno.resource.within && anno.resource.within["@type"] == "sc:Manifest"){
+                                            linkToManifest.url = anno.resource.within["@id"];
+                                            linkToManifest.label = anno.resource.within.label;
+                                            linkToManifest.description = anno.resource.within.description;
+                                            linkToManifest.canvasId = anno.resource["@id"];
+                                        }
+                                    }       
+                                    if(linkToManifest.url){
+                                        renderLink(linkToManifest);
+                                    }                                                                 
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
     }
 
+    function renderLink(linkToManifest){
+        // won't actually draw this on the canvas for this demo
+        var html = "<p>Draw link at <a href='{manifest}' data-canvas='{canvas}'>{xywh}</a> going to <i>{label}</i></p>";
+        html += "<p class='desc'>{description}</p>"
+        html = html.replace("{manifest}", linkToManifest.url);
+        html = html.replace("{canvas}", linkToManifest.canvasId);
+        html = html.replace("{xywh}", linkToManifest.xywh);
+        html = html.replace("{label}", linkToManifest.label);
+        html = html.replace("{description}", linkToManifest.description);        
+        $('#linkDump').append(html);
+        $('#linkDump').show();
+        
+        $('#linkDump a').click(function(ev){
+            ev.preventDefault();            
+            canvasId = $(this).attr("data-canvas");    
+            $.ajax({
+                dataType: "json",
+                url: this.href,
+                cache: true,
+                success: function (manifest) {
+                    loadSupplemental(manifest, canvasId);
+                }
+            });
+
+        });
+    }
+
+    function loadSupplemental(manifest, canvasId){
+        $('#supplemental').css("width", "50%");
+        $('#supplementalTitle').text(manifest.label);
+        $('#supplementalDesc').text(manifest.description);
+        $supplementalImages = $("#supplementalImages");
+        IIIF.wrap(manifest);
+        canvasIndex = manifest.sequences[0].canvases.findIndexById(canvasId);
+        if(canvasIndex < 0) canvasIndex = 0;
+        for(var ci=0; ci<manifest.sequences[0].canvases.length; ci++){
+            var canvas = manifest.sequences[0].canvases[ci];
+            var imageUrl = canvas.images[0].resource.service.id + "/full/!1000,1000/0/default.jpg";
+            $supplementalImages.append("<img id='suppcv_" + ci + "' src='" + imageUrl + "' />");
+        }
+        var imageOfInterest = document.getElementById("suppcv_" + canvasIndex);
+        document.getElementById('supplementalImages').scrollTop = imageOfInterest.offsetTop;
+    }
 
     function getDisplayRanges(manifest){
         // wire up ranges into something more useful. This is making a lot of assumptions,
