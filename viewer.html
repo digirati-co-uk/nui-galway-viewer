@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NUI Galway viewer sandbox</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <input type="checkbox" id="scaleMode" /><label for="scaleMode">Timeline proportional</label>
+    
+    <div id="viewer">
+        <div id="timeline">
+            <div id="canvases"></div>
+            <div id="canvasDisplayRanges"></div>
+            <div id="ranges"></div>
+        </div>
+        <div id="main">
+            <div id="paging">
+                <button class="canvasSource" id="previous">&larr;</button>
+                    <span id="position"></span>
+                <button class="canvasSource" id="next">&rarr;</button>
+            </div>
+            <div id="canvas"></div>
+            <div id="linkDump"></div>
+        </div>
+        <div id="supplemental">
+            <h2 id="supplementalTitle"></h2>
+            <div id="supplementalImages"></div>
+            <div id="supplementalDesc"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="http://tomcrane.github.io/iiif-expts/getthumbnail/iiif.js"></script>
+    <script src="viewer.js"></script>
+    <script>
+        viewer.initialise("manifest-wip.json");
+    </script>
+</body>
+</html>
