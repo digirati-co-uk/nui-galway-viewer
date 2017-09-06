@@ -1,0 +1,77 @@
+html, body {
+    height: 98%;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#viewer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#timeline {
+    width:100%;
+    display: inline-block;
+}
+
+
+#canvases {
+    width:100%;
+    height: 20px;
+    display: inline-block;
+    border:1px solid #999;
+}
+
+#ranges, #canvasDisplayRanges {
+    position: relative;
+    width:100%;
+    height: 20px;
+    display: inline-block;
+    border:1px solid #999;
+}
+
+.navCanvas {
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+} 
+
+.navCanvas.even {    
+    background-color: #aaa;
+}
+
+.navRange {
+    position: absolute;
+    display: inline-block;
+    color: #fff;
+    font-size: 8pt;
+    cursor: pointer;
+}
+.navRange.even {    
+    background-color: #333;
+}
+.navRange.odd {    
+    background-color: #777;
+}
+
+.navCanvas.selected {
+    background-color: red;
+}
+
+#paging {
+    padding:10px;
+    color:#aaa;
+}
+
+#main {
+    flex-grow: 1;
+    margin-top:30px;
+    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
