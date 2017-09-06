@@ -321,6 +321,12 @@
               }, 
               "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json"
             }
+          ],
+          "otherContent" : [
+            {
+                "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/003.json",
+                "@type": "sc:AnnotationList"
+            }
           ]
         }, 
         {

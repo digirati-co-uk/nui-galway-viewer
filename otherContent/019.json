@@ -8,7 +8,7 @@
         "@type":"oa:Annotation",
         "motivation":"oa:linking",
         "resource": {
-            "@id":"http://57eaa235-f418-4c33-9812-d5be31a514ae/",
+            "@id":"http://57eaa235-f418-4c33-9812-d5be31a514ae",
             "@type":"sc:Canvas",
             "within": {
                 "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/p135_co_225_0001.json",

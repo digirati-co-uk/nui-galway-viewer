@@ -1,0 +1,23 @@
+{
+    "@context": "http://iiif.io/api/presentation/2/context.json",
+    "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/003.json",
+    "@type": "sc:AnnotationList",
+    "resources": [
+      {
+          "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/003/01",
+          "@type":"oa:Annotation",
+          "motivation":"oa:linking",
+          "resource": {
+              "@id":"https://wellcomelibrary.org/iiif/b18035723/canvas/c23",
+              "@type":"sc:Canvas",
+              "within": {
+                  "@id": "https://wellcomelibrary.org/iiif/b18035723/manifest",
+                  "@type": "sc:Manifest",
+                  "label": "Wunder der Vererbung",
+                  "description": "Demo link to show a multi canvas resource."
+              }
+          },
+        "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json#xywh=90,90,666,777"
+      }
+    ]
+  }
