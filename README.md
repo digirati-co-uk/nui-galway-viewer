@@ -34,3 +34,11 @@ Multiple image with fixed text - e.g., Letter, Book, Scrapbook
 
 ![wireframe](images/multi-image.png)
 
+## Implementation
+
+The modelling approach is described in [implementation.md](implementation.md). 
+
+## Versions
+
+[First test version](release1.md)
+
