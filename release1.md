@@ -1,6 +1,6 @@
 # Initial behaviours test   
 
-See http://resources.digirati.com/nuig/viewer.html. 
+See [http://resources.digirati.com/nuig/viewer.html](http://resources.digirati.com/nuig/viewer.html). 
 This release tests the modelling approach outlined in [implementation.md](implementation.md). It is most definitely not production ready code, or visual design.
 
 ## Timeline UI
