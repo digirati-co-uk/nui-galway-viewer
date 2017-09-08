@@ -58,7 +58,7 @@
           "@id": "http://library.nuigalway.ie/mmos/range/r9",
           "@type": "sc:Range",
           "label": "San Francisco Earthquake & return from Hawaii"
-        }
+        },
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r10",
           "@type": "sc:Range",
