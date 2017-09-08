@@ -17,54 +17,59 @@
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r1",
           "@type": "sc:Range",
-          "label": "Early Life"
+          "label": "Childhood & Schooling"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r2",
           "@type": "sc:Range",
-          "label": "Engineering studies"
+          "label": "University"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r3",
           "@type": "sc:Range",
-          "label": "Early career in San Francisco"
+          "label": "Emigration, San Francisco, & Early Engineering Work"
         },          
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r4",
           "@type": "sc:Range",
-          "label": "Hawaii"
+          "label": "Rail, Mining, & Civil Engineering Work"
         },          
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r5",
           "@type": "sc:Range",
-          "label": "Private Practice"
+          "label": "Midwinter Exposition & Civil Engineering"
         },            
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r6",
           "@type": "sc:Range",
-          "label": "Hetch Hetchy project"
+          "label": "Hawaii"
         },       
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r7",
           "@type": "sc:Range",
-          "label": "Short test"
+          "label": "Mill Valley Politics"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r8",
           "@type": "sc:Range",
-          "label": "Chief Engineer of San Francisco"
+          "label": "Hawaii"
         },           
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r9",
           "@type": "sc:Range",
-          "label": "End test"
+          "label": "San Francisco Earthquake & return from Hawaii"
+        }
+        {
+          "@id": "http://library.nuigalway.ie/mmos/range/r10",
+          "@type": "sc:Range",
+          "label": "San Diego & the Morena Dam"
         }
       ]
     },  
     {  
   "@id":"http://library.nuigalway.ie/mmos/range/r1",
   "@type":"sc:Range",
-  "label":"Childhood and Schooling",
+  "label":"Childhood & Schooling",
   "dcterms:temporal":"1864-05-28/1881-10-01",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json",
@@ -124,7 +129,7 @@
 {  
   "@id":"http://library.nuigalway.ie/mmos/range/r3",
   "@type":"sc:Range",
-  "label":"Emigration, San Francisco, &amp; Early Engineering Work",
+  "label":"Emigration, San Francisco, & Early Engineering Work",
   "dcterms:temporal":"1885-01-01/1888-06-01",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0046.tif.json",
@@ -154,7 +159,7 @@
 {  
   "@id":"http://library.nuigalway.ie/mmos/range/r4",
   "@type":"sc:Range",
-  "label":"Rail, Mining, &amp; Civil Engineering Work",
+  "label":"Rail, Mining, & Civil Engineering Work",
   "dcterms:temporal":"1888-06-02/1893-06-01",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0068.tif.json",
@@ -178,7 +183,7 @@
 {  
   "@id":"http://library.nuigalway.ie/mmos/range/r5",
   "@type":"sc:Range",
-  "label":"Midwinter Exposition &amp; Civil Engineering",
+  "label":"Midwinter Exposition & Civil Engineering",
   "dcterms:temporal":"1893-06-02/1899-04-30",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0084.tif.json",
@@ -278,7 +283,7 @@
 {  
   "@id":"http://library.nuigalway.ie/mmos/range/r9",
   "@type":"sc:Range",
-  "label":"San Francisco Earthquake &amp; return from Hawaii",
+  "label":"San Francisco Earthquake & return from Hawaii",
   "dcterms:temporal":"1906-04-18/1906-12-31",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0149.tif.json",
@@ -297,7 +302,7 @@
 {  
   "@id":"http://library.nuigalway.ie/mmos/range/r10",
   "@type":"sc:Range",
-  "label":"San Diego &amp; the Morena Dam",
+  "label":"San Diego & the Morena Dam",
   "dcterms:temporal":"1907-01-01/1912-12-28",
   "canvases":[  
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0160.tif.json",
