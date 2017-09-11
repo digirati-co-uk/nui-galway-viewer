@@ -245,6 +245,10 @@ var viewer = function(){
         $('#supplementalDesc').text(manifest.description || "(no description)");
         $supplementalImages = $("#supplementalImages");
         IIIF.wrap(manifest);
+        if(manifest["related"]){
+            repo = manifest["related"].asArray()[0]; // todo - prefer HTML format
+            $('#supplementalDesc').prepend("<p><a href='" + repo["@id"] + "'>" + (repo["label"] || "View in repository") + "</a></p>");
+        }
         canvasIndex = manifest.sequences[0].canvases.findIndexById(canvasId);
         if(canvasIndex < 0) canvasIndex = 0;
         // TODO - only load an image when its pixels are on screen
@@ -283,6 +287,8 @@ var viewer = function(){
             return manifest.sequences[0].canvases.first(function(cv){
                 return cv.id == canvasId;
             })
+        }).filter(function(cv){
+            return cv; // filter missing canvases
         })
     }
 

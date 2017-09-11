@@ -170,6 +170,25 @@ The simplest possible form of interaction would be to construct all the linked r
 
 This is more of a UX consideration than an implementation problem, but it is fundamental to the feel of the memoir viewer.
 
+## Linking to other representations
+
+For the viewer to generate a link to view the supplemental material elsewhere, such as its main catalogue page ("view in repository"), the annotation description of the manifest, or the manifest itself, or both, can contain a link to a suitable page via the `related` property:
+
+```json
+{
+    "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/p135_co_225_0001.json",
+    "@type": "sc:Manifest",
+    "label": "Letter to M M O'Shaughnessy from Reginald N [Tenman]",
+    "description": "Cricket was a lifelong interest of O'Shaughnessy's. This letter from 1897 follows the disbandment of the Mill Valley Cricket Club, and asks O'Shaughnessy if he would consider selling their cricket outfit at a cut rate",
+    "related": {
+        "@id": "https://www.facebook.com/countygalwaycricketclub/",
+        "format": "text/html",
+        "label": "View in repository"
+    }
+}
+```
+
+
 ## Interactions
 
 The client software exhibits the following behaviours:

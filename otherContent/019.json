@@ -14,7 +14,12 @@
                 "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/p135_co_225_0001.json",
                 "@type": "sc:Manifest",
                 "label": "Letter to M M O'Shaughnessy from Reginald N [Tenman]",
-                "description": "Cricket was a lifelong interest of O'Shaughnessy's. This letter from 1897 follows the disbandment of the Mill Valley Cricket Club, and asks O'Shaughnessy if he would consider selling their cricket outfit at a cut rate"
+                "description": "Cricket was a lifelong interest of O'Shaughnessy's. This letter from 1897 follows the disbandment of the Mill Valley Cricket Club, and asks O'Shaughnessy if he would consider selling their cricket outfit at a cut rate",
+                "related": {
+                    "@id": "https://www.facebook.com/countygalwaycricketclub/",
+                    "format": "text/html",
+                    "label": "View in repository"
+                }
             }
         },
       "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0019.tif.json#xywh=1000,1000,300,300"
