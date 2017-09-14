@@ -145,7 +145,7 @@ var viewer = function(){
                 }
             }
         }
-        $('#position').text(canvasIndex + 1 + " of " + self.canvases.length);
+        $('#position').text(canvas["label"] + " (" + (canvasIndex + 1) + " of " + self.canvases.length + ")");
         loadCanvas(canvas);
     }
 
