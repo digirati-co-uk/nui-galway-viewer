@@ -27,7 +27,7 @@
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r3",
           "@type": "sc:Range",
-          "label": "Emigration, San Francisco, & Early Engineering Work"
+          "label": "San Francisco & Early Work"
         },
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r4",
@@ -57,7 +57,7 @@
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r9",
           "@type": "sc:Range",
-          "label": "San Francisco Earthquake & return from Hawaii"
+          "label": "San Francisco Earthquake"
         },
         {
           "@id": "http://library.nuigalway.ie/mmos/range/r10",
@@ -129,7 +129,7 @@
 {
   "@id":"http://library.nuigalway.ie/mmos/range/r3",
   "@type":"sc:Range",
-  "label":"Emigration, San Francisco, & Early Engineering Work",
+  "label":"San Francisco & Early Work",
   "dcterms:temporal":"1885-01-01/1888-06-01",
   "canvases":[
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0046.tif.json",
@@ -283,7 +283,7 @@
 {
   "@id":"http://library.nuigalway.ie/mmos/range/r9",
   "@type":"sc:Range",
-  "label":"San Francisco Earthquake & return from Hawaii",
+  "label":"San Francisco Earthquake",
   "dcterms:temporal":"1906-04-18/1906-12-31",
   "canvases":[
     "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0149.tif.json",
