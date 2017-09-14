@@ -1,0 +1,49 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/001.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+        "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/001/01",
+        "@type":"oa:Annotation",
+        "motivation":"oa:linking",
+        "resource": {
+            "@id":"http://6aae0b6e-7c82-4122-87bb-890dc61d86f9",
+            "@type":"sc:Canvas",
+            "within": {
+                "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/otherContent/p135_4_2.json",
+                "@type": "sc:Manifest",
+                "label": "Photograph of Jointer Cottage",
+                "description": "A view of the large farmhouse at Loughill, where M M O'Shaughnessy was born and spent much of his childhood. This photograph was taken c. 1913, when O'Shaughnessy was living in California.",
+                "related": {
+                    "@id": "https://digital.library.nuigalway.ie/islandora/object/nuigalway:p135_4_2",
+                    "format": "text/html",
+                    "label": "View in repository"
+                }
+            }
+        },
+      "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json#xywh=479,2999,520,326"
+    },
+    {
+        "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/001/02",
+        "@type":"oa:Annotation",
+        "motivation":"oa:linking",
+        "resource": {
+            "@id":"http://b5598bf4-7b00-494a-8d02-1677baf4ee5d",
+            "@type":"sc:Canvas",
+            "within": {
+                "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/otherContent/p135_4_1.json",
+                "@type": "sc:Manifest",
+                "label": "Studio portrait photograph of M M O'Shaughnessy's parents",
+                "description": "Portrait studio photograph of M M O'Shaughnessy's parents, Patrick O'Shaughnessy and Margaret O'Donnell.",
+                "related": {
+                    "@id": "https://digital.library.nuigalway.ie/islandora/object/nuigalway:p135_4_1",
+                    "format": "text/html",
+                    "label": "View in repository"
+                }
+            }
+        },
+      "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json#xywh=1020,3397,949,347"
+    }
+  ]
+}

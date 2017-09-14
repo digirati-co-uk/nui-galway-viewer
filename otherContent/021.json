@@ -1,0 +1,28 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/021.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+        "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/021/01",
+        "@type":"oa:Annotation",
+        "motivation":"oa:linking",
+        "resource": {
+            "@id":"http://4e58b961-0e9a-428f-867f-e390a71afe8f",
+            "@type":"sc:Canvas",
+            "within": {
+                "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/otherContent/p135_1_36.json",
+                "@type": "sc:Manifest",
+                "label": "Photograph of a group of men taken at Mill Valley, California",
+                "description": "This photograph was taken during a rail survey project at Mill Valley that was being led by M M O'Shaughnessy. The man on the left of the photograph is his cousin Willie Malony as an adult, using a transit. The photograph was taken in March 1890.",
+                "related": {
+                    "@id": "https://digital.library.nuigalway.ie/islandora/object/nuigalway:p135_1_36",
+                    "format": "text/html",
+                    "label": "View in repository"
+                }
+            }
+        },
+      "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0021.tif.json#xywh=3296,2178,991,373"
+    }
+  ]
+}

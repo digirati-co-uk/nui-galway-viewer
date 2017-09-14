@@ -1,0 +1,28 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/015.json",
+  "@type": "sc:AnnotationList",
+  "resources": [
+    {
+        "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/015/01",
+        "@type":"oa:Annotation",
+        "motivation":"oa:linking",
+        "resource": {
+            "@id":"http://bb2cd431-466a-4d1d-855e-be8014c0a18b",
+            "@type":"sc:Canvas",
+            "within": {
+                "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/otherContent/p135_4_26.json",
+                "@type": "sc:Manifest",
+                "label": "Letter to M M O'Shaughnessy from his sister, Margaret",
+                "description": "Handwritten letter to to M M O'Shaughnessy from his sister, Margaret. This letter was written in 1892 when they were both adults, and after Michael had emigrated to California. Margaret expresses her frustration at a marriage arrangement which has fallen through, and her desire to emigrate to Colorado.",
+                "related": {
+                    "@id": "https://digital.library.nuigalway.ie/islandora/object/nuigalway:p135_4_26",
+                    "format": "text/html",
+                    "label": "View in repository"
+                }
+            }
+        },
+      "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0015.tif.json#xywh=2088,1311,719,350"
+    }
+  ]
+}

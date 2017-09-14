@@ -18,6 +18,27 @@
               }
           },
         "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json#xywh=90,90,666,777"
+      },
+      {
+          "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/003/02",
+          "@type":"oa:Annotation",
+          "motivation":"oa:linking",
+          "resource": {
+              "@id":"http://339a158c-fbd1-4657-b8af-15efaed976d2",
+              "@type":"sc:Canvas",
+              "within": {
+                  "@id": "http://lux.library.nuigalway.ie/assets/iiif/manifests/p135/otherContent/p135_4_3.json",
+                  "@type": "sc:Manifest",
+                  "label": "Studio portrait photograph of Uncle Maurice",
+                  "description": "Portrait studio photograph of M M O'Shaughnessy's Uncle Maurice, pictured here wearing his Dundreary whiskers."
+                  "related": {
+                      "@id": "https://digital.library.nuigalway.ie/islandora/object/nuigalway:p135_4_3",
+                      "format": "text/html",
+                      "label": "View in repository"
+                  }
+              }
+          },
+        "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json#xywh=1308,5426,915,357"
       }
     ]
   }
