@@ -3,6 +3,7 @@
 ## Done:
 
 * Use canvas label in UI (done for demo/prototype)
+* park current prototype in branch, for reference later
 
 ## TODO:
 
