@@ -8,17 +8,16 @@ html, body {
     box-sizing: border-box;
 }
 
-
 .dragon {
-    height: 400px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
+    background: #000;
 }
+
 body {
     font-family: sans-serif;
     height: 100%;
 }
-
-
 
 /** Main */
 .main {
@@ -29,17 +28,21 @@ body {
 
 /** Timeline */
 .timeline {
-    display: flex;
     padding: 5px;
     border: 2px solid #DDD;
-    white-space: nowrap;
-    height: 80px;
+    height: 100px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
 }
-.timeline:after {
+
+.timeline__item-container {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.timeline__item-container:after {
     content: '';
     display: table;
     clear: both;
@@ -49,36 +52,178 @@ body {
     float: left;
     padding: 3px;
     white-space: nowrap;
+    transition: all .2s;
 }
+
 .timeline__box {
+    position: relative;
     padding: 5px;
     background: #eee;
 }
+
 .timeline__item--active .timeline__box {
-    background: #BBB;
+    background: #30884D;
+    color: #fff;
 }
-.timeline__label {
-    font-weight: 300;
+.timeline__item--active .timeline__tooltip {
+    background: #30884D;
+    color: #fff;
+    outline: none;
 }
 
+.timeline__label {
+    font-weight: 300;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.timeline__tooltip {
+    display: none;
+    background: #eee;
+    font-weight: 300;
+    font-size: 16px;
+    left: 0;
+    padding: 5px;
+    z-index: 9;
+    position: absolute;
+    top: 0px;
+}
+.timeline__item:hover .timeline__tooltip {
+    display: block;
+}
+
+.timeline__slider {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.timeline__slider input {
+    width: 100%;
+}
+
+/** Viewer */
 .viewer-container {
     position: absolute;
-    top: 80px;
+    top: 100px;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
 .viewer {
+    background: #000;
     width: 100%;
     height: 100%;
     text-align: center;
 }
+
 .viewer__image {
+    /*transition: all .2s;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.viewer__image--disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.viewer__osd {
+    /*transition: all .2s;*/
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.viewer__osd--active {
+    opacity: 1;
+    pointer-events: initial;
+}
+.viewer__image {
+    background: #000;
+}
+.viewer__image img {
     max-height: 100%;
     max-width: 100%;
     width: auto;
     height: auto;
+    pointer-events: none;
+}
+
+/** Supplemental */
+
+.supplemental {
+    transition: all .2s;
+    pointer-events: none;
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background: #fff;
+    padding: 40px;
+    flex-grow: 1;
+    flex-basis: auto;
+    flex-direction: column;
+}
+
+.supplemental__title {
+    flex-grow: 1;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.supplemental__images {
+    flex: 0 1 auto;
+    width: 100%;
+    display: inline-block;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.supplemental__description {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin-top: 10px;
+}
+
+.supplemental__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+}
+
+.supplemental--active {
+    pointer-events: initial;
+    opacity: 1;
+    z-index: 15;
+}
+
+/** Paging */
+.paging {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    z-index: 15;
+}
+
+.linkDump {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    z-index: 14;
 }
 
 #viewer {
@@ -88,24 +233,23 @@ body {
 }
 
 #timeline {
-    width:100%;
+    width: 100%;
     display: inline-block;
 }
 
-
 #canvases {
-    width:100%;
+    width: 100%;
     height: 20px;
     display: inline-block;
-    border:1px solid #999;
+    border: 1px solid #999;
 }
 
 #ranges, #canvasDisplayRanges {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 20px;
     display: inline-block;
-    border:1px solid #999;
+    border: 1px solid #999;
 }
 
 .navCanvas {
@@ -125,9 +269,11 @@ body {
     font-size: 8pt;
     cursor: pointer;
 }
+
 .navRange.even {
     background-color: #333;
 }
+
 .navRange.odd {
     background-color: #777;
 }
@@ -137,8 +283,8 @@ body {
 }
 
 #paging {
-    padding:10px;
-    color:#aaa;
+    padding: 10px;
+    color: #aaa;
 }
 
 #mainwrap {
@@ -150,7 +296,7 @@ body {
 #main {
     flex-grow: 1;
     flex-basis: auto;
-    margin-top:30px;
+    margin-top: 30px;
     background-color: #000;
     background-size: contain;
     background-repeat: no-repeat;
@@ -163,51 +309,53 @@ body {
     flex-basis: auto;
     display: flex;
     flex-direction: column;
-    border:1px solid #777;
+    border: 1px solid #777;
     display: inline-block;
     position: inherit;
     margin-left: 10px;
-    margin-top:30px;
-    padding:10px;
-    width:50%;
+    margin-top: 30px;
+    padding: 10px;
+    width: 50%;
 }
 
 #supplementalTitle {
     flex-grow: 1
 }
+
 #supplementalImages {
-    flex:0 1 auto;
+    flex: 0 1 auto;
     width: 100%;
-    height:66%;
-    border:1px solid #777;
+    height: 66%;
+    border: 1px solid #777;
     display: inline-block;
     overflow-y: scroll;
 }
 
 #supplementalImages img {
-    width:100%;
-    margin:0 0 10px 0;
+    width: 100%;
+    margin: 0 0 10px 0;
 }
 
 #supplementalDesc {
     flex-grow: 1;
     flex-basis: auto;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
-#linkDump {
-    background:rgba(255,255,255,0.25);
-    margin:1em;
-    padding:1em;
-    position: relative;
-    color:#fff;
-    font-size: 9pt;
-}
+/*#linkDump {*/
+    /*background: rgba(255, 255, 255, 0.25);*/
+    /*margin: 1em;*/
+    /*padding: 1em;*/
+    /*position: relative;*/
+    /*color: #fff;*/
+    /*font-size: 9pt;*/
+/*}*/
 
-#linkDump a {
-    color:pink;
-}
-#linkDump p.desc {
-    font-size: 8pt;
-    margin: 0 0 1em 0;
-}
+/*#linkDump a {*/
+    /*color: pink;*/
+/*}*/
+
+/*#linkDump p.desc {*/
+    /*font-size: 8pt;*/
+    /*margin: 0 0 1em 0;*/
+/*}*/

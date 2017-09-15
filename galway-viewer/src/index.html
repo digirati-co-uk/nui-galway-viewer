@@ -14,36 +14,51 @@
 
 
     <div class="timeline">
-        <div class="timeline__item" style="width: 100px">
-            <div class="timeline__year">1860</div>
-            <div class="timeline__box">
-                <div class="timeline__label">Early life</div>
-            </div>
+        <div class="timeline__item-container">
+
         </div>
-        <div class="timeline__item" style="width: 200px">
-            <div class="timeline__year">1860</div>
-            <div class="timeline__box">
-                <div class="timeline__label">Early life</div>
-            </div>
+        <div class="timeline__slider">
+            <input type="range"/>
         </div>
-        <div class="timeline__item timeline__item--active" style="width: 120px">
-            <div class="timeline__year">1860</div>
-            <div class="timeline__box">
-                <div class="timeline__label">Early life</div>
-            </div>
-        </div>
+    </div>
+
+    <div class="paging" id="paging">
+        <button class="canvasSource" id="previous">&larr;</button>
+        <span id="position"></span>
+        <button class="canvasSource" id="next">&rarr;</button>
     </div>
 
     <div class="viewer-container">
         <div class="viewer">
-            <img class="viewer__image"
-                 src="http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0003.tif/full/!1600,1600/0/default.jpg"/>
-            <div class="viewer__osd">
-                <div style="width: 100%; height: 100%; display: block; background: #CCC"></div>
-            </div>
+            <div class="linkDump" id="linkDump"></div>
         </div>
     </div>
 
+    <div class="supplemental" style="display: none">
+        <div class="supplemental__close">&times;</div>
+        <div class="supplemental__title">Photograph of Jointer Cottage</div>
+        <div class="supplemental__images">
+            <div id="supplementalImages">
+                <img src="http://library.nuigalway.ie/loris/srv/p135/memoir-callouts/p135_4_2.tif/full/!1000,1000/0/default.jpg" />
+                <img src="http://library.nuigalway.ie/loris/srv/p135/memoir-callouts/p135_4_2.tif/full/!1000,1000/0/default.jpg" />
+            </div>
+        </div>
+        <div class="supplemental__description">
+            A view of the large farmhouse at Loughill, where M M O'Shaughnessy was born and spent much of his childhood.
+            This photograph was taken c. 1913, when O'Shaughnessy was living in California.
+        </div>
+    </div>
+    <div id="void" style="visibility: hidden; height: 0; overflow: hidden;"></div>
+    <script>
+//        let sup = document.querySelector('.supplemental');
+//        document.querySelector('.supplemental__close').addEventListener('click', function () {
+//          if(sup.classList.contains('supplemental--active')) {
+//            sup.classList.remove('supplemental--active');
+//          } else {
+//            sup.classList.add('supplemental--active');
+//          }
+//        });
+    </script>
 
 </main>
 
@@ -76,5 +91,6 @@
   </div>
 </div>
 -->
+<script type="application/javascript" src="//cdn.jsdelivr.net/npm/openseadragon@2.2/build/openseadragon/openseadragon.min.js"></script>
 </body>
 </html>

@@ -97,7 +97,6 @@ export default class Dragon {
         return this.resolveRealTileSource(
           canvas.images.map(image => this.getService(image.resource.service)).filter(e => e).pop(),
         ).then((tileSource) => {
-          console.info('tileSource', tileSource);
           this.osd = OpenSeadragon({
             element: this.$container,
             tileSources: [tileSource],

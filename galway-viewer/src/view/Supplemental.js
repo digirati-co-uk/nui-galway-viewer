@@ -2,9 +2,18 @@ export default class Supplemental {
 
   constructor($el) {
     this.$supplemental = $el;
-    this.$title = $el.querySelector('#supplementalTitle');
-    this.$desc = $el.querySelector('#supplementalTitle');
-    this.$images = $el.querySelector('#supplementalImages');
+    this.$title = $el.querySelector('.supplemental__title');
+    this.$desc = $el.querySelector('.supplemental__description');
+    this.$images = $el.querySelector('.supplemental__images');
+    // bug fixes.
+    this.$supplemental.style.removeProperty('display');
+
+    const close = this.$supplemental.querySelector('.supplemental__close');
+    if (close) {
+      close.addEventListener('click', () => {
+        this.$supplemental.classList.remove('supplemental--active');
+      })
+    }
   }
 
   static div(text) {
@@ -44,7 +53,7 @@ export default class Supplemental {
     }
     if (height) {
       this.$supplemental.scrollTop = 0;
-      this.$supplemental.style.width = 0;
+      // this.$supplemental.style.width = 0;
     }
   }
 
@@ -52,7 +61,9 @@ export default class Supplemental {
     IIIF.wrap(manifest);
     this.renderEmpty(false);
 
-    this.$supplemental.style.width = '50%';
+
+    console.log('rendering...');
+    this.$supplemental.classList.add('supplemental--active');
     this.$title.innerText = manifest.label;
     const descriptions = [];
 

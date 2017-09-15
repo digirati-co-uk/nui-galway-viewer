@@ -5,9 +5,9 @@ import $ from 'jquery';
 export default class Viewer {
 
   constructor() {
-    this.canvas = new Canvas(document.getElementById('main'));
-    this.$dateDisplayRanges = document.getElementById('ranges');
-    this.$canvasDisplayRanges = document.getElementById('canvasDisplayRanges');
+    this.canvas = new Canvas(document.querySelector('.viewer'));
+    this.$dateDisplayRanges = document.querySelector('.timeline__item-container');
+    this.$canvasDisplayRanges = document.querySelector('.timeline__item-container');
 
     this.displayRanges = [];
     this.currentRange = null;
@@ -141,9 +141,9 @@ export default class Viewer {
     });
 
     this.makeCanvasNav(this.displayRanges);
-    this.makeRangeNav(this.displayRanges);
+    // this.makeRangeNav(this.displayRanges);
 
-    this.makeNotches(canvases);
+    // this.makeNotches(canvases);
   }
 
   makeRangeNav(displayRanges) {
@@ -171,16 +171,46 @@ export default class Viewer {
     );
   }
 
+  makeTimelineItem({ label, year, left, width }) {
+    const $item = document.createElement('div');
+    $item.classList.add('timeline__item');
+    $item.style.left = `${left}%`;
+    $item.style.width = `${width}%`;
+
+    const $box = document.createElement('div');
+    $box.classList.add('timeline__box');
+
+    const $label = document.createElement('div');
+    $label.classList.add('timeline__label');
+    $label.textContent = label;
+    const $tool = document.createElement('div');
+    $tool.classList.add('timeline__tooltip');
+    $tool.textContent = label;
+
+    const $year = document.createElement('div');
+    $year.classList.add('timeline__year');
+    $year.textContent = year;
+
+    $box.appendChild($label);
+    $box.appendChild($tool);
+    $item.appendChild($year);
+    $item.appendChild($box);
+    return $item;
+  }
+
   makeCanvasNav(displayRanges) {
     // Display
     this.displayRanges = displayRanges.map(range => {
-      const navCanvas = document.createElement('div');
-      navCanvas.className = 'navRange canvasSource ' + (range.index % 2 === 0 ? 'even' : 'odd');
-      navCanvas.style.left = `${range.canvasOffset}%`;
-      navCanvas.style.width = `${range.canvasWidth}%`;
-      navCanvas.textContent = range.label;
+      const navCanvas = this.makeTimelineItem({
+        left: range.canvasOffset,
+        width: range.canvasWidth,
+        label: range.label,
+        year: 2000,
+      });
+
       navCanvas.setAttribute('data-rangeid', range.id);
       navCanvas.setAttribute('data-canvasid', range.canvas);
+
       navCanvas.addEventListener('click', () => {
         this.navigateToCanvas(range.canvas);
       });
@@ -198,13 +228,13 @@ export default class Viewer {
 
   renderDateRanges(canvasId) {
     // Remove previously selected.
-    const selected = this.$dateDisplayRanges.querySelector('.selected');
-    if (selected) {
-      selected.classList.remove('selected');
-    }
-    const selectedC = this.$canvasDisplayRanges.querySelector('.selected');
+    // const selected = this.$dateDisplayRanges.querySelector('.selected');
+    // if (selected) {
+    //   selected.classList.remove('selected');
+    // }
+    const selectedC = this.$canvasDisplayRanges.querySelector('.timeline__item--active');
     if (selectedC) {
-      selectedC.classList.remove('selected');
+      selectedC.classList.remove('timeline__item--active');
     }
 
     // Find new to select.
@@ -219,8 +249,8 @@ export default class Viewer {
     }
 
     // Add class.
-    this.currentRange.$canvasNav.classList.add('selected');
-    this.currentRange.$rangeNav.classList.add('selected');
+    this.currentRange.$canvasNav.classList.add('timeline__item--active');
+    // this.currentRange.$rangeNav.classList.add('selected');
   }
 
   navigateToCanvas(canvasId) {

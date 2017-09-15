@@ -7,11 +7,23 @@ export default class Canvas {
 
   constructor($el) {
     this.$el = $el;
-    this.$supplimental = new Supplemental(document.getElementById('supplemental'));
+    this.$imageContainer = document.createElement('div');
+    this.$imageContainer.classList.add('viewer__image');
+    this.$osdContainer = document.createElement('div');
+    this.$osdContainer.classList.add('viewer__osd');
+
+    this.$supplimental = new Supplemental(document.querySelector('.supplemental'));
     this.$link = new Link(document.getElementById('linkDump'));
     this.openSeaDragonCache = {};
-    this.osdContainer = document.createElement('div');
-    this.$el.appendChild(this.osdContainer);
+
+    this.$imageContainer.addEventListener('click', () => {
+      this.$imageContainer.classList.add('viewer__image--disabled');
+      this.$osdContainer.classList.add('viewer__osd--active');
+      this.currentOsd.osd.viewport.zoomBy(1.1);
+    });
+
+    this.$el.appendChild(this.$osdContainer);
+    this.$el.appendChild(this.$imageContainer);
     this.voidSetup();
   }
 
@@ -60,7 +72,7 @@ export default class Canvas {
       return;
     }
     if (this.currentOsd) {
-      this.currentOsd.close(this.osdContainer);
+      this.currentOsd.close(this.$osdContainer);
     }
     this.currentOsd = toRender;
     if (this.void.osdNext.contains(toRender.$container)) {
@@ -69,7 +81,7 @@ export default class Canvas {
     if (this.void.osdPrevious.contains(toRender.$container)) {
       this.void.osdPrevious.removeChild(toRender.$container);
     }
-    toRender.open(this.osdContainer);
+    toRender.open(this.$osdContainer);
   }
 
   loadOsd(canvas, $target = null) {
@@ -80,9 +92,6 @@ export default class Canvas {
   }
 
   preload({ next, prev }) {
-    if (!canvas) {
-      return null;
-    }
     this.void.next.innerText = '';
     this.void.next.appendChild(Canvas.img(next));
     this.void.previous.innerText = '';
@@ -98,7 +107,15 @@ export default class Canvas {
 
     this.preload({ next: imageUrlNext, prev: imageUrlPrev });
 
-    this.$el.style.backgroundImage = `url(${imageUrl})`;
+    this.$imageContainer.classList.remove('viewer__image--disabled');
+    this.$osdContainer.classList.remove('viewer__osd--active');
+
+
+    this.$imageContainer.innerHTML = '';
+    const image = document.createElement('img');
+    image.src = imageUrl;
+    this.$imageContainer.appendChild(image);
+    // this.$el.style.backgroundImage = `url(${imageUrl})`;
     this.$link.renderEmpty();
     this.$supplimental.renderEmpty();
 
