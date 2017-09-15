@@ -26,6 +26,23 @@ export function mapCanvasIds(manifest, canvasIds) {
   }).filter(cv => cv);
 }
 
+export function startDurationTime(displayRanges) {
+  // here we need to make the timeline div proportional to the time coverage of each range
+  let start = null;
+  let end = null;
+  for (let ri = 0; ri < displayRanges.length; ri++) {
+    const testRange = displayRanges[ri];
+    if (!start || testRange.start < start) {
+      start = testRange.start;
+    }
+    if (!end || testRange.end > end) {
+      end = testRange.end;
+    }
+  }
+  const duration = end.getTime() - start.getTime();
+  return {start, duration};
+}
+
 export function getDisplayRanges(manifest) {
   // wire up ranges into something more useful. This is making a lot of assumptions,
   // needs to be generalised to work with arbitrary manifests

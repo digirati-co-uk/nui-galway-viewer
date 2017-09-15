@@ -1,5 +1,6 @@
 import Supplemental from './Supplemental';
 import Link from './Link';
+import Dragon from './Dragon';
 import $ from 'jquery';
 
 export default class Canvas {
@@ -8,6 +9,10 @@ export default class Canvas {
     this.$el = $el;
     this.$supplimental = new Supplemental(document.getElementById('supplemental'));
     this.$link = new Link(document.getElementById('linkDump'));
+    this.openSeaDragonCache = {};
+    this.osdContainer = document.createElement('div');
+    this.$el.appendChild(this.osdContainer);
+    this.voidSetup();
   }
 
   handleClick = canvasId => (href, e) => {
@@ -27,13 +32,86 @@ export default class Canvas {
     return (a ? a : '').toLowerCase() === (b ? b : '').toLowerCase();
   }
 
-  render({canvas}) {
+  voidSetup() {
+    const $cached = document.getElementById('void');
+    $cached.innerText = '';
+    this.void = {
+      previous: document.createElement('div'),
+      osdPrevious: document.createElement('div'),
+      osd: document.createElement('div'),
+      osdNext: document.createElement('div'),
+      next: document.createElement('div'),
+    };
+    $cached.appendChild(this.void.previous);
+    $cached.appendChild(this.void.osdPrevious);
+    $cached.appendChild(this.void.osd);
+    $cached.appendChild(this.void.osdNext);
+    $cached.appendChild(this.void.next);
+  }
+
+  static img(src) {
+    const image = document.createElement('img');
+    image.src = src;
+    return image;
+  }
+
+  renderOsd(toRender) {
+    if (!toRender) {
+      return;
+    }
+    if (this.currentOsd) {
+      this.currentOsd.close(this.osdContainer);
+    }
+    this.currentOsd = toRender;
+    if (this.void.osdNext.contains(toRender.$container)) {
+      this.void.osdNext.removeChild(toRender.$container);
+    }
+    if (this.void.osdPrevious.contains(toRender.$container)) {
+      this.void.osdPrevious.removeChild(toRender.$container);
+    }
+    toRender.open(this.osdContainer);
+  }
+
+  loadOsd(canvas, $target = null) {
+    this.openSeaDragonCache[canvas.id] = this.openSeaDragonCache[canvas.id] ? this.openSeaDragonCache[canvas.id] : new Dragon(canvas);
+    if ($target) {
+      this.openSeaDragonCache[canvas.id].open($target);
+    }
+  }
+
+  preload({ next, prev }) {
+    if (!canvas) {
+      return null;
+    }
+    this.void.next.innerText = '';
+    this.void.next.appendChild(Canvas.img(next));
+    this.void.previous.innerText = '';
+    this.void.previous.appendChild(Canvas.img(prev));
+  }
+
+  render({canvas, nextCanvas, prevCanvas}) {
     // here you need to add sensible logic for your images. I know that Galway's are level 2 (Loris),
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
     const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
+    const imageUrlNext = nextCanvas ? nextCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
+    const imageUrlPrev = prevCanvas ? prevCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg': null;
+
+    this.preload({ next: imageUrlNext, prev: imageUrlPrev });
+
     this.$el.style.backgroundImage = `url(${imageUrl})`;
     this.$link.renderEmpty();
     this.$supplimental.renderEmpty();
+
+    this.loadOsd(canvas);
+    this.renderOsd(this.openSeaDragonCache[canvas.id]);
+    if (nextCanvas) {
+      this.void.osdNext.innerHTML = '';
+      this.loadOsd(nextCanvas, this.void.osdNext);
+    }
+    if (prevCanvas) {
+      this.void.osdPrevious.innerHTML = '';
+      this.loadOsd(prevCanvas, this.void.osdPrevious);
+    }
 
     if (canvas.otherContent) {
       for (let ai = 0; ai < canvas.otherContent.length; ai++) {

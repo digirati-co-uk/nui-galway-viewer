@@ -1,6 +1,7 @@
 import Viewer from './view/Viewer';
-import manifest from './manifes.js';
+import manifest from './manifest.js';
 import './style.css';
+
 
 const viewer = new Viewer();
 viewer.load(manifest);
