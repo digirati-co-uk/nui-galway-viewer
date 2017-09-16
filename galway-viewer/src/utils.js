@@ -26,6 +26,10 @@ export function mapCanvasIds(manifest, canvasIds) {
   }).filter(cv => cv);
 }
 
+export const flatten = list => list.reduce(
+  (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
+);
+
 export function startDurationTime(displayRanges) {
   // here we need to make the timeline div proportional to the time coverage of each range
   let start = null;

@@ -2,26 +2,31 @@ import Supplemental from './Supplemental';
 import Link from './Link';
 import Dragon from './Dragon';
 import $ from 'jquery';
+import {flatten} from '../utils';
 
 export default class Canvas {
 
   constructor($el) {
+    // Dom fetch
     this.$el = $el;
     this.$imageContainer = document.createElement('div');
     this.$imageContainer.classList.add('viewer__image');
     this.$osdContainer = document.createElement('div');
     this.$osdContainer.classList.add('viewer__osd');
 
+    // Sub components
     this.$supplimental = new Supplemental(document.querySelector('.supplemental'));
     this.$link = new Link(document.getElementById('linkDump'));
     this.openSeaDragonCache = {};
 
+    // Events.
     this.$imageContainer.addEventListener('click', () => {
       this.$imageContainer.classList.add('viewer__image--disabled');
       this.$osdContainer.classList.add('viewer__osd--active');
       this.currentOsd.osd.viewport.zoomBy(1.1);
     });
 
+    // DOM render.
     this.$el.appendChild(this.$osdContainer);
     this.$el.appendChild(this.$imageContainer);
     this.voidSetup();
@@ -30,14 +35,11 @@ export default class Canvas {
   handleClick = canvasId => (href, e) => {
     e.preventDefault();
     e.stopPropagation();
-    $.ajax({
-      dataType: 'json',
-      url: href,
-      cache: true,
-      success: (manifest) => {
-        this.$supplimental.render({manifest, canvasId});
-      },
-    });
+    fetch(href)
+    .then(r => r.json())
+    .then(
+      manifest => this.$supplimental.render({manifest, canvasId}),
+    );
   };
 
   static dropCaseComparison(a, b) {
@@ -91,11 +93,59 @@ export default class Canvas {
     }
   }
 
-  preload({ next, prev }) {
+  preload({next, prev}) {
     this.void.next.innerText = '';
     this.void.next.appendChild(Canvas.img(next));
     this.void.previous.innerText = '';
     this.void.previous.appendChild(Canvas.img(prev));
+  }
+
+  renderAnnotations(otherContent) {
+    if (!otherContent) {
+      return Promise.resolve(null);
+    }
+    return Promise.all(otherContent.map(
+      content => fetch(content['@id'])
+      .then(r => r.json())
+      .then(({resources}) => {
+        if (!resources) {
+          return [];
+        }
+        return resources.map(
+          annotation => {
+            const linkToManifest = {
+              xywh: null,
+              url: null,
+              canvasId: null,
+              label: null,
+              description: null,
+            };
+            if (Canvas.dropCaseComparison(annotation.motivation, 'oa:linking')) {
+              const parts = annotation.on.split('#');
+              linkToManifest.xywh = parts.length > 1 ? parts[1] : null;
+              // will populate this object:
+              if (annotation.resource['@type'] === 'sc:Manifest') {
+                linkToManifest.url = annotation.resource['@id'];
+                linkToManifest.label = annotation.resource.label;
+                linkToManifest.description = annotation.resource.description;
+              } else if (Canvas.dropCaseComparison(annotation.resource['@type'], 'sc:Canvas')) {
+                // we MUST be given a within otherwise we're stuffed
+                if (annotation.resource.within && Canvas.dropCaseComparison(annotation.resource.within['@type'], 'sc:Manifest')) {
+                  linkToManifest.url = annotation.resource.within['@id'];
+                  linkToManifest.label = annotation.resource.within.label;
+                  linkToManifest.description = annotation.resource.within.description;
+                  linkToManifest.canvasId = annotation.resource['@id'];
+                }
+              }
+            }
+            if (!linkToManifest.url) {
+              return null;
+            }
+            return linkToManifest;
+          },
+        );
+      }),
+    )).then(flatten);
   }
 
   render({canvas, nextCanvas, prevCanvas}) {
@@ -103,24 +153,33 @@ export default class Canvas {
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
     const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
     const imageUrlNext = nextCanvas ? nextCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
-    const imageUrlPrev = prevCanvas ? prevCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg': null;
+    const imageUrlPrev = prevCanvas ? prevCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
 
-    this.preload({ next: imageUrlNext, prev: imageUrlPrev });
+    // Preload previous and next <img/> tags.
+    this.preload({
+      next: imageUrlNext,
+      prev: imageUrlPrev,
+    });
 
+    // Reset open seadragon to default hidden view.
     this.$imageContainer.classList.remove('viewer__image--disabled');
     this.$osdContainer.classList.remove('viewer__osd--active');
 
-
+    // Add image
     this.$imageContainer.innerHTML = '';
-    const image = document.createElement('img');
-    image.src = imageUrl;
+    const image = Canvas.img(imageUrl);
     this.$imageContainer.appendChild(image);
-    // this.$el.style.backgroundImage = `url(${imageUrl})`;
+
+    // Empty previous links and supplemental
     this.$link.renderEmpty();
     this.$supplimental.renderEmpty();
 
+
+    // Load current OSD, using cached preload if available.
     this.loadOsd(canvas);
     this.renderOsd(this.openSeaDragonCache[canvas.id]);
+
+    // Preload previous and next OSD viewers
     if (nextCanvas) {
       this.void.osdNext.innerHTML = '';
       this.loadOsd(nextCanvas, this.void.osdNext);
@@ -130,52 +189,10 @@ export default class Canvas {
       this.loadOsd(prevCanvas, this.void.osdPrevious);
     }
 
-    if (canvas.otherContent) {
-      for (let ai = 0; ai < canvas.otherContent.length; ai++) {
-        $.ajax({
-          dataType: 'json',
-          url: canvas.otherContent[ai]['@id'],
-          cache: true,
-          success: (annoList) => {
-            if (annoList.resources) {
-              for (let ri = 0; ri < annoList.resources.length; ri++) {
-                // we're only interested in links to canvases in other manifests here.
-                const anno = annoList.resources[ri];
-                if (Canvas.dropCaseComparison(anno.motivation, 'oa:linking')) {
-                  const parts = anno.on.split('#');
-                  const cvid = parts[0];
-                  const xywh = parts.length > 1 ? parts[1] : null;
-                  // will populate this object:
-                  const linkToManifest = {
-                    xywh: xywh,
-                    url: null,
-                    canvasId: null,
-                    label: null,
-                    description: null,
-                  };
-                  if (anno.resource['@type'] === 'sc:Manifest') {
-                    linkToManifest.url = anno.resource['@id'];
-                    linkToManifest.label = anno.resource.label;
-                    linkToManifest.description = anno.resource.description;
-                  } else if (Canvas.dropCaseComparison(anno.resource['@type'], 'sc:Canvas')) {
-                    // we MUST be given a within otherwise we're stuffed
-                    if (anno.resource.within && Canvas.dropCaseComparison(anno.resource.within['@type'], 'sc:Manifest')) {
-                      linkToManifest.url = anno.resource.within['@id'];
-                      linkToManifest.label = anno.resource.within.label;
-                      linkToManifest.description = anno.resource.within.description;
-                      linkToManifest.canvasId = anno.resource['@id'];
-                    }
-                  }
-                  if (linkToManifest.url) {
-                    this.$link.render({linkToManifest, handleClick: this.handleClick });
-                  }
-                }
-              }
-            }
-          },
-        });
-      }
-    }
+    // Finally render the annotations, at this point we will have OSD.
+    this.renderAnnotations(canvas.otherContent).then(annotations => annotations.map(linkToManifest =>
+      this.$link.render({linkToManifest, handleClick: this.handleClick})),
+    );
   }
 
 }
