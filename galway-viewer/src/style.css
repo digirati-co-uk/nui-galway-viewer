@@ -157,6 +157,17 @@ body {
     pointer-events: none;
 }
 
+.annotation-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.annotation {
+    position: absolute;
+    background-color: rgba(255, 255, 255, .3);
+    border: 1px solid rgba(255, 255, 255, .6);
+}
+
 /** Supplemental */
 
 .supplemental {

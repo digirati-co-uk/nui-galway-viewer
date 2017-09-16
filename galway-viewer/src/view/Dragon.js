@@ -89,8 +89,6 @@ export default class Dragon {
   render($target) {
     const {isOpen, isLoading, isLoaded, isClosed} = this.state;
 
-    console.log(this.canvasContent.id, this.state);
-
     if (isOpen && !isLoading && !isLoaded) {
       this.$container.classList.add('dragon--open');
       this.findCanvas().then((canvas) => {

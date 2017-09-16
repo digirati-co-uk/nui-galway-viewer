@@ -12,6 +12,17 @@ export function asArray(objOrArray) {
   return Array.isArray(objOrArray) ? objOrArray : [objOrArray];
 }
 
+export function parseFrag(xywh, ratio = 1) {
+  const co = (xywh.split('=')[1] || '');
+  const [x, y, width, height] = co.split(',').map(e => e.trim()).map(n => parseInt(n, 10));
+  return {
+    x: x * ratio,
+    y: y * ratio,
+    width: width * ratio,
+    height: height * ratio,
+  };
+}
+
 export function mapCanvasIds(manifest, canvasIds) {
   if (!(
       manifest &&
@@ -26,9 +37,7 @@ export function mapCanvasIds(manifest, canvasIds) {
   }).filter(cv => cv);
 }
 
-export const flatten = list => list.reduce(
-  (a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []
-);
+export const flatten = list => Array.prototype.concat(...list);
 
 export function startDurationTime(displayRanges) {
   // here we need to make the timeline div proportional to the time coverage of each range

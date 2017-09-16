@@ -2,7 +2,7 @@ import Supplemental from './Supplemental';
 import Link from './Link';
 import Dragon from './Dragon';
 import $ from 'jquery';
-import {flatten} from '../utils';
+import {flatten, parseFrag} from '../utils';
 
 export default class Canvas {
 
@@ -18,6 +18,17 @@ export default class Canvas {
     this.$supplimental = new Supplemental(document.querySelector('.supplemental'));
     this.$link = new Link(document.getElementById('linkDump'));
     this.openSeaDragonCache = {};
+    this.$annotationOverlay = null;
+    this.$image = null;
+
+    window.addEventListener('resize', () => {
+      if (this.$image && this.$annotationOverlay) {
+        if (this.$replay) {
+          this.$replay();
+        }
+        this.updateOverlaySize(this.$image, this.$annotationOverlay);
+      }
+    });
 
     // Events.
     this.$imageContainer.addEventListener('click', () => {
@@ -148,7 +159,25 @@ export default class Canvas {
     )).then(flatten);
   }
 
+  updateOverlaySize($image, $annotationOverlay) {
+    const {width, height} = $image.getBoundingClientRect();
+
+    // const fullWidth = parseInt($image.getAttribute('data-width'), 10);
+    const fullHeight = parseInt($image.getAttribute('data-height'), 10);
+    const ratio = height / fullHeight;
+
+    console.log(height, width);
+
+    $annotationOverlay.style.height = `${height}px`;
+    $annotationOverlay.style.width = `${width}px`;
+    $annotationOverlay.style.marginLeft = `-${width / 2}px`;
+
+    this.imageRatio = ratio;
+  }
+
   render({canvas, nextCanvas, prevCanvas}) {
+
+    this.$replay = () => this.render({ canvas, nextCanvas, prevCanvas });
     // here you need to add sensible logic for your images. I know that Galway's are level 2 (Loris),
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
     const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
@@ -167,13 +196,14 @@ export default class Canvas {
 
     // Add image
     this.$imageContainer.innerHTML = '';
-    const image = Canvas.img(imageUrl);
-    this.$imageContainer.appendChild(image);
+    this.$image = Canvas.img(imageUrl);
+    this.$image.setAttribute('data-width', canvas.width);
+    this.$image.setAttribute('data-height', canvas.height);
+    this.$imageContainer.appendChild(this.$image);
 
     // Empty previous links and supplemental
     this.$link.renderEmpty();
     this.$supplimental.renderEmpty();
-
 
     // Load current OSD, using cached preload if available.
     this.loadOsd(canvas);
@@ -190,9 +220,48 @@ export default class Canvas {
     }
 
     // Finally render the annotations, at this point we will have OSD.
-    this.renderAnnotations(canvas.otherContent).then(annotations => annotations.map(linkToManifest =>
-      this.$link.render({linkToManifest, handleClick: this.handleClick})),
-    );
+    this.renderAnnotations(canvas.otherContent).then(annotations => {
+      if (!annotations) {
+        return null;
+      }
+
+      // Annotation container.
+      this.$annotationOverlay = document.createElement('div');
+      this.$annotationOverlay.classList.add('annotation-overlay');
+      this.$imageContainer.appendChild(this.$annotationOverlay);
+      this.updateOverlaySize(this.$image, this.$annotationOverlay);
+      this.$image.addEventListener('load', () => {
+        this.updateOverlaySize(this.$image, this.$annotationOverlay);
+      });
+
+      // Grab a best guess image ratio.
+      const imageRatio = (this.$imageContainer.getBoundingClientRect().height/canvas.height);
+      this.$annotationOverlay.innerHTML = '';
+
+      // Add annotations to container.
+      annotations.map(linkToManifest => {
+        const {x, y, width, height} = parseFrag(linkToManifest.xywh, imageRatio);
+        const anno = document.createElement('div');
+        const px = n => `${n}px`;
+        anno.style.width = px(width);
+        anno.style.height = px(height);
+        anno.style.top = px(y);
+        anno.style.left = px(x);
+        anno.classList.add('annotation');
+        anno.addEventListener('click', e => {
+          e.stopPropagation();
+          this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
+        });
+        this.$annotationOverlay.appendChild(anno);
+
+        // Link dump.
+        // this.$link.render({linkToManifest, handleClick: this.handleClick})
+
+        // Add static regions
+        // Clean current open sea dragon
+        // Add OSD annotations regions
+      });
+    });
   }
 
 }
