@@ -1,11 +1,7 @@
-import Viewer from './view/Viewer';
+import GalwayViewer from './view/GalwayViewer';
 import manifest from './manifest.js';
 import './style.css';
 
 
-const viewer = new Viewer();
+const viewer = new GalwayViewer(document.querySelector('.main'));
 viewer.load(manifest);
-
-// let app = document.querySelector('#app')
-//
-// app.innerHTML = '<h2>Welcome to galway-viewer</h2>'
