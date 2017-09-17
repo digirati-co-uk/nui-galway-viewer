@@ -7,6 +7,11 @@ export default class Supplemental {
     this.$images = $el.querySelector('.supplemental__images');
     // bug fixes.
     this.$supplemental.style.removeProperty('display');
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27) {
+        this.$supplemental.classList.remove('supplemental--active');
+      }
+    });
 
     const close = this.$supplemental.querySelector('.supplemental__close');
     if (close) {

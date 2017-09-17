@@ -2,7 +2,7 @@ export default class Link {
 
   constructor($el) {
     this.$link = $el;
-    this.$link.style.opacity = 0;
+    // this.$link.style.opacity = 0;
   }
 
   static a(href, text, onClick) {
@@ -27,8 +27,8 @@ export default class Link {
   }
 
   renderEmpty() {
-    this.$link.style.opacity = 0;
-    this.$link.innerHTML = '';
+    // this.$link.style.opacity = 0;
+    // this.$link.innerHTML = '';
   }
 
   render({linkToManifest, handleClick}) {

@@ -28,15 +28,26 @@ export default class Dragon {
     this.canvasContent = canvas;
     this.$container = document.createElement('div');
     this.$container.classList.add('dragon');
+    document.querySelector('.zoom__in').addEventListener('click', () => {
+      this.activeOsd.then(osd => osd.viewport.zoomBy(1.2));
+    });
+    document.querySelector('.zoom__out').addEventListener('click', () => {
+      this.activeOsd.then(osd => osd.viewport.zoomBy(0.8));
+    });
   }
 
   close($target) {
-    $target.removeChild(this.$container);
-    this.changeState(state => ({
-      isOpen: false,
-    }), $target);
+    setTimeout(() => {
+      if ($target.contains(this.$container)) {
+        $target.removeChild(this.$container);
+        this.changeState(state => ({
+          isOpen: false,
+        }), $target);
+      }
+    }, 0);
   }
   open($target) {
+    this.activeOsd = new Promise(resolve => { this.resolveOsd = resolve });
     this.changeState(state => ({
       isOpen: true,
     }), $target);
@@ -81,9 +92,29 @@ export default class Dragon {
     return null;
   }
 
+  reset() {
+    return this.activeOsd.then(osd => {
+      console.info('reset');
+      osd.clearOverlays();
+      osd.overlaysContainer.innerHTML = '';
+    })
+  }
+
   changeState(func, $target) {
     this.state = {...this.state, ...func(this.state),};
     requestAnimationFrame(() => this.render($target));
+  }
+
+  addOverlay(element, { x, y, width, height }) {
+    this.activeOsd.then(osd => {
+      console.info('adding overlay');
+      osd.addOverlay({
+        element,
+        location: this.osd.viewport.imageToViewportRectangle(
+          new OpenSeadragon.Rect(x, y, width, height)
+        )
+      })
+    });
   }
 
   render($target) {
@@ -102,13 +133,13 @@ export default class Dragon {
             showNavigator: true,
             showRotationControl: true,
             defaultZoomLevel: 0,
-            maxZoomPixelRatio: 2,
+            maxZoomPixelRatio: 1,
             navigatorPosition: 'BOTTOM_RIGHT',
-            animationTime: 0.8,
+            animationTime: 0.6,
             immediateRender: false,
             preserveViewport: true,
-            blendTime: 0,
-            minPixelRatio: 0.5,
+            blendTime: 0.1,
+            minPixelRatio: 1,
             visibilityRatio: 0.65,
             constrainDuringPan: false,
             showSequenceControl: false,
@@ -137,6 +168,7 @@ export default class Dragon {
 
     if (isOpen && isLoaded) {
       if (this.osd) {
+        this.resolveOsd(this.osd);
         this.osd.viewport.goHome(true);
       }
       $target.appendChild(this.$container);
