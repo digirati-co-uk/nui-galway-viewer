@@ -25,7 +25,7 @@ export default class Canvas {
         if (this.$replay) {
           this.$replay();
         }
-        this.updateOverlaySize(this.$image, this.$annotationOverlay);
+        Canvas.updateOverlaySize(this.$image, this.$annotationOverlay);
       }
     });
 
@@ -118,7 +118,7 @@ export default class Canvas {
     }
   }
 
-  renderAnnotations(otherContent) {
+  getAnnotations(otherContent) {
     if (!otherContent) {
       return Promise.resolve(null);
     }
@@ -166,7 +166,7 @@ export default class Canvas {
     )).then(flatten);
   }
 
-  updateOverlaySize($image, $annotationOverlay) {
+  static updateOverlaySize($image, $annotationOverlay) {
     const {width, height} = $image.getBoundingClientRect();
 
     // const fullWidth = parseInt($image.getAttribute('data-width'), 10);
@@ -179,7 +179,7 @@ export default class Canvas {
 
   }
 
-  createStaticAnnotation(label, description, position = null) {
+  static createStaticAnnotation(label, description, position = null) {
     const $annotation = document.createElement('div');
     const px = n => `${n}px`;
     if (position) {
@@ -248,7 +248,7 @@ export default class Canvas {
     }
 
     // Finally render the annotations, at this point we will have OSD.
-    this.renderAnnotations(canvas.otherContent).then(annotations => {
+    this.getAnnotations(canvas.otherContent).then(annotations => {
       if (!annotations) {
         return null;
       }
@@ -257,9 +257,9 @@ export default class Canvas {
       this.$annotationOverlay = document.createElement('div');
       this.$annotationOverlay.classList.add('annotation-overlay');
       this.$imageContainer.appendChild(this.$annotationOverlay);
-      this.updateOverlaySize(this.$image, this.$annotationOverlay);
+      Canvas.updateOverlaySize(this.$image, this.$annotationOverlay);
       this.$image.addEventListener('load', () => {
-        this.updateOverlaySize(this.$image, this.$annotationOverlay);
+        Canvas.updateOverlaySize(this.$image, this.$annotationOverlay);
       });
 
       // Grab a best guess image ratio.
@@ -267,32 +267,33 @@ export default class Canvas {
       this.$annotationOverlay.innerHTML = '';
 
       // Remove container
-      this.currentOsd.reset().then(() => {
+      this.currentOsd.reset().then(() => this.renderAnnotations(annotations, imageRatio));
+    });
+  }
 
-        // Add annotations to container.
-        annotations.map(linkToManifest => {
-          const {x, y, width, height} = parseFrag(linkToManifest.xywh, imageRatio);
-          const $annotation = this.createStaticAnnotation(linkToManifest.label, linkToManifest.description, {
-            width,
-            height,
-            x,
-            y,
-          });
-          const $viewerAnnotation = this.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
-          $annotation.addEventListener('click', e => {
-            e.stopPropagation();
-            this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
-          });
-
-          const viewerPosition = parseFrag(linkToManifest.xywh);
-          this.$annotationOverlay.appendChild($annotation);
-          $viewerAnnotation.addEventListener('click', e => {
-            e.stopPropagation();
-            this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
-          });
-          this.currentOsd.addOverlay($viewerAnnotation, viewerPosition);
-        });
+  renderAnnotations(annotations, imageRatio) {
+    // Add annotations to container.
+    annotations.map(linkToManifest => {
+      const {x, y, width, height} = parseFrag(linkToManifest.xywh, imageRatio);
+      const $annotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description, {
+        width,
+        height,
+        x,
+        y,
       });
+      const $viewerAnnotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
+      $annotation.addEventListener('click', e => {
+        e.stopPropagation();
+        this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
+      });
+
+      const viewerPosition = parseFrag(linkToManifest.xywh);
+      this.$annotationOverlay.appendChild($annotation);
+      $viewerAnnotation.addEventListener('click', e => {
+        e.stopPropagation();
+        this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
+      });
+      this.currentOsd.addOverlay($viewerAnnotation, viewerPosition);
     });
   }
 
