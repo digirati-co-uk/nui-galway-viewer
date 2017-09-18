@@ -14,6 +14,14 @@ class GalwayViewer {
       nextPage: () => this.nextPage(),
       prevPage: () => this.prevPage(),
     });
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode === 37) {
+        this.prevPage();
+      }
+      if (e.keyCode === 39) {
+        this.nextPage();
+      }
+    });
   }
 
   // Core

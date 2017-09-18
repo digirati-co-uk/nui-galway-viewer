@@ -22,9 +22,6 @@ export default class Canvas {
 
     window.addEventListener('resize', () => {
       if (this.$image && this.$annotationOverlay) {
-        if (this.$replay) {
-          this.$replay();
-        }
         Canvas.updateOverlaySize(this.$image, this.$annotationOverlay);
       }
     });
@@ -204,8 +201,6 @@ export default class Canvas {
   }
 
   render({canvas, nextCanvas, prevCanvas}) {
-
-    this.$replay = () => this.render({canvas, nextCanvas, prevCanvas});
     // here you need to add sensible logic for your images. I know that Galway's are level 2 (Loris),
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
     const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
@@ -274,13 +269,8 @@ export default class Canvas {
   renderAnnotations(annotations, imageRatio) {
     // Add annotations to container.
     annotations.map(linkToManifest => {
-      const {x, y, width, height} = parseFrag(linkToManifest.xywh, imageRatio);
-      const $annotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description, {
-        width,
-        height,
-        x,
-        y,
-      });
+      const staticViewerPosition = parseFrag(linkToManifest.xywh, imageRatio);
+      const $annotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description, staticViewerPosition);
       const $viewerAnnotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
       $annotation.addEventListener('click', e => {
         e.stopPropagation();
