@@ -14,13 +14,12 @@ class GalwayViewer {
       nextPage: () => this.nextPage(),
       prevPage: () => this.prevPage(),
     });
-    document.addEventListener('keydown', (e) => {
-      if (e.keyCode === 37) {
-        this.prevPage();
-      }
-      if (e.keyCode === 39) {
-        this.nextPage();
-      }
+    let input;
+    this.timeline.$sliderContainer.addEventListener('mousemove', (e) => {
+      input = input ? input : e.currentTarget.querySelector('input');
+      const val = parseInt(input.value, 10);
+      const label = this.canvases[val].label;
+      this.pager.render(label, val, this.canvases.length, ((val / this.canvases.length) * 95) + 5);
     });
   }
 
@@ -74,7 +73,7 @@ class GalwayViewer {
     // Render.
     this.slider.render(canvasIndex);
     this.timeline.render(canvasId, canvas.label);
-    this.pager.render(canvas, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
+    this.pager.render(canvas.label, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
     this.canvas.render({
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,

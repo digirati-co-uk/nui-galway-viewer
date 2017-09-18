@@ -330,7 +330,7 @@ body {
 
 .paging__position {
     opacity: 0;
-    transition: all .2s;
+    transition: opacity .2s;
 }
 
 .paging__position--active {
@@ -384,9 +384,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 input[type=range]::-moz-range-track {
+    box-sizing: border-box;
     width: 100%;
     height: 25px;
-    border: 12px solid rgba(255, 255, 255, 1);
+    border: 12px solid #fff;
     cursor: pointer;
     background: rgba(0, 0, 0, .4);
 }
@@ -397,6 +398,7 @@ input[type=range]::-moz-range-thumb {
     width: 10px;
     background: rgba(0, 0, 0, 1);
     cursor: pointer;
+    border-radius: 0;
 }
 
 input[type=range]::-ms-track {
