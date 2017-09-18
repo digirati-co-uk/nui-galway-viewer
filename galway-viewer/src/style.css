@@ -264,7 +264,7 @@ body {
 .supplemental--active {
     pointer-events: initial;
     opacity: 1;
-    z-index: 15;
+    z-index: 50;
 }
 .slider {
     position: relative;
@@ -300,7 +300,7 @@ body {
     top: 100px;
     bottom: 0;
     background: rgba(20,20,20,.5);
-    width: 40px;
+    width: 60px;
     z-index: 15;
     border: none;
     font-size: 30px;
@@ -551,6 +551,7 @@ input[type=range]:focus::-ms-fill-upper {
 
     .paging__previous,
     .paging__next {
+        width: 40px;
         bottom: 50px;
         background-color: transparent;
     }
