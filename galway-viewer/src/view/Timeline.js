@@ -1,4 +1,3 @@
-
 import {startDurationTime} from '../utils';
 
 class Timeline {
@@ -12,6 +11,17 @@ class Timeline {
     this.currentRange = null;
     this.currentCanvas = null;
     this.navigateToCanvas = navigateToCanvas;
+
+    // Mobile
+    this.mobileRanges = document.createElement('div');
+    this.mobileRanges.classList.add('timeline__menu');
+    this.mobileToggle = document.createElement('div');
+    this.mobileToggle.classList.add('timeline__toggle');
+    this.mobileToggle.addEventListener('click', () => {
+      this.mobileRanges.classList.toggle('timeline__menu--active');
+    });
+    this.mobileRanges.appendChild(this.mobileToggle);
+    this.$timeline.appendChild(this.mobileRanges);
   }
 
   setDisplayRanges(displayRanges, canvases) {
@@ -47,13 +57,18 @@ class Timeline {
     });
 
     this.makeCanvasNav(this.displayRanges);
+    this.makeMobileNav(this.displayRanges);
   }
 
   static createItem({label, year, left, width}) {
     const $item = document.createElement('div');
     $item.classList.add('timeline__item');
-    $item.style.left = `${left}%`;
-    $item.style.width = `${width}%`;
+    if (left) {
+      $item.style.left = `${left}%`;
+    }
+    if (width) {
+      $item.style.width = `${width}%`;
+    }
 
     const $box = document.createElement('div');
     $box.classList.add('timeline__box');
@@ -104,11 +119,42 @@ class Timeline {
     );
   }
 
-  render(canvasId) {
+  makeMobileNav(displayRanges) {
+    // Display
+    this.displayRanges = displayRanges.map(range => {
+      const navCanvas = Timeline.createItem({
+        label: range.label,
+        year: range.start.getFullYear(),
+      });
+
+      navCanvas.setAttribute('data-rangeid', range.id);
+      navCanvas.setAttribute('data-canvasid', range.canvas);
+
+      navCanvas.addEventListener('click', () => {
+        this.mobileRanges.classList.remove('timeline__menu--active');
+        this.navigateToCanvas(range.canvas);
+      });
+
+      return {
+        ...range,
+        $mobileNav: navCanvas,
+      };
+    });
+
+    this.displayRanges.map(
+      item => this.mobileRanges.appendChild(item.$mobileNav),
+    );
+  }
+
+  render(canvasId, label) {
     // Remove previously selected.
     const selected = this.$canvasDisplayRanges.querySelector('.timeline__item--active');
     if (selected) {
       selected.classList.remove('timeline__item--active');
+    }
+    const selectedMobile = this.mobileRanges.querySelector('.timeline__item--active');
+    if (selectedMobile) {
+      selectedMobile.classList.remove('timeline__item--active');
     }
 
     // Find new to select.
@@ -118,12 +164,17 @@ class Timeline {
       }
     });
 
+    this.mobileToggle.innerText = this.currentRange ? this.currentRange.label : label;
+
     if (!this.currentRange) {
       return;
     }
 
+    // Add text.
+    this.mobileToggle.innerText = this.currentRange.label;
     // Add class.
     this.currentRange.$canvasNav.classList.add('timeline__item--active');
+    this.currentRange.$mobileNav.classList.add('timeline__item--active');
   }
 
 

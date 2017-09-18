@@ -8,13 +8,14 @@ class Pager {
     this.$paging.querySelector('.paging__previous').addEventListener('click', prevPage);
   }
 
-  render(canvas, index, total) {
+  render(canvas, index, total, offset) {
     clearTimeout(this.$pagingTimeout);
     this.$pagingPosition.classList.add('paging__position--active');
     this.$pagingTimeout = setTimeout(() => {
       this.$pagingPosition.classList.remove('paging__position--active');
     }, 2000);
-    this.$pagingPosition.innerText = `${canvas['label']} (${index + 1} of ${total})`;
+    this.$pagingPosition.style.left = `${offset}%`;
+    this.$pagingPosition.innerText = `${index + 1} of ${total}`;
   }
 }
 

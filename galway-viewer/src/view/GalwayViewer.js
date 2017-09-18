@@ -73,8 +73,8 @@ class GalwayViewer {
 
     // Render.
     this.slider.render(canvasIndex);
-    this.timeline.render(canvasId);
-    this.pager.render(canvas, canvasIndex, this.canvases.length);
+    this.timeline.render(canvasId, canvas.label);
+    this.pager.render(canvas, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95)+5);
     this.canvas.render({
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,
