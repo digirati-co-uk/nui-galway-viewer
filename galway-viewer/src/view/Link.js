@@ -18,7 +18,7 @@ export default class Link {
   static p(children, className) {
     const p = document.createElement('p');
     children.map($child =>
-      p.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child)
+      p.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child),
     );
     if (className) {
       p.className = className;
@@ -39,11 +39,11 @@ export default class Link {
         'Draw link at',
         Link.a(url, xywh, handleClick(canvasId)),
         'going to',
-        label
-      ])
+        label,
+      ]),
     );
     this.$link.appendChild(
-      Link.p([ description ], 'desc')
+      Link.p([description], 'desc'),
     );
 
     this.$link.style.opacity = 1;

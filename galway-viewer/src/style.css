@@ -278,7 +278,7 @@ body {
 .paging__position {
     position: absolute;
     left: 0;
-    top: 103px;
+    top: 100px;
     z-index: 16;
     margin-left: -50px;
     padding: 10px;
@@ -543,6 +543,10 @@ input[type=range]:focus::-ms-fill-upper {
 
     .viewer-container {
         bottom: 50px;
+    }
+
+    .paging__position {
+        display: none;
     }
 
     .paging__previous,

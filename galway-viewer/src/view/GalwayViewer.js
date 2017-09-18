@@ -57,11 +57,11 @@ class GalwayViewer {
     let displayRanges = getDisplayRanges(manifest);
     this.timeline.setDisplayRanges(displayRanges, this.canvases);
     this.slider = new Slider(this.$el.querySelector('.timeline__slider'), this.canvases.length, e => {
-        const index = parseInt(e.currentTarget.value, 10);
-        const canvas = this.canvases[index];
-        if (canvas !== this.currentCanvas) {
-          this.render(this.canvases[index].id);
-        }
+      const index = parseInt(e.currentTarget.value, 10);
+      const canvas = this.canvases[index];
+      if (canvas !== this.currentCanvas) {
+        this.render(this.canvases[index].id);
+      }
     });
     this.render(this.canvases[0].id);
   }
@@ -74,7 +74,7 @@ class GalwayViewer {
     // Render.
     this.slider.render(canvasIndex);
     this.timeline.render(canvasId, canvas.label);
-    this.pager.render(canvas, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95)+5);
+    this.pager.render(canvas, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
     this.canvas.render({
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,

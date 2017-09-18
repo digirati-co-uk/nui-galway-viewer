@@ -1,4 +1,3 @@
-
 function isValidTileSource(tileSource) {
   return !!(
     tileSource &&
@@ -46,8 +45,11 @@ export default class Dragon {
       }
     }, 0);
   }
+
   open($target) {
-    this.activeOsd = new Promise(resolve => { this.resolveOsd = resolve });
+    this.activeOsd = new Promise(resolve => {
+      this.resolveOsd = resolve;
+    });
     this.changeState(state => ({
       isOpen: true,
     }), $target);
@@ -97,7 +99,7 @@ export default class Dragon {
       console.info('reset');
       osd.clearOverlays();
       osd.overlaysContainer.innerHTML = '';
-    })
+    });
   }
 
   changeState(func, $target) {
@@ -105,15 +107,15 @@ export default class Dragon {
     requestAnimationFrame(() => this.render($target));
   }
 
-  addOverlay(element, { x, y, width, height }) {
+  addOverlay(element, {x, y, width, height}) {
     this.activeOsd.then(osd => {
       console.info('adding overlay');
       osd.addOverlay({
         element,
         location: this.osd.viewport.imageToViewportRectangle(
-          new OpenSeadragon.Rect(x, y, width, height)
-        )
-      })
+          new OpenSeadragon.Rect(x, y, width, height),
+        ),
+      });
     });
   }
 
@@ -175,7 +177,6 @@ export default class Dragon {
     }
 
   }
-
 
 
 }

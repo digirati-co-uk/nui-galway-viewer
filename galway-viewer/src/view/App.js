@@ -1,4 +1,3 @@
-
 import Timeline from '../components/Timeline';
 
 export default class App {
@@ -7,7 +6,7 @@ export default class App {
     this.$el = $el;
     this.state = {counter: 0};
     this.$timeline = new Timeline();
-    setInterval(() => this.render(), 100)
+    setInterval(() => this.render(), 100);
   }
 
   load(manifest) {

@@ -17,7 +17,7 @@ export default class Supplemental {
     if (close) {
       close.addEventListener('click', () => {
         this.$supplemental.classList.remove('supplemental--active');
-      })
+      });
     }
   }
 
@@ -32,7 +32,7 @@ export default class Supplemental {
     img.src = src;
     img.id = id;
     if (onLoad) {
-      img.addEventListener('load', (e) => onLoad(img))
+      img.addEventListener('load', (e) => onLoad(img));
     }
     return img;
   }
@@ -49,11 +49,11 @@ export default class Supplemental {
   renderEmpty(height = true) {
     this.$title.innerText = '';
     // Empty
-    while(this.$desc.firstChild){
+    while (this.$desc.firstChild) {
       this.$desc.removeChild(this.$desc.firstChild);
     }
     // Empty
-    while(this.$images.firstChild){
+    while (this.$images.firstChild) {
       this.$images.removeChild(this.$images.firstChild);
     }
     if (height) {
@@ -62,7 +62,7 @@ export default class Supplemental {
     }
   }
 
-  render({ manifest, canvasId }) {
+  render({manifest, canvasId}) {
     IIIF.wrap(manifest);
     this.renderEmpty(false);
 
@@ -75,7 +75,7 @@ export default class Supplemental {
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
       descriptions.push(
-        Supplemental.div(`<p><a href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`)
+        Supplemental.div(`<p><a href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
       );
     }
 

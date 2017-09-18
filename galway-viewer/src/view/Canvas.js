@@ -28,7 +28,10 @@ export default class Canvas {
 
     // Events.
     this.$imageContainer.addEventListener('click', () => this.activateOSD());
-    this.$imageContainer.addEventListener('touchstart', () => this.activateOSD());
+    this.$imageContainer.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      this.activateOSD();
+    });
     this.$imageContainer.addEventListener('wheel', () => this.activateOSD());
 
     // DOM render.
