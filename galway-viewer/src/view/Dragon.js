@@ -96,7 +96,6 @@ export default class Dragon {
 
   reset() {
     return this.activeOsd.then(osd => {
-      console.info('reset');
       osd.clearOverlays();
       osd.overlaysContainer.innerHTML = '';
     });
@@ -109,7 +108,6 @@ export default class Dragon {
 
   addOverlay(element, {x, y, width, height}) {
     this.activeOsd.then(osd => {
-      console.info('adding overlay');
       osd.addOverlay({
         element,
         location: this.osd.viewport.imageToViewportRectangle(
