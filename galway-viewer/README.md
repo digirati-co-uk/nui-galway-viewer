@@ -1,3 +1,5 @@
 # galway-viewer
 
-Describe galway-viewer here.
+`npm install`
+
+`npm run start` to view in browser
