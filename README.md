@@ -41,6 +41,7 @@ The modelling approach is described in [implementation.md](implementation.md).
 ## Versions
 
 [First test version](release1.md)
+[Second test version](release2.md)
 
 ## Further UI:
 
