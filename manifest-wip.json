@@ -7,6 +7,7 @@
   "description": "Michael Maurice O’Shaughnessy (MMOS) began his engineering studies at Queen’s College, Cork. After a year in Cork, he transferred to Queen’s College, Galway to study Civil Engineering under Professor Townsend, and in 1884 he was awarded his degree by the Royal University of Ireland. The following year O’Shaughnessy travelled to the United States. Following several decades of engineering experience in the US and in Hawaii, he was invited to become chief engineer of San Francisco by the mayor of the city in 1912, a position he served in for over 20 years.",
   "license": "https://creativecommons.org/licenses/by/3.0/",
   "attribution": "Published by NUI Galway Library. Written by M. M. O’Shaughnessy",
+  "startCanvas": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json",
   "structures": [
     {
       "@id": "http://library.nuigalway.ie/mmos/range/r0",
