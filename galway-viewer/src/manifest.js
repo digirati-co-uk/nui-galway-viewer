@@ -4,9 +4,9 @@ export default {
   "@type": "sc:Manifest",
   "label": "O'Shaughnessy Memoir",
   "metadata": [],
-  "description": "Michael Maurice O’Shaughnessy (MMOS) began his engineering studies at Queen’s College, Cork. After a year in Cork, he transferred to Queen’s College, Galway to study Civil Engineering under Professor Townsend, and in 1884 he was awarded his degree by the Royal University of Ireland. The following year O’Shaughnessy travelled to the United States. Following several decades of engineering experience in the US and in Hawaii, he was invited to become chief engineer of San Francisco by the mayor of the city in 1912, a position he served in for over 20 years.",
+  "description": "Michael Maurice O'Shaughnessy (MMOS) began his engineering studies at Queen's College, Cork. After a year in Cork, he transferred to Queen's College, Galway to study Civil Engineering under Professor Townsend, and in 1884 he was awarded his degree by the Royal University of Ireland. The following year O’Shaughnessy travelled to the United States. Following several decades of engineering experience in the US and in Hawaii, he was invited to become chief engineer of San Francisco by the mayor of the city in 1912, a position he served in for over 20 years.",
   "license": "https://creativecommons.org/licenses/by/3.0/",
-  "attribution": "Published by NUI Galway Library. Written by M. M. O’Shaughnessy",
+  "attribution": "Published by NUI Galway Library. Written by M. M. O'Shaughnessy",
   "startCanvas": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json",
   "structures": [
     {
@@ -732,7 +732,7 @@ export default {
           ],
           "otherContent" : [
             {
-              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/015.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/015.json",
               "@type": "sc:AnnotationList"
             }
           ]
@@ -842,7 +842,7 @@ export default {
           ],
           "otherContent": [
             {
-              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/019.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/019.json",
               "@type": "sc:AnnotationList"
             }
           ]
@@ -900,7 +900,7 @@ export default {
           ],
           "otherContent" : [
             {
-              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/021.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/021.json",
               "@type": "sc:AnnotationList"
             }
           ]
