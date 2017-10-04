@@ -1,326 +1,301 @@
 export default {
   "@context": "http://iiif.io/api/presentation/2/context.json",
-  "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/manifest-wip.json",
+  "@id": "https://iiif.library.nuigalway.ie/manifests/p135/manifest_memoir.json",
   "@type": "sc:Manifest",
-  "label": "O' Shaughnessy Memoir",
+  "label": "O'Shaughnessy Memoir",
   "metadata": [],
   "description": "Michael Maurice O’Shaughnessy (MMOS) began his engineering studies at Queen’s College, Cork. After a year in Cork, he transferred to Queen’s College, Galway to study Civil Engineering under Professor Townsend, and in 1884 he was awarded his degree by the Royal University of Ireland. The following year O’Shaughnessy travelled to the United States. Following several decades of engineering experience in the US and in Hawaii, he was invited to become chief engineer of San Francisco by the mayor of the city in 1912, a position he served in for over 20 years.",
   "license": "https://creativecommons.org/licenses/by/3.0/",
   "attribution": "Published by NUI Galway Library. Written by M. M. O’Shaughnessy",
+  "startCanvas": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json",
   "structures": [
     {
-      "@id": "http://library.nuigalway.ie/mmos/range/r0",
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r0",
       "@type": "sc:Range",
       "label": "Timeline",
       "viewingHint": "top",
       "members": [
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r1",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r1",
           "@type": "sc:Range",
           "label": "Childhood & Schooling"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r2",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
           "@type": "sc:Range",
           "label": "University"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r3",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
           "@type": "sc:Range",
           "label": "San Francisco & Early Work"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r4",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
           "@type": "sc:Range",
           "label": "Rail, Mining, & Civil Engineering Work"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r5",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
           "@type": "sc:Range",
           "label": "Midwinter Exposition & Civil Engineering"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r6",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
           "@type": "sc:Range",
           "label": "Hawaii"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r7",
-          "@type": "sc:Range",
-          "label": "Mill Valley Politics"
-        },
-        {
-          "@id": "http://library.nuigalway.ie/mmos/range/r8",
-          "@type": "sc:Range",
-          "label": "Hawaii"
-        },
-        {
-          "@id": "http://library.nuigalway.ie/mmos/range/r9",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
           "@type": "sc:Range",
           "label": "San Francisco Earthquake"
         },
         {
-          "@id": "http://library.nuigalway.ie/mmos/range/r10",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
           "@type": "sc:Range",
           "label": "San Diego & the Morena Dam"
         }
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r1",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r1",
       "@type":"sc:Range",
       "label":"Childhood & Schooling",
       "dcterms:temporal":"1864-05-28/1881-10-01",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0002.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0004.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0005.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0006.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0007.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0008.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0009.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0010.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0011.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0013.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0014.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0015.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0016.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0017.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0018.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0019.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0020.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0021.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0022.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0023.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0024.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0025.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0026.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0027.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0028.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0029.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0030.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0031.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0032.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0033.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0034.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0035.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0036.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0037.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_002.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_003.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_004.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_005.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_006.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_007.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_008.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_009.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_010.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_011.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_013.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_014.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_015.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_016.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_017.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_018.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_019.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_020.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_021.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_022.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_023.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_024.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_025.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_026.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_027.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_028.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_029.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_030.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_031.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_032.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_033.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_034.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_035.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_036.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_037.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r2",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
       "@type":"sc:Range",
       "label":"University",
       "dcterms:temporal":"1881-10-02/1884-12-31",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0038.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0039.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0040.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0041.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0042.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0043.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0044.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0045.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_038.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_039.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_040.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_041.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_042.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_043.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_044.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_045.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r3",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
       "@type":"sc:Range",
       "label":"San Francisco & Early Work",
       "dcterms:temporal":"1885-01-01/1888-06-01",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0046.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0047.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0048.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0049.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0050.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0051.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0052.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0053.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0054.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0055.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0056.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0057.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0058.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0059.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0060.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0061.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0062.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0063.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0064.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0065.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0066.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0067.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_046.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_047.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_048.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_049.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_050.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_051.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_052.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_053.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_054.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_055.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_056.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_057.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_058.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_059.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_060.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_061.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_062.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_063.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_064.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_065.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_066.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_067.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r4",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
       "@type":"sc:Range",
       "label":"Rail, Mining, & Civil Engineering Work",
       "dcterms:temporal":"1888-06-02/1893-06-01",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0068.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0069.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0070.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0071.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0072.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0073.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0074.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0075.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0076.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0077.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0078.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0079.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0080.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0081.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0082.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0083.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_068.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_069.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_070.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_071.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_072.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_073.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_074.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_075.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_076.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_077.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_078.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_079.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_080.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_081.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_082.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_083.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r5",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
       "@type":"sc:Range",
       "label":"Midwinter Exposition & Civil Engineering",
       "dcterms:temporal":"1893-06-02/1899-04-30",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0084.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0085.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0086.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0087.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0088.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0089.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0090.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0091.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0092.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0093.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0094.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0095.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0096.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0098.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0099.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_084.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_085.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_086.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_087.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_088.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_089.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_090.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_091.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_092.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_093.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_094.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_095.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_096.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_098.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_099.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r6",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
       "@type":"sc:Range",
       "label":"Hawaii",
-      "dcterms:temporal":"1899-05-01/1901-10-31",
+      "dcterms:temporal":"1899-05-01/1906-04-17",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0100.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0101.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0102.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0103.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0104.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0105.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0106.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0107.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0108.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0109.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0110.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0111.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0112.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0113.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0114.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0115.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0116.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0117.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0118.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0119.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0120.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0121.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0122.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0123.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0124.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_100.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_101.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_102.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_103.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_104.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_105.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_106.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_107.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_108.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_109.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_110.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_111.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_112.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_113.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_114.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_117.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_118.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_119.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_120.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_121.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_122.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_123.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_124.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125a.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_126.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_127.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_128.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_129.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_130.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_131.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132a.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_133.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_134.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_135.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_136.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_137.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_138.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_139.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_140.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_141.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_142.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_143.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_144.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145a.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145b.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_146.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_147.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_148.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r7",
-      "@type":"sc:Range",
-      "label":"Mill Valley Politics",
-      "dcterms:temporal":"1901-11-01/1902-04-30",
-      "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125a.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0126.tif.json"
-      ]
-    },
-    {
-      "@id":"http://library.nuigalway.ie/mmos/range/r8",
-      "@type":"sc:Range",
-      "label":"Hawaii",
-      "dcterms:temporal":"1902-05-01/1906-04-17",
-      "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0127.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0128.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0129.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0130.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0131.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132a.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0133.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0134.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0135.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0136.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0137.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0138.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0139.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0140.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0141.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0142.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0143.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0144.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145a.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145b.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0146.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0147.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0148.tif.json"
-      ]
-    },
-    {
-      "@id":"http://library.nuigalway.ie/mmos/range/r9",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
       "@type":"sc:Range",
       "label":"San Francisco Earthquake",
       "dcterms:temporal":"1906-04-18/1906-12-31",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0149.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0150.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0151.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0152.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0153.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0154.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0155.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0156.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0157.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0158.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0159.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_149.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_150.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_151.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_152.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_153.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_154.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_155.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_156.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_157.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_158.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_159.tif.json"
       ]
     },
     {
-      "@id":"http://library.nuigalway.ie/mmos/range/r10",
+      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
       "@type":"sc:Range",
       "label":"San Diego & the Morena Dam",
       "dcterms:temporal":"1907-01-01/1912-12-28",
       "canvases":[
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0160.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0161.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0162.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0163.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0164.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0165.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0166.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0167.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0168.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0169.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0170.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0171.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0172.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0173.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0174.tif.json",
-        "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0175.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_160.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_161.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_162.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_163.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_164.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_165.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_166.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_167.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_168.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_169.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_170.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_171.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_172.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_173.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_174.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_175.tif.json"
       ]
     }
   ],
@@ -329,4738 +304,4738 @@ export default {
       "@type": "sc:Sequence",
       "canvases": [
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_frontcover.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_frontcover.tif.json",
           "@type": "sc:Canvas",
           "label": "Front cover",
-          "height": 6770,
-          "width": 5116,
+          "height": 3385,
+          "width": 2558,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_frontcover.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_frontcover.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6770,
-                "width": 5116,
+                "height": 3385,
+                "width": 2558,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_frontcover.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_frontcover.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_frontcover.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_frontcover.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_title.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_title.tif.json",
           "@type": "sc:Canvas",
           "label": "Title page",
-          "height": 6468,
-          "width": 5043,
+          "height": 3306,
+          "width": 2560,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_title.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_title.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6468,
-                "width": 5043,
+                "height": 3306,
+                "width": 2560,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_title.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_title.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_title.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_title.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 001",
-          "height": 7427,
-          "width": 5548,
+          "label": "Page 001 of 175",
+          "height": 3270,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0001.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_001.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7427,
-                "width": 5548,
+                "height": 3270,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0001.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_001.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0001.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json"
             }
           ],
           "otherContent" : [
             {
-              "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/001.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/001.json",
               "@type": "sc:AnnotationList"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0002.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_002.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 002",
-          "height": 7142,
-          "width": 5488,
+          "label": "Page 002 of 175",
+          "height": 3269,
+          "width": 2506,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0002.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_002.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7142,
-                "width": 5488,
+                "height": 3269,
+                "width": 2506,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0002.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_002.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0002.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_002.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_003.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 003",
-          "height": 7141,
-          "width": 5488,
+          "label": "Page 003 of 175",
+          "height": 3306,
+          "width": 2531,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0003.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_003.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7141,
-                "width": 5488,
+                "height": 3306,
+                "width": 2531,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0003.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_003.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0003.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_003.tif.json"
             }
           ],
           "otherContent" : [
             {
-              "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/003.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/003.json",
               "@type": "sc:AnnotationList"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0004.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_004.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 004",
-          "height": 6424,
-          "width": 4971,
+          "label": "Page 004 of 175",
+          "height": 3252,
+          "width": 2503,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0004.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_004.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6424,
-                "width": 4971,
+                "height": 3252,
+                "width": 2503,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0004.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_004.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0004.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_004.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0005.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_005.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 005",
-          "height": 6328,
-          "width": 5018,
+          "label": "Page 005 of 175",
+          "height": 3285,
+          "width": 2541,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0005.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_005.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6328,
-                "width": 5018,
+                "height": 3285,
+                "width": 2541,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0005.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_005.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0005.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_005.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0006.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_006.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 006",
-          "height": 6472,
-          "width": 4961,
+          "label": "Page 006 of 175",
+          "height": 3280,
+          "width": 2520,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0006.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_006.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6472,
-                "width": 4961,
+                "height": 3280,
+                "width": 2520,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0006.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_006.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0006.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_006.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0007.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_007.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 007",
-          "height": 6443,
-          "width": 4904,
+          "label": "Page 007 of 175",
+          "height": 3269,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0007.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_007.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6443,
-                "width": 4904,
+                "height": 3269,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0007.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_007.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0007.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_007.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0008.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_008.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 008",
-          "height": 6386,
-          "width": 4952,
+          "label": "Page 008 of 175",
+          "height": 3281,
+          "width": 2443,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0008.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_008.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6386,
-                "width": 4952,
+                "height": 3281,
+                "width": 2443,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0008.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_008.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0008.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_008.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0009.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_009.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 009",
-          "height": 6309,
-          "width": 4932,
+          "label": "Page 009 of 175",
+          "height": 3265,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0009.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_009.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6309,
-                "width": 4932,
+                "height": 3265,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0009.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_009.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0009.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_009.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0010.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_010.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 010",
-          "height": 7141,
-          "width": 5488,
+          "label": "Page 010 of 175",
+          "height": 3277,
+          "width": 2474,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0010.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_010.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7141,
-                "width": 5488,
+                "height": 3277,
+                "width": 2474,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0010.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_010.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0010.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_010.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0011.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_011.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 011",
-          "height": 7141,
-          "width": 5488,
+          "label": "Page 011 of 175",
+          "height": 3265,
+          "width": 2486,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0011.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_011.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7141,
-                "width": 5488,
+                "height": 3265,
+                "width": 2486,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0011.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_011.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0011.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_011.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0013.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_013.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 013",
-          "height": 6828,
-          "width": 5103,
+          "label": "Page 013 of 175",
+          "height": 3269,
+          "width": 2430,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0013.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_013.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6828,
-                "width": 5103,
+                "height": 3269,
+                "width": 2430,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0013.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_013.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0013.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_013.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0014.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_014.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 014",
-          "height": 6748,
-          "width": 5103,
+          "label": "Page 014 of 175",
+          "height": 3279,
+          "width": 2533,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0014.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_014.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6748,
-                "width": 5103,
+                "height": 3279,
+                "width": 2533,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0014.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_014.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0014.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_014.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0015.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_015.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 015",
-          "height": 6798,
-          "width": 5093,
+          "label": "Page 015 of 175",
+          "height": 3280,
+          "width": 2469,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0015.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_015.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5093,
+                "height": 3280,
+                "width": 2469,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0015.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_015.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0015.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_015.tif.json"
             }
           ],
           "otherContent" : [
             {
-              "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/015.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/015.json",
               "@type": "sc:AnnotationList"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0016.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_016.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 016",
-          "height": 6758,
-          "width": 5073,
+          "label": "Page 016 of 175",
+          "height": 3289,
+          "width": 2510,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0016.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_016.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6758,
-                "width": 5073,
+                "height": 3289,
+                "width": 2510,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0016.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_016.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0016.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_016.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0017.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_017.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 017",
-          "height": 6808,
-          "width": 5083,
+          "label": "Page 017 of 175",
+          "height": 3283,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0017.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_017.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6808,
-                "width": 5083,
+                "height": 3283,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0017.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_017.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0017.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_017.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0018.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_018.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 018",
-          "height": 7446,
-          "width": 5561,
+          "label": "Page 018 of 175",
+          "height": 3289,
+          "width": 2506,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0018.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_018.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7446,
-                "width": 5561,
+                "height": 3289,
+                "width": 2506,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0018.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_018.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0018.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_018.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0019.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_019.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 019",
-          "height": 7446,
-          "width": 5561,
+          "label": "Page 019 of 175",
+          "height": 3283,
+          "width": 2496,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0019.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_019.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7446,
-                "width": 5561,
+                "height": 3283,
+                "width": 2496,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0019.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_019.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0019.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_019.tif.json"
             }
           ],
           "otherContent": [
             {
-              "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/019.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/019.json",
               "@type": "sc:AnnotationList"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0020.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_020.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 020",
-          "height": 6778,
-          "width": 5053,
+          "label": "Page 020 of 175",
+          "height": 3273,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0020.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_020.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6778,
-                "width": 5053,
+                "height": 3273,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0020.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_020.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0020.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_020.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0021.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_021.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 021",
-          "height": 6867,
-          "width": 5060,
+          "label": "Page 021 of 175",
+          "height": 3263,
+          "width": 2484,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0021.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_021.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6867,
-                "width": 5060,
+                "height": 3263,
+                "width": 2484,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0021.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_021.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0021.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_021.tif.json"
             }
           ],
           "otherContent" : [
             {
-              "@id": "https://digirati-co-uk.github.io/nui-galway-viewer/otherContent/021.json",
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/memoir/otherContent/021.json",
               "@type": "sc:AnnotationList"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0022.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_022.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 022",
-          "height": 6928,
-          "width": 5026,
+          "label": "Page 022 of 175",
+          "height": 3281,
+          "width": 2476,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0022.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_022.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6928,
-                "width": 5026,
+                "height": 3281,
+                "width": 2476,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0022.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_022.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0022.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_022.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0023.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_023.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 023",
-          "height": 6837,
-          "width": 5080,
+          "label": "Page 023 of 175",
+          "height": 3280,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0023.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_023.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5080,
+                "height": 3280,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0023.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_023.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0023.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_023.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0024.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_024.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 024",
-          "height": 6737,
-          "width": 5080,
+          "label": "Page 024 of 175",
+          "height": 3246,
+          "width": 2519,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0024.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_024.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6737,
-                "width": 5080,
+                "height": 3246,
+                "width": 2519,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0024.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_024.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0024.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_024.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0025.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_025.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 025",
-          "height": 6747,
-          "width": 5050,
+          "label": "Page 025 of 175",
+          "height": 3282,
+          "width": 2503,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0025.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_025.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6747,
-                "width": 5050,
+                "height": 3282,
+                "width": 2503,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0025.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_025.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0025.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_025.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0026.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_026.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 026",
-          "height": 6737,
-          "width": 5050,
+          "label": "Page 026 of 175",
+          "height": 3285,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0026.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_026.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6737,
-                "width": 5050,
+                "height": 3285,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0026.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_026.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0026.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_026.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0027.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_027.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 027",
-          "height": 6857,
-          "width": 5160,
+          "label": "Page 027 of 175",
+          "height": 3269,
+          "width": 2530,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0027.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_027.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6857,
-                "width": 5160,
+                "height": 3269,
+                "width": 2530,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0027.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_027.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0027.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_027.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0028.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_028.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 028",
-          "height": 6787,
-          "width": 5100,
+          "label": "Page 028 of 175",
+          "height": 3254,
+          "width": 2524,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0028.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_028.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6787,
-                "width": 5100,
+                "height": 3254,
+                "width": 2524,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0028.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_028.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0028.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_028.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0029.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_029.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 029",
-          "height": 6717,
-          "width": 5030,
+          "label": "Page 029 of 175",
+          "height": 3277,
+          "width": 2502,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0029.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_029.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6717,
-                "width": 5030,
+                "height": 3277,
+                "width": 2502,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0029.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_029.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0029.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_029.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0030.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_030.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 030",
-          "height": 6847,
-          "width": 5170,
+          "label": "Page 030 of 175",
+          "height": 3292,
+          "width": 2522,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0030.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_030.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6847,
-                "width": 5170,
+                "height": 3292,
+                "width": 2522,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0030.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_030.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0030.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_030.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0031.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_031.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 031",
-          "height": 6827,
-          "width": 5146,
+          "label": "Page 031 of 175",
+          "height": 3280,
+          "width": 2512,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0031.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_031.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6827,
-                "width": 5146,
+                "height": 3280,
+                "width": 2512,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0031.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_031.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0031.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_031.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0032.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_032.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 032",
-          "height": 6867,
-          "width": 5120,
+          "label": "Page 032 of 175",
+          "height": 3265,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0032.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_032.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6867,
-                "width": 5120,
+                "height": 3265,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0032.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_032.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0032.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_032.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0033.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_033.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 033",
-          "height": 6777,
-          "width": 5160,
+          "label": "Page 033 of 175",
+          "height": 3284,
+          "width": 2500,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0033.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_033.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6777,
-                "width": 5160,
+                "height": 3284,
+                "width": 2500,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0033.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_033.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0033.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_033.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0034.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_034.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 034",
-          "height": 6807,
-          "width": 5116,
+          "label": "Page 034 of 175",
+          "height": 3277,
+          "width": 2482,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0034.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_034.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5116,
+                "height": 3277,
+                "width": 2482,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0034.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_034.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0034.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_034.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0035.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_035.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 035",
-          "height": 6887,
-          "width": 5126,
+          "label": "Page 035 of 175",
+          "height": 3268,
+          "width": 2516,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0035.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_035.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6887,
-                "width": 5126,
+                "height": 3268,
+                "width": 2516,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0035.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_035.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0035.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_035.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0036.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_036.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 036",
-          "height": 6837,
-          "width": 5126,
+          "label": "Page 036 of 175",
+          "height": 3277,
+          "width": 2539,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0036.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_036.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5126,
+                "height": 3277,
+                "width": 2539,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0036.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_036.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0036.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_036.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0037.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_037.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 037",
-          "height": 6837,
-          "width": 5185,
+          "label": "Page 037 of 175",
+          "height": 3265,
+          "width": 2519,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0037.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_037.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5185,
+                "height": 3265,
+                "width": 2519,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0037.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_037.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0037.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_037.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0038.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_038.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 038",
-          "height": 6797,
-          "width": 5116,
+          "label": "Page 038 of 175",
+          "height": 3255,
+          "width": 2490,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0038.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_038.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6797,
-                "width": 5116,
+                "height": 3255,
+                "width": 2490,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0038.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_038.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0038.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_038.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0039.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_039.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 039",
-          "height": 6767,
-          "width": 5156,
+          "label": "Page 039 of 175",
+          "height": 3274,
+          "width": 2491,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0039.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_039.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6767,
-                "width": 5156,
+                "height": 3274,
+                "width": 2491,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0039.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_039.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0039.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_039.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0040.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_040.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 040",
-          "height": 6787,
-          "width": 5146,
+          "label": "Page 040 of 175",
+          "height": 3251,
+          "width": 2510,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0040.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_040.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6787,
-                "width": 5146,
+                "height": 3251,
+                "width": 2510,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0040.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_040.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0040.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_040.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0041.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_041.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 041",
-          "height": 6737,
-          "width": 5116,
+          "label": "Page 041 of 175",
+          "height": 3279,
+          "width": 2551,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0041.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_041.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6737,
-                "width": 5116,
+                "height": 3279,
+                "width": 2551,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0041.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_041.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0041.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_041.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0042.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_042.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 042",
-          "height": 6797,
-          "width": 5146,
+          "label": "Page 042 of 175",
+          "height": 3296,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0042.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_042.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6797,
-                "width": 5146,
+                "height": 3296,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0042.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_042.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0042.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_042.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0043.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_043.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 043",
-          "height": 6797,
-          "width": 5076,
+          "label": "Page 043 of 175",
+          "height": 3289,
+          "width": 2573,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0043.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_043.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6797,
-                "width": 5076,
+                "height": 3289,
+                "width": 2573,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0043.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_043.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0043.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_043.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0044.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_044.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 044",
-          "height": 6847,
-          "width": 5146,
+          "label": "Page 044 of 175",
+          "height": 3278,
+          "width": 2544,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0044.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_044.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6847,
-                "width": 5146,
+                "height": 3278,
+                "width": 2544,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0044.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_044.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0044.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_044.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0045.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_045.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 045",
-          "height": 6797,
-          "width": 5206,
+          "label": "Page 045 of 175",
+          "height": 3287,
+          "width": 2545,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0045.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_045.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6797,
-                "width": 5206,
+                "height": 3287,
+                "width": 2545,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0045.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_045.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0045.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_045.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0046.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_046.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 046",
-          "height": 6837,
-          "width": 5166,
+          "label": "Page 046 of 175",
+          "height": 3291,
+          "width": 2527,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0046.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_046.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5166,
+                "height": 3291,
+                "width": 2527,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0046.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_046.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0046.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_046.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0047.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_047.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 047",
-          "height": 6798,
-          "width": 5121,
+          "label": "Page 047 of 175",
+          "height": 3286,
+          "width": 2486,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0047.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_047.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5121,
+                "height": 3286,
+                "width": 2486,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0047.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_047.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0047.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_047.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0048.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_048.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 048",
-          "height": 6788,
-          "width": 5121,
+          "label": "Page 048 of 175",
+          "height": 3281,
+          "width": 2536,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0048.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_048.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6788,
-                "width": 5121,
+                "height": 3281,
+                "width": 2536,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0048.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_048.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0048.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_048.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0049.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_049.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 049",
-          "height": 6848,
-          "width": 5191,
+          "label": "Page 049 of 175",
+          "height": 3272,
+          "width": 2548,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0049.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_049.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6848,
-                "width": 5191,
+                "height": 3272,
+                "width": 2548,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0049.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_049.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0049.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_049.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0050.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_050.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 050",
-          "height": 6798,
-          "width": 5151,
+          "label": "Page 050 of 175",
+          "height": 3272,
+          "width": 2547,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0050.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_050.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5151,
+                "height": 3272,
+                "width": 2547,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0050.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_050.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0050.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_050.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0051.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_051.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 051",
-          "height": 6847,
-          "width": 5076,
+          "label": "Page 051 of 175",
+          "height": 3289,
+          "width": 2568,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0051.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_051.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6847,
-                "width": 5076,
+                "height": 3289,
+                "width": 2568,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0051.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_051.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0051.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_051.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0052.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_052.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 052",
-          "height": 6817,
-          "width": 5026,
+          "label": "Page 052 of 175",
+          "height": 3274,
+          "width": 2549,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0052.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_052.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6817,
-                "width": 5026,
+                "height": 3274,
+                "width": 2549,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0052.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_052.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0052.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_052.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0053.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_053.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 053",
-          "height": 6867,
-          "width": 5046,
+          "label": "Page 053 of 175",
+          "height": 3309,
+          "width": 2558,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0053.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_053.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6867,
-                "width": 5046,
+                "height": 3309,
+                "width": 2558,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0053.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_053.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0053.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_053.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0054.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_054.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 054",
-          "height": 6838,
-          "width": 5024,
+          "label": "Page 054 of 175",
+          "height": 3288,
+          "width": 2541,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0054.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_054.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6838,
-                "width": 5024,
+                "height": 3288,
+                "width": 2541,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0054.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_054.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0054.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_054.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0055.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_055.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 055",
-          "height": 6848,
-          "width": 5013,
+          "label": "Page 055 of 175",
+          "height": 3267,
+          "width": 2526,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0055.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_055.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6848,
-                "width": 5013,
+                "height": 3267,
+                "width": 2526,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0055.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_055.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0055.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_055.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0056.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_056.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 056",
-          "height": 6888,
-          "width": 5053,
+          "label": "Page 056 of 175",
+          "height": 3292,
+          "width": 2544,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0056.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_056.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6888,
-                "width": 5053,
+                "height": 3292,
+                "width": 2544,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0056.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_056.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0056.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_056.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0057.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_057.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 057",
-          "height": 6838,
-          "width": 5003,
+          "label": "Page 057 of 175",
+          "height": 3296,
+          "width": 2544,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0057.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_057.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6838,
-                "width": 5003,
+                "height": 3296,
+                "width": 2544,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0057.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_057.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0057.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_057.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0058.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_058.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 058",
-          "height": 6798,
-          "width": 5063,
+          "label": "Page 058 of 175",
+          "height": 3298,
+          "width": 2543,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0058.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_058.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5063,
+                "height": 3298,
+                "width": 2543,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0058.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_058.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0058.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_058.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0059.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_059.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 059",
-          "height": 6828,
-          "width": 5033,
+          "label": "Page 059 of 175",
+          "height": 3276,
+          "width": 2543,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0059.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_059.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6828,
-                "width": 5033,
+                "height": 3276,
+                "width": 2543,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0059.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_059.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0059.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_059.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0060.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_060.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 060",
-          "height": 6848,
-          "width": 5123,
+          "label": "Page 060 of 175",
+          "height": 3267,
+          "width": 2557,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0060.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_060.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6848,
-                "width": 5123,
+                "height": 3267,
+                "width": 2557,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0060.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_060.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0060.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_060.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0061.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_061.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 061",
-          "height": 6848,
-          "width": 5023,
+          "label": "Page 061 of 175",
+          "height": 3269,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0061.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_061.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6848,
-                "width": 5023,
+                "height": 3269,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0061.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_061.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0061.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_061.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0062.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_062.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 062",
-          "height": 6828,
-          "width": 4933,
+          "label": "Page 062 of 175",
+          "height": 3288,
+          "width": 2557,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0062.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_062.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6828,
-                "width": 4933,
+                "height": 3288,
+                "width": 2557,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0062.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_062.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0062.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_062.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0063.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_063.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 063",
-          "height": 6817,
-          "width": 5030,
+          "label": "Page 063 of 175",
+          "height": 3284,
+          "width": 2542,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0063.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_063.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6817,
-                "width": 5030,
+                "height": 3284,
+                "width": 2542,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0063.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_063.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0063.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_063.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0064.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_064.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 064",
-          "height": 6747,
-          "width": 5011,
+          "label": "Page 064 of 175",
+          "height": 3292,
+          "width": 2538,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0064.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_064.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6747,
-                "width": 5011,
+                "height": 3292,
+                "width": 2538,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0064.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_064.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0064.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_064.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0065.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_065.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 065",
-          "height": 6777,
-          "width": 5070,
+          "label": "Page 065 of 175",
+          "height": 3293,
+          "width": 2528,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0065.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_065.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6777,
-                "width": 5070,
+                "height": 3293,
+                "width": 2528,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0065.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_065.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0065.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_065.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0066.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_066.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 066",
-          "height": 6797,
-          "width": 5090,
+          "label": "Page 066 of 175",
+          "height": 3277,
+          "width": 2488,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0066.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_066.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6797,
-                "width": 5090,
+                "height": 3277,
+                "width": 2488,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0066.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_066.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0066.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_066.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0067.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_067.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 067",
-          "height": 6807,
-          "width": 5040,
+          "label": "Page 067 of 175",
+          "height": 3289,
+          "width": 2551,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0067.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_067.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5040,
+                "height": 3289,
+                "width": 2551,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0067.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_067.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0067.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_067.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0068.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_068.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 068",
-          "height": 6827,
-          "width": 5080,
+          "label": "Page 068 of 175",
+          "height": 3294,
+          "width": 2504,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0068.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_068.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6827,
-                "width": 5080,
+                "height": 3294,
+                "width": 2504,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0068.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_068.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0068.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_068.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0069.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_069.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 069",
-          "height": 6778,
-          "width": 5050,
+          "label": "Page 069 of 175",
+          "height": 3298,
+          "width": 2531,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0069.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_069.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6778,
-                "width": 5050,
+                "height": 3298,
+                "width": 2531,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0069.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_069.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0069.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_069.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0070.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_070.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 070",
-          "height": 6787,
-          "width": 5040,
+          "label": "Page 070 of 175",
+          "height": 3298,
+          "width": 2516,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0070.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_070.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6787,
-                "width": 5040,
+                "height": 3298,
+                "width": 2516,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0070.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_070.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0070.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_070.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0071.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_071.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 071",
-          "height": 6777,
-          "width": 5030,
+          "label": "Page 071 of 175",
+          "height": 3290,
+          "width": 2508,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0071.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_071.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6777,
-                "width": 5030,
+                "height": 3290,
+                "width": 2508,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0071.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_071.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0071.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_071.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0072.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_072.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 072",
-          "height": 6827,
-          "width": 5080,
+          "label": "Page 072 of 175",
+          "height": 3295,
+          "width": 2537,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0072.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_072.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6827,
-                "width": 5080,
+                "height": 3295,
+                "width": 2537,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0072.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_072.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0072.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_072.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0073.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_073.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 073",
-          "height": 6777,
-          "width": 5056,
+          "label": "Page 073 of 175",
+          "height": 3304,
+          "width": 2524,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0073.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_073.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6777,
-                "width": 5056,
+                "height": 3304,
+                "width": 2524,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0073.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_073.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0073.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_073.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0074.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_074.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 074",
-          "height": 6807,
-          "width": 5046,
+          "label": "Page 074 of 175",
+          "height": 3270,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0074.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_074.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5046,
+                "height": 3270,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0074.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_074.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0074.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_074.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0075.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_075.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 075",
-          "height": 6817,
-          "width": 5016,
+          "label": "Page 075 of 175",
+          "height": 3289,
+          "width": 2506,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0075.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_075.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6817,
-                "width": 5016,
+                "height": 3289,
+                "width": 2506,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0075.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_075.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0075.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_075.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0076.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_076.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 076",
-          "height": 6737,
-          "width": 5056,
+          "label": "Page 076 of 175",
+          "height": 3292,
+          "width": 2545,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0076.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_076.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6737,
-                "width": 5056,
+                "height": 3292,
+                "width": 2545,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0076.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_076.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0076.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_076.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0077.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_077.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 077",
-          "height": 6807,
-          "width": 5076,
+          "label": "Page 077 of 175",
+          "height": 3292,
+          "width": 2468,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0077.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_077.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5076,
+                "height": 3292,
+                "width": 2468,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0077.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_077.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0077.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_077.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0078.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_078.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 078",
-          "height": 6817,
-          "width": 5036,
+          "label": "Page 078 of 175",
+          "height": 3262,
+          "width": 2552,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0078.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_078.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6817,
-                "width": 5036,
+                "height": 3262,
+                "width": 2552,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0078.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_078.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0078.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_078.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0079.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_079.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 079",
-          "height": 6787,
-          "width": 5066,
+          "label": "Page 079 of 175",
+          "height": 3279,
+          "width": 2559,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0079.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_079.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6787,
-                "width": 5066,
+                "height": 3279,
+                "width": 2559,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0079.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_079.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0079.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_079.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0080.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_080.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 080",
-          "height": 6807,
-          "width": 5086,
+          "label": "Page 080 of 175",
+          "height": 3284,
+          "width": 2534,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0080.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_080.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5086,
+                "height": 3284,
+                "width": 2534,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0080.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_080.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0080.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_080.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0081.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_081.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 081",
-          "height": 6807,
-          "width": 5036,
+          "label": "Page 081 of 175",
+          "height": 3296,
+          "width": 2507,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0081.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_081.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6807,
-                "width": 5036,
+                "height": 3296,
+                "width": 2507,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0081.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_081.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0081.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_081.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0082.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_082.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 082",
-          "height": 6837,
-          "width": 5096,
+          "label": "Page 082 of 175",
+          "height": 3291,
+          "width": 2539,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0082.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_082.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5096,
+                "height": 3291,
+                "width": 2539,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0082.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_082.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0082.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_082.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0083.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_083.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 083",
-          "height": 6837,
-          "width": 5086,
+          "label": "Page 083 of 175",
+          "height": 3274,
+          "width": 2505,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0083.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_083.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6837,
-                "width": 5086,
+                "height": 3274,
+                "width": 2505,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0083.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_083.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0083.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_083.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0084.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_084.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 084",
-          "height": 6798,
-          "width": 5051,
+          "label": "Page 084 of 175",
+          "height": 3266,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0084.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_084.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5051,
+                "height": 3266,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0084.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_084.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0084.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_084.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0085.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_085.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 085",
-          "height": 6818,
-          "width": 5081,
+          "label": "Page 085 of 175",
+          "height": 3274,
+          "width": 2527,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0085.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_085.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6818,
-                "width": 5081,
+                "height": 3274,
+                "width": 2527,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0085.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_085.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0085.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_085.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0086.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_086.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 086",
-          "height": 6888,
-          "width": 5081,
+          "label": "Page 086 of 175",
+          "height": 3279,
+          "width": 2521,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0086.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_086.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6888,
-                "width": 5081,
+                "height": 3279,
+                "width": 2521,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0086.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_086.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0086.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_086.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0087.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_087.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 087",
-          "height": 6828,
-          "width": 5031,
+          "label": "Page 087 of 175",
+          "height": 3284,
+          "width": 2535,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0087.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_087.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6828,
-                "width": 5031,
+                "height": 3284,
+                "width": 2535,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0087.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_087.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0087.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_087.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0088.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_088.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 088",
-          "height": 6798,
-          "width": 5061,
+          "label": "Page 088 of 175",
+          "height": 3306,
+          "width": 2548,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0088.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_088.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6798,
-                "width": 5061,
+                "height": 3306,
+                "width": 2548,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0088.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_088.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0088.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_088.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0089.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_089.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 089",
-          "height": 6845,
-          "width": 5039,
+          "label": "Page 089 of 175",
+          "height": 3263,
+          "width": 2556,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0089.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_089.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6845,
-                "width": 5039,
+                "height": 3263,
+                "width": 2556,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0089.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_089.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0089.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_089.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0090.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_090.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 090",
-          "height": 6845,
-          "width": 5039,
+          "label": "Page 090 of 175",
+          "height": 3282,
+          "width": 2535,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0090.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_090.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6845,
-                "width": 5039,
+                "height": 3282,
+                "width": 2535,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0090.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_090.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0090.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_090.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0091.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_091.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 091",
-          "height": 6795,
-          "width": 5009,
+          "label": "Page 091 of 175",
+          "height": 3268,
+          "width": 2502,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0091.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_091.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6795,
-                "width": 5009,
+                "height": 3268,
+                "width": 2502,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0091.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_091.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0091.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_091.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0092.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_092.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 092",
-          "height": 6825,
-          "width": 4999,
+          "label": "Page 092 of 175",
+          "height": 3296,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0092.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_092.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6825,
-                "width": 4999,
+                "height": 3296,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0092.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_092.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0092.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_092.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0093.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_093.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 093",
-          "height": 6805,
-          "width": 5019,
+          "label": "Page 093 of 175",
+          "height": 3281,
+          "width": 2536,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0093.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_093.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6805,
-                "width": 5019,
+                "height": 3281,
+                "width": 2536,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0093.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_093.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0093.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_093.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0094.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_094.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 094",
-          "height": 6775,
-          "width": 5009,
+          "label": "Page 094 of 175",
+          "height": 3277,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0094.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_094.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6775,
-                "width": 5009,
+                "height": 3277,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0094.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_094.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0094.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_094.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0095.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_095.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 095",
-          "height": 6775,
-          "width": 4999,
+          "label": "Page 095 of 175",
+          "height": 3265,
+          "width": 2466,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0095.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_095.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6775,
-                "width": 4999,
+                "height": 3265,
+                "width": 2466,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0095.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_095.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0095.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_095.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0096.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_096.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 096",
-          "height": 6765,
-          "width": 4979,
+          "label": "Page 096 of 175",
+          "height": 3274,
+          "width": 2525,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0096.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_096.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6765,
-                "width": 4979,
+                "height": 3274,
+                "width": 2525,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0096.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_096.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0096.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_096.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0098.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_098.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 098",
-          "height": 6785,
-          "width": 5049,
+          "label": "Page 098 of 175",
+          "height": 3294,
+          "width": 2543,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0098.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_098.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6785,
-                "width": 5049,
+                "height": 3294,
+                "width": 2543,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0098.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_098.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0098.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_098.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0099.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_099.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 099",
-          "height": 6825,
-          "width": 5039,
+          "label": "Page 099 of 175",
+          "height": 3290,
+          "width": 2539,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0099.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_099.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6825,
-                "width": 5039,
+                "height": 3290,
+                "width": 2539,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0099.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_099.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0099.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_099.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0100.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_100.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 100",
-          "height": 6795,
-          "width": 4959,
+          "label": "Page 100 of 175",
+          "height": 3277,
+          "width": 2530,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0100.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_100.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6795,
-                "width": 4959,
+                "height": 3277,
+                "width": 2530,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0100.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_100.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0100.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_100.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0101.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_101.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 101",
-          "height": 6524,
-          "width": 5034,
+          "label": "Page 101 of 175",
+          "height": 3267,
+          "width": 2532,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0101.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_101.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6524,
-                "width": 5034,
+                "height": 3267,
+                "width": 2532,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0101.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_101.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0101.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_101.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0102.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_102.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 102",
-          "height": 6795,
-          "width": 4984,
+          "label": "Page 102 of 175",
+          "height": 3278,
+          "width": 2532,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0102.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_102.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6795,
-                "width": 4984,
+                "height": 3278,
+                "width": 2532,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0102.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_102.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0102.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_102.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0103.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_103.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 103",
-          "height": 6735,
-          "width": 5008,
+          "label": "Page 103 of 175",
+          "height": 3268,
+          "width": 2517,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0103.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_103.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6735,
-                "width": 5008,
+                "height": 3268,
+                "width": 2517,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0103.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_103.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0103.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_103.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0104.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_104.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 104",
-          "height": 6776,
-          "width": 5039,
+          "label": "Page 104 of 175",
+          "height": 3266,
+          "width": 2534,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0104.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_104.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6776,
-                "width": 5039,
+                "height": 3266,
+                "width": 2534,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0104.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_104.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0104.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_104.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0105.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_105.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 105",
-          "height": 6716,
-          "width": 5019,
+          "label": "Page 105 of 175",
+          "height": 3277,
+          "width": 2496,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0105.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_105.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6716,
-                "width": 5019,
+                "height": 3277,
+                "width": 2496,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0105.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_105.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0105.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_105.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0106.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_106.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 106",
-          "height": 6816,
-          "width": 5029,
+          "label": "Page 106 of 175",
+          "height": 3258,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0106.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_106.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6816,
-                "width": 5029,
+                "height": 3258,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0106.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_106.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0106.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_106.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0107.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_107.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 107",
-          "height": 6756,
-          "width": 5008,
+          "label": "Page 107 of 175",
+          "height": 3260,
+          "width": 2521,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0107.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_107.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6756,
-                "width": 5008,
+                "height": 3260,
+                "width": 2521,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0107.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_107.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0107.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_107.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0108.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_108.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 108",
-          "height": 6766,
-          "width": 5039,
+          "label": "Page 108 of 175",
+          "height": 3297,
+          "width": 2487,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0108.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_108.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6766,
-                "width": 5039,
+                "height": 3297,
+                "width": 2487,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0108.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_108.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0108.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_108.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0109.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_109.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 109",
-          "height": 6806,
-          "width": 5018,
+          "label": "Page 109 of 175",
+          "height": 3283,
+          "width": 2536,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0109.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_109.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6806,
-                "width": 5018,
+                "height": 3283,
+                "width": 2536,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0109.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_109.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0109.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_109.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0110.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_110.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 110",
-          "height": 6766,
-          "width": 5008,
+          "label": "Page 110 of 175",
+          "height": 3260,
+          "width": 2484,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0110.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_110.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6766,
-                "width": 5008,
+                "height": 3260,
+                "width": 2484,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0110.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_110.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0110.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_110.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0111.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_111.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 111",
-          "height": 6736,
-          "width": 4989,
+          "label": "Page 111 of 175",
+          "height": 3266,
+          "width": 2499,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0111.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_111.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6736,
-                "width": 4989,
+                "height": 3266,
+                "width": 2499,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0111.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_111.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0111.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_111.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0112.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_112.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 112",
-          "height": 6786,
-          "width": 5059,
+          "label": "Page 112 of 175",
+          "height": 3279,
+          "width": 2550,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0112.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_112.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6786,
-                "width": 5059,
+                "height": 3279,
+                "width": 2550,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0112.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_112.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0112.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_112.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0113.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_113.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 113",
-          "height": 6794,
-          "width": 5085,
+          "label": "Page 113 of 175",
+          "height": 3272,
+          "width": 2539,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0113.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_113.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6794,
-                "width": 5085,
+                "height": 3272,
+                "width": 2539,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0113.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_113.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0113.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_113.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0114.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_114.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 114",
-          "height": 6774,
-          "width": 5075,
+          "label": "Page 114 of 175",
+          "height": 3275,
+          "width": 2525,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0114.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_114.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6774,
-                "width": 5075,
+                "height": 3275,
+                "width": 2525,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0114.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_114.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0114.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_114.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0115.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 115",
-          "height": 6814,
-          "width": 5075,
+          "label": "Page 115 of 175",
+          "height": 3280,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0115.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_115.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6814,
-                "width": 5075,
+                "height": 3280,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0115.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_115.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0115.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0116.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 116",
-          "height": 6814,
-          "width": 5045,
+          "label": "Page 116 of 175",
+          "height": 3272,
+          "width": 2525,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0116.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_116.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6814,
-                "width": 5045,
+                "height": 3272,
+                "width": 2525,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0116.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_116.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0116.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0117.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_117.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 117",
-          "height": 6854,
-          "width": 5005,
+          "label": "Page 117 of 175",
+          "height": 3270,
+          "width": 2556,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0117.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_117.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6854,
-                "width": 5005,
+                "height": 3270,
+                "width": 2556,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0117.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_117.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0117.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_117.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0118.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_118.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 118",
-          "height": 6744,
-          "width": 5025,
+          "label": "Page 118 of 175",
+          "height": 3304,
+          "width": 2552,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0118.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_118.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6744,
-                "width": 5025,
+                "height": 3304,
+                "width": 2552,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0118.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_118.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0118.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_118.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0119.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_119.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 119",
-          "height": 6764,
-          "width": 5045,
+          "label": "Page 119 of 175",
+          "height": 3287,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0119.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_119.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6764,
-                "width": 5045,
+                "height": 3287,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0119.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_119.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0119.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_119.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0120.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_120.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 120",
-          "height": 6784,
-          "width": 5065,
+          "label": "Page 120 of 175",
+          "height": 3293,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0120.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_120.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6784,
-                "width": 5065,
+                "height": 3293,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0120.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_120.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0120.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_120.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0121.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_121.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 121",
-          "height": 6784,
-          "width": 5055,
+          "label": "Page 121 of 175",
+          "height": 3279,
+          "width": 2554,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0121.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_121.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6784,
-                "width": 5055,
+                "height": 3279,
+                "width": 2554,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0121.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_121.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0121.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_121.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0122.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_122.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 122",
-          "height": 6744,
-          "width": 5005,
+          "label": "Page 122 of 175",
+          "height": 3293,
+          "width": 2518,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0122.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_122.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6744,
-                "width": 5005,
+                "height": 3293,
+                "width": 2518,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0122.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_122.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0122.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_122.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0123.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_123.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 123",
-          "height": 6774,
-          "width": 5055,
+          "label": "Page 123 of 175",
+          "height": 3275,
+          "width": 2542,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0123.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_123.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6774,
-                "width": 5055,
+                "height": 3275,
+                "width": 2542,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0123.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_123.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0123.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_123.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0124.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_124.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 124",
-          "height": 6804,
-          "width": 5073,
+          "label": "Page 124 of 175",
+          "height": 3280,
+          "width": 2538,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0124.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_124.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6804,
-                "width": 5073,
+                "height": 3280,
+                "width": 2538,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0124.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_124.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0124.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_124.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 125",
-          "height": 6815,
-          "width": 5066,
+          "label": "Page 125 of 175",
+          "height": 3297,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0125.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_125.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6815,
-                "width": 5066,
+                "height": 3297,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0125.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_125.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125a.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125a.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 125A",
-          "height": 6774,
-          "width": 5083,
+          "label": "Page 125A of 175",
+          "height": 3282,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0125a.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_125a.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6774,
-                "width": 5083,
+                "height": 3282,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0125a.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_125a.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0125a.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125a.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0126.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_126.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 126",
-          "height": 6764,
-          "width": 5053,
+          "label": "Page 126 of 175",
+          "height": 3282,
+          "width": 2526,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0126.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_126.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6764,
-                "width": 5053,
+                "height": 3282,
+                "width": 2526,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0126.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_126.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0126.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_126.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0127.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_127.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 127",
-          "height": 6794,
-          "width": 5083,
+          "label": "Page 127 of 175",
+          "height": 3297,
+          "width": 2527,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0127.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_127.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6794,
-                "width": 5083,
+                "height": 3297,
+                "width": 2527,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0127.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_127.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0127.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_127.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0128.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_128.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 128",
-          "height": 6734,
-          "width": 5093,
+          "label": "Page 128 of 175",
+          "height": 3273,
+          "width": 2544,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0128.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_128.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6734,
-                "width": 5093,
+                "height": 3273,
+                "width": 2544,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0128.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_128.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0128.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_128.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0129.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_129.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 129",
-          "height": 6754,
-          "width": 5103,
+          "label": "Page 129 of 175",
+          "height": 3286,
+          "width": 2547,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0129.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_129.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6754,
-                "width": 5103,
+                "height": 3286,
+                "width": 2547,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0129.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_129.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0129.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_129.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0130.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_130.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 130",
-          "height": 6714,
-          "width": 5013,
+          "label": "Page 130 of 175",
+          "height": 3292,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0130.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_130.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6714,
-                "width": 5013,
+                "height": 3292,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0130.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_130.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0130.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_130.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0131.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_131.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 131",
-          "height": 6784,
-          "width": 5033,
+          "label": "Page 131 of 175",
+          "height": 3269,
+          "width": 2541,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0131.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_131.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6784,
-                "width": 5033,
+                "height": 3269,
+                "width": 2541,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0131.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_131.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0131.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_131.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 132",
-          "height": 6734,
-          "width": 5043,
+          "label": "Page 132 of 175",
+          "height": 3281,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0132.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_132.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6734,
-                "width": 5043,
+                "height": 3281,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0132.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_132.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132a.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132a.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 132A",
-          "height": 6725,
-          "width": 5071,
+          "label": "Page 132A of 175",
+          "height": 3287,
+          "width": 2505,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0132a.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_132a.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6725,
-                "width": 5071,
+                "height": 3287,
+                "width": 2505,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0132a.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_132a.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0132a.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_132a.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0133.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_133.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 133",
-          "height": 6736,
-          "width": 5031,
+          "label": "Page 133 of 175",
+          "height": 3272,
+          "width": 2548,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0133.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_133.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6736,
-                "width": 5031,
+                "height": 3272,
+                "width": 2548,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0133.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_133.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0133.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_133.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0134.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_134.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 134",
-          "height": 6776,
-          "width": 5051,
+          "label": "Page 134 of 175",
+          "height": 3279,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0134.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_134.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6776,
-                "width": 5051,
+                "height": 3279,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0134.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_134.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0134.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_134.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0135.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_135.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 135",
-          "height": 6826,
-          "width": 5081,
+          "label": "Page 135 of 175",
+          "height": 3258,
+          "width": 2499,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0135.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_135.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6826,
-                "width": 5081,
+                "height": 3258,
+                "width": 2499,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0135.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_135.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0135.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_135.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0136.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_136.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 136",
-          "height": 6796,
-          "width": 5031,
+          "label": "Page 136 of 175",
+          "height": 3272,
+          "width": 2535,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0136.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_136.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6796,
-                "width": 5031,
+                "height": 3272,
+                "width": 2535,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0136.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_136.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0136.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_136.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0137.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_137.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 137",
-          "height": 6766,
-          "width": 5051,
+          "label": "Page 137 of 175",
+          "height": 3246,
+          "width": 2533,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0137.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_137.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6766,
-                "width": 5051,
+                "height": 3246,
+                "width": 2533,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0137.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_137.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0137.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_137.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0138.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_138.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 138",
-          "height": 6706,
-          "width": 5041,
+          "label": "Page 138 of 175",
+          "height": 3275,
+          "width": 2498,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0138.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_138.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6706,
-                "width": 5041,
+                "height": 3275,
+                "width": 2498,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0138.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_138.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0138.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_138.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0139.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_139.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 139",
-          "height": 6756,
-          "width": 5051,
+          "label": "Page 139 of 175",
+          "height": 3266,
+          "width": 2538,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0139.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_139.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6756,
-                "width": 5051,
+                "height": 3266,
+                "width": 2538,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0139.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_139.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0139.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_139.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0140.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_140.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 140",
-          "height": 6786,
-          "width": 5031,
+          "label": "Page 140 of 175",
+          "height": 3264,
+          "width": 2519,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0140.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_140.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6786,
-                "width": 5031,
+                "height": 3264,
+                "width": 2519,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0140.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_140.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0140.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_140.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0141.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_141.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 141",
-          "height": 6725,
-          "width": 5071,
+          "label": "Page 141 of 175",
+          "height": 3256,
+          "width": 2485,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0141.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_141.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6725,
-                "width": 5071,
+                "height": 3256,
+                "width": 2485,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0141.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_141.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0141.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_141.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0142.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_142.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 142",
-          "height": 6756,
-          "width": 5071,
+          "label": "Page 142 of 175",
+          "height": 3294,
+          "width": 2532,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0142.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_142.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6756,
-                "width": 5071,
+                "height": 3294,
+                "width": 2532,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0142.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_142.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0142.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_142.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0143.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_143.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 143",
-          "height": 6766,
-          "width": 5011,
+          "label": "Page 143 of 175",
+          "height": 3247,
+          "width": 2511,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0143.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_143.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6766,
-                "width": 5011,
+                "height": 3247,
+                "width": 2511,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0143.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_143.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0143.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_143.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0144.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_144.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 144",
-          "height": 6756,
-          "width": 5082,
+          "label": "Page 144 of 175",
+          "height": 3219,
+          "width": 2523,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0144.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_144.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6756,
-                "width": 5082,
+                "height": 3219,
+                "width": 2523,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0144.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_144.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0144.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_144.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 145",
-          "height": 6786,
-          "width": 5102,
+          "label": "Page 145 of 175",
+          "height": 3287,
+          "width": 2499,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6786,
-                "width": 5102,
+                "height": 3287,
+                "width": 2499,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145a.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145a.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 145A",
-          "height": 6695,
-          "width": 5011,
+          "label": "Page 145a of 175",
+          "height": 3289,
+          "width": 2536,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145a.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145a.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6695,
-                "width": 5011,
+                "height": 3289,
+                "width": 2536,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145a.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145a.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145a.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145a.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145b.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145b.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 145B",
-          "height": 6716,
-          "width": 5112,
+          "label": "Page 145b of 175",
+          "height": 3295,
+          "width": 2538,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145b.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145b.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6716,
-                "width": 5112,
+                "height": 3295,
+                "width": 2538,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0145b.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_145b.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0145b.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_145b.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0146.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_146.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 146",
-          "height": 6824,
-          "width": 5098,
+          "label": "Page 146 of 175",
+          "height": 3293,
+          "width": 2537,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0146.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_146.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6824,
-                "width": 5098,
+                "height": 3293,
+                "width": 2537,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0146.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_146.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0146.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_146.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0147.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_147.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 147",
-          "height": 6733,
-          "width": 5017,
+          "label": "Page 147 of 175",
+          "height": 3292,
+          "width": 2492,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0147.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_147.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6733,
-                "width": 5017,
+                "height": 3292,
+                "width": 2492,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0147.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_147.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0147.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_147.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0148.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_148.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 148",
-          "height": 6723,
-          "width": 5038,
+          "label": "Page 148 of 175",
+          "height": 3275,
+          "width": 2531,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0148.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_148.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6723,
-                "width": 5038,
+                "height": 3275,
+                "width": 2531,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0148.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_148.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0148.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_148.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0149.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_149.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 149",
-          "height": 6723,
-          "width": 5088,
+          "label": "Page 149 of 175",
+          "height": 3286,
+          "width": 2545,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0149.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_149.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6723,
-                "width": 5088,
+                "height": 3286,
+                "width": 2545,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0149.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_149.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0149.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_149.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0150.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_150.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 150",
-          "height": 6763,
-          "width": 5028,
+          "label": "Page 150 of 175",
+          "height": 3295,
+          "width": 2532,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0150.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_150.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6763,
-                "width": 5028,
+                "height": 3295,
+                "width": 2532,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0150.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_150.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0150.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_150.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0151.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_151.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 151",
-          "height": 6753,
-          "width": 5008,
+          "label": "Page 151 of 175",
+          "height": 3289,
+          "width": 2525,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0151.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_151.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6753,
-                "width": 5008,
+                "height": 3289,
+                "width": 2525,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0151.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_151.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0151.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_151.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0152.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_152.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 152",
-          "height": 6814,
-          "width": 4967,
+          "label": "Page 152 of 175",
+          "height": 3291,
+          "width": 2519,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0152.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_152.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6814,
-                "width": 4967,
+                "height": 3291,
+                "width": 2519,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0152.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_152.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0152.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_152.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0153.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_153.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 153",
-          "height": 6703,
-          "width": 4998,
+          "label": "Page 153 of 175",
+          "height": 3275,
+          "width": 2530,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0153.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_153.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6703,
-                "width": 4998,
+                "height": 3275,
+                "width": 2530,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0153.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_153.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0153.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_153.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0154.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_154.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 154",
-          "height": 6794,
-          "width": 5058,
+          "label": "Page 154 of 175",
+          "height": 3280,
+          "width": 2501,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0154.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_154.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6794,
-                "width": 5058,
+                "height": 3280,
+                "width": 2501,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0154.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_154.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0154.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_154.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0155.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_155.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 155",
-          "height": 6794,
-          "width": 5008,
+          "label": "Page 155 of 175",
+          "height": 3257,
+          "width": 2515,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0155.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_155.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6794,
-                "width": 5008,
+                "height": 3257,
+                "width": 2515,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0155.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_155.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0155.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_155.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0156.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_156.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 156",
-          "height": 6804,
-          "width": 5055,
+          "label": "Page 156 of 175",
+          "height": 3300,
+          "width": 2534,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0156.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_156.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6804,
-                "width": 5055,
+                "height": 3300,
+                "width": 2534,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0156.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_156.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0156.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_156.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0157.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_157.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 157",
-          "height": 6834,
-          "width": 5055,
+          "label": "Page 157 of 175",
+          "height": 3283,
+          "width": 2504,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0157.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_157.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6834,
-                "width": 5055,
+                "height": 3283,
+                "width": 2504,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0157.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_157.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0157.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_157.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0158.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_158.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 158",
-          "height": 6804,
-          "width": 5065,
+          "label": "Page 158 of 175",
+          "height": 3301,
+          "width": 2535,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0158.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_158.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6804,
-                "width": 5065,
+                "height": 3301,
+                "width": 2535,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0158.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_158.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0158.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_158.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0159.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_159.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 159",
-          "height": 6804,
-          "width": 5055,
+          "label": "Page 159 of 175",
+          "height": 3304,
+          "width": 2558,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0159.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_159.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6804,
-                "width": 5055,
+                "height": 3304,
+                "width": 2558,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0159.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_159.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0159.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_159.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0160.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_160.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 160",
-          "height": 7552,
-          "width": 5631,
+          "label": "Page 160 of 175",
+          "height": 3270,
+          "width": 2565,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0160.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_160.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7552,
-                "width": 5631,
+                "height": 3270,
+                "width": 2565,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0160.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_160.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0160.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_160.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0161.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_161.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 161",
-          "height": 7552,
-          "width": 5631,
+          "label": "Page 161 of 175",
+          "height": 3277,
+          "width": 2469,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0161.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_161.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7552,
-                "width": 5631,
+                "height": 3277,
+                "width": 2469,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0161.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_161.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0161.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_161.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0162.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_162.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 162",
-          "height": 6865,
-          "width": 5065,
+          "label": "Page 162 of 175",
+          "height": 3277,
+          "width": 2504,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0162.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_162.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6865,
-                "width": 5065,
+                "height": 3277,
+                "width": 2504,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0162.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_162.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0162.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_162.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0163.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_163.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 163",
-          "height": 6814,
-          "width": 5024,
+          "label": "Page 163 of 175",
+          "height": 3271,
+          "width": 2512,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0163.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_163.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6814,
-                "width": 5024,
+                "height": 3271,
+                "width": 2512,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0163.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_163.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0163.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_163.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0164.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_164.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 164",
-          "height": 6764,
-          "width": 5095,
+          "label": "Page 164 of 175",
+          "height": 3283,
+          "width": 2458,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0164.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_164.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6764,
-                "width": 5095,
+                "height": 3283,
+                "width": 2458,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0164.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_164.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0164.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_164.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0165.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_165.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 165",
-          "height": 6753,
-          "width": 5065,
+          "label": "Page 165 of 175",
+          "height": 3301,
+          "width": 2543,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0165.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_165.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6753,
-                "width": 5065,
+                "height": 3301,
+                "width": 2543,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0165.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_165.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0165.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_165.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0166.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_166.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 166",
-          "height": 6733,
-          "width": 5095,
+          "label": "Page 166 of 175",
+          "height": 3289,
+          "width": 2540,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0166.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_166.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6733,
-                "width": 5095,
+                "height": 3289,
+                "width": 2540,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0166.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_166.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0166.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_166.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0167.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_167.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 167",
-          "height": 6773,
-          "width": 5101,
+          "label": "Page 167 of 175",
+          "height": 3279,
+          "width": 2533,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0167.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_167.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6773,
-                "width": 5101,
+                "height": 3279,
+                "width": 2533,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0167.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_167.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0167.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_167.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0168.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_168.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 168",
-          "height": 7552,
-          "width": 5631,
+          "label": "Page 168 of 175",
+          "height": 3284,
+          "width": 2529,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0168.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_168.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 7552,
-                "width": 5631,
+                "height": 3284,
+                "width": 2529,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0168.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_168.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0168.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_168.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0169.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_169.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 169",
-          "height": 6723,
-          "width": 5101,
+          "label": "Page 169 of 175",
+          "height": 3272,
+          "width": 2500,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0169.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_169.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6723,
-                "width": 5101,
+                "height": 3272,
+                "width": 2500,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0169.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_169.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0169.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_169.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0170.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_170.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 170",
-          "height": 6774,
-          "width": 5060,
+          "label": "Page 170 of 175",
+          "height": 3295,
+          "width": 2517,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0170.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_170.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6774,
-                "width": 5060,
+                "height": 3295,
+                "width": 2517,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0170.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_170.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0170.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_170.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0171.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_171.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 171",
-          "height": 6753,
-          "width": 5090,
+          "label": "Page 171 of 175",
+          "height": 3294,
+          "width": 2546,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0171.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_171.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6753,
-                "width": 5090,
+                "height": 3294,
+                "width": 2546,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0171.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_171.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0171.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_171.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0172.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_172.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 172",
-          "height": 6784,
-          "width": 5050,
+          "label": "Page 172 of 175",
+          "height": 3256,
+          "width": 2548,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0172.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_172.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6784,
-                "width": 5050,
+                "height": 3256,
+                "width": 2548,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0172.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_172.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0172.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_172.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0173.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_173.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 173",
-          "height": 6762,
-          "width": 5108,
+          "label": "Page 173 of 175",
+          "height": 3272,
+          "width": 2533,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0173.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_173.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6762,
-                "width": 5108,
+                "height": 3272,
+                "width": 2533,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0173.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_173.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0173.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_173.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0174.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_174.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 174",
-          "height": 6783,
-          "width": 5037,
+          "label": "Page 174 of 175",
+          "height": 3282,
+          "width": 2509,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0174.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_174.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6783,
-                "width": 5037,
+                "height": 3282,
+                "width": 2509,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0174.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_174.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0174.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_174.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0175.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_175.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 175",
-          "height": 6751,
-          "width": 5097,
+          "label": "Page 175 of 175",
+          "height": 3293,
+          "width": 2542,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0175.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_175.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6751,
-                "width": 5097,
+                "height": 3293,
+                "width": 2542,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0175.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_175.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0175.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_175.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0176.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_176.tif.json",
           "@type": "sc:Canvas",
-          "label": "Page 176",
-          "height": 6199,
-          "width": 7859,
+          "label": "Map insert of O'Shaughnessy's birthplace",
+          "height": 3178,
+          "width": 3996,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0176.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_176.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6199,
-                "width": 7859,
+                "height": 3178,
+                "width": 3996,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0176.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_176.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_0176.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_176.tif.json"
             }
           ]
         },
         {
-          "@id": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_backcover.tif.json",
+          "@id": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_backcover.tif.json",
           "@type": "sc:Canvas",
-          "label": "P135 Memoir Backcover",
-          "height": 6743,
-          "width": 5002,
+          "label": "Page Backcover",
+          "height": 3372,
+          "width": 2501,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "resource": {
-                "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_backcover.tif/full/full/0/default.jpg",
+                "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_backcover.tif/full/full/0/default.jpg",
                 "@type": "dctypes:Image",
                 "format": "image/jpeg",
-                "height": 6743,
-                "width": 5002,
+                "height": 3372,
+                "width": 2501,
                 "service": {
                   "@context": "http://iiif.io/api/image/2/context.json",
-                  "@id": "http://library.nuigalway.ie/loris/srv/p135/p135_memoir_backcover.tif",
+                  "@id": "https://iiif.library.nuigalway.ie/loris/p135/p135_memoir_backcover.tif",
                   "profile": "http://iiif.io/api/image/2/level1.json"
                 }
               },
-              "on": "http://library.nuigalway.ie/loris/srv/p135/canvas/p135_memoir_backcover.tif.json"
+              "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_backcover.tif.json"
             }
           ]
         }
