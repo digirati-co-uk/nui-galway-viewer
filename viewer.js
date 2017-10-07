@@ -12,19 +12,19 @@ var viewer = function(){
                 IIIF.wrap(manifest);
                 // we're going to assume that there is one top level range, and then the
                 // child ranges. This is for the one manifest demo.
-                if(manifest.structures && "top" == manifest.structures[0].viewingHint){
+                if(manifest.structures && "top" === manifest.structures[0].viewingHint){
                     var canvases = manifest.sequences[0].canvases;
                     var displayRanges = getDisplayRanges(manifest);
                     makeCanvasNav(canvases, displayRanges);
                     makeRangeNav(canvases, displayRanges);
                     self.canvases = canvases;
-                    self.displayRanges = displayRanges;   
-                    
+                    self.displayRanges = displayRanges;
+
                     $(".canvasSource").on('click', function(ev){
                         cvid = this.getAttribute("data-canvasid");
                         if(cvid){
                             navigateToCanvas(cvid);
-                        } 
+                        }
                     });
 
                     $('#scaleMode').change(function() {
@@ -36,9 +36,9 @@ var viewer = function(){
                             $('#canvases').show();
                             $('#canvasDisplayRanges').show();
                             $('#ranges').hide();
-                        }       
+                        }
                     });
-                    
+
                     $('#ranges').hide();
                     navigateToCanvas(self.canvases[0].id);
 
@@ -51,10 +51,10 @@ var viewer = function(){
 
     function makeCanvasNav(canvases, displayRanges){
         // see https://github.com/digirati-co-uk/nui-galway-viewer/issues/1
-        
-        var canvasWidth = 100.0/canvases.length;      
-        var $canvases = $('#canvases');      
-        var $canvasDisplayRanges = $('#canvasDisplayRanges');  
+
+        var canvasWidth = 100.0/canvases.length;
+        var $canvases = $('#canvases');
+        var $canvasDisplayRanges = $('#canvasDisplayRanges');
         // yeah, storing the model in the DOM...
         // create two sets of divs. First set has one div for each canvas:
         for(var ci=0; ci<canvases.length; ci++){
@@ -66,13 +66,13 @@ var viewer = function(){
             $canvases.append(cv);
         }
 
-        // We are going to make some very strong assumptions in the prototype. 
+        // We are going to make some very strong assumptions in the prototype.
         // We assume that within a range, the canvases are in the right order and that they are contiguous.
         // A more robust solution would do some sorting.
         // This approach also offers later possibility of stacked overlapping ranges:
         // ----    ---------   ----
         //    ------------   -----
-        //        ---- ------ 
+        //        ---- ------
         // ...etc
         for(var ri=0; ri<displayRanges.length; ri++){
             displayRange = displayRanges[ri];
@@ -102,8 +102,8 @@ var viewer = function(){
                 end = testRange.end;
             }
         }
-        
-        var $dateDisplayRanges = $('#ranges');  
+
+        var $dateDisplayRanges = $('#ranges');
 
         var timelineDuration = end.getTime() - start.getTime();
         for(var ri=0; ri<displayRanges.length; ri++){
@@ -120,7 +120,7 @@ var viewer = function(){
             navRange.setAttribute("data-canvasid", displayRange.canvases[0].id);
             $dateDisplayRanges.append(navRange);
         }
-        
+
 
     }
 
@@ -132,7 +132,7 @@ var viewer = function(){
         if(canvasIndex > 0){
             $('#previous').attr("data-canvasid", self.canvases[canvasIndex - 1].id);
         }
-        if(canvasIndex < self.canvases.length - 1){            
+        if(canvasIndex < self.canvases.length - 1){
             $('#next').attr("data-canvasid", self.canvases[canvasIndex + 1].id);
         }
         // highlight active navigation element(s)
@@ -155,7 +155,7 @@ var viewer = function(){
         var imageUrl = canvas.images[0].resource.service.id + "/full/!1600,1600/0/default.jpg";
         $('#main').css('background-image', 'url(' + imageUrl + ')');
         $('#linkDump').empty();
-        $('#linkDump').hide();        
+        $('#linkDump').hide();
         $('#supplementalTitle').empty();
         $('#supplementalImages').empty();
         $('#supplementalDesc').empty();
@@ -199,10 +199,10 @@ var viewer = function(){
                                             linkToManifest.description = anno.resource.within.description;
                                             linkToManifest.canvasId = anno.resource["@id"];
                                         }
-                                    }       
+                                    }
                                     if(linkToManifest.url){
                                         renderLink(linkToManifest);
-                                    }                                                                 
+                                    }
                                 }
                             }
                         }
@@ -220,13 +220,13 @@ var viewer = function(){
         html = html.replace("{canvas}", linkToManifest.canvasId);
         html = html.replace("{xywh}", linkToManifest.xywh);
         html = html.replace("{label}", linkToManifest.label);
-        html = html.replace("{description}", linkToManifest.description);        
+        html = html.replace("{description}", linkToManifest.description);
         $('#linkDump').append(html);
         $('#linkDump').show();
-        
+
         $('#linkDump a').click(function(ev){
-            ev.preventDefault();            
-            canvasId = $(this).attr("data-canvas");    
+            ev.preventDefault();
+            canvasId = $(this).attr("data-canvas");
             $.ajax({
                 dataType: "json",
                 url: this.href,

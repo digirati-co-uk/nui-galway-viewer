@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NUI Galway viewer sandbox</title>
+    <script src="https://tomcrane.github.io/iiif-expts/getthumbnail/iiif.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="Galway">
+</head>
+<body>
+
+<main class="main" id="app">
+    <div class="timeline" data-min-width="50">
+        <div class="timeline__item-container"></div>
+        <div class="timeline__slider"></div>
+    </div>
+
+    <div class="paging">
+        <button class="paging__previous">&lsaquo;</button>
+        <button class="paging__next">&rsaquo;</button>
+        <span class="paging__position"></span>
+    </div>
+    <div class="zoom">
+        <button class="zoom__in">&plus;</button>
+        <button class="zoom__out">&minus;</button>
+    </div>
+
+    <div class="viewer-container">
+        <div class="viewer"></div>
+    </div>
+
+    <div class="supplemental" style="display: none">
+        <div class="supplemental__close">&times;</div>
+        <div class="supplemental__title"></div>
+        <div class="supplemental__images"></div>
+        <div class="supplemental__description"></div>
+    </div>
+    <div id="void" style="visibility: hidden; height: 0; overflow: hidden;"></div>
+</main>
+
+<script type="application/javascript" src="//cdn.jsdelivr.net/npm/openseadragon@2.2/build/openseadragon/openseadragon.min.js"></script>
+</body>
+</html>

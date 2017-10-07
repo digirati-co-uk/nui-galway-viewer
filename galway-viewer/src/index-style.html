@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NUI Galway viewer sandbox</title>
+  <script src="https://tomcrane.github.io/iiif-expts/getthumbnail/iiif.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<main class="main" id="app">
+
+
+  <div class="timeline">
+    <div class="timeline__item-container">
+      <div class="timeline__item" style="width: 100px">
+        <div class="timeline__year">1860</div>
+        <div class="timeline__box">
+          <div class="timeline__label">Early life</div>
+        </div>
+      </div>
+      <div class="timeline__item" style="width: 200px">
+        <div class="timeline__year">1860</div>
+        <div class="timeline__box">
+          <div class="timeline__label">Early life</div>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--active" style="width: 120px">
+        <div class="timeline__year">1860</div>
+        <div class="timeline__box">
+          <div class="timeline__label">Early life</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline__slider">
+      <div id="linkDump"></div>
+      <!--<input type="range"/>-->
+    </div>
+  </div>
+
+  <div class="viewer-container">
+    <div class="viewer">
+      <div class="viewer__image">
+        <img src="http://library.nuigalway.ie/loris/srv/p135/p135_memoir_0003.tif/full/!1600,1600/0/default.jpg"/>
+      </div>
+      <div class="viewer__osd">
+        <div style="width: 100%; height: 100%; display: block; background: #CCC"></div>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+
+<!--
+<input type="checkbox" id="scaleMode" /><label for="scaleMode">Timeline proportional</label>
+
+<div id="viewer">
+  <div id="timeline">
+    <div id="canvases"></div>
+    <div id="canvasDisplayRanges"></div>
+    <div id="ranges"></div>
+  </div>
+  <div id="mainwrap">
+    <div id="main">
+      <div id="paging">
+        <button class="canvasSource" id="previous">&larr;</button>
+        <span id="position"></span>
+        <button class="canvasSource" id="next">&rarr;</button>
+      </div>
+      <div id="canvas"></div>
+      <div id="linkDump">
+      </div>
+    </div>
+    <div id="supplemental">
+      <h2 id="supplementalTitle"></h2>
+      <div id="supplementalImages"></div>
+      <div id="supplementalDesc"></div>
+    </div>
+  </div>
+</div>
+-->
+</body>
+</html>
