@@ -25,7 +25,11 @@ body {
 .main {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
 }
 
@@ -488,7 +492,8 @@ body {
 
 input[type=range] {
     -webkit-appearance: none;
-    /*margin: 12px 0;*/
+    margin: 2px 0;
+    padding: 0;
     width: 100%;
     position: relative;
 }
@@ -544,7 +549,7 @@ input[type=range]::-ms-track {
     cursor: pointer;
     background: transparent;
     border-color: transparent;
-    border-width: 16px 0;
+    border-width: 12px 0;
     color: transparent;
 }
 
@@ -697,7 +702,7 @@ input[type=range]:focus::-ms-fill-upper {
         float: none;
         font-size: 20px;
     }
-
+    .timeline--alternative .timeline__slider,
     .timeline__slider {
         margin-top: 10px;
         width: 100%;
