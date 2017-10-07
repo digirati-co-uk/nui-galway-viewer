@@ -62,6 +62,19 @@ class GalwayViewer {
         this.render(this.canvases[index].id);
       }
     });
+
+    // arrow keys, avoiding duplicates.
+    document.addEventListener('keydown', (e) => {
+      if (this.slider.$slider === document.activeElement) {
+        return;
+      }
+      if (e.keyCode === 37/*left arrow*/) {
+        this.prevPage();
+      }
+      if (e.keyCode === 39/*right arrow*/) {
+        this.nextPage();
+      }
+    });
     this.render(this.canvases[0].id);
   }
 
