@@ -10,6 +10,7 @@ class GalwayViewer {
   constructor($el) {
     this.$el = $el;
     this.useCanvasLabel = ($el.getAttribute('data-use-canvas-labels')||'').toLowerCase() === 'true';
+    this.forceHttps = ($el.getAttribute('data-force-https')||'').toLowerCase() === 'true';
     this.startScreen = new StartScreen($el.querySelector('.start-screen'));
     this.canvas = new Canvas($el.querySelector('.viewer')); // @todo change to viewer.
     this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
@@ -99,6 +100,7 @@ class GalwayViewer {
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,
       prevCanvas: this.canvases[canvasIndex - 1] ? this.canvases[canvasIndex - 1] : null,
+      forceHttps: this.forceHttps,
     });
   }
 
