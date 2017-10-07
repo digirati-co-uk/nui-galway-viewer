@@ -20,6 +20,12 @@ export default class Supplemental {
         this.$supplemental.classList.remove('supplemental--active');
       });
     }
+    const lightbox = this.$supplemental.querySelector('.supplemental__lightbox');
+    if (lightbox) {
+      lightbox.addEventListener('click', () => {
+        this.$supplemental.classList.remove('supplemental--active');
+      });
+    }
   }
 
   static div(text) {
