@@ -28,6 +28,43 @@ body {
     overflow: hidden;
 }
 
+/** Start screen **/
+.start-screen {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.start-screen__title {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.start-screen__inner {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    right: 40px;
+    background: #fff;
+    padding: 40px 60px 40px 40px;
+}
+
+.start-screen__dismiss--start {
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+    padding: 12px 30px;
+    background: darkslategrey;
+}
+
+.start-screen--hidden {
+    display: none;
+}
+
 /** Timeline */
 .timeline {
     padding: 5px;
@@ -220,20 +257,40 @@ body {
 .supplemental {
     transition: all .2s;
     pointer-events: none;
-    display: flex;
     position: absolute;
     opacity: 0;
-    top: 20px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    z-index: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 1;
+}
+
+.supplemental__inner {
     background: #fff;
     padding: 40px;
+    display: flex;
     flex-grow: 1;
     flex-basis: auto;
     flex-direction: column;
-    box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, .4);
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    position: absolute;
+}
+.start-screen__dismiss--lightbox,
+.supplemental__lightbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    -webkit-backdrop-filter: blur(10px);
+    display: block;
+    z-index: 0;
 }
 
 .supplemental__title {
@@ -257,6 +314,7 @@ body {
     margin-top: 10px;
 }
 
+.start-screen__dismiss--close,
 .supplemental__close {
     position: absolute;
     top: 20px;
@@ -327,7 +385,7 @@ body {
 .zoom {
     cursor: pointer;
     position: absolute;
-    right: 0;
+    right: 60px;
     top: 100px;
     z-index: 15;
     padding: 10px;

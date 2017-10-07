@@ -3,11 +3,14 @@ import Slider from './Slider';
 import Timeline from './Timeline';
 import Pager from './Pager';
 import {getDisplayRanges} from '../utils';
+import Supplemental from "./Supplemental";
+import StartScreen from "./StartScreen";
 
 class GalwayViewer {
 
   constructor($el) {
     this.$el = $el;
+    this.startScreen = new StartScreen($el.querySelector('.start-screen'));
     this.canvas = new Canvas($el.querySelector('.viewer')); // @todo change to viewer.
     this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
     this.pager = new Pager($el.querySelector('.paging'), {
@@ -52,6 +55,8 @@ class GalwayViewer {
     if (!manifest.structures || 'top' !== manifest.structures[0].viewingHint) {
       return null;
     }
+    this.startCanvas = manifest.startCanvas || null;
+
     this.canvases = manifest.sequences[0].canvases;
     let displayRanges = getDisplayRanges(manifest);
     this.timeline.setDisplayRanges(displayRanges, this.canvases);
@@ -75,7 +80,7 @@ class GalwayViewer {
         this.nextPage();
       }
     });
-    this.render(this.canvases[0].id);
+    this.render(this.startCanvas ? this.startCanvas : this.canvases[0].id);
   }
 
   render(canvasId) {

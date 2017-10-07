@@ -5,6 +5,7 @@ export default class Supplemental {
     this.$title = $el.querySelector('.supplemental__title');
     this.$desc = $el.querySelector('.supplemental__description');
     this.$images = $el.querySelector('.supplemental__images');
+
     // bug fixes.
     this.$supplemental.style.removeProperty('display');
     document.addEventListener('keydown', (e) => {
