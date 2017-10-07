@@ -6,7 +6,7 @@ class Timeline {
     this.$timeline = $el;
     this.$canvasDisplayRanges = $el.querySelector('.timeline__item-container');
     this.$sliderContainer = $el.querySelector('.timeline__slider');
-    this.minCanvasWidth = parseFloat($el.getAttribute('data-min-width')) || 20.0;
+    this.minCanvasWidth = parseFloat($el.getAttribute('data-min-width')) || 0;
     this.displayRanges = [];
     this.currentRange = null;
     this.currentCanvas = null;
@@ -36,7 +36,6 @@ class Timeline {
       const displayRangeDuration = displayRange.end.getTime() - displayRange.start.getTime();
       const canvasIndex = canvases.findIndexById(displayRange.canvases[0].id);
 
-
       return {
         ...displayRange,
         canvas: displayRange.canvases[0].id,
@@ -60,7 +59,7 @@ class Timeline {
     this.makeMobileNav(this.displayRanges);
   }
 
-  static createItem({label, year, left, width}) {
+  static createItem({label, year, endYear, left, width}) {
     const $item = document.createElement('div');
     $item.classList.add('timeline__item');
     if (left) {
@@ -82,7 +81,11 @@ class Timeline {
 
     const $year = document.createElement('div');
     $year.classList.add('timeline__year');
-    $year.textContent = year;
+    if (endYear) {
+      $year.textContent = `${year} – ${endYear}`;
+    } else {
+      $year.textContent = year;
+    }
 
     $box.appendChild($label);
     $box.appendChild($tool);
@@ -99,6 +102,7 @@ class Timeline {
         width: range.canvasWidth,
         label: range.label,
         year: range.start.getFullYear(),
+        endYear: range.end ? range.end.getFullYear() : null,
       });
 
       navCanvas.setAttribute('data-rangeid', range.id);
@@ -125,6 +129,7 @@ class Timeline {
       const navCanvas = Timeline.createItem({
         label: range.label,
         year: range.start.getFullYear(),
+        endYear: range.end ? range.end.getFullYear() : null,
       });
 
       navCanvas.setAttribute('data-rangeid', range.id);
