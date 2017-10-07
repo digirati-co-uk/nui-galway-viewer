@@ -3,17 +3,18 @@ import Slider from './Slider';
 import Timeline from './Timeline';
 import Pager from './Pager';
 import {getDisplayRanges} from '../utils';
-import Supplemental from "./Supplemental";
 import StartScreen from "./StartScreen";
 
 class GalwayViewer {
 
   constructor($el) {
     this.$el = $el;
+    this.useCanvasLabel = ($el.getAttribute('data-use-canvas-labels')||'').toLowerCase() === 'true';
     this.startScreen = new StartScreen($el.querySelector('.start-screen'));
     this.canvas = new Canvas($el.querySelector('.viewer')); // @todo change to viewer.
     this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
     this.pager = new Pager($el.querySelector('.paging'), {
+      useCanvasLabel: this.useCanvasLabel,
       nextPage: () => this.nextPage(),
       prevPage: () => this.prevPage(),
     });
@@ -60,7 +61,9 @@ class GalwayViewer {
     this.canvases = manifest.sequences[0].canvases;
     let displayRanges = getDisplayRanges(manifest);
     this.timeline.setDisplayRanges(displayRanges, this.canvases);
-    this.slider = new Slider(this.$el.querySelector('.timeline__slider'), this.canvases.length, e => {
+    this.slider = new Slider(
+      this.$el.querySelector('.timeline__slider'),
+      this.canvases.length, e => {
       const index = parseInt(e.currentTarget.value, 10);
       const canvas = this.canvases[index];
       if (canvas !== this.currentCanvas) {

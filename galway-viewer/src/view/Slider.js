@@ -11,6 +11,7 @@ class Slider {
     // This optimisation does not work.
     // this.$slider.addEventListener('mousemove', onChange);
     this.$sliderContainer.appendChild(this.$slider);
+
   }
 
   render(value) {
