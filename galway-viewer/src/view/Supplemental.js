@@ -75,9 +75,11 @@ export default class Supplemental {
 
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
-      descriptions.push(
-        Supplemental.div(`<p><a href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
-      );
+      if (repo['@id']) {
+        descriptions.push(
+          Supplemental.div(`<p><a target="_blank" href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
+        );
+      }
     }
 
     descriptions.push(Supplemental.div(manifest.description || '(no description)'));
