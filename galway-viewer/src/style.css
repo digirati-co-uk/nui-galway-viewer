@@ -5,6 +5,7 @@ html, body {
 }
 
 *, *:before, *:after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -93,6 +94,8 @@ body {
     float: left;
     padding: 3px;
     white-space: nowrap;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -116,13 +119,14 @@ body {
 
 .timeline__label {
     font-weight: 300;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .timeline__tooltip {
     display: none;
-    background: #eee;
+    background: #ddd;
     font-weight: 300;
     font-size: 16px;
     left: 0;
@@ -218,6 +222,8 @@ body {
 }
 
 .annotation:hover .annotation__label {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     opacity: 1;
     pointer-events: initial;
@@ -242,6 +248,7 @@ body {
     background: #fff;
     overflow: hidden;
     white-space: nowrap;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     text-align: left;
     pointer-events: none;
@@ -255,6 +262,8 @@ body {
 /** Supplemental */
 
 .supplemental {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     pointer-events: none;
     position: absolute;
@@ -270,9 +279,17 @@ body {
 .supplemental__inner {
     background: #fff;
     padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     top: 20px;
     bottom: 20px;
@@ -294,6 +311,8 @@ body {
 }
 
 .supplemental__title {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     font-size: 40px;
     margin-bottom: 30px;
@@ -301,6 +320,8 @@ body {
 }
 
 .supplemental__images {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     width: 100%;
     display: inline-block;
@@ -309,7 +330,10 @@ body {
 }
 
 .supplemental__description {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
     margin-top: 10px;
 }
@@ -390,6 +414,8 @@ body {
     z-index: 15;
     padding: 10px;
     opacity: 0;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -399,6 +425,8 @@ body {
 
 .paging__position {
     opacity: 0;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
     transition: opacity .2s;
 }
 
@@ -562,6 +590,8 @@ input[type=range]:focus::-ms-fill-upper {
         background-position: top 10px right 10px;
         background-repeat: no-repeat;
         background-size: 30px;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
         transition: all .2s;
         display: block;
         background-color: rgba(255, 255, 255, .9);
@@ -584,11 +614,17 @@ input[type=range]:focus::-ms-fill-upper {
         position: absolute;
         z-index: 17;
         background: #fff;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
         transform: translateY(100%);
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
         transition: all .2s;
     }
 
     .timeline__menu--active {
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
         transform: translateY(0%);
     }
 
