@@ -5,6 +5,7 @@ export default class Supplemental {
     this.$title = $el.querySelector('.supplemental__title');
     this.$desc = $el.querySelector('.supplemental__description');
     this.$images = $el.querySelector('.supplemental__images');
+
     // bug fixes.
     this.$supplemental.style.removeProperty('display');
     document.addEventListener('keydown', (e) => {
@@ -16,6 +17,12 @@ export default class Supplemental {
     const close = this.$supplemental.querySelector('.supplemental__close');
     if (close) {
       close.addEventListener('click', () => {
+        this.$supplemental.classList.remove('supplemental--active');
+      });
+    }
+    const lightbox = this.$supplemental.querySelector('.supplemental__lightbox');
+    if (lightbox) {
+      lightbox.addEventListener('click', () => {
         this.$supplemental.classList.remove('supplemental--active');
       });
     }
@@ -74,9 +81,11 @@ export default class Supplemental {
 
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
-      descriptions.push(
-        Supplemental.div(`<p><a href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
-      );
+      if (repo['@id']) {
+        descriptions.push(
+          Supplemental.div(`<p><a target="_blank" href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
+        );
+      }
     }
 
     descriptions.push(Supplemental.div(manifest.description || '(no description)'));

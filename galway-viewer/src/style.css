@@ -5,6 +5,7 @@ html, body {
 }
 
 *, *:before, *:after {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -24,8 +25,49 @@ body {
 .main {
     height: 100%;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
+}
+
+/** Start screen **/
+.start-screen {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.start-screen__title {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.start-screen__inner {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    right: 40px;
+    background: #fff;
+    padding: 40px 60px 40px 40px;
+}
+
+.start-screen__dismiss--start {
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+    padding: 12px 30px;
+    background: darkslategrey;
+}
+
+.start-screen--hidden {
+    display: none;
 }
 
 /** Timeline */
@@ -33,6 +75,21 @@ body {
     padding: 5px;
     border: 2px solid #DDD;
     height: 100px;
+}
+
+.timeline--alternative .timeline__label {
+    font-size: 0.0001px;
+    height: 4px;
+}
+.timeline--alternative .timeline__tooltip {
+    top: 18px;
+    border-radius: 2px;
+}
+.timeline--alternative .timeline__item-container {
+    padding-bottom: 0;
+}
+.timeline--alternative .timeline__slider {
+    margin-top: 62px;
 }
 
 .timeline__item-container {
@@ -46,6 +103,15 @@ body {
     right: 0;
 }
 
+
+.timeline__item-container {
+    padding: 5px 55px;
+}
+.timeline__slider {
+    padding-right: 45px;
+    padding-left: 20px;
+}
+
 .timeline__item-container:after {
     content: '';
     display: table;
@@ -56,6 +122,8 @@ body {
     float: left;
     padding: 3px;
     white-space: nowrap;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -77,15 +145,27 @@ body {
     outline: none;
 }
 
+.timeline--hide-years-on-hover .timeline__item:hover + .timeline__item .timeline__year,
+.timeline--hide-years-on-hover .timeline__year {
+    background: #fff;
+    transition: all .2s;
+    opacity: 0;
+}
+.timeline__item:hover .timeline__year,
+.timeline__item--active .timeline__year {
+    opacity: 1;
+}
+
 .timeline__label {
     font-weight: 300;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .timeline__tooltip {
     display: none;
-    background: #eee;
+    background: #ddd;
     font-weight: 300;
     font-size: 16px;
     left: 0;
@@ -94,6 +174,7 @@ body {
     position: absolute;
     top: 0px;
 }
+
 
 .timeline__item:hover .timeline__tooltip {
     display: block;
@@ -107,6 +188,10 @@ body {
 
 .timeline__slider input {
     width: 100%;
+}
+
+.timeline__year {
+    font-size: 11px;
 }
 
 /** Viewer */
@@ -181,6 +266,8 @@ body {
 }
 
 .annotation:hover .annotation__label {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     opacity: 1;
     pointer-events: initial;
@@ -205,6 +292,7 @@ body {
     background: #fff;
     overflow: hidden;
     white-space: nowrap;
+    -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
     text-align: left;
     pointer-events: none;
@@ -218,25 +306,57 @@ body {
 /** Supplemental */
 
 .supplemental {
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
     pointer-events: none;
-    display: flex;
     position: absolute;
     opacity: 0;
-    top: 20px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    z-index: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 1;
+}
+
+.supplemental__inner {
     background: #fff;
     padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, .4);
+    top: 20px;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    position: absolute;
+}
+.start-screen__dismiss--lightbox,
+.supplemental__lightbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    -webkit-backdrop-filter: blur(10px);
+    display: block;
+    z-index: 0;
 }
 
 .supplemental__title {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     font-size: 40px;
     margin-bottom: 30px;
@@ -244,6 +364,8 @@ body {
 }
 
 .supplemental__images {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     width: 100%;
     display: inline-block;
@@ -252,11 +374,15 @@ body {
 }
 
 .supplemental__description {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
     margin-top: 10px;
 }
 
+.start-screen__dismiss--close,
 .supplemental__close {
     position: absolute;
     top: 20px;
@@ -327,11 +453,13 @@ body {
 .zoom {
     cursor: pointer;
     position: absolute;
-    right: 0;
+    right: 60px;
     top: 100px;
     z-index: 15;
     padding: 10px;
     opacity: 0;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
@@ -341,6 +469,8 @@ body {
 
 .paging__position {
     opacity: 0;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
     transition: opacity .2s;
 }
 
@@ -362,7 +492,8 @@ body {
 
 input[type=range] {
     -webkit-appearance: none;
-    /*margin: 12px 0;*/
+    margin: 2px 0;
+    padding: 0;
     width: 100%;
     position: relative;
 }
@@ -418,7 +549,7 @@ input[type=range]::-ms-track {
     cursor: pointer;
     background: transparent;
     border-color: transparent;
-    border-width: 16px 0;
+    border-width: 12px 0;
     color: transparent;
 }
 
@@ -452,7 +583,7 @@ input[type=range]:focus::-ms-fill-upper {
         border: none;
     }
 
-    .supplemental {
+    .supplemental__inner {
         top: 10px;
         bottom: 10px;
         left: 10px;
@@ -504,6 +635,8 @@ input[type=range]:focus::-ms-fill-upper {
         background-position: top 10px right 10px;
         background-repeat: no-repeat;
         background-size: 30px;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
         transition: all .2s;
         display: block;
         background-color: rgba(255, 255, 255, .9);
@@ -526,11 +659,17 @@ input[type=range]:focus::-ms-fill-upper {
         position: absolute;
         z-index: 17;
         background: #fff;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
         transform: translateY(100%);
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
         transition: all .2s;
     }
 
     .timeline__menu--active {
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
         transform: translateY(0%);
     }
 
@@ -549,6 +688,7 @@ input[type=range]:focus::-ms-fill-upper {
         position: absolute;
         right: 20px;
         margin: 6px;
+        padding: 5px;
         z-index: 13;
         background: #eee;
     }
@@ -562,7 +702,7 @@ input[type=range]:focus::-ms-fill-upper {
         float: none;
         font-size: 20px;
     }
-
+    .timeline--alternative .timeline__slider,
     .timeline__slider {
         margin-top: 10px;
         width: 100%;
@@ -615,6 +755,66 @@ input[type=range]:focus::-ms-fill-upper {
         margin-top: -14px;
     }
 
+}
+
+.timeline--colourful .timeline__box {
+    transition: all .2s;
+}
+
+/** Example tweaking of hiding of tooltip **/
+.timeline--always-show-tooltip .timeline__item--active .timeline__tooltip {
+    display: block;
+    z-index: -1;
+}
+
+/** Example custom colours **/
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r1"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r1"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r1"].timeline__item--active .timeline__box {
+    background: palevioletred;
+    color: #fff;
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r2"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r2"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r2"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: cornflowerblue;
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r3"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r3"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r3"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: darkslategrey;
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r4"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r4"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r4"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: mediumpurple;
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #d68910; /* Orange */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #28b463; /* Green */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #979a9a; /* Light Grey */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #cb4335; /* Red */
 }
 
 /*#viewer {*/

@@ -79,9 +79,9 @@ export default class Canvas {
     $cached.appendChild(this.void.next);
   }
 
-  static img(src) {
+  static img(src, forceHttps) {
     const image = document.createElement('img');
-    image.src = src;
+    image.src = forceHttps ? Canvas.https(src) : src;
     return image;
   }
 
@@ -109,14 +109,14 @@ export default class Canvas {
     }
   }
 
-  preload({next, prev}) {
+  preload({next, prev, forceHttps}) {
     this.void.next.innerText = '';
     if (next) {
-      this.void.next.appendChild(Canvas.img(next));
+      this.void.next.appendChild(Canvas.img(next, forceHttps));
     }
     this.void.previous.innerText = '';
     if (prev) {
-      this.void.previous.appendChild(Canvas.img(prev));
+      this.void.previous.appendChild(Canvas.img(prev, forceHttps));
     }
   }
 
@@ -205,7 +205,14 @@ export default class Canvas {
     return $annotation;
   }
 
-  render({canvas, nextCanvas, prevCanvas}) {
+  static https(url) {
+    if (url.substr(0, 5) !== 'http:') {
+      return url;
+    }
+    return `https${url.substr(4)}`;
+  }
+
+  render({canvas, nextCanvas, prevCanvas, forceHttps}) {
     // here you need to add sensible logic for your images. I know that Galway's are level 2 (Loris),
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
     const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
@@ -216,6 +223,7 @@ export default class Canvas {
     this.preload({
       next: imageUrlNext,
       prev: imageUrlPrev,
+      forceHttps,
     });
 
     // Reset open seadragon to default hidden view.
@@ -225,7 +233,7 @@ export default class Canvas {
 
     // Add image
     this.$imageContainer.innerHTML = '';
-    this.$image = Canvas.img(imageUrl);
+    this.$image = Canvas.img(imageUrl, forceHttps);
     this.$image.setAttribute('data-width', canvas.width);
     this.$image.setAttribute('data-height', canvas.height);
     this.$imageContainer.appendChild(this.$image);

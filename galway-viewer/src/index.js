@@ -1,7 +1,6 @@
 import GalwayViewer from './view/GalwayViewer';
-import manifest from './manifest.js';
 import './style.css';
-
+import 'whatwg-fetch';
 
 const viewer = new GalwayViewer(document.querySelector('.main'));
-viewer.load(manifest);
+viewer.loadUri('https://iiif.library.nuigalway.ie/manifests/p135/memoir.json');
