@@ -792,7 +792,30 @@ input[type=range]:focus::-ms-fill-upper {
     color: #fff;
     background: mediumpurple;
 }
-
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r5"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #d68910; /* Orange */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r6"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #28b463; /* Green */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r7"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #979a9a; /* Light Grey */
+}
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"] .timeline__tooltip,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"]:hover .timeline__box,
+.timeline--colourful [data-rangeid="https://iiif.library.nuigalway.ie/manifests/p135/range/r8"].timeline__item--active .timeline__box {
+    color: #fff;
+    background: #cb4335; /* Red */
+}
 
 /*#viewer {*/
 /*display: flex;*/
