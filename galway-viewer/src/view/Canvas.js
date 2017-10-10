@@ -286,13 +286,20 @@ export default class Canvas {
       const $annotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description, staticViewerPosition);
       const $viewerAnnotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
       $annotation.addEventListener('click', e => {
+        e.preventDefault();
         e.stopPropagation();
         this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
       });
 
       const viewerPosition = parseFrag(linkToManifest.xywh);
       this.$annotationOverlay.appendChild($annotation);
+      $viewerAnnotation.addEventListener('touchstart', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
+      });
       $viewerAnnotation.addEventListener('click', e => {
+        e.preventDefault();
         e.stopPropagation();
         this.handleClick(linkToManifest.canvasId)(linkToManifest.url, e);
       });
