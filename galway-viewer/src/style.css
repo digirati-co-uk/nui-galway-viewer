@@ -64,6 +64,7 @@ body {
     display: inline-block;
     padding: 12px 30px;
     background: darkslategrey;
+    cursor: pointer;
 }
 
 .start-screen--hidden {
