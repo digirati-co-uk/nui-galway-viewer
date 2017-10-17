@@ -54,9 +54,9 @@ class GalwayViewer {
     IIIF.wrap(manifest);
     // we're going to assume that there is one top level range, and then the
     // child ranges. This is for the one manifest demo.
-    if (!manifest.structures || 'top' !== manifest.structures[0].viewingHint) {
-      return null;
-    }
+    // if (!manifest.structures || 'top' !== manifest.structures[0].viewingHint) {
+    //   return null;
+    // }
     this.startCanvas = manifest.startCanvas || null;
 
     this.canvases = manifest.sequences[0].canvases;

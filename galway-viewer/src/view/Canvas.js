@@ -215,9 +215,14 @@ export default class Canvas {
   render({canvas, nextCanvas, prevCanvas, forceHttps}) {
     // here you need to add sensible logic for your images. I know that Galway's are level 2 (Loris),
     // and I know that the annotated resource image is full size, and too big. So I'm going to ask for a smaller one.
-    const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
-    const imageUrlNext = nextCanvas ? nextCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
-    const imageUrlPrev = prevCanvas ? prevCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
+    // const imageUrl = canvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg';
+    // const imageUrlNext = nextCanvas ? nextCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
+    // const imageUrlPrev = prevCanvas ? prevCanvas.images[0].resource.service.id + '/full/!1600,1600/0/default.jpg' : null;
+
+    
+    const imageUrl = canvas.getThumbnail(1024, 1000, 2000).url;
+    const imageUrlNext = nextCanvas ? nextCanvas.getThumbnail(1024, 1000, 2000).url : null;
+    const imageUrlPrev = prevCanvas ? prevCanvas.getThumbnail(1024, 1000, 2000).url : null;
 
     // Preload previous and next <img/> tags.
     this.preload({
@@ -255,6 +260,9 @@ export default class Canvas {
       this.loadOsd(prevCanvas, this.void.osdPrevious);
     }
 
+    // skip loading anno for now, none of them will be links
+    return;
+
     // Finally render the annotations, at this point we will have OSD.
     this.getAnnotations(canvas.otherContent).then(annotations => {
       if (!annotations) {
@@ -282,6 +290,7 @@ export default class Canvas {
   renderAnnotations(annotations, imageRatio) {
     // Add annotations to container.
     annotations.map(linkToManifest => {
+      if(!linkToManifest) return;
       const staticViewerPosition = parseFrag(linkToManifest.xywh, imageRatio);
       const $annotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description, staticViewerPosition);
       const $viewerAnnotation = Canvas.createStaticAnnotation(linkToManifest.label, linkToManifest.description);

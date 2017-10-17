@@ -43,6 +43,7 @@ export function startDurationTime(displayRanges) {
   // here we need to make the timeline div proportional to the time coverage of each range
   let start = null;
   let end = null;
+  let duration = null;
   for (let ri = 0; ri < displayRanges.length; ri++) {
     const testRange = displayRanges[ri];
     if (!start || testRange.start < start) {
@@ -52,7 +53,9 @@ export function startDurationTime(displayRanges) {
       end = testRange.end;
     }
   }
-  const duration = end.getTime() - start.getTime();
+  if(start && end){
+    duration = end.getTime() - start.getTime();
+  }
   return {start, duration};
 }
 
