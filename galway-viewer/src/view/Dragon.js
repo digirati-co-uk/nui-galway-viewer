@@ -143,6 +143,7 @@ export default class Dragon {
             defaultZoomLevel: 0,
             navigatorPosition: 'BOTTOM_RIGHT',
             animationTime: 0.6,
+            minZoomImageRatio: 1,
             immediateRender: true,
             preserveViewport: true,
             constrainDuringPan: false,
@@ -152,6 +153,7 @@ export default class Dragon {
             showHomeControl: false,
             showFullPageControl: false,
             sequenceMode: true,
+
           });
           this.resolveOsd(this.osd);
           this.changeState(() => ({
