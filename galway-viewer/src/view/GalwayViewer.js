@@ -49,6 +49,22 @@ class GalwayViewer {
     }
   }
 
+  static readNavigation() {
+    console.log(window.location.hash.slice(1, 2));
+    const query = window.location.hash.slice(1, 2) === '?' ? window.location.hash.slice(2) : window.location.hash.slice(1);
+    const vars = query.split('&');
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split('=');
+      if (decodeURIComponent(pair[0]) === 'canvas') {
+        return decodeURIComponent(pair[1]);
+      }
+    }
+  }
+
+  static navigateTo(canvasId) {
+    window.location.hash = `#?canvas=${canvasId}`;
+  }
+
   // Core
   load(manifest) {
     IIIF.wrap(manifest);
@@ -84,10 +100,14 @@ class GalwayViewer {
         this.nextPage();
       }
     });
-    this.render(this.startCanvas ? this.startCanvas : this.canvases[0].id);
+
+    const hash = GalwayViewer.readNavigation('canvas');
+
+    this.render(hash ? hash : (this.startCanvas ? this.startCanvas : this.canvases[0].id));
   }
 
   render(canvasId) {
+    GalwayViewer.navigateTo(canvasId);
     const canvasIndex = this.canvases.findIndexById(canvasId);
     this.currentCanvas = canvasIndex;
     const canvas = this.canvases[canvasIndex];
