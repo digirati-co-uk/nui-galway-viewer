@@ -50,7 +50,6 @@ class GalwayViewer {
   }
 
   static readNavigation() {
-    console.log(window.location.hash.slice(1, 2));
     const query = window.location.hash.slice(1, 2) === '?' ? window.location.hash.slice(2) : window.location.hash.slice(1);
     const vars = query.split('&');
     for (let i = 0; i < vars.length; i++) {
