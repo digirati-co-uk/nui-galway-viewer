@@ -74,7 +74,6 @@ export default class Supplemental {
     this.renderEmpty(false);
 
 
-    console.log('rendering...');
     this.$supplemental.classList.add('supplemental--active');
     this.$title.innerText = manifest.label;
     const descriptions = [];
