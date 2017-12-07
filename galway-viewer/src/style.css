@@ -217,6 +217,38 @@ body {
     text-align: center;
 }
 
+.viewer--loading {
+    cursor: wait;
+    pointer-events: none;
+}
+.viewer--loading * {
+    cursor: wait;
+    pointer-events: none;
+}
+
+.viewer--loading:after {
+    content: 'loading...';
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+}
+.viewer--error:after {
+    content: 'Something went wrong, we can\'t display this content at the moment';
+    color: #fff;
+    padding: 20px;
+    background: rgba(140, 0, 0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
+
 .viewer__image {
     /*transition: all .2s;*/
     position: absolute;

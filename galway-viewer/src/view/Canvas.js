@@ -49,13 +49,29 @@ export default class Canvas {
   }
 
   handleClick = canvasId => (href, e) => {
+    this.$el.classList.add('viewer--loading');
     e.preventDefault();
     e.stopPropagation();
     fetch(href, {cache: 'force-cache'})
     .then(r => r.json())
+    // Artificial delay for testing loading indicator.
+    // .then(r => {
+    //   return new Promise(resolve => setTimeout(() => resolve(r), 1000))
+    // })
     .then(
-      manifest => this.$supplimental.render({manifest, canvasId}),
-    );
+      manifest => {
+        this.$el.classList.remove('viewer--loading');
+        this.$supplimental.render({manifest, canvasId});
+      }
+    )
+    .catch((e) => {
+      this.$el.classList.remove('viewer--loading');
+      this.$el.classList.add('viewer--error');
+      console.error(`The supplemental at ${href} was not able to be displayed.`, e);
+      setTimeout(() => {
+        this.$el.classList.remove('viewer--error');
+      }, 2000)
+    });
   };
 
   static dropCaseComparison(a, b) {
