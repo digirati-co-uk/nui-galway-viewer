@@ -20,9 +20,12 @@ function getCanonicalImage(image) {
   return `${image}/info.json`;
 }
 
+export const DragonId = Symbol('DragonId');
+
 export default class Dragon {
 
   constructor(canvas) {
+    this[DragonId] = Symbol('Dragon instance Id');
     this.state = {isOpen: true, isLoaded: false, isLoading: false, isClosed: true};
     this.canvasContent = canvas;
     this.$container = document.createElement('div');
@@ -32,6 +35,9 @@ export default class Dragon {
     });
     document.querySelector('.zoom__out').addEventListener('click', () => {
       this.activeOsd.then(osd => osd.viewport.zoomBy(0.8));
+    });
+    this.activeOsd = new Promise(resolve => {
+      this.resolveOsd = resolve;
     });
   }
 
@@ -47,9 +53,6 @@ export default class Dragon {
   }
 
   open($target) {
-    this.activeOsd = new Promise(resolve => {
-      this.resolveOsd = resolve;
-    });
     this.changeState(state => ({
       isOpen: true,
     }), $target);
@@ -108,12 +111,17 @@ export default class Dragon {
 
   addOverlay(element, {x, y, width, height}) {
     this.activeOsd.then(osd => {
-      osd.addOverlay({
-        element,
-        location: this.osd.viewport.imageToViewportRectangle(
-          new OpenSeadragon.Rect(x, y, width, height),
-        ),
-      });
+      // This is an ordering bug with promises. This should happen AFTER the image is painted.
+      // There is no way around this really, setTimeout 0 will throw the code to top of the
+      // execution stack, forcing it to happen after the other promises.
+      // The could be eliminated with a more fluent event system instead of promises.
+      setTimeout(() =>
+        osd.addOverlay({
+          element,
+          location: osd.viewport.imageToViewportRectangle(
+            new OpenSeadragon.Rect(x, y, width, height),
+          ),
+        }), 0)
     });
   }
 
@@ -145,6 +153,7 @@ export default class Dragon {
             showFullPageControl: false,
             sequenceMode: true,
           });
+          this.resolveOsd(this.osd);
           this.changeState(() => ({
             isLoading: false,
             isLoaded: true,
@@ -163,13 +172,18 @@ export default class Dragon {
     }
 
     if (isOpen && isLoaded) {
-      if (this.osd) {
-        this.resolveOsd(this.osd);
-        this.osd.viewport.goHome(true);
-      }
+      this.goHome(true);
       $target.appendChild(this.$container);
     }
 
+  }
+
+  goHome(immediate = false) {
+    if (this.osd) {
+      this.osd.viewport.goHome(immediate)
+    } else {
+      this.activeOsd.then(osd => osd.viewport.goHome(immediate));
+    }
   }
 
 
