@@ -46,7 +46,7 @@ export default class Canvas {
     this.$imageContainer.classList.add('viewer__image--disabled');
     this.$osdContainer.classList.add('viewer__osd--active');
     document.querySelector('.zoom').classList.add('zoom--active');
-    this.currentOsd.osd.viewport.zoomBy(1.2);
+    this.currentOsd.zoomBy(1.2);
   }
 
   handleClick = canvasId => (href, e) => {

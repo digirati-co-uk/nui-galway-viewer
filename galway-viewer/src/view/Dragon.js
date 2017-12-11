@@ -104,6 +104,10 @@ export default class Dragon {
     });
   }
 
+  zoomBy(num) {
+    return this.activeOsd.then(osd => osd.viewport.zoomBy(num));
+  }
+
   changeState(func, $target) {
     this.state = {...this.state, ...func(this.state),};
     requestAnimationFrame(() => this.render($target));
