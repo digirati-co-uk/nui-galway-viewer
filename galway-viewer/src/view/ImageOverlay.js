@@ -1,10 +1,10 @@
 import Canvas from "./Canvas";
+import {div} from '../utils';
 
 export default class ImageOverlay {
 
   constructor() {
-    this.$annotationOverlay = document.createElement('div');
-    this.$annotationOverlay.classList.add('annotation-overlay');
+    this.$annotationOverlay = div({ className: 'annotation-overlay' });
     this.annotations = [];
   }
 

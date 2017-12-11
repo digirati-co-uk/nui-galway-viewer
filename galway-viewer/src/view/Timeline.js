@@ -1,4 +1,4 @@
-import {startDurationTime} from '../utils';
+import {div, startDurationTime} from '../utils';
 
 class Timeline {
 
@@ -13,14 +13,12 @@ class Timeline {
     this.navigateToCanvas = navigateToCanvas;
 
     // Mobile
-    this.mobileRanges = document.createElement('div');
-    this.mobileRanges.classList.add('timeline__menu');
-    this.mobileToggle = document.createElement('div');
-    this.mobileToggle.classList.add('timeline__toggle');
+    this.mobileRanges = div({className: 'timeline__menu'}, [
+      this.mobileToggle = div({className: 'timeline__toggle'}),
+    ]);
     this.mobileToggle.addEventListener('click', () => {
       this.mobileRanges.classList.toggle('timeline__menu--active');
     });
-    this.mobileRanges.appendChild(this.mobileToggle);
     this.$timeline.appendChild(this.mobileRanges);
   }
 
@@ -60,38 +58,25 @@ class Timeline {
   }
 
   static createItem({label, year, endYear, left, width}) {
-    const $item = document.createElement('div');
-    $item.classList.add('timeline__item');
-    if (left) {
-      $item.style.left = `${left}%`;
-    }
-    if (width) {
-      $item.style.width = `${width}%`;
-    }
-
-    const $box = document.createElement('div');
-    $box.classList.add('timeline__box');
-
-    const $label = document.createElement('div');
-    $label.classList.add('timeline__label');
-    $label.textContent = label;
-    const $tool = document.createElement('div');
-    $tool.classList.add('timeline__tooltip');
-    $tool.textContent = label;
-
-    const $year = document.createElement('div');
-    $year.classList.add('timeline__year');
-    if (endYear) {
-      $year.textContent = `${year} – ${endYear}`;
-    } else {
-      $year.textContent = year;
-    }
-
-    $box.appendChild($label);
-    $box.appendChild($tool);
-    $item.appendChild($year);
-    $item.appendChild($box);
-    return $item;
+    return div({
+      className: 'timeline__item',
+      style: {
+        left: left ? `${left}%` : '0',
+        width: width ? `${width}%` : '0',
+      },
+    }, [
+      div({ className: 'timeline__year' }, [
+        endYear ? (
+          `${year} – ${endYear}`
+        ) : (
+          year
+        )
+      ]),
+      div({ className: 'timeline__box' }, [
+        div({ className: 'timeline__label' }, [label]),
+        div({ className: 'timeline__tooltip' }, [label])
+      ])
+    ]);
   }
 
   makeCanvasNav(displayRanges) {

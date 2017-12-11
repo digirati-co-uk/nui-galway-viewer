@@ -1,19 +1,16 @@
 import Supplemental from './Supplemental';
 import Link from './Link';
-import Dragon, {DragonId} from './Dragon';
-import {flatten, parseFrag} from '../utils';
-import ImageOverlay from "./ImageOverlay";
+import Dragon from './Dragon';
+import {div, flatten, img, parseFrag} from '../utils';
+import ImageOverlay from './ImageOverlay';
 
 export default class Canvas {
 
   constructor($el) {
     // Dom fetch
     this.$el = $el;
-    this.$imageContainer = document.createElement('div');
-    this.$imageContainer.classList.add('viewer__image');
-    this.$osdContainer = document.createElement('div');
-    this.$osdContainer.classList.add('viewer__osd');
-
+    this.$imageContainer = div({className: 'viewer__image'});
+    this.$osdContainer = div({className: 'viewer__osd'});
     // Sub components
     this.$supplimental = new Supplemental(document.querySelector('.supplemental'));
     this.$link = new Link(document.getElementById('linkDump'));
@@ -23,7 +20,7 @@ export default class Canvas {
 
     window.addEventListener('resize', () => {
       if (this.$image && this.$annotationOverlay) {
-        this.$annotationOverlay.render(this.$image)
+        this.$annotationOverlay.render(this.$image);
       }
     });
 
@@ -54,25 +51,25 @@ export default class Canvas {
     e.preventDefault();
     e.stopPropagation();
     fetch(href, {cache: 'force-cache'})
-    .then(r => r.json())
-    // Artificial delay for testing loading indicator.
-    // .then(r => {
-    //   return new Promise(resolve => setTimeout(() => resolve(r), 1000))
-    // })
-    .then(
-      manifest => {
+      .then(r => r.json())
+      // Artificial delay for testing loading indicator.
+      // .then(r => {
+      //   return new Promise(resolve => setTimeout(() => resolve(r), 1000))
+      // })
+      .then(
+        manifest => {
+          this.$el.classList.remove('viewer--loading');
+          this.$supplimental.render({manifest, canvasId});
+        },
+      )
+      .catch((e) => {
         this.$el.classList.remove('viewer--loading');
-        this.$supplimental.render({manifest, canvasId});
-      }
-    )
-    .catch((e) => {
-      this.$el.classList.remove('viewer--loading');
-      this.$el.classList.add('viewer--error');
-      console.error(`The supplemental at ${href} was not able to be displayed.`, e);
-      setTimeout(() => {
-        this.$el.classList.remove('viewer--error');
-      }, 2000)
-    });
+        this.$el.classList.add('viewer--error');
+        console.error(`The supplemental at ${href} was not able to be displayed.`, e);
+        setTimeout(() => {
+          this.$el.classList.remove('viewer--error');
+        }, 2000);
+      });
   };
 
   static dropCaseComparison(a, b) {
@@ -83,23 +80,17 @@ export default class Canvas {
     const $cached = document.getElementById('void');
     $cached.innerText = '';
     this.void = {
-      previous: document.createElement('div'),
-      osdPrevious: document.createElement('div'),
-      osd: document.createElement('div'),
-      osdNext: document.createElement('div'),
-      next: document.createElement('div'),
+      previous: div(),
+      osdPrevious: div(),
+      osd: div(),
+      osdNext: div(),
+      next: div(),
     };
     $cached.appendChild(this.void.previous);
     $cached.appendChild(this.void.osdPrevious);
     $cached.appendChild(this.void.osd);
     $cached.appendChild(this.void.osdNext);
     $cached.appendChild(this.void.next);
-  }
-
-  static img(src, forceHttps) {
-    const image = document.createElement('img');
-    image.src = forceHttps ? Canvas.https(src) : src;
-    return image;
   }
 
   renderOsd(toRender) {
@@ -126,14 +117,14 @@ export default class Canvas {
     }
   }
 
-  preload({next, prev, forceHttps}) {
+  preload({next, prev, forceHttps }) {
     this.void.next.innerText = '';
     if (next) {
-      this.void.next.appendChild(Canvas.img(next, forceHttps));
+      this.void.next.appendChild(img(next, { forceHttps }));
     }
     this.void.previous.innerText = '';
     if (prev) {
-      this.void.previous.appendChild(Canvas.img(prev, forceHttps));
+      this.void.previous.appendChild(img(prev, { forceHttps }));
     }
   }
 
@@ -143,70 +134,57 @@ export default class Canvas {
     }
     return Promise.all(otherContent.map(
       content => fetch(content['@id'], {cache: 'force-cache'})
-      .then(r => r.json())
-      .then(({resources}) => {
-        if (!resources) {
+        .then(r => r.json())
+        .catch(err => {
+          console.warn(err);
           return [];
-        }
-        return resources.map(
-          annotation => {
-            const linkToManifest = {
-              xywh: null,
-              url: null,
-              canvasId: null,
-              label: null,
-              description: null,
-            };
-            if (Canvas.dropCaseComparison(annotation.motivation, 'oa:linking')) {
-              const parts = annotation.on.split('#');
-              linkToManifest.xywh = parts.length > 1 ? parts[1] : null;
-              // will populate this object:
-              if (annotation.resource['@type'] === 'sc:Manifest') {
-                linkToManifest.url = annotation.resource['@id'];
-                linkToManifest.label = annotation.resource.label;
-                linkToManifest.description = annotation.resource.description;
-              } else if (Canvas.dropCaseComparison(annotation.resource['@type'], 'sc:Canvas')) {
-                // we MUST be given a within otherwise we're stuffed
-                if (annotation.resource.within && Canvas.dropCaseComparison(annotation.resource.within['@type'], 'sc:Manifest')) {
-                  linkToManifest.url = annotation.resource.within['@id'];
-                  linkToManifest.label = annotation.resource.within.label;
-                  linkToManifest.description = annotation.resource.within.description;
-                  linkToManifest.canvasId = annotation.resource['@id'];
+        })
+        .then(({resources}) => {
+          if (!resources) {
+            return [];
+          }
+          return resources.map(
+            annotation => {
+              const linkToManifest = {
+                xywh: null,
+                url: null,
+                canvasId: null,
+                label: null,
+                description: null,
+              };
+              if (Canvas.dropCaseComparison(annotation.motivation, 'oa:linking')) {
+                const parts = annotation.on.split('#');
+                linkToManifest.xywh = parts.length > 1 ? parts[1] : null;
+                // will populate this object:
+                if (annotation.resource['@type'] === 'sc:Manifest') {
+                  linkToManifest.url = annotation.resource['@id'];
+                  linkToManifest.label = annotation.resource.label;
+                  linkToManifest.description = annotation.resource.description;
+                } else if (Canvas.dropCaseComparison(annotation.resource['@type'], 'sc:Canvas')) {
+                  // we MUST be given a within otherwise we're stuffed
+                  if (annotation.resource.within && Canvas.dropCaseComparison(annotation.resource.within['@type'], 'sc:Manifest')) {
+                    linkToManifest.url = annotation.resource.within['@id'];
+                    linkToManifest.label = annotation.resource.within.label;
+                    linkToManifest.description = annotation.resource.within.description;
+                    linkToManifest.canvasId = annotation.resource['@id'];
+                  }
                 }
               }
-            }
-            if (!linkToManifest.url) {
-              return null;
-            }
-            return linkToManifest;
-          },
-        );
-      }),
+              if (!linkToManifest.url) {
+                return null;
+              }
+              return linkToManifest;
+            },
+          );
+        }),
     )).then(flatten);
   }
 
   static createStaticAnnotation(label, description) {
-    const $annotation = document.createElement('div');
-    $annotation.classList.add('annotation');
-
-    const $label = document.createElement('div');
-    $label.innerText = label;
-    $label.classList.add('annotation__label');
-    $annotation.appendChild($label);
-
-    const $description = document.createElement('div');
-    $description.innerText = description;
-    $description.classList.add('annotation__description');
-    $annotation.appendChild($description);
-
-    return $annotation;
-  }
-
-  static https(url) {
-    if (url.substr(0, 5) !== 'http:') {
-      return url;
-    }
-    return `https${url.substr(4)}`;
+    return div({className: 'annotation'}, [
+      div({className: 'annotation__label'}, label),
+      div({className: 'annotation__description'}, description),
+    ]);
   }
 
   render({canvas, nextCanvas, prevCanvas, forceHttps}) {
@@ -230,7 +208,7 @@ export default class Canvas {
 
     // Add image
     this.$imageContainer.innerHTML = '';
-    this.$image = Canvas.img(imageUrl, forceHttps);
+    this.$image = img(imageUrl, { forceHttps });
     this.$image.setAttribute('data-width', canvas.width);
     this.$image.setAttribute('data-height', canvas.height);
     this.$imageContainer.appendChild(this.$image);
@@ -263,7 +241,7 @@ export default class Canvas {
       this.$annotationOverlay.mountTo(this.$imageContainer);
 
       this.$image.addEventListener('load', () => {
-        this.$annotationOverlay.render(this.$image)
+        this.$annotationOverlay.render(this.$image);
       });
 
       // Remove container

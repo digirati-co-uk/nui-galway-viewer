@@ -1,3 +1,5 @@
+import {div, img, link, paragraph} from '../utils';
+
 export default class Supplemental {
 
   constructor($el) {
@@ -26,22 +28,6 @@ export default class Supplemental {
         this.$supplemental.classList.remove('supplemental--active');
       });
     }
-  }
-
-  static div(text) {
-    const div = document.createElement('div');
-    div.innerHTML = text;
-    return div;
-  }
-
-  image(src, id, onLoad = null) {
-    const img = document.createElement('img');
-    img.src = src;
-    img.id = id;
-    if (onLoad) {
-      img.addEventListener('load', (e) => onLoad(img));
-    }
-    return img;
   }
 
   static getCanvasIndex(manifest, canvasId) {
@@ -81,19 +67,23 @@ export default class Supplemental {
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
       if (repo['@id']) {
+        const url = link(repo['@id'], repo['label'] || 'View in repository');
+        url.setAttribute('target', '_blank');
         descriptions.push(
-          Supplemental.div(`<p><a target="_blank" href='${repo['@id']}'>${repo['label'] || 'View in repository'}</a></p>`),
+          div({},
+            paragraph([ url ])
+          )
         );
       }
     }
 
-    descriptions.push(Supplemental.div(manifest.description || '(no description)'));
+    descriptions.push(div({}, manifest.description || '(no description)'));
 
     const canvasIndex = Supplemental.getCanvasIndex(manifest, canvasId);
     const images = manifest.sequences[0].canvases.map((canvas, index) => {
       const imageUrl = canvas.images[0].resource.service.id + '/full/!1000,1000/0/default.jpg';
       const onLoad = index === canvasIndex ? (img) => this.scrollTo(img) : null;
-      return this.image(imageUrl, `suppcv_${index}`, onLoad);
+      return img(imageUrl, { id: `suppcv_${index}`, onLoad });
     });
 
     descriptions.map(description => this.$desc.appendChild(description));

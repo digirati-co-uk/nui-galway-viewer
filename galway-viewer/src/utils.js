@@ -1,5 +1,79 @@
 export const TEMPORAL = 'dcterms:temporal';
 
+export function DOM(tagName, {className, style, attributes} = {}, children) {
+  const $el = document.createElement(tagName);
+  if (className) {
+    if (Array.isArray(className)) {
+      className.forEach(c => $el.classList.add(c));
+    } else {
+      $el.classList.add(className);
+    }
+  }
+  if (attributes) {
+    Object.keys(attributes)
+      .map(key => ({key, value: attributes[key]}))
+      .forEach(attr => $el.setAttribute(attr.key, attr.value))
+  }
+  if (style) {
+    Object.keys(style)
+      .map(key => ({key, value: style[key]}))
+      .forEach(styleAttr => $el.style[styleAttr.key] = styleAttr.value);
+  }
+  if (children) {
+    if (Array.isArray(children)) {
+      children.forEach($child => $el.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child));
+    }
+    if (typeof children === 'string') {
+      $el.innerText = children;
+    }
+  }
+  return $el;
+}
+
+export function https(url) {
+  if (url.substr(0, 5) !== 'http:') {
+    return url;
+  }
+  return `https${url.substr(4)}`;
+}
+
+export function img(src, { forceHttps, id, onLoad = null }) {
+  const image = document.createElement('img');
+  if (id) {
+    image.id = id;
+  }
+  if (onLoad) {
+    image.addEventListener('load', (e) => onLoad(img));
+  }
+  image.src = forceHttps ? https(src) : src;
+  return image;
+}
+
+export function link(href, text, onClick) {
+  const link = document.createElement('a');
+  link.href = href;
+  link.innerText = text;
+  link.addEventListener('click', (e) => {
+    onClick(href, e);
+  });
+  return link;
+}
+
+export function paragraph(children, className) {
+  const p = document.createElement('p');
+  children.map($child =>
+    p.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child),
+  );
+  if (className) {
+    p.className = className;
+  }
+  return p;
+}
+
+export function div(props, children) {
+  return DOM('div', props, children);
+}
+
 export function first(obj, predicate) {
   const array = asArray(obj);
   if (predicate) {
