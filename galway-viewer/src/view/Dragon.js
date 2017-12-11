@@ -1,3 +1,5 @@
+import {div} from '../utils';
+
 function isValidTileSource(tileSource) {
   return !!(
     tileSource &&
@@ -28,8 +30,7 @@ export default class Dragon {
     this[DragonId] = Symbol('Dragon instance Id');
     this.state = {isOpen: true, isLoaded: false, isLoading: false, isClosed: true};
     this.canvasContent = canvas;
-    this.$container = document.createElement('div');
-    this.$container.classList.add('dragon');
+    this.$container = div({ className: 'dragon' });
     document.querySelector('.zoom__in').addEventListener('click', () => {
       this.activeOsd.then(osd => osd.viewport.zoomBy(1.2));
     });
