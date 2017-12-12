@@ -1,0 +1,65 @@
+$subtitle-colour: #ccc !default;
+$active-item: #8BC34A !default;
+$inactive-item: #C8E6C9 !default;
+
+.galway-timeline {
+  background: #fff;
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    margin: 12px 14px;
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: normal;
+      margin: 0 12px 0 0;
+
+      @media (max-width: 40em) {
+        flex: 1;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    span {
+      color: $subtitle-colour;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__item-container {
+    padding: 15px;
+    display: flex;
+    @media (max-width: 40em) {
+      padding: 5px 15px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+  }
+
+  &__representation {
+    background: $inactive-item;
+    height: 15px;
+    margin: 1px 1px 10px;
+
+    .galway-timeline__item--active & {
+      background: $active-item;
+    }
+
+    @media (max-width: 40em) {
+      height: 5px;
+    }
+  }
+
+  &__temporal {
+    font-size: 12px;
+    line-height: 14px;
+    @media (max-width: 40em) {
+      display: none;
+    }
+  }
+}

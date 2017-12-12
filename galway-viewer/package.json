@@ -12,12 +12,16 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "@material/drawer": "^0.26.0",
     "cookies-js": "^1.2.3",
     "jquery": "^3.2.1",
-    "whatwg-fetch": "^2.0.3"
+    "material-components-web": "^0.26.0",
+    "whatwg-fetch": "^2.0.3",
+    "@material/slider": "latest"
   },
   "devDependencies": {
-    "nwb": "0.18.x"
+    "nwb": "0.18.x",
+    "nwb-sass": "^0.8.2"
   },
   "author": "",
   "license": "MIT",

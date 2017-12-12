@@ -1,0 +1,20 @@
+$header-color: #388E3C;
+$subtitle-colour: #388E3C;
+
+@import "./galway-header";
+@import "./galway-timeline";
+@import "./galway-player";
+@import "./galway-layout";
+@import "./galway-controls";
+
+html, body {
+  background: #388E3C;
+  position:fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+main {
+  overflow: hidden;
+  height: 100%;
+}
