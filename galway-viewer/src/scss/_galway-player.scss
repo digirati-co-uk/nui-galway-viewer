@@ -2,11 +2,32 @@
   background: #222;
   position: relative;
 
+  &--loading {
+    cursor: wait;
+    pointer-events: none;
+  }
+  &--loading * {
+    cursor: wait;
+    pointer-events: none;
+  }
+
+  &--loading:after {
+    content: 'loading...';
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
+  }
   &--error:after {
     content: 'Something went wrong, we can\'t display this content at the moment';
     color: #fff;
     padding: 20px;
-    background: rgba(140, 0, 0, .7);
+    background: rgba(140, 0, 0, .6);
     position: absolute;
     top: 0;
     left: 0;
