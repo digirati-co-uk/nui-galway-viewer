@@ -4,6 +4,9 @@ import Timeline from './Timeline';
 import Pager from './Pager';
 import {getDisplayRanges} from '../utils';
 import StartScreen from "./StartScreen";
+import Header from "./Header";
+import Drawer from "./Drawer";
+import Controls from "./Controls";
 
 class GalwayViewer {
 
@@ -11,21 +14,35 @@ class GalwayViewer {
     this.$el = $el;
     this.useCanvasLabel = ($el.getAttribute('data-use-canvas-labels')||'').toLowerCase() === 'true';
     this.forceHttps = ($el.getAttribute('data-force-https')||'').toLowerCase() === 'true';
-    this.startScreen = new StartScreen($el.querySelector('.start-screen'));
-    this.canvas = new Canvas($el.querySelector('.viewer')); // @todo change to viewer.
-    this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
-    this.pager = new Pager($el.querySelector('.paging'), {
-      useCanvasLabel: this.useCanvasLabel,
-      nextPage: () => this.nextPage(),
-      prevPage: () => this.prevPage(),
+    this.currentCanvas = 0;
+
+    // Start screen.
+    this.startScreen = new StartScreen($el.querySelector('.galway-start-screen'));
+
+    // Header.
+    this.header = new Header($el.querySelector('.galway-header'));
+
+    // Drawer.
+    this.drawer = new Drawer($el.querySelector('.galway-drawer'));
+
+    this.header.onClickMenu(() => {
+      this.drawer.openMenu();
     });
-    let input;
-    this.timeline.$sliderContainer.addEventListener('mousemove', (e) => {
-      input = input ? input : e.currentTarget.querySelector('input');
-      const val = parseInt(input.value, 10);
-      const label = this.canvases[val].label;
-      this.pager.render(label, val, this.canvases.length, ((val / this.canvases.length) * 95) + 5);
+
+    this.header.onClickInfo(() => {
+      this.startScreen.openStartScreen();
     });
+
+    this.canvas = new Canvas($el.querySelector('.galway-player'));
+
+    // this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
+    // let input;
+    // this.timeline.$sliderContainer.addEventListener('mousemove', (e) => {
+    //   input = input ? input : e.currentTarget.querySelector('input');
+    //   const val = parseInt(input.value, 10);
+    //   const label = this.canvases[val].label;
+    //   this.pager.render(label, val, this.canvases.length, ((val / this.canvases.length) * 95) + 5);
+    // });
   }
 
   // Core
@@ -33,6 +50,12 @@ class GalwayViewer {
     fetch(manifestUri, {cache: 'force-cache'}).then(m => m.json()).then(manifest => {
       this.load(manifest);
     });
+  }
+
+  goToPage(n) {
+    if (this.canvases[n]) {
+      this.render(this.canvases[n].id);
+    }
   }
 
   // Core
@@ -76,20 +99,27 @@ class GalwayViewer {
 
     this.canvases = manifest.sequences[0].canvases;
     let displayRanges = getDisplayRanges(manifest);
-    this.timeline.setDisplayRanges(displayRanges, this.canvases);
-    this.slider = new Slider(
-      this.$el.querySelector('.timeline__slider'),
-      this.canvases.length, e => {
-      const index = parseInt(e.currentTarget.value, 10);
-      const canvas = this.canvases[index];
-      if (canvas !== this.currentCanvas) {
-        this.render(this.canvases[index].id);
-      }
-    });
+    // this.timeline.setDisplayRanges(displayRanges, this.canvases);
+    // this.slider = new Slider(
+    //   this.$el.querySelector('.timeline__slider'),
+    //   this.canvases.length, e => {
+    //   const index = parseInt(e.currentTarget.value, 10);
+    //   const canvas = this.canvases[index];
+    //   if (canvas !== this.currentCanvas) {
+    //     this.render(this.canvases[index].id);
+    //   }
+    // });
+
+
+    this.controls = new Controls(this.$el.querySelector('.galway-controls'), { totalElements: this.canvases.length });
+
+    this.controls.onNext(() => this.nextPage());
+    this.controls.onPrevious(() => this.prevPage());
+    this.controls.onChangeSlider((n) => this.goToPage(n));
 
     // arrow keys, avoiding duplicates.
     document.addEventListener('keydown', (e) => {
-      if (this.slider.$slider === document.activeElement) {
+      if (this.controls.isSliderElement(document.activeElement)) {
         return;
       }
       if (e.keyCode === 37/*left arrow*/) {
@@ -112,9 +142,9 @@ class GalwayViewer {
     const canvas = this.canvases[canvasIndex];
 
     // Render.
-    this.slider.render(canvasIndex);
-    this.timeline.render(canvasId, canvas.label);
-    this.pager.render(canvas.label, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
+    this.controls.setValue(canvasIndex);
+    // this.timeline.render(canvasId, canvas.label);
+    // this.pager.render(canvas.label, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
     this.canvas.render({
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,

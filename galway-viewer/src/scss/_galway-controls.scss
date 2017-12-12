@@ -11,6 +11,7 @@
 
   &__button {
     background: #333;
+    border-radius: 0;
     border: none;
     height: 50px;
     width: 50px;
@@ -19,8 +20,8 @@
     text-align: center;
 
     &:focus {
-      outline: 2px solid #111;
-      outline-offset: -3px;
+      outline: 2px solid #fff;
+      outline-offset: -4px;
     }
     &:active {
       background: #222;

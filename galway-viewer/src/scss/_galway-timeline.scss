@@ -38,13 +38,16 @@ $inactive-item: #C8E6C9 !default;
   }
 
   &__item {
+    overflow: hidden;
     flex: 1;
+    transition: flex .4s;
   }
 
   &__representation {
     background: $inactive-item;
     height: 15px;
     margin: 1px 1px 10px;
+    flex: 100;
 
     .galway-timeline__item--active & {
       background: $active-item;

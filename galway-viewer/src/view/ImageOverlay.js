@@ -17,6 +17,13 @@ export default class ImageOverlay {
     this.annotations.push({ $el: $annotation, position });
   }
 
+  static createStaticAnnotation(label, description) {
+    return div({className: 'galway-annotation'}, [
+      div({className: 'galway-annotation__label'}, label),
+      div({className: 'galway-annotation__description'}, description),
+    ]);
+  }
+
   render($image) {
     const {width, height} = $image.getBoundingClientRect();
     const px = n => `${n}px`;

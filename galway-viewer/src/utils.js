@@ -1,5 +1,42 @@
 export const TEMPORAL = 'dcterms:temporal';
 
+export function dropCaseComparison(a, b) {
+  return (a ? a : '').toLowerCase() === (b ? b : '').toLowerCase();
+}
+
+export function mapAnnotation(annotation) {
+  const linkToManifest = {
+    xywh: null,
+    url: null,
+    canvasId: null,
+    label: null,
+    description: null,
+  };
+  if (dropCaseComparison(annotation.motivation, 'oa:linking')) {
+    const parts = annotation.on.split('#');
+    linkToManifest.xywh = parts.length > 1 ? parts[1] : null;
+    // will populate this object:
+    if (annotation.resource['@type'] === 'sc:Manifest') {
+      linkToManifest.url = annotation.resource['@id'];
+      linkToManifest.label = annotation.resource.label;
+      linkToManifest.description = annotation.resource.description;
+    } else if (dropCaseComparison(annotation.resource['@type'], 'sc:Canvas')) {
+      // we MUST be given a within otherwise we're stuffed
+      if (annotation.resource.within && dropCaseComparison(annotation.resource.within['@type'], 'sc:Manifest')) {
+        linkToManifest.url = annotation.resource.within['@id'];
+        linkToManifest.label = annotation.resource.within.label;
+        linkToManifest.description = annotation.resource.within.description;
+        linkToManifest.canvasId = annotation.resource['@id'];
+      }
+    }
+  }
+  if (!linkToManifest.url) {
+    return null;
+  }
+  return linkToManifest;
+}
+
+
 export function DOM(tagName, {className, style, attributes} = {}, children) {
   const $el = document.createElement(tagName);
   if (className) {

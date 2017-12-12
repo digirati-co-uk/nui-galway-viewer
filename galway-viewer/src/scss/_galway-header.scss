@@ -27,8 +27,8 @@ $header-color: #ddd !default;
 
     &:focus {
       border-radius: 0;
-      outline-offset: -2px;
-      outline: 2px solid mix(#000, $header-color, 20%);
+      outline-offset: -4px;
+      outline: 2px solid rgba(#fff, .8);
       background: mix(#000, $header-color, 10%);
     }
   }
