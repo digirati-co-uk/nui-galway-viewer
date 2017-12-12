@@ -174,7 +174,7 @@ export default class Canvas {
 
   renderAnnotations(annotations, currentAnnotationOverlay, canvasId) {
     // Add annotations to container.
-    annotations.map(linkToManifest => {
+    const osdAnnotations = annotations.map(linkToManifest => {
       const $annotation = ImageOverlay.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
       const $viewerAnnotation = ImageOverlay.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
       const viewerPosition = parseFrag(linkToManifest.xywh);
@@ -198,8 +198,12 @@ export default class Canvas {
       // OSD annotations
       $viewerAnnotation.addEventListener('touchstart', handleAnnotationClick);
       $viewerAnnotation.addEventListener('click', handleAnnotationClick);
+      
+      return [$viewerAnnotation, viewerPosition, canvasId]
+    });
 
-      this.osdContainer.reset().then(() => {
+    this.osdContainer.reset().then(() => {
+      osdAnnotations.map(([$viewerAnnotation, viewerPosition, canvasId]) => {
         this.osdContainer.addOverlay($viewerAnnotation, viewerPosition, canvasId);
       })
     });
