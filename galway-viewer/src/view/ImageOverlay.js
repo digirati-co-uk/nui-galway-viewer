@@ -27,7 +27,11 @@ export default class ImageOverlay {
     ]);
   }
 
-  render($image) {
+  render($image, canvasId) {
+    if (this.canvasId !== canvasId) {
+      return;
+    }
+
     const {width, height} = $image.getBoundingClientRect();
     const px = n => `${n}px`;
 

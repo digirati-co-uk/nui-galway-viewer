@@ -168,11 +168,7 @@ export default class Canvas {
 
       const currentAnnotationOverlay = this.$annotationOverlay;
 
-      // Remove container
-      this.osdContainer.reset()
-        .then(() => this.renderAnnotations(annotations, currentAnnotationOverlay, canvas.id))
-        .then(() => currentAnnotationOverlay ? currentAnnotationOverlay.render(this.$image) : null)
-      ;
+      this.renderAnnotations(annotations, currentAnnotationOverlay, canvas.id);
     });
   }
 
@@ -196,14 +192,19 @@ export default class Canvas {
         e.preventDefault();
         e.stopPropagation();
       });
+
       currentAnnotationOverlay.addAnnotation($annotation, viewerPosition, canvasId);
 
       // OSD annotations
       $viewerAnnotation.addEventListener('touchstart', handleAnnotationClick);
       $viewerAnnotation.addEventListener('click', handleAnnotationClick);
 
-      this.osdContainer.addOverlay($viewerAnnotation, viewerPosition, canvasId);
+      this.osdContainer.reset().then(() => {
+        this.osdContainer.addOverlay($viewerAnnotation, viewerPosition, canvasId);
+      })
     });
+
+    currentAnnotationOverlay.render(this.$image, canvasId);
   }
 
 }
