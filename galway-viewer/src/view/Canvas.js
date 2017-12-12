@@ -159,22 +159,24 @@ export default class Canvas {
       }
 
       // Annotation container.
-      this.$annotationOverlay = new ImageOverlay();
+      this.$annotationOverlay = new ImageOverlay(canvas.id);
       this.$annotationOverlay.mountTo(this.imageContainer.$el);
 
       this.$image.addEventListener('load', () => {
         this.$annotationOverlay.render(this.$image);
       });
 
+      const currentAnnotationOverlay = this.$annotationOverlay;
+
       // Remove container
       this.osdContainer.reset()
-        .then(() => this.renderAnnotations(annotations))
-        .then(() => this.$annotationOverlay.render(this.$image))
+        .then(() => this.renderAnnotations(annotations, currentAnnotationOverlay, canvas.id))
+        .then(() => currentAnnotationOverlay ? currentAnnotationOverlay.render(this.$image) : null)
       ;
     });
   }
 
-  renderAnnotations(annotations) {
+  renderAnnotations(annotations, currentAnnotationOverlay, canvasId) {
     // Add annotations to container.
     annotations.map(linkToManifest => {
       const $annotation = ImageOverlay.createStaticAnnotation(linkToManifest.label, linkToManifest.description);
@@ -194,13 +196,13 @@ export default class Canvas {
         e.preventDefault();
         e.stopPropagation();
       });
-      this.$annotationOverlay.addAnnotation($annotation, viewerPosition);
+      currentAnnotationOverlay.addAnnotation($annotation, viewerPosition, canvasId);
 
       // OSD annotations
       $viewerAnnotation.addEventListener('touchstart', handleAnnotationClick);
       $viewerAnnotation.addEventListener('click', handleAnnotationClick);
 
-      this.osdContainer.addOverlay($viewerAnnotation, viewerPosition);
+      this.osdContainer.addOverlay($viewerAnnotation, viewerPosition, canvasId);
     });
   }
 

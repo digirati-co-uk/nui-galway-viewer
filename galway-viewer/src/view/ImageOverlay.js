@@ -3,7 +3,8 @@ import {div} from '../utils';
 
 export default class ImageOverlay {
 
-  constructor() {
+  constructor(canvasId) {
+    this.canvasId = canvasId;
     this.$annotationOverlay = div({ className: 'annotation-overlay' });
     this.annotations = [];
   }
@@ -12,9 +13,11 @@ export default class ImageOverlay {
     $target.appendChild(this.$annotationOverlay);
   }
 
-  addAnnotation($annotation, position) {
-    this.$annotationOverlay.appendChild($annotation);
-    this.annotations.push({ $el: $annotation, position });
+  addAnnotation($annotation, position, canvasId) {
+    if (this.canvasId === canvasId) {
+      this.$annotationOverlay.appendChild($annotation);
+      this.annotations.push({$el: $annotation, position});
+    }
   }
 
   static createStaticAnnotation(label, description) {
