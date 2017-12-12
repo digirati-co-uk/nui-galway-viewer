@@ -198,7 +198,7 @@ export default class Canvas {
       // OSD annotations
       $viewerAnnotation.addEventListener('touchstart', handleAnnotationClick);
       $viewerAnnotation.addEventListener('click', handleAnnotationClick);
-      
+
       return [$viewerAnnotation, viewerPosition, canvasId]
     });
 

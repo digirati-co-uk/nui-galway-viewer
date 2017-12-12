@@ -41,7 +41,6 @@ export default class OpenSeadragonContainer {
       clearTimeout(this.renderCycle);
     }
     this.renderCycle = setTimeout(() => {
-      console.log('Rendering OSD - HEAVY OP', id);
       const toRender = this.openSeaDragonCache[id];
       if (!toRender) {
         return;
