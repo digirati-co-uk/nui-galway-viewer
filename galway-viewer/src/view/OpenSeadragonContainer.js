@@ -71,14 +71,14 @@ export default class OpenSeadragonContainer {
     });
   }
 
-  preloadImages({next, prev, forceHttps}) {
+  preloadImages({next, prev}) {
     this.$void.next.innerText = '';
     if (next) {
-      this.$void.next.appendChild(img(next, {forceHttps}));
+      this.$void.next.appendChild(next);
     }
     this.$void.previous.innerText = '';
     if (prev) {
-      this.$void.previous.appendChild(img(prev, {forceHttps}));
+      this.$void.previous.appendChild(prev);
     }
   }
 

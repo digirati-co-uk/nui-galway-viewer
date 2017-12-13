@@ -58,11 +58,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r1",
-      "@type":"sc:Range",
-      "label":"Childhood & Schooling",
-      "dcterms:temporal":"1864-05-28/1881-10-01",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r1",
+      "@type": "sc:Range",
+      "label": "Childhood & Schooling",
+      "dcterms:temporal": "1864-05-28/1881-10-01",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_002.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_003.tif.json",
@@ -102,11 +102,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
-      "@type":"sc:Range",
-      "label":"University",
-      "dcterms:temporal":"1881-10-02/1884-12-31",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
+      "@type": "sc:Range",
+      "label": "University",
+      "dcterms:temporal": "1881-10-02/1884-12-31",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_038.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_039.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_040.tif.json",
@@ -118,11 +118,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
-      "@type":"sc:Range",
-      "label":"San Francisco & Early Work",
-      "dcterms:temporal":"1885-01-01/1888-06-01",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
+      "@type": "sc:Range",
+      "label": "San Francisco & Early Work",
+      "dcterms:temporal": "1885-01-01/1888-06-01",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_046.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_047.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_048.tif.json",
@@ -148,11 +148,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
-      "@type":"sc:Range",
-      "label":"Rail, Mining, & Civil Engineering Work",
-      "dcterms:temporal":"1888-06-02/1893-06-01",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
+      "@type": "sc:Range",
+      "label": "Rail, Mining, & Civil Engineering Work",
+      "dcterms:temporal": "1888-06-02/1893-06-01",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_068.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_069.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_070.tif.json",
@@ -172,11 +172,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
-      "@type":"sc:Range",
-      "label":"Midwinter Exposition & Civil Engineering",
-      "dcterms:temporal":"1893-06-02/1899-04-30",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
+      "@type": "sc:Range",
+      "label": "Midwinter Exposition & Civil Engineering",
+      "dcterms:temporal": "1893-06-02/1899-04-30",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_084.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_085.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_086.tif.json",
@@ -195,11 +195,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
-      "@type":"sc:Range",
-      "label":"Hawaii",
-      "dcterms:temporal":"1899-05-01/1906-04-17",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
+      "@type": "sc:Range",
+      "label": "Hawaii",
+      "dcterms:temporal": "1899-05-01/1906-04-17",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_100.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_101.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_102.tif.json",
@@ -256,11 +256,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
-      "@type":"sc:Range",
-      "label":"San Francisco Earthquake",
-      "dcterms:temporal":"1906-04-18/1906-12-31",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
+      "@type": "sc:Range",
+      "label": "San Francisco Earthquake",
+      "dcterms:temporal": "1906-04-18/1906-12-31",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_149.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_150.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_151.tif.json",
@@ -275,11 +275,11 @@ export default {
       ]
     },
     {
-      "@id":"https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
-      "@type":"sc:Range",
-      "label":"San Diego & the Morena Dam",
-      "dcterms:temporal":"1907-01-01/1912-12-28",
-      "canvases":[
+      "@id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
+      "@type": "sc:Range",
+      "label": "San Diego & the Morena Dam",
+      "dcterms:temporal": "1907-01-01/1912-12-28",
+      "canvases": [
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_160.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_161.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_162.tif.json",
@@ -380,7 +380,7 @@ export default {
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_001.tif.json"
             }
           ],
-          "otherContent" : [
+          "otherContent": [
             {
               "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/001.json",
               "@type": "sc:AnnotationList"
@@ -438,7 +438,7 @@ export default {
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_003.tif.json"
             }
           ],
-          "otherContent" : [
+          "otherContent": [
             {
               "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/003.json",
               "@type": "sc:AnnotationList"
@@ -730,7 +730,7 @@ export default {
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_015.tif.json"
             }
           ],
-          "otherContent" : [
+          "otherContent": [
             {
               "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/015.json",
               "@type": "sc:AnnotationList"
@@ -813,6 +813,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_018.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/018.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -838,12 +844,6 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_019.tif.json"
-            }
-          ],
-          "otherContent": [
-            {
-              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/019.json",
-              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -898,7 +898,7 @@ export default {
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_021.tif.json"
             }
           ],
-          "otherContent" : [
+          "otherContent": [
             {
               "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/021.json",
               "@type": "sc:AnnotationList"
@@ -1033,6 +1033,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_026.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/026.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1136,6 +1142,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_030.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/030.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -1267,6 +1279,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_035.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/035.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1345,6 +1363,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_038.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/038.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1370,6 +1394,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_039.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/039.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -1448,6 +1478,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_042.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/042.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -1605,6 +1641,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_048.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/048.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1709,6 +1751,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_052.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/052.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1760,6 +1808,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_054.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/054.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -1891,6 +1945,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_059.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/059.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -1995,6 +2055,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_063.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/063.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2047,6 +2113,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_065.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/065.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2072,6 +2144,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_066.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/066.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2125,6 +2203,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_068.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/068.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2150,6 +2234,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_069.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/069.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2203,6 +2293,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_071.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/071.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2228,6 +2324,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_072.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/072.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2280,6 +2382,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_074.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/074.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2385,6 +2493,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_078.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/078.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2437,6 +2551,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_080.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/080.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2463,6 +2583,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_081.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/081.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2488,6 +2614,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_082.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/082.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2541,6 +2673,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_084.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/084.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2567,6 +2705,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_085.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/085.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2592,6 +2736,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_086.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/086.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2645,6 +2795,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_088.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/088.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2696,6 +2852,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_090.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/090.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2749,6 +2911,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_092.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/092.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2774,6 +2942,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_093.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/093.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2801,6 +2975,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_094.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/094.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2826,6 +3006,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_095.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/095.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -2879,6 +3065,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_098.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/098.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2931,6 +3123,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_100.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/100.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2957,6 +3155,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_101.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/101.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -2982,6 +3186,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_102.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/102.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3113,6 +3323,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_107.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/107.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3164,6 +3380,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_109.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/109.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3217,6 +3439,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_111.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/111.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3269,6 +3497,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_113.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/113.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3294,6 +3528,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_114.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/114.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3321,6 +3561,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/115.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3347,6 +3593,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/116.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3372,6 +3624,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_117.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/117.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3425,6 +3683,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_119.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/119.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3450,6 +3714,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_120.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/120.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3502,6 +3772,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_122.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/122.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3581,6 +3857,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_125.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/125.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3632,6 +3914,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_126.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/126.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3685,6 +3973,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_128.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/128.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3710,6 +4004,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_129.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/129.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3737,6 +4037,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_130.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/130.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -3762,6 +4068,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_131.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/131.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3840,6 +4152,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_133.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/133.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -3944,6 +4262,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_137.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/137.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4074,6 +4398,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_142.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/142.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4231,6 +4561,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_146.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/146.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4256,6 +4592,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_147.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/147.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4335,6 +4677,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_150.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/150.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4387,6 +4735,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_152.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/152.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4412,6 +4766,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_153.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/153.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4543,6 +4903,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_158.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/158.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4595,6 +4961,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_160.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/160.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4620,6 +4992,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_161.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/161.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4647,6 +5025,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_162.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/162.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4673,6 +5057,12 @@ export default {
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_163.tif.json"
             }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/163.json",
+              "@type": "sc:AnnotationList"
+            }
           ]
         },
         {
@@ -4698,6 +5088,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_164.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/164.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -4776,6 +5172,12 @@ export default {
                 }
               },
               "on": "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_167.tif.json"
+            }
+          ],
+          "otherContent": [
+            {
+              "@id": "https://iiif.library.nuigalway.ie/manifests/p135/otherContent/167.json",
+              "@type": "sc:AnnotationList"
             }
           ]
         },
@@ -5042,4 +5444,4 @@ export default {
       ]
     }
   ]
-}
+};

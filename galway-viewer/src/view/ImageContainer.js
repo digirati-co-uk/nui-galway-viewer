@@ -26,15 +26,21 @@ export default class ImageContainer {
     $parent.appendChild(this.$el);
   }
 
-  render(id, createImage) {
+  getCachedImage(id, createImage) {
     if (!this.imageCache[id]) {
       this.imageCache[id] = createImage();
     }
 
-    this.clearContents();
-    this.$el.appendChild(this.imageCache[id]);
-
     return this.imageCache[id];
+  }
+
+  render(id, createImage) {
+    const $image = this.getCachedImage(id, createImage);
+
+    this.clearContents();
+    this.$el.appendChild($image);
+
+    return $image;
   }
 
   clearContents() {
