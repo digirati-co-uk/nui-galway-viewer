@@ -36,6 +36,14 @@ export function mapAnnotation(annotation) {
   return linkToManifest;
 }
 
+export function setStyle($el, style) {
+  if (style) {
+    Object.keys(style)
+      .map(key => ({key, value: style[key]}))
+      .forEach(styleAttr => $el.style[styleAttr.key] = styleAttr.value);
+  }
+  return $el;
+}
 
 export function DOM(tagName, {className, style, attributes} = {}, children) {
   const $el = document.createElement(tagName);
@@ -51,11 +59,9 @@ export function DOM(tagName, {className, style, attributes} = {}, children) {
       .map(key => ({key, value: attributes[key]}))
       .forEach(attr => $el.setAttribute(attr.key, attr.value))
   }
-  if (style) {
-    Object.keys(style)
-      .map(key => ({key, value: style[key]}))
-      .forEach(styleAttr => $el.style[styleAttr.key] = styleAttr.value);
-  }
+
+  setStyle($el, style);
+
   if (children) {
     if (Array.isArray(children)) {
       children.forEach($child => $el.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child));
@@ -74,7 +80,7 @@ export function https(url) {
   return `https${url.substr(4)}`;
 }
 
-export function img(src, { forceHttps, id, onLoad = null }) {
+export function img(src, {forceHttps, id, onLoad = null}) {
   const image = document.createElement('img');
   if (id) {
     image.id = id;
@@ -193,4 +199,89 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       callback.call(thisArg, this[i], i, this);
     }
   };
+}
+
+export function byLevelsReducer(level, index = {n: 0}) {
+  return (state, {...range, children}) => {
+    state.depths[level] = state.depths[level] ? state.depths[level] : [];
+    state.depths[level].push(index.n);
+    state.flattened.push(range);
+    index.n++;
+    return children ? children.reduce(byLevelsReducer(level + 1, index), state) : state;
+  };
+}
+
+export function rangeReducer(parentNum) {
+  return (state, range) => {
+    state.push(parentNum);
+    return range.children ? range.children.reduce(rangeReducer(parentNum), state) : state;
+  }
+}
+
+export function changePointsReducer(state, range) {
+  state.push(range.range[0]);
+  return range.children ? range.children.reduce(changePointsReducer, state) : state;
+}
+
+export function depthsReducer(currentDepth) {
+  return (state, range) => {
+    state[currentDepth] = state[currentDepth] ? state[currentDepth] : [];
+    state[currentDepth] = state[currentDepth] ? state[currentDepth] : [];
+    state[currentDepth].push(range.range[0]);
+
+    return range.children ? range.children.reduce(depthsReducer(currentDepth + 1), state) : state;
+  };
+}
+
+export function createMatrix(byLevels, parentDescription) {
+  const DISPLAY = {
+    COMPACT: 1,
+    RELATIVE: -1,
+    HIDDEN: 0,
+  };
+
+  return byLevels.depths.map(
+    (fullSingleDepth, n) => {
+        return fullSingleDepth.map(depth => {
+          const fullCurrent = byLevels.flattened[depth];
+            if (n > 0) {
+              return fullSingleDepth.reduce((state, k) => {
+                // console.log('parentDescription.ranges[depth]', parentDescription.ranges[k]);
+                if (parentDescription.ranges[k] === parentDescription.ranges[depth]) {
+                  // Previous.
+                  if (fullSingleDepth[fullSingleDepth.indexOf(k) - 1]) {
+                    const prev = fullSingleDepth[fullSingleDepth.indexOf(k) - 1];
+                    state[prev] = state[prev] === DISPLAY.RELATIVE ?  state[prev]: DISPLAY.COMPACT;
+                  }
+
+                  // Current.
+                  state[k] = DISPLAY.RELATIVE;
+
+
+                  if (fullSingleDepth[fullSingleDepth.indexOf(k) + 1]) {
+                    const next = fullSingleDepth[fullSingleDepth.indexOf(k) + 1];
+                    state[next] = state[next] === DISPLAY.RELATIVE ?  state[next]: DISPLAY.COMPACT;
+                  }
+                  // // Next.
+                  // if ((k + 1) < byLevels.flattened.length) {
+                  //   state[k + 1] = DISPLAY.COMPACT;
+                  // }
+                } else {
+                  // state[k] = state[k] === 1 ? state[k] : DISPLAY.HIDDEN;
+                }
+                console.log('zero:', state[0]);
+                return state;
+              }, (new Array(byLevels.flattened.length)).fill(DISPLAY.HIDDEN)); // Hide everything by default.
+            }
+
+            return byLevels.depths[0].reduce((state, topLevelItem) => {
+              state[topLevelItem] = DISPLAY.RELATIVE;
+              return state;
+            }, (new Array(byLevels.flattened.length)).fill(DISPLAY.HIDDEN)); // Hide everything by default.)
+            // console.log('PD', byLevels.depths[0])
+            // console.log('REL', depth, (new Array(depth.length)).fill(DISPLAY.RELATIVE));
+            // return (new Array(byLevels.flattened.length)).fill(DISPLAY.RELATIVE); // Top level is all relative.
+          }
+        )
+    });
 }

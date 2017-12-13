@@ -7,6 +7,7 @@ import StartScreen from "./StartScreen";
 import Header from "./Header";
 import Drawer from "./Drawer";
 import Controls from "./Controls";
+import DeepRange from "./DeepRange";
 
 class GalwayViewer {
 
@@ -24,6 +25,9 @@ class GalwayViewer {
 
     // Drawer.
     this.drawer = new Drawer($el.querySelector('.galway-drawer'));
+
+    // Deep range
+    this.deepRange = new DeepRange();
 
     this.header.onClickMenu(() => {
       this.drawer.openMenu();
@@ -99,6 +103,10 @@ class GalwayViewer {
 
     this.canvases = manifest.sequences[0].canvases;
     let displayRanges = getDisplayRanges(manifest);
+
+
+
+
     // this.timeline.setDisplayRanges(displayRanges, this.canvases);
     // this.slider = new Slider(
     //   this.$el.querySelector('.timeline__slider'),
@@ -140,6 +148,8 @@ class GalwayViewer {
     const canvasIndex = this.canvases.findIndexById(canvasId);
     this.currentCanvas = canvasIndex;
     const canvas = this.canvases[canvasIndex];
+
+    this.deepRange.render(canvasIndex, 1);
 
     // Render.
     this.controls.setValue(canvasIndex);
