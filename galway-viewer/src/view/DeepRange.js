@@ -68,8 +68,28 @@ export default class DeepRange {
           },
         ]
       },
-
     ];
+
+    /*
+     * New Plan:
+     * - Find max depth.
+     * - For each depth create list of keys (next/prev).
+     * - Use these to find current/next/prev.
+     * - Most of it should be the same.
+     */
+
+    function assignNumber(vars) {
+      return (singleItem) => {
+        singleItem.key = vars.num;
+        vars.num += 1;
+        if (singleItem.children) {
+          singleItem.children.forEach(assignNumber(vars))
+        }
+      }
+    }
+
+    const vars = { num: 0 };
+    this.structure.forEach(assignNumber(vars));
 
 
     this.parentDescription = this.structure.reduce((state, topLevel, currentIndex) => ({
@@ -89,7 +109,7 @@ export default class DeepRange {
       const missing = this.parentDescription.ranges.filter((i) => {
         return r.indexOf(i) === -1;
       });
-      console.log('SINGLE: ', singleDepth);
+      // console.log('SINGLE: ', singleDepth);
 
       return singleDepth
         .reduce((state, item, k) => {
@@ -104,10 +124,10 @@ export default class DeepRange {
 
     this.matrix = createMatrix(this.byLevels, this.parentDescription);
 
-    this.matrix.map(m => console.table(m));
+    // this.matrix.map(m => console.table(m));
 
     const initialMatrix = this.getMatrixByIndexAndDepth(452, 1);
-    console.log(initialMatrix);
+    // console.log(initialMatrix);
     /*
       <div class="galway-timeline__item" style="flex: 113">
         <div class="galway-timeline__representation"></div>
@@ -177,7 +197,93 @@ export default class DeepRange {
     return this.matrix[depth][pos];
   }
 
+  findChildrenMatchingRange = (canvasIndex) => (found, structure, index) => {
+    if (found === false) {
+      const [from, to] = structure.range;
+      if (canvasIndex >= from && canvasIndex <= to) {
+        return structure;
+      }
+    }
+    return found;
+  };
+
+  findLevel = (arr, canvasIndex, targetLevel, level = 0) => {
+    if (!arr) {
+      return [];
+    }
+    if (targetLevel === level) {
+      return arr || [];
+    }
+    const found = arr.reduce(this.findChildrenMatchingRange(canvasIndex), false);
+    const nextLevel = level + 1;
+    if (targetLevel === nextLevel) {
+      return found.children ? found.children : [found];
+    }
+    return this.findLevel(found.children, targetLevel, level + 1);
+  };
+
+
   render(canvasIndex, depth) {
+    const currentTopLevel = this.structure.reduce(this.findChildrenMatchingRange(canvasIndex), false);
+    const topLevelKeys = this.structure.map(item => item.key);
+
+    if (depth === 0) {
+      this.$elements.forEach(($element, key) => {
+        const currentLevel = topLevelKeys.indexOf(key);
+        if (currentLevel !== -1) {
+          const item = this.structure[currentLevel];
+          setStyle($element, {flex: item.range[1] - item.range[0], 'flex-basis': '0px'});
+          return;
+        }
+
+        setStyle($element, {flex: 0.0001, 'flex-basis': '0px'});
+      });
+      return;
+    }
+
+
+    // console.log('=> finding previous');
+    // const prevLevelViews = (
+    //   currentTopLevel.prev && currentTopLevel.prev.children
+    //     ? this.findLevel(currentTopLevel.prev.children, canvasIndex, depth)
+    //     : (currentTopLevel.prev ? [currentTopLevel.prev] : null)
+    // );
+    // const prevView = prevLevelViews ? prevLevelViews.shift() : null;
+
+    const currentLevelViews = this.findLevel(this.structure, canvasIndex, depth);
+
+    // console.log('=> finding next');
+    // const nextLevelViews = (
+    //   currentTopLevel.next && currentTopLevel.next.children
+    //     ? this.findLevel(currentTopLevel.next.children, canvasIndex, depth)
+    //     : (currentTopLevel.next ? [currentTopLevel.next] : null)
+    // );
+    // const nextView = nextLevelViews ? nextLevelViews.pop() : null;
+
+    const currentLevelKeys = currentLevelViews.map(item => item.key);
+    this.$elements.forEach(($element, key) => {
+      // if (
+      //   (prevView && prevView.key === key) ||
+      //   (nextView && nextView.key === key)
+      // ) {
+      //   setStyle($element, {flex: '0 0 80px'});
+      //   return;
+      // }
+
+      const currentLevel = currentLevelKeys.indexOf(key);
+      if (currentLevel !== -1) {
+        const item = currentLevelViews[currentLevel];
+        setStyle($element, {flex: item.range[1] - item.range[0], 'flex-basis': '0px'});
+        return;
+      }
+
+      setStyle($element, {flex: 0.0001, 'flex-basis': '0px'});
+    });
+
+    return;
+
+
+
     const matrix = this.getMatrixByIndexAndDepth(canvasIndex, depth);
 
     const currentItem = this.byLevels.depths[depth][this.getPositionInDepth(canvasIndex, depth)];

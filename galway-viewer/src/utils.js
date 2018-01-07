@@ -269,7 +269,7 @@ export function createMatrix(byLevels, parentDescription) {
                 } else {
                   // state[k] = state[k] === 1 ? state[k] : DISPLAY.HIDDEN;
                 }
-                console.log('zero:', state[0]);
+                // console.log('zero:', state[0]);
                 return state;
               }, (new Array(byLevels.flattened.length)).fill(DISPLAY.HIDDEN)); // Hide everything by default.
             }
