@@ -1,7 +1,4 @@
 import Canvas from './Canvas';
-import Slider from './Slider';
-import Timeline from './Timeline';
-import Pager from './Pager';
 import {getDisplayRanges} from '../utils';
 import StartScreen from "./StartScreen";
 import Header from "./Header";
@@ -28,6 +25,11 @@ class GalwayViewer {
 
     // Deep range
     this.deepRange = new DeepRange();
+    this.deepRange.onClickRange(item => {
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
 
     this.header.onClickMenu(() => {
       this.drawer.openMenu();
@@ -38,15 +40,6 @@ class GalwayViewer {
     });
 
     this.canvas = new Canvas($el.querySelector('.galway-player'));
-
-    // this.timeline = new Timeline($el.querySelector('.timeline'), (canvasId) => this.render(canvasId));
-    // let input;
-    // this.timeline.$sliderContainer.addEventListener('mousemove', (e) => {
-    //   input = input ? input : e.currentTarget.querySelector('input');
-    //   const val = parseInt(input.value, 10);
-    //   const label = this.canvases[val].label;
-    //   this.pager.render(label, val, this.canvases.length, ((val / this.canvases.length) * 95) + 5);
-    // });
   }
 
   // Core
@@ -104,21 +97,6 @@ class GalwayViewer {
     this.canvases = manifest.sequences[0].canvases;
     let displayRanges = getDisplayRanges(manifest);
 
-
-
-
-    // this.timeline.setDisplayRanges(displayRanges, this.canvases);
-    // this.slider = new Slider(
-    //   this.$el.querySelector('.timeline__slider'),
-    //   this.canvases.length, e => {
-    //   const index = parseInt(e.currentTarget.value, 10);
-    //   const canvas = this.canvases[index];
-    //   if (canvas !== this.currentCanvas) {
-    //     this.render(this.canvases[index].id);
-    //   }
-    // });
-
-
     this.controls = new Controls(this.$el.querySelector('.galway-controls'), { totalElements: this.canvases.length });
 
     this.controls.onNext(() => this.nextPage());
@@ -149,12 +127,10 @@ class GalwayViewer {
     this.currentCanvas = canvasIndex;
     const canvas = this.canvases[canvasIndex];
 
-    this.deepRange.render(canvasIndex, 1);
-
     // Render.
+    this.deepRange.render(canvasIndex, 1);
     this.controls.setValue(canvasIndex);
-    // this.timeline.render(canvasId, canvas.label);
-    // this.pager.render(canvas.label, canvasIndex, this.canvases.length, ((canvasIndex / this.canvases.length) * 95) + 5);
+
     this.canvas.render({
       canvas,
       nextCanvas: this.canvases[canvasIndex + 1] ? this.canvases[canvasIndex + 1] : null,

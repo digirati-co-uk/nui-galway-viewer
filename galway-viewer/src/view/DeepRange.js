@@ -1,15 +1,29 @@
 import {
-  byLevelsReducer,
-  changePointsReducer,
-  createMatrix,
-  depthsReducer, div,
-  rangeReducer, setStyle
-} from "../utils";
+  assignNumber,
+  computeStyleFromItem,
+  CurrentLevel,
+  depthOf,
+  div,
+  findLevel,
+  flattenAll,
+  mapDepths,
+  matchesRange,
+  RANGE_DISPLAY_LARGE,
+  RANGE_DISPLAY_NONE,
+  RANGE_DISPLAY_PREV_NEXT,
+  setStyle,
+  sortByKey
+} from '../utils';
 
 export default class DeepRange {
 
-  constructor() {
+  static CSS_ITEM = 'galway-timeline__item';
+  static CSS_ITEM_ACTIVE = 'galway-timeline__item--active';
+  static CSS_ITEM_REPRESENTATION = 'galway-timeline__representation';
+  static CSS_TEMPORAL = 'galway-timeline__temporal';
+  static CSS_ITEM_CONTAINER = '.galway-timeline__item-container';
 
+  constructor() {
     this.structure = [
       {
         id: 'testing-1',
@@ -19,12 +33,24 @@ export default class DeepRange {
           {
             id: 'testing-1-1',
             label: 'testing-1-1',
-            range: [0, 5]
+            range: [0, 5],
+            children: [
+              {
+                id: 'testing-1-2-1',
+                label: 'testing-1-2-1',
+                range: [0, 1],
+              },
+              {
+                id: 'testing-1-1',
+                label: 'testing-1-1',
+                range: [1, 5],
+              }
+            ]
           },
           {
             id: 'testing-1-2',
             label: 'testing-1-2',
-            range: [6, 10]
+            range: [6, 10],
           },
         ]
       },
@@ -55,7 +81,6 @@ export default class DeepRange {
         label: 'testing-4',
         range: [41, 50],
         children: [
-          // @todo GAP FILLING, self reference
           {
             id: 'testing-4-1',
             label: 'testing-4-1',
@@ -70,248 +95,110 @@ export default class DeepRange {
       },
     ];
 
-    /*
-     * New Plan:
-     * - Find max depth.
-     * - For each depth create list of keys (next/prev).
-     * - Use these to find current/next/prev.
-     * - Most of it should be the same.
-     */
+    const maxDepth = depthOf(this.structure);
+    this.depthMap = mapDepths(this.structure, maxDepth);
 
-    function assignNumber(vars) {
-      return (singleItem) => {
-        singleItem.key = vars.num;
-        vars.num += 1;
-        if (singleItem.children) {
-          singleItem.children.forEach(assignNumber(vars))
-        }
+    this.structure.forEach(assignNumber({num: 0}));
+    this.topLevelKeys = this.levelKeys(0);
+    this.flatItems = flattenAll(this.structure).sort(sortByKey);
+
+    // Initial DOM elements
+    this.renderInitial();
+  }
+
+  onClickRange(func) {
+    this.$elements.forEach(
+      $el => {
+        const key = this.$elements.indexOf($el);
+        const item = this.flatItems[key];
+        $el.addEventListener('click', e => {
+          return func(item, key, $el, e);
+        })
       }
-    }
+    );
+  }
 
-    const vars = { num: 0 };
-    this.structure.forEach(assignNumber(vars));
-
-
-    this.parentDescription = this.structure.reduce((state, topLevel, currentIndex) => ({
-      ranges: rangeReducer(currentIndex)(state.ranges, topLevel),
-      changePoints: changePointsReducer(state.changePoints, topLevel),
-      depths: depthsReducer(0)(state.depths, topLevel)
-    }), {ranges: [], changePoints: [], depths: []});
-
-    this.byLevels = this.structure.reduce(byLevelsReducer(0), {
-      depths: [],
-      flattened: [],
-    });
-
-
-    this.byLevels.depths = this.byLevels.depths.map(singleDepth => {
-      const r = singleDepth.map(e => this.parentDescription.ranges[e]);
-      const missing = this.parentDescription.ranges.filter((i) => {
-        return r.indexOf(i) === -1;
-      });
-      // console.log('SINGLE: ', singleDepth);
-
-      return singleDepth
-        .reduce((state, item, k) => {
-          while (missing.length !== 0 && item > this.parentDescription.ranges.indexOf(missing[missing.length - 1])) {
-            state.push(this.parentDescription.ranges.indexOf(missing.shift()));
-          }
-          state.push(item);
-          return state;
-        }, []);
-    });
-
-
-    this.matrix = createMatrix(this.byLevels, this.parentDescription);
-
-    // this.matrix.map(m => console.table(m));
-
-    const initialMatrix = this.getMatrixByIndexAndDepth(452, 1);
-    // console.log(initialMatrix);
-    /*
-      <div class="galway-timeline__item" style="flex: 113">
-        <div class="galway-timeline__representation"></div>
-        <div class="galway-timeline__temporal">1888</div>
-      </div>
-     */
-    this.$elements = initialMatrix.map(
-      (visibility, key) => {
-        const item = this.keyToItem(key);
+  renderInitial() {
+    this.$elements = this.flatItems.map(
+      (item) => {
+        // Only show top level, hide the rest.
+        const visibility = this.topLevelKeys.indexOf(item.key) === -1 ? RANGE_DISPLAY_NONE : RANGE_DISPLAY_LARGE;
         return (
-          div({className: 'galway-timeline__item', style: this.computeStyleFromItem(item, visibility)}, [
-            div({className: 'galway-timeline__representation'}),
-            div({className: 'galway-timeline__temporal'}, [item.label]),
+          div({className: DeepRange.CSS_ITEM, style: computeStyleFromItem(visibility, item)}, [
+            div({className: DeepRange.CSS_ITEM_REPRESENTATION}),
+            div({className: DeepRange.CSS_TEMPORAL}, [item.label]),
           ])
-        )
+        );
       }
     );
 
-    const $el = document.querySelector('.galway-timeline__item-container');
+    const $el = document.querySelector(DeepRange.CSS_ITEM_CONTAINER);
     $el.innerHTML = '';
     this.$elements.forEach($element => {
       $el.appendChild($element);
-    })
-
-    // let n = 0;
-
-    // setInterval(() => {
-    //   n += 10;
-    //   const matrix = this.getMatrixByIndexAndDepth(n, 1);
-    //   const currentItem = this.byLevels.depths[1][this.getPositionInDepth(n, 1)];
-    //
-    //   console.log(currentItem, this.byLevels);
-    //
-    //   matrix.forEach((visibility, key) => {
-    //     const $element = this.$elements[key];
-    //     const item = this.keyToItem(key);
-    //     // console.log(key, pos);
-    //     if (key === currentItem) {
-    //       setStyle($element, { outline: '1px solid red' });
-    //     } else {
-    //       setStyle($element, { outline: 'none' });
-    //     }
-    //     setStyle($element, this.computeStyleFromItem(item, visibility));
-    //   })
-    // }, 500)
+    });
   }
 
-  keyToItem(key) {
-    return this.byLevels.flattened[key];
-  }
+  levelKeys = (level) => this.depthMap[level].items.map(item => item.key);
 
-  getPosition(index) {
-    return this.parentDescription.changePoints.reduce((state, item, k) => {
-      return index >= item ? k : state;
-    }, null) - 1;
-  }
-
-  getPositionInDepth(index, depth) {
-    return this.parentDescription.depths[depth].reduce((state, item, k) => {
-      return index >= item ? k : state;
-    }, null);
-  }
-
-  getMatrixByIndexAndDepth(index, depth) {
-    const pos = this.getPositionInDepth(index, depth);
-
-    return this.matrix[depth][pos];
-  }
-
-  findChildrenMatchingRange = (canvasIndex) => (found, structure, index) => {
-    if (found === false) {
-      const [from, to] = structure.range;
-      if (canvasIndex >= from && canvasIndex <= to) {
-        return structure;
-      }
-    }
-    return found;
-  };
-
-  findLevel = (arr, canvasIndex, targetLevel, level = 0) => {
-    if (!arr) {
-      return [];
-    }
-    if (targetLevel === level) {
-      return arr || [];
-    }
-    const found = arr.reduce(this.findChildrenMatchingRange(canvasIndex), false);
-    const nextLevel = level + 1;
-    if (targetLevel === nextLevel) {
-      return found.children ? found.children : [found];
-    }
-    return this.findLevel(found.children, targetLevel, level + 1);
-  };
-
-
-  render(canvasIndex, depth) {
-    const currentTopLevel = this.structure.reduce(this.findChildrenMatchingRange(canvasIndex), false);
-    const topLevelKeys = this.structure.map(item => item.key);
-
-    if (depth === 0) {
-      this.$elements.forEach(($element, key) => {
-        const currentLevel = topLevelKeys.indexOf(key);
-        if (currentLevel !== -1) {
-          const item = this.structure[currentLevel];
-          setStyle($element, {flex: item.range[1] - item.range[0], 'flex-basis': '0px'});
-          return;
-        }
-
-        setStyle($element, {flex: 0.0001, 'flex-basis': '0px'});
-      });
-      return;
-    }
-
-
-    // console.log('=> finding previous');
-    // const prevLevelViews = (
-    //   currentTopLevel.prev && currentTopLevel.prev.children
-    //     ? this.findLevel(currentTopLevel.prev.children, canvasIndex, depth)
-    //     : (currentTopLevel.prev ? [currentTopLevel.prev] : null)
-    // );
-    // const prevView = prevLevelViews ? prevLevelViews.shift() : null;
-
-    const currentLevelViews = this.findLevel(this.structure, canvasIndex, depth);
-
-    // console.log('=> finding next');
-    // const nextLevelViews = (
-    //   currentTopLevel.next && currentTopLevel.next.children
-    //     ? this.findLevel(currentTopLevel.next.children, canvasIndex, depth)
-    //     : (currentTopLevel.next ? [currentTopLevel.next] : null)
-    // );
-    // const nextView = nextLevelViews ? nextLevelViews.pop() : null;
-
-    const currentLevelKeys = currentLevelViews.map(item => item.key);
+  renderTopLevel(canvasIndex) {
     this.$elements.forEach(($element, key) => {
-      // if (
-      //   (prevView && prevView.key === key) ||
-      //   (nextView && nextView.key === key)
-      // ) {
-      //   setStyle($element, {flex: '0 0 80px'});
-      //   return;
-      // }
+      const currentLevel = this.topLevelKeys.indexOf(key);
+      const item = this.structure[currentLevel];
 
-      const currentLevel = currentLevelKeys.indexOf(key);
+      DeepRange.renderActive($element, item, canvasIndex);
+
       if (currentLevel !== -1) {
-        const item = currentLevelViews[currentLevel];
-        setStyle($element, {flex: item.range[1] - item.range[0], 'flex-basis': '0px'});
+        setStyle($element, computeStyleFromItem(RANGE_DISPLAY_LARGE, item));
         return;
       }
 
-      setStyle($element, {flex: 0.0001, 'flex-basis': '0px'});
+      setStyle($element, computeStyleFromItem(RANGE_DISPLAY_NONE, item));
     });
-
-    return;
-
-
-
-    const matrix = this.getMatrixByIndexAndDepth(canvasIndex, depth);
-
-    const currentItem = this.byLevels.depths[depth][this.getPositionInDepth(canvasIndex, depth)];
-
-    matrix.forEach((visibility, key) => {
-      const $element = this.$elements[key];
-      const item = this.keyToItem(key);
-      if (key === currentItem) {
-
-        $element.classList.add('galway-timeline__item--active');
-        // setStyle($element, {outline: '1px solid red'});
-      } else {
-        $element.classList.remove('galway-timeline__item--active');
-        // setStyle($element, {outline: 'none'});
-      }
-      setStyle($element, this.computeStyleFromItem(item, visibility));
-    })
-
   }
 
-  computeStyleFromItem(item, visibility) {
-    if (visibility === 0) {
-      return {flex: 0.0001, 'flex-basis': '0px'};
+  static renderActive($element, item, canvasIndex) {
+    if (matchesRange(item, canvasIndex)) {
+      $element.classList.add(DeepRange.CSS_ITEM_ACTIVE);
+    } else if ($element.classList.contains(DeepRange.CSS_ITEM_ACTIVE)) {
+      $element.classList.remove(DeepRange.CSS_ITEM_ACTIVE);
     }
-    if (visibility === 1) {
-      return {flex: 1, 'flex-basis': '40px'}
+  }
+
+  render(canvasIndex, depth) {
+    // If we are at the top level depth, we just render as normal.
+    if (depth === 0) {
+      return this.renderTopLevel(canvasIndex);
     }
 
-    return {flex: item.range[1] - item.range[0], 'flex-basis': '0px'}
+    // Here we look for the current "view" which is the sub-sections expanded out.
+    const currentLevelViews = findLevel(this.structure, canvasIndex, depth);
+    if (currentLevelViews.length === 0) {
+      // Default back to top level if we can't find a view.
+      return this.renderTopLevel(canvasIndex);
+    }
+
+    // Array of keys for the current level.
+    const fullLevelKeys = this.levelKeys(depth);
+    const currentLevel = new CurrentLevel(currentLevelViews, fullLevelKeys);
+
+    this.$elements.forEach(($element, key) => {
+      const item = currentLevel.findCurrent(key);
+      // Render the current item with class.
+      DeepRange.renderActive($element, item, canvasIndex);
+
+      if (currentLevel.isNext(key) || currentLevel.isPrevious(key)) {
+        setStyle($element, computeStyleFromItem(RANGE_DISPLAY_PREV_NEXT, item));
+        return;
+      }
+
+      if (item) {
+        setStyle($element, computeStyleFromItem(RANGE_DISPLAY_LARGE, item));
+        return;
+      }
+
+      setStyle($element, computeStyleFromItem(RANGE_DISPLAY_NONE, item));
+    });
+
   }
 }

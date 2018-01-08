@@ -127,8 +127,8 @@ export default class Canvas {
 
     // Preload previous and next <img/> tags.
     this.osdContainer.preloadImages({
-      next: this.imageContainer.getCachedImage(nextCanvas.id, buildImage(imageUrlNext)),
-      prev: this.imageContainer.getCachedImage(prevCanvas.id, buildImage(imageUrlPrev)),
+      next: nextCanvas ? this.imageContainer.getCachedImage(nextCanvas.id, buildImage(imageUrlNext)) : null,
+      prev: prevCanvas ? this.imageContainer.getCachedImage(prevCanvas.id, buildImage(imageUrlPrev)) : null,
     });
 
     // Reset open seadragon to default hidden view.

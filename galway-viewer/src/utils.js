@@ -201,87 +201,140 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
-export function byLevelsReducer(level, index = {n: 0}) {
-  return (state, {...range, children}) => {
-    state.depths[level] = state.depths[level] ? state.depths[level] : [];
-    state.depths[level].push(index.n);
-    state.flattened.push(range);
-    index.n++;
-    return children ? children.reduce(byLevelsReducer(level + 1, index), state) : state;
-  };
-}
+export class CurrentLevel {
+  constructor(currentLevelViews, fullLevelKeys) {
+    this.currentLevelViews = currentLevelViews;
+    this.keys = currentLevelViews.map(item => item.key);
+    this.first = fullLevelKeys.indexOf(currentLevelViews[0].key);
+    this.last = fullLevelKeys.indexOf(currentLevelViews[currentLevelViews.length - 1].key);
+    this.previous = this.first > 0 ? fullLevelKeys[this.first - 1] : null;
+    this.next = this.last < fullLevelKeys.length ? fullLevelKeys[this.last + 1] : null;
+  }
 
-export function rangeReducer(parentNum) {
-  return (state, range) => {
-    state.push(parentNum);
-    return range.children ? range.children.reduce(rangeReducer(parentNum), state) : state;
+  findCurrent(key) {
+    const index = this.keys.indexOf(key);
+    if (index !== -1) {
+      return this.currentLevelViews[index];
+    }
+  }
+
+  isNext(key) {
+    return (this.next && this.next === key);
+  }
+
+  isPrevious(key) {
+    return (this.previous && this.previous === key);
   }
 }
 
-export function changePointsReducer(state, range) {
-  state.push(range.range[0]);
-  return range.children ? range.children.reduce(changePointsReducer, state) : state;
+export function sortByKey(a, b) {
+  if (a.key > b.key) {
+    return 1;
+  }
+  if (a.key < b.key) {
+    return -1;
+  }
+  return 0;
 }
 
-export function depthsReducer(currentDepth) {
-  return (state, range) => {
-    state[currentDepth] = state[currentDepth] ? state[currentDepth] : [];
-    state[currentDepth] = state[currentDepth] ? state[currentDepth] : [];
-    state[currentDepth].push(range.range[0]);
+export function depthOf(object, level = 0) {
+  const levels = [];
+  for (const singleObj of object) {
+    if (singleObj.children) {
+      const depth = depthOf(singleObj.children, level + 1);
+      levels.push(depth);
+    }
+  }
+  level = Math.max(level, ...levels);
+  return level;
+}
 
-    return range.children ? range.children.reduce(depthsReducer(currentDepth + 1), state) : state;
+export function findLevel(arr, canvasIndex, targetLevel, level = 0) {
+  if (!arr) {
+    return [];
+  }
+  if (targetLevel === level) {
+    return arr || [];
+  }
+  const found = arr.reduce(findChildrenMatchingRange(canvasIndex), false);
+  const nextLevel = level + 1;
+  if (targetLevel === nextLevel) {
+    return found.children ? found.children : (found ? [found] : []);
+  }
+  return findLevel(found.children, targetLevel, nextLevel);
+}
+
+export const RANGE_DISPLAY_NONE = 'RANGE_DISPLAY_NONE';
+export const RANGE_DISPLAY_LARGE = 'RANGE_DISPLAY_LARGE';
+export const RANGE_DISPLAY_PREV_NEXT = 'RANGE_DISPLAY_PREV_NEXT';
+
+export function computeStyleFromItem(visibility, item) {
+  if (visibility === RANGE_DISPLAY_NONE) {
+    return {flex: 0.0001, 'flex-basis': '0px'};
+  }
+  if (visibility === RANGE_DISPLAY_PREV_NEXT) {
+    return {flex: '0 0 80px'};
+  }
+  if (visibility === RANGE_DISPLAY_LARGE && item) {
+    return {flex: item.range[1] - item.range[0], 'flex-basis': '0px'};
+  }
+  return {};
+}
+
+export function matchesRange(item, canvasIndex) {
+  if (!item || !item.range) {
+    return false;
+  }
+  const [from, to] = item.range;
+  return (canvasIndex >= from && canvasIndex <= to);
+}
+
+export function findChildrenMatchingRange(canvasIndex) {
+  return (found, structure) => {
+    if (found === false && matchesRange(structure, canvasIndex)) {
+      return structure;
+    }
+    return found;
+  }
+}
+
+export function flattenDepth(object, targetLevel, level = 0) {
+  if (targetLevel === level) {
+    return object;
+  }
+  return object.reduce((children, singleChild) => {
+    if ((level + 1) === targetLevel) {
+      return children.concat(singleChild.children ? singleChild.children : [singleChild]);
+    } else {
+      return children.concat(singleChild.children ? flattenDepth(singleChild.children, targetLevel, level + 1) : singleChild);
+    }
+  }, []);
+}
+
+export function flattenAll(object) {
+  return object.reduce((children, singleChild) => {
+    children.push(singleChild);
+    return children.concat(singleChild.children ? flattenAll(singleChild.children) : []);
+  }, []);
+}
+
+export function assignNumber(vars) {
+  return (singleItem) => {
+    singleItem.key = vars.num;
+    vars.num += 1;
+    if (singleItem.children) {
+      singleItem.children.forEach(assignNumber(vars));
+    }
   };
 }
 
-export function createMatrix(byLevels, parentDescription) {
-  const DISPLAY = {
-    COMPACT: 1,
-    RELATIVE: -1,
-    HIDDEN: 0,
-  };
-
-  return byLevels.depths.map(
-    (fullSingleDepth, n) => {
-        return fullSingleDepth.map(depth => {
-          const fullCurrent = byLevels.flattened[depth];
-            if (n > 0) {
-              return fullSingleDepth.reduce((state, k) => {
-                // console.log('parentDescription.ranges[depth]', parentDescription.ranges[k]);
-                if (parentDescription.ranges[k] === parentDescription.ranges[depth]) {
-                  // Previous.
-                  if (fullSingleDepth[fullSingleDepth.indexOf(k) - 1]) {
-                    const prev = fullSingleDepth[fullSingleDepth.indexOf(k) - 1];
-                    state[prev] = state[prev] === DISPLAY.RELATIVE ?  state[prev]: DISPLAY.COMPACT;
-                  }
-
-                  // Current.
-                  state[k] = DISPLAY.RELATIVE;
-
-
-                  if (fullSingleDepth[fullSingleDepth.indexOf(k) + 1]) {
-                    const next = fullSingleDepth[fullSingleDepth.indexOf(k) + 1];
-                    state[next] = state[next] === DISPLAY.RELATIVE ?  state[next]: DISPLAY.COMPACT;
-                  }
-                  // // Next.
-                  // if ((k + 1) < byLevels.flattened.length) {
-                  //   state[k + 1] = DISPLAY.COMPACT;
-                  // }
-                } else {
-                  // state[k] = state[k] === 1 ? state[k] : DISPLAY.HIDDEN;
-                }
-                // console.log('zero:', state[0]);
-                return state;
-              }, (new Array(byLevels.flattened.length)).fill(DISPLAY.HIDDEN)); // Hide everything by default.
-            }
-
-            return byLevels.depths[0].reduce((state, topLevelItem) => {
-              state[topLevelItem] = DISPLAY.RELATIVE;
-              return state;
-            }, (new Array(byLevels.flattened.length)).fill(DISPLAY.HIDDEN)); // Hide everything by default.)
-            // console.log('PD', byLevels.depths[0])
-            // console.log('REL', depth, (new Array(depth.length)).fill(DISPLAY.RELATIVE));
-            // return (new Array(byLevels.flattened.length)).fill(DISPLAY.RELATIVE); // Top level is all relative.
-          }
-        )
+export function mapDepths(structure, maxDepth) {
+  const depthMap = [];
+  for (let i = 0; i <= maxDepth; i++) {
+    depthMap.push({
+      depth: i,
+      items: flattenDepth(structure, i)
     });
+  }
+  return depthMap;
 }
