@@ -13,6 +13,8 @@ $transition-speed: .2s;
     margin: 12px 14px;
 
     h1 {
+      width: 100%;
+      text-align: center;
       font-size: 24px;
       line-height: 28px;
       font-weight: normal;
@@ -76,12 +78,14 @@ $transition-speed: .2s;
 
   &__breadcrumb-back {
     flex: 0 0 20px;
+    display: none;
   }
   &__breadcrumb-container {
     flex: 1;
   }
 
   &__breadcrumb-item {
+    text-align: center;
     flex: 1;
     line-height: 24px;
     padding-left: 10px;
@@ -124,10 +128,10 @@ $transition-speed: .2s;
   }
 
   &__sub-title {
-    display: flex;
     margin: 10px 20px;
     font-size: 15px;
     line-height: 20px;
+    text-align: center;
   }
 
   &__temporal {
