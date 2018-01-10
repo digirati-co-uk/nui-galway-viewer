@@ -5,6 +5,7 @@ $transition-speed: .2s;
 
 .galway-timeline {
   background: #fff;
+  height: 145px;
 
   &__title {
     display: flex;
@@ -29,6 +30,10 @@ $transition-speed: .2s;
       color: $subtitle-colour;
       font-size: 12px;
       line-height: 14px;
+    }
+
+    &--hidden {
+      display: none;
     }
   }
 
@@ -55,7 +60,7 @@ $transition-speed: .2s;
     display: flex;
     flex-direction: row;
     margin: 10px 15px;
-    transition: height $transition-speed;
+    //transition: height $transition-speed;
     height: 0;
     overflow: hidden;
 
@@ -116,6 +121,13 @@ $transition-speed: .2s;
     @media (max-width: 40em) {
       height: 5px;
     }
+  }
+
+  &__sub-title {
+    display: flex;
+    margin: 10px 20px;
+    font-size: 15px;
+    line-height: 20px;
   }
 
   &__temporal {
