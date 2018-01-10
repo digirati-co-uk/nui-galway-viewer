@@ -1,0 +1,40 @@
+.galway-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+
+  &--inactive {
+    pointer-events: none;
+  }
+
+  &__menu {
+    background: #fff;
+    width: 290px;
+    z-index: 10;
+    transition: transform .4s;
+
+    .galway-drawer--inactive & {
+      transform: translateX(-290px);
+    }
+  }
+
+  &__background {
+    content: '';
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    transition: background .4s;
+
+    .galway-drawer--inactive & {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+}

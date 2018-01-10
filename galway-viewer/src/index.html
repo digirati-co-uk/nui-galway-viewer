@@ -2,64 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no; viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>O'Shaughnessy Memoir Viewer, NUI Galway Library</title>
     <script src="https://tomcrane.github.io/iiif-expts/getthumbnail/iiif.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="Galway">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-<body>
+<body class="galway-layout main" data-force-https="true" data-use-canvas-labels="true">
 
-<main class="main" id="app" data-force-https="true" data-use-canvas-labels="true">
-    <div class="start-screen start-screen--hidden">
-        <div class="start-screen__dismiss start-screen__dismiss--lightbox"></div>
-        <div class="start-screen__inner">
-            <div class="start-screen__dismiss start-screen__dismiss--close">&times;</div>
-            <div class="start-screen__title">O'Shaughnessy's Memoir "Engineering Experiences: From Honolulu to Hetch Hetchy"</div>
-            <div class="start-screen__body">
-              Navigate the O'Shaughnessy's memoir by using the timeline (at the top) or by paging (next or previous). The timeline is categorised by key sections of the memoir.</br><img src="https://user-images.githubusercontent.com/8266711/31308689-cc42141c-ab72-11e7-97fa-c1ff8f6b0df7.gif" alt="timeline" style="max-width:100%;"></br>
-                  Pages have links that display additional contextual information from the digital archive.</br>
-                  This memoir presents a digitised copy of O'Shaughnessy's unpublished memoir, Engineering Experiences: From Honolulu to Hetch Hetchy which describes his life from childhood until 1912, shortly before his appointment as City Engineer of San Francisco.</br>
-                  This work follows the specifications of the <a target="_blank" href="http://iiif.io">International Image Interoperability Framework (IIIF)</a>, with a new and innovative timeline navigation application. The IIIF suite of specifications facilitates interoperability between applications that serve, display, and manipulate images. IIIF helps further sharing of images between cultural heritage institutions who provide access to complementary digital resources.</br>
-                  This version of the 'Galway Viewer' is a beta version, released 11 October 2017. Issues can be logged at <a target="_blank" href="https://github.com/digirati-co-uk/nui-galway-viewer/issues">GitHub</a> or by contacting the <a href="mailto:digitallibrary@nuigalway.ie">Digital Publishing and Innovation team</a> at the NUI Galway Library.
+<section class="galway-start-screen galway-start-screen--hidden">
+    <div class="galway-start-screen__dismiss galway-start-screen__dismiss--lightbox"></div>
+    <div class="galway-start-screen__inner">
+        <div class="galway-start-screen__dismiss galway-start-screen__dismiss--close">&times;</div>
+        <div class="galway-start-screen__title mdc-typography">
+            O'Shaughnessy's Memoir "Engineering Experiences: From Honolulu to Hetch Hetchy"
+        </div>
+        <div class="galway-start-screen__body mdc-typography">
+            <div class="galway-start-screen__content">
+                <p>Navigate the O'Shaughnessy's memoir by using the timeline (at the top) or by paging (next or
+                    previous).
+                    The timeline is categorised by key sections of the memoir.</p>
+                <p>
+                    Pages have links that display additional contextual information from the digital archive.
+                </p>
+                <p>
+                    This memoir presents a digitised copy of O'Shaughnessy's unpublished memoir, Engineering
+                    Experiences:
+                    From Honolulu to Hetch Hetchy which describes his life from childhood until 1912, shortly before his
+                    appointment as City Engineer of San Francisco.
+                </p>
+                <p>
+                    This work follows the specifications of the <a target="_blank" href="http://iiif.io">International
+                    Image
+                    Interoperability Framework (IIIF)</a>, with a new and innovative timeline navigation application.
+                    The
+                    IIIF suite of specifications facilitates interoperability between applications that serve, display,
+                    and
+                    manipulate images. IIIF helps further sharing of images between cultural heritage institutions who
+                    provide access to complementary digital resources.</p>
+                <p>
+                    This version of the 'Galway Viewer' is a beta version, released 11 October 2017. Issues can be
+                    logged at
+                    <a target="_blank" href="https://github.com/digirati-co-uk/nui-galway-viewer/issues">GitHub</a> or
+                    by
+                    contacting the <a href="mailto:digitallibrary@nuigalway.ie">Digital Publishing and Innovation
+                    team</a>
+                    at the NUI Galway Library.
+                </p>
             </div>
-            <div class="start-screen__dismiss start-screen__dismiss--start">Start</div>
+            <div class="galway-start-screen__image">
+                <img src="https://iiif.library.nuigalway.ie/loris/p135/memoir-callouts/p135_4_8.tif/full/!500,500/0/default.jpg"
+                     alt=""/>
+                <div class="galway-start-screen__dismiss galway-start-screen__dismiss--start">Start</div>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="timeline timeline--colourful timeline--hide-years-on-hover timeline--alternative timeline--always-show-tooltip">
-        <div class="timeline__item-container"></div>
-        <div class="timeline__slider"></div>
+<div class="supplemental">
+    <div class="supplemental__lightbox"></div>
+    <div class="supplemental__inner">
+        <div class="supplemental__close">&times;</div>
+        <div class="supplemental__title"></div>
+        <div class="supplemental__images"></div>
+        <div class="supplemental__description"></div>
     </div>
+</div>
 
-    <div class="paging">
-        <button class="paging__previous">&lsaquo;</button>
-        <button class="paging__next">&rsaquo;</button>
-        <span class="paging__position"></span>
+<aside class="galway-drawer galway-drawer--inactive">
+    <div class="galway-drawer__menu">
+        <ul>
+            <li>soon</li>
+        </ul>
     </div>
-    <div class="zoom">
-        <button class="zoom__in">&plus;</button>
-        <button class="zoom__out">&minus;</button>
-    </div>
+    <div class="galway-drawer__background"></div>
+</aside>
 
-    <div class="viewer-container">
-        <div class="viewer"></div>
-    </div>
+<header class="galway-header galway-layout__top">
+    <button class="galway-header__menu material-icons mdc-toolbar__menu-icon">menu</button>
+    <span class="galway-header__title mdc-typography">0’Shaughnessy Memoirs</span>
+    <button class="galway-header__share material-icons mdc-toolbar__menu-icon">share</button>
+    <button class="galway-header__info material-icons mdc-toolbar__menu-icon">info</button>
+</header>
 
-    <div class="supplemental" style="display: none">
-        <div class="supplemental__lightbox"></div>
-        <div class="supplemental__inner">
-            <div class="supplemental__close">&times;</div>
-            <div class="supplemental__title"></div>
-            <div class="supplemental__images"></div>
-            <div class="supplemental__description"></div>
+<nav class="galway-timeline galway-layout__top">
+    <div class="galway-timeline__breadcrumbs">
+        <div class="galway-timeline__breadcrumb-prefix">
+            Timeline
+        </div>
+        <!--<div class="galway-timeline__breadcrumb-back material-icons">keyboard_arrow_left</div>-->
+        <div class="galway-timeline__breadcrumb-container">
+
         </div>
     </div>
-    <div id="void" style="visibility: hidden; height: 0; overflow: hidden;"></div>
+    <div class="galway-timeline__title">
+        <h1 class="mdc-typography">Childhood and Schooling</h1>
+        <span class="mdc-typography">1864 -1881</span>
+    </div>
+    <div class="galway-timeline__item-container">
+        <div class="galway-timeline__item galway-timeline__item--active" style="flex: 249">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1864</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 55">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1881</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 153">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1885</div>
+        </div>
+
+        <!-- this is hidden -->
+        <div class="galway-timeline__item" style="flex: 0.0001">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1886</div>
+        </div>
+        <!-- / this is hidden -->
+
+        <div class="galway-timeline__item" style="flex: 113">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1888</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 103">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1893</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 365">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1899</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 77">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1906</div>
+        </div>
+
+        <div class="galway-timeline__item" style="flex: 120">
+            <div class="galway-timeline__representation"></div>
+            <div class="galway-timeline__temporal">1907</div>
+        </div>
+    </div>
+</nav>
+
+<main class="galway-player mdc-typography galway-layout__content">
+    <nav class="galway-player__controls">
+        <button class="galway-player__control material-icons galway-player__control--zoom-in">add</button>
+        <button class="galway-player__control material-icons galway-player__control--zoom-out">remove</button>
+        <button class="galway-player__control material-icons galway-player__control--fullscreen">fullscreen</button>
+    </nav>
 </main>
 
+<footer class="galway-controls galway-layout__footer">
+    <div class="galway-controls__slider mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+         aria-label="Select Value">
+        <div class="mdc-slider__track-container">
+            <div class="mdc-slider__track"></div>
+        </div>
+        <div class="mdc-slider__thumb-container">
+            <div class="mdc-slider__pin">
+                <span class="mdc-slider__pin-value-marker"></span>
+            </div>
+            <svg class="mdc-slider__thumb" width="21" height="21">
+                <circle cx="10.5" cy="10.5" r="7.875"></circle>
+            </svg>
+            <div class="mdc-slider__focus-ring"></div>
+        </div>
+    </div>
+
+    <nav class="galway-controls__pagination">
+        <button class="galway-controls__button galway-controls__button--previous material-icons">navigate_before</button>
+        <button class="galway-controls__button galway-controls__button--next material-icons">navigate_next</button>
+    </nav>
+</footer>
+<div id="void" style="visibility: hidden; height: 0; overflow: hidden;"></div>
 <script type="application/javascript"
         src="//cdn.jsdelivr.net/npm/openseadragon@2.2/build/openseadragon/openseadragon.min.js"></script>
 </body>

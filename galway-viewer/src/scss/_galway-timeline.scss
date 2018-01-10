@@ -1,0 +1,173 @@
+$subtitle-colour: #ccc !default;
+$active-item: #8BC34A !default;
+$inactive-item: #C8E6C9 !default;
+$link-color: $pallet-3-3 !default;
+$transition-speed: .2s;
+
+.galway-timeline {
+  background: #fff;
+
+  &__title {
+    display: flex;
+    align-items: baseline;
+    margin: 12px 14px;
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: normal;
+      margin: 0 12px 0 0;
+      transition: all $transition-speed;
+
+      @media (max-width: 40em) {
+        flex: 1;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    span {
+      display: none;
+      color: $subtitle-colour;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__item-container {
+    height: 50px;
+    margin: 15px;
+    display: flex;
+    @media (max-width: 40em) {
+      margin: 5px 10px;
+      height: 20px;
+      pointer-events: none;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    flex: 1;
+    transition: flex $transition-speed;
+    cursor: pointer;
+  }
+
+  &__breadcrumb-prefix {
+    //color: $link-color;
+    color: #000;
+    line-height: 20px;
+    font-size: 13px;
+  }
+
+  &__breadcrumbs {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 15px;
+    transition: height $transition-speed;
+    //height: 0;
+    overflow: hidden;
+
+    &--active {
+      //height: 25px;
+
+      & ~ .galway-timeline__title h1 {
+        //font-size: 1em;
+        //line-height: 1.2em;
+      }
+    }
+    @media (max-width: 40em) {
+      display: none;
+    }
+  }
+
+  &__breadcrumb-back {
+    flex: 0 0 20px;
+  }
+  &__breadcrumb-container {
+    flex: 1;
+  }
+
+  &__breadcrumb-item {
+    position: relative;
+    margin-left: 25px;
+    flex: 1;
+    color: $link-color;
+    line-height: 20px;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($link-color, 10%);
+    }
+
+    &:before {
+      color: #000;
+      left: -15px;
+      position: absolute;
+      content: '\027A4';
+      font-size: 8px;
+      line-height: 20px;
+    }
+  }
+
+  &__representation {
+    background: $pallet-3-3;
+    height: 15px;
+    margin: 1px 1px 10px;
+    flex: 100;
+    transition: opacity $transition-speed;
+    cursor: pointer;
+    opacity: 0.5;
+
+    .galway-timeline__item--children.galway-timeline__item--active:hover & {
+      // animation: galway-timeline__item--pulse 1s infinite;
+
+      @at-root {
+        @keyframes galway-timeline__item--pulse {
+          0% {
+            opacity: 0.75;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+
+    .galway-timeline__item--active & {
+      opacity: 1;
+    }
+
+    @media (max-width: 40em) {
+      height: 5px;
+    }
+  }
+
+  &__temporal {
+    color: #000;
+    font-size: 12px;
+    line-height: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+    @media (max-width: 40em) {
+      display: none;
+    }
+    .galway-timeline__item--active & {
+      font-weight: 600;
+    }
+
+    .galway-timeline__item--active.galway-timeline__item--children & {
+      color: $link-color;
+      &:hover {
+        color: darken($link-color, 10%);
+      }
+      &:after {
+        padding-left: 5px;
+        content: ' \25BE'
+      }
+    }
+  }
+}

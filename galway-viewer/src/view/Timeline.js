@@ -1,173 +1,107 @@
-import {div, startDurationTime} from '../utils';
+import DeepRange from './DeepRange';
+import {div, renderTemporal} from '../utils';
 
-class Timeline {
+export default class Timeline {
+  constructor($el, initialDepth = 0) {
+    // .galway-timeline
+    this.$el = $el;
 
-  constructor($el, navigateToCanvas) {
-    this.$timeline = $el;
-    this.$canvasDisplayRanges = $el.querySelector('.timeline__item-container');
-    this.$sliderContainer = $el.querySelector('.timeline__slider');
-    this.minCanvasWidth = parseFloat($el.getAttribute('data-min-width')) || 0;
-    this.displayRanges = [];
-    this.currentRange = null;
-    this.currentCanvas = null;
-    this.navigateToCanvas = navigateToCanvas;
+    // Deep range slider.
+    this.deepRange = new DeepRange($el.querySelector('.galway-timeline__item-container'));
 
-    // Mobile
-    this.mobileRanges = div({className: 'timeline__menu'}, [
-      this.mobileToggle = div({className: 'timeline__toggle'}),
-    ]);
-    this.mobileToggle.addEventListener('click', () => {
-      this.mobileRanges.classList.toggle('timeline__menu--active');
-    });
-    this.$timeline.appendChild(this.mobileRanges);
-  }
-
-  setDisplayRanges(displayRanges, canvases) {
-    const relative = 100.0 - this.minCanvasWidth;
-
-    const {start, duration} = startDurationTime(displayRanges);
-    const canvasWidth = relative / canvases.length;
-    const minWidth = this.minCanvasWidth / displayRanges.length;
-
-    this.displayRanges = displayRanges.map((displayRange, index) => {
-      const offset = displayRange.start.getTime() - start.getTime();
-      const displayRangeDuration = displayRange.end.getTime() - displayRange.start.getTime();
-      const canvasIndex = canvases.findIndexById(displayRange.canvases[0].id);
-
-      return {
-        ...displayRange,
-        canvas: displayRange.canvases[0].id,
-        canvasIds: displayRange.canvases.map(c => c.id),
-        index,
-
-        // Relative to range.
-        timeOffset: offset,
-        displayRangeDuration,
-        rangeWidth: (displayRangeDuration * relative) / duration,
-        rangeOffset: offset * relative / duration,
-        next: this.displayRanges[index + 1] ? this.displayRanges[index + 1] : null,
-        prev: this.displayRanges[index - 1] ? this.displayRanges[index - 1] : null,
-        // Relative to canvas.
-        canvasWidth: canvasWidth * displayRange.canvases.length + minWidth,
-        canvasOffset: canvasIndex * canvasWidth + (minWidth * index),
-      };
-    });
-
-    this.makeCanvasNav(this.displayRanges);
-    this.makeMobileNav(this.displayRanges);
-  }
-
-  static createItem({label, year, endYear, left, width}) {
-    return div({
-      className: 'timeline__item',
-      style: {
-        left: left ? `${left}%` : '0',
-        width: width ? `${width}%` : '0',
-      },
-    }, [
-      div({ className: 'timeline__year' }, [
-        endYear ? (
-          `${year} – ${endYear}`
-        ) : (
-          year
-        )
-      ]),
-      div({ className: 'timeline__box' }, [
-        div({ className: 'timeline__label' }, [label]),
-        div({ className: 'timeline__tooltip' }, [label])
-      ])
-    ]);
-  }
-
-  makeCanvasNav(displayRanges) {
-    // Display
-    this.displayRanges = displayRanges.map(range => {
-      const navCanvas = Timeline.createItem({
-        left: range.canvasOffset,
-        width: range.canvasWidth,
-        label: range.label,
-        year: range.start.getFullYear(),
-        endYear: range.end ? range.end.getFullYear() : null,
-      });
-
-      navCanvas.setAttribute('data-rangeid', range.id);
-      navCanvas.setAttribute('data-canvasid', range.canvas);
-
-      navCanvas.addEventListener('click', () => {
-        this.navigateToCanvas(range.canvas);
-      });
-
-      return {
-        ...range,
-        $canvasNav: navCanvas,
-      };
-    });
-
-    this.displayRanges.map(
-      item => this.$canvasDisplayRanges.appendChild(item.$canvasNav),
+    this.title = new TimelineTitle(
+      $el.querySelector('.galway-timeline__title'),
+      $el.querySelector('.galway-timeline__breadcrumbs')
     );
-  }
 
-  makeMobileNav(displayRanges) {
-    // Display
-    this.displayRanges = displayRanges.map(range => {
-      const navCanvas = Timeline.createItem({
-        label: range.label,
-        year: range.start.getFullYear(),
-        endYear: range.end ? range.end.getFullYear() : null,
-      });
-
-      navCanvas.setAttribute('data-rangeid', range.id);
-      navCanvas.setAttribute('data-canvasid', range.canvas);
-
-      navCanvas.addEventListener('click', () => {
-        this.mobileRanges.classList.remove('timeline__menu--active');
-        this.navigateToCanvas(range.canvas);
-      });
-
-      return {
-        ...range,
-        $mobileNav: navCanvas,
-      };
-    });
-
-    this.displayRanges.map(
-      item => this.mobileRanges.appendChild(item.$mobileNav),
-    );
-  }
-
-  render(canvasId, label) {
-    // Remove previously selected.
-    const selected = this.$canvasDisplayRanges.querySelector('.timeline__item--active');
-    if (selected) {
-      selected.classList.remove('timeline__item--active');
-    }
-    const selectedMobile = this.mobileRanges.querySelector('.timeline__item--active');
-    if (selectedMobile) {
-      selectedMobile.classList.remove('timeline__item--active');
-    }
-
-    // Find new to select.
-    this.displayRanges.forEach(range => {
-      if (range.canvasIds && range.canvasIds.indexOf(canvasId) !== -1) {
-        this.currentRange = range;
+    this.title.onBack(() => {
+      if (this.deepRange.inRange(this.depth - 1)) {
+        this.depth -= 1;
+        this.render(this.currentCanvasIndex);
       }
     });
 
-    this.mobileToggle.innerText = this.currentRange ? this.currentRange.label : label;
-
-    if (!this.currentRange) {
-      return;
-    }
-
-    // Add text.
-    this.mobileToggle.innerText = this.currentRange.label;
-    // Add class.
-    this.currentRange.$canvasNav.classList.add('timeline__item--active');
-    this.currentRange.$mobileNav.classList.add('timeline__item--active');
+    // Initial dept to show.
+    this.depth = initialDepth;
   }
 
+  onClickRange(func) {
+    return this.deepRange.onClickRange((item, key, $el, e) => {
+      if (
+        // this.deepRange.isCurrent(item, this.currentCanvasIndex) &&
+        this.deepRange.inRange(this.depth + 1)
+      ) {
+        this.depth += 1;
+      }
+      func(item, key, $el, e);
+    });
+  }
 
+  onClickBreadcrumb(func) {
+    return this.title.setBreadcrumbClickHandler((item, e) => {
+      if (
+        this.deepRange.inRange(this.depth - 1)
+      ) {
+        this.depth -= 1;
+      }
+      func(item, e);
+    });
+  }
+
+  render(canvasIndex) {
+    this.currentCanvasIndex = canvasIndex;
+    this.deepRange.render(canvasIndex, this.depth);
+    const currentRange = this.deepRange.findCurrent();
+    if (currentRange) {
+      const breadCrumbs = this.deepRange.getBreadCrumbs(currentRange.item.key);
+      this.title.render(breadCrumbs);
+    }
+  }
 }
 
-export default Timeline;
+class TimelineTitle {
+
+  constructor($el, $breadcrumbs) {
+    this.$el = $el;
+    this.h1 = $el.querySelector('h1');
+    this.span = $el.querySelector('span');
+    this.breadcrumbs = $breadcrumbs;
+    this.back = $breadcrumbs.querySelector('.galway-timeline__breadcrumb-back');
+    this.breadcrumbContainer = $breadcrumbs.querySelector('.galway-timeline__breadcrumb-container');
+  }
+
+  onBack(func) {
+    if (this.back) {
+      return this.back.addEventListener('click', func);
+    }
+  }
+
+  createBreadcrumb(item) {
+    return div({
+      className: 'galway-timeline__breadcrumb-item',
+      onClick: (e) => this.breadCrumbClickHandler ? this.breadCrumbClickHandler(item, e) : null
+    }, [
+      item.label,
+    ]);
+  }
+
+  setBreadcrumbClickHandler(onClick) {
+    this.breadCrumbClickHandler = onClick;
+  }
+
+  render(breadcrumb) {
+    this.h1.innerText = breadcrumb.item.label;
+    this.span.innerText = renderTemporal(breadcrumb.item);
+    this.breadcrumbContainer.innerHTML = '';
+    if (breadcrumb.path && breadcrumb.path.length !== 0) {
+      breadcrumb.path.forEach(p => {
+        const crumb = this.createBreadcrumb(p);
+        this.breadcrumbContainer.appendChild(crumb);
+      });
+      this.breadcrumbs.classList.add('galway-timeline__breadcrumbs--active');
+    } else {
+      this.breadcrumbs.classList.remove('galway-timeline__breadcrumbs--active');
+    }
+  }
+
+}
