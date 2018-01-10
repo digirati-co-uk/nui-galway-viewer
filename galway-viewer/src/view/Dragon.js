@@ -31,12 +31,6 @@ export default class Dragon {
     this.state = {isOpen: true, isLoaded: false, isLoading: false, isClosed: true};
     this.canvasContent = canvas;
     this.$container = div({ className: 'dragon' });
-    document.querySelector('.zoom__in').addEventListener('click', () => {
-      this.activeOsd.then(osd => osd.viewport.zoomBy(1.2));
-    });
-    document.querySelector('.zoom__out').addEventListener('click', () => {
-      this.activeOsd.then(osd => osd.viewport.zoomBy(0.8));
-    });
     this.activeOsd = new Promise(resolve => {
       this.resolveOsd = resolve;
     });
@@ -107,6 +101,14 @@ export default class Dragon {
 
   zoomBy(num) {
     return this.activeOsd.then(osd => osd.viewport.zoomBy(num));
+  }
+
+  fullScreen() {
+    return this.activeOsd.then(osd => osd.setFullScreen(true));
+  }
+
+  exitFullScreen() {
+    return this.activeOsd.then(osd => osd.setFullScreen(false));
   }
 
   changeState(func, $target) {

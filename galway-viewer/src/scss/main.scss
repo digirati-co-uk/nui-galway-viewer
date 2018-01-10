@@ -1,0 +1,46 @@
+// primary colours
+$primary-mulberry: #68075A;
+$primary-midnight-blue: #1B4163;
+$primary-jade: #8AA793;
+$primary-dusk-blue: #8FB7C3;
+
+// Pallet 3
+$pallet-3-1: #02AB5E;
+$pallet-3-2: #22B998;
+$pallet-3-3: #00AEB2;
+$pallet-3-4: #8ABCBE;
+$pallet-3-5: #8BBC56;
+$pallet-3-6: #C3DA34;
+$pallet-3-7: #007D6C;
+$pallet-3-8: #73A49C;
+$pallet-3-9: #789C63;
+$pallet-3-10: #A1C195;
+
+
+$header-color: $primary-mulberry;
+
+$subtitle-colour: $primary-jade !default;
+$active-item: $primary-midnight-blue !default;
+$inactive-item: $primary-dusk-blue !default;
+
+@import "./galway-header";
+@import "./galway-timeline";
+@import "./galway-player";
+@import "./galway-layout";
+@import "./galway-controls";
+@import "./galway-drawer";
+@import "./galway-annotation";
+@import "./galway-annotation-overlay";
+@import "./galway-start-screen";
+
+html, body {
+  background: #388E3C;
+  position:fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+main {
+  overflow: hidden;
+  height: 100%;
+}
