@@ -1,6 +1,7 @@
 $subtitle-colour: #ccc !default;
 $active-item: #8BC34A !default;
 $inactive-item: #C8E6C9 !default;
+$pallet-3-2: #22B998 !default;
 $transition-speed: .2s;
 
 .galway-timeline {
@@ -50,21 +51,27 @@ $transition-speed: .2s;
     cursor: pointer;
   }
 
+  &__breadcrumb-prefix {
+    color: $pallet-3-2;
+    line-height: 20px;
+    font-size: 13px;
+  }
+
   &__breadcrumbs {
     clear: both;
     display: flex;
     flex-direction: row;
     margin: 10px 15px;
     transition: height $transition-speed;
-    height: 0;
+    //height: 0;
     overflow: hidden;
 
     &--active {
-      height: 25px;
+      //height: 25px;
 
       & ~ .galway-timeline__title h1 {
-        font-size: 1em;
-        line-height: 1.2em;
+        //font-size: 1em;
+        //line-height: 1.2em;
       }
     }
   }
@@ -77,10 +84,20 @@ $transition-speed: .2s;
   }
 
   &__breadcrumb-item {
+    position: relative;
+    margin-left: 25px;
     flex: 1;
-    line-height: 24px;
-    padding-left: 10px;
+    color: $pallet-3-2;
+    line-height: 20px;
+    font-size: 13px;
     cursor: pointer;
+    &:before {
+      left: -15px;
+      position: absolute;
+      content: '\027A4';
+      font-size: 8px;
+      line-height: 20px;
+    }
   }
 
   &__representation {
@@ -90,9 +107,10 @@ $transition-speed: .2s;
     flex: 100;
     transition: opacity $transition-speed;
     cursor: pointer;
+    opacity: 0.5;
 
     .galway-timeline__item--children.galway-timeline__item--active:hover & {
-      animation: galway-timeline__item--pulse 1s infinite;
+      // animation: galway-timeline__item--pulse 1s infinite;
 
       @at-root {
         @keyframes galway-timeline__item--pulse {
@@ -110,7 +128,7 @@ $transition-speed: .2s;
     }
 
     .galway-timeline__item--active & {
-      opacity: 0.5;
+      opacity: 1;
     }
 
     @media (max-width: 40em) {
@@ -125,6 +143,9 @@ $transition-speed: .2s;
     cursor: pointer;
     @media (max-width: 40em) {
       display: none;
+    }
+    .galway-timeline__item--active & {
+      font-weight: 600;
     }
   }
 }

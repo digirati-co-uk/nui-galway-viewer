@@ -71,7 +71,9 @@ class TimelineTitle {
   }
 
   onBack(func) {
-    return this.back.addEventListener('click', func);
+    if (this.back) {
+      return this.back.addEventListener('click', func);
+    }
   }
 
   createBreadcrumb(item) {
@@ -90,8 +92,8 @@ class TimelineTitle {
   render(breadcrumb) {
     this.h1.innerText = breadcrumb.item.label;
     this.span.innerText = renderTemporal(breadcrumb.item);
+    this.breadcrumbContainer.innerHTML = '';
     if (breadcrumb.path && breadcrumb.path.length !== 0) {
-      this.breadcrumbContainer.innerHTML = '';
       breadcrumb.path.forEach(p => {
         const crumb = this.createBreadcrumb(p);
         this.breadcrumbContainer.appendChild(crumb);
