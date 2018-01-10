@@ -29,6 +29,306 @@ export default class DeepRange {
     this.structure = [
       {
         "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r1",
+        "label": "Childhood and Schooling",
+        "temporal": [
+          1864,
+          1881
+        ],
+        "range": [
+          2,
+          37
+        ],
+        "children": [
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
+            "label": "Living with maternal grandparents",
+            "temporal": [
+              1866
+            ],
+            "range": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
+            "label": "Pallaskenry girls' National School",
+            "temporal": [
+              1868
+            ],
+            "range": [
+              5,
+              6
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
+            "label": "Pallaskenry boys' National School",
+            "temporal": [
+              1870
+            ],
+            "range": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
+            "label": "Childhood mischief",
+            "temporal": [
+              187
+            ],
+            "range": [
+              7,
+              16
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
+            "label": "Marriage of Aunt Alice",
+            "temporal": [
+              1872
+            ],
+            "range": [
+              17,
+              18
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
+            "label": "Marriage of Uncle Maurice",
+            "temporal": [
+              1873
+            ],
+            "range": [
+              22,
+              24
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
+            "label": "Moriarty's wake",
+            "temporal": [
+              1873
+            ],
+            "range": [
+              27,
+              28
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r9",
+            "label": "Escape to Kilkerin",
+            "temporal": [
+              1873
+            ],
+            "range": [
+              30,
+              32
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r10",
+            "label": "School in Flean, near Loughill",
+            "temporal": [
+              1874
+            ],
+            "range": 32
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r11",
+            "label": "School in Mount Trenchard",
+            "temporal": [
+              1875,
+              1880
+            ],
+            "range": [
+              33,
+              34
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r12",
+            "label": "School in Rockwell College",
+            "temporal": [
+              1881
+            ],
+            "range": [
+              34,
+              37
+            ]
+          }
+        ]
+      },
+      {
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r13",
+        "label": "University",
+        "temporal": [
+          1881,
+          1884
+        ],
+        "range": [
+          35,
+          45
+        ],
+        "children": [
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r14",
+            "label": "Scholarship to Queen's College Cork",
+            "temporal": [
+              1881
+            ],
+            "range": [
+              38,
+              41
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r15",
+            "label": "Move to Queen's College Galway",
+            "temporal": [
+              1882
+            ],
+            "range": [
+              42,
+              44
+            ]
+          }
+        ]
+      },
+      {
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r16",
+        "label": "San Francisco and Early Work",
+        "temporal": [
+          1885,
+          1888
+        ],
+        "range": [
+          46,
+          67
+        ],
+        "children": [
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r17",
+            "label": "Emigration",
+            "temporal": [
+              1885
+            ],
+            "range": [
+              46,
+              49
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r18",
+            "label": "Arrival in San Francisco",
+            "temporal": [
+              1885
+            ],
+            "range": [
+              49,
+              51
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r19",
+            "label": "First Engineering Work, Sierra Valley & Mohawk Railroad Co.",
+            "temporal": [
+              1886
+            ],
+            "range": [
+              52,
+              54
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r20",
+            "label": "Second Engineering Job, Southern Pacific Co.",
+            "temporal": [
+              1886,
+              1888
+            ],
+            "range": [
+              55,
+              64
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r21",
+            "label": "San Pedro Soundings and Townsites",
+            "temporal": [
+              1888
+            ],
+            "range": [
+              65,
+              68
+            ]
+          }
+        ]
+      },
+      {
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r22",
+        "label": "Rail, Mining & Civil Engineering Work",
+        "temporal": [
+          1888,
+          1893
+        ],
+        "range": [
+          68,
+          83
+        ],
+        "children": [
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r23",
+            "label": "Eureka Ranch & Santa Ysabel",
+            "temporal": [
+              1888
+            ],
+            "range": [
+              68,
+              70
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r24",
+            "label": "Mill Valley",
+            "temporal": [
+              1888,
+              1890
+            ],
+            "range": [
+              71,
+              78
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r25",
+            "label": "Ingleside race-track",
+            "temporal": [
+              1890,
+              1894
+            ],
+            "range": [
+              79,
+              80
+            ]
+          },
+          {
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r26",
+            "label": "Market Street & Potrero Ave. Extensions",
+            "temporal": [
+              1891,
+              1893
+            ],
+            "range": [
+              81,
+              83
+            ]
+          }
+        ]
+      },
+      {
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r27",
         "label": "Midwinter Exposition & Civil Engineering",
         "temporal": [
           1893,
@@ -40,7 +340,7 @@ export default class DeepRange {
         ],
         "children": [
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r2",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r28",
             "label": "Chief Engineer Midwinter Exposition",
             "temporal": [
               1893
@@ -51,7 +351,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r3",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r29",
             "label": "Chief Engineer Shasta County",
             "temporal": [
               1894
@@ -62,7 +362,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r4",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r30",
             "label": "Spring Valley Water Works",
             "temporal": [
               1897,
@@ -76,7 +376,7 @@ export default class DeepRange {
         ]
       },
       {
-        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r5",
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r31",
         "label": "Hawaii",
         "temporal": [
           1899,
@@ -88,7 +388,7 @@ export default class DeepRange {
         ],
         "children": [
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r6",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r32",
             "label": "First Hawaiian Surveys",
             "temporal": [
               1899
@@ -99,7 +399,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r7",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r33",
             "label": "Return to San Francisco",
             "temporal": [
               1899
@@ -110,7 +410,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r8",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r34",
             "label": "Second Visit to Hawaii, irrigation",
             "temporal": [
               1899
@@ -121,7 +421,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r9",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r35",
             "label": "Closing San Francisco Office",
             "temporal": [
               1899
@@ -129,7 +429,7 @@ export default class DeepRange {
             "range": 114
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r10",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r36",
             "label": "Third Visit to Hawaii, sugar stock collapse",
             "temporal": [
               1900
@@ -140,7 +440,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r11",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r37",
             "label": "Fourth Visit to Hawaii, hydraulic power",
             "temporal": [
               1901
@@ -151,7 +451,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r12",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r38",
             "label": "Mill Valley Politics",
             "temporal": [
               1901
@@ -162,7 +462,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r13",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r39",
             "label": "Olokele Aqueduct",
             "temporal": [
               1901
@@ -173,7 +473,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r14",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r40",
             "label": "Koolau Viaduct",
             "temporal": [
               1903
@@ -184,7 +484,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r15",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r41",
             "label": "Kohala Aqueduct",
             "temporal": [
               1904
@@ -195,7 +495,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r16",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r42",
             "label": "Shipwreck Alameda",
             "temporal": [
               1905
@@ -208,8 +508,8 @@ export default class DeepRange {
         ]
       },
       {
-        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r17",
-        "label": "San Francisco Earthquake (p. 149-159)",
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r43",
+        "label": "San Francisco Earthquake",
         "temporal": [
           1906
         ],
@@ -219,7 +519,7 @@ export default class DeepRange {
         ],
         "children": [
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r18",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r44",
             "label": "News of Earthquake",
             "temporal": [
               1906
@@ -230,7 +530,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r19",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r45",
             "label": "Return to San Francisco",
             "temporal": [
               1906
@@ -241,7 +541,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r20",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r46",
             "label": "Finishing Kohala Aqueduct",
             "temporal": [
               1906
@@ -254,7 +554,7 @@ export default class DeepRange {
         ]
       },
       {
-        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r21",
+        "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r47",
         "label": "San Diego & the Morena Dam",
         "temporal": [
           1907,
@@ -266,7 +566,7 @@ export default class DeepRange {
         ],
         "children": [
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r22",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r48",
             "label": "First San Diego Visit",
             "temporal": [
               1907
@@ -277,7 +577,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r23",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r49",
             "label": "The Morena Dam",
             "temporal": [
               1907
@@ -288,7 +588,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r24",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r50",
             "label": "Personal contacts in San Diego",
             "temporal": [
               1907
@@ -299,7 +599,7 @@ export default class DeepRange {
             ]
           },
           {
-            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r25",
+            "id": "https://iiif.library.nuigalway.ie/manifests/p135/range/r51",
             "label": "Sale San Diego System",
             "temporal": [
               1912
@@ -339,7 +639,7 @@ export default class DeepRange {
 
   generateColour(key) {
     const staticColoursThatWillBeChangedToSeed = [
-      'green', 'blue', 'purple', 'orange', 'hotpink'
+      '#A84796', '#C3DA34', '#6ECAE9', '#F38413'
     ];
     return staticColoursThatWillBeChangedToSeed[key % staticColoursThatWillBeChangedToSeed.length];
   }

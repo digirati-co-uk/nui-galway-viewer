@@ -2,135 +2,274 @@ const manifest = require('./src/manifest');
 
 const range = [
   {
-    'label': 'Midwinter Exposition & Civil Engineering',
-    'temporal': [1893, 1899],
-    'range': ['084', '099'],
-    'members': [
+    label: 'Childhood and Schooling',
+    temporal: [1864, 1881],
+    range: ['001', '037'],
+    members: [
       {
-        'label': 'Chief Engineer Midwinter Exposition',
-        'temporal': [1893],
-        'range': ['084', '089']
+        label: 'Living with maternal grandparents',
+        temporal: [1866],
+        range: ['002', '003']
       },
       {
-        'label': 'Chief Engineer Shasta County',
-        'temporal': [1894],
-        'range': ['090', '095']
+        label: 'Pallaskenry girls\' National School',
+        temporal: [1868],
+        range: ['004', '005']
       },
       {
-        'label': 'Spring Valley Water Works',
-        'temporal': [1897, 1898],
-        'range': ['096', '099']
+        label: 'Pallaskenry boys\' National School',
+        temporal: [1870],
+        range: ['005', '006']
+      },
+      {
+        label: 'Childhood mischief',
+        temporal: [187],
+        range: ['006', '016']
+      },
+      {
+        label: 'Marriage of Aunt Alice',
+        temporal: [1872],
+        range: ['017', '018']
+      },
+      {
+        label: 'Marriage of Uncle Maurice',
+        temporal: [1873],
+        range: ['022', '024']
+      },
+      {
+        label: 'Moriarty\'s wake',
+        temporal: [1873],
+        range: ['027', '028']
+      },
+      {
+        label: 'Escape to Kilkerin',
+        temporal: [1873],
+        range: ['030', '032']
+      },
+      {
+        label: 'School in Flean, near Loughill',
+        temporal: [1874],
+        range: ['032']
+      },
+      {
+        label: 'School in Mount Trenchard',
+        temporal: [1875, 1880],
+        range: ['033', '034']
+      },
+      {
+        label: 'School in Rockwell College',
+        temporal: [1881],
+        range: ['034', '037']
+      },
+    ]
+  },
+  {
+    label: 'University',
+    temporal: [1881, 1884],
+    range: ['035', '045'],
+    members: [
+      {
+        temporal: [1881],
+        label: 'Scholarship to Queen\'s College Cork',
+        range: ['038', '041']
+      },
+      {
+        temporal: [1882],
+        label: 'Move to Queen\'s College Galway',
+        range: ['042', '044']
+      }
+    ],
+  },
+  {
+    label: 'San Francisco and Early Work (p. 46-67)',
+    temporal: [1885, 1888],
+    range: ['046', '067'],
+    members: [
+      {
+        temporal: [1885],
+        label: 'Emigration',
+        range: ['046', '049']
+      },
+      {
+        temporal: [1885],
+        label: 'Arrival in San Francisco',
+        range: ['049', '051']
+      },
+      {
+        temporal: [1886],
+        label: 'First Engineering Work, Sierra Valley & Mohawk Railroad Co.',
+        range: ['052', '054']
+      },
+      {
+        temporal: [1886, 1888],
+        label: 'Second Engineering Job, Southern Pacific Co.',
+        range: ['055', '064']
+      },
+      {
+        temporal: [1888],
+        label: 'San Pedro Soundings and Townsites',
+        range: ['065', '068']
+      },
+    ]
+  },
+  {
+    label: 'Rail, Mining & Civil Engineering Work',
+    temporal: [1888, 1893],
+    range: ['068', '083'],
+    members: [
+      {
+        temporal: [1888],
+        label: 'Eureka Ranch & Santa Ysabel',
+        range: ['068', '070']
+      },
+      {
+        temporal: [1888, 1890],
+        label: 'Mill Valley',
+        range: ['071', '078']
+      },
+      {
+        temporal: [1890, 1894],
+        label: 'Ingleside race-track',
+        range: ['079', '080']
+      },
+      {
+        temporal: [1891, 1893],
+        label: 'Market Street & Potrero Ave. Extensions',
+        range: ['081', '083']
+      },
+    ]
+  },
+
+  {
+    label: 'Midwinter Exposition & Civil Engineering',
+    temporal: [1893, 1899],
+    range: ['084', '099'],
+    members: [
+      {
+        label: 'Chief Engineer Midwinter Exposition',
+        temporal: [1893],
+        range: ['084', '089']
+      },
+      {
+        label: 'Chief Engineer Shasta County',
+        temporal: [1894],
+        range: ['090', '095']
+      },
+      {
+        label: 'Spring Valley Water Works',
+        temporal: [1897, 1898],
+        range: ['096', '099']
       }
     ]
   },
   {
-    'label': 'Hawaii',
-    'temporal': [1899, 1906],
-    'range': ['100', '148'],
-    'members': [
+    label: 'Hawaii',
+    temporal: [1899, 1906],
+    range: ['100', '148'],
+    members: [
       {
-        'label': 'First Hawaiian Surveys',
-        'temporal': [1899],
-        'range': ['100', '108']
+        label: 'First Hawaiian Surveys',
+        temporal: [1899],
+        range: ['100', '108']
       },
       {
-        'label': 'Return to San Francisco',
-        'temporal': [1899],
-        'range': ['109', '111']
+        label: 'Return to San Francisco',
+        temporal: [1899],
+        range: ['109', '111']
       },
       {
-        'label': 'Second Visit to Hawaii, irrigation',
-        'temporal': [1899],
-        'range': ['112', '114']
+        label: 'Second Visit to Hawaii, irrigation',
+        temporal: [1899],
+        range: ['112', '114']
       },
       {
-        'label': 'Closing San Francisco Office',
-        'temporal': [1899],
-        'range': ['115'],
+        label: 'Closing San Francisco Office',
+        temporal: [1899],
+        range: ['115'],
       },
       {
-        'label': 'Third Visit to Hawaii, sugar stock collapse',
-        'temporal': [1900],
-        'range': ['116', '119']
+        label: 'Third Visit to Hawaii, sugar stock collapse',
+        temporal: [1900],
+        range: ['116', '119']
       },
       {
-        'label': 'Fourth Visit to Hawaii, hydraulic power',
-        'temporal': [1901],
-        'range': ['120', '124']
+        label: 'Fourth Visit to Hawaii, hydraulic power',
+        temporal: [1901],
+        range: ['120', '124']
       },
       {
-        'label': 'Mill Valley Politics',
-        'temporal': [1901],
-        'range': ['125', '126']
+        label: 'Mill Valley Politics',
+        temporal: [1901],
+        range: ['125', '126']
       },
       {
-        'label': 'Olokele Aqueduct',
-        'temporal': [1901],
-        'range': ['127', '130']
+        label: 'Olokele Aqueduct',
+        temporal: [1901],
+        range: ['127', '130']
       },
       {
-        'label': 'Koolau Viaduct',
-        'temporal': [1903],
-        'range': ['131', '141']
+        label: 'Koolau Viaduct',
+        temporal: [1903],
+        range: ['131', '141']
       },
       {
-        'label': 'Kohala Aqueduct',
-        'temporal': [1904],
-        'range': ['142', '145']
+        label: 'Kohala Aqueduct',
+        temporal: [1904],
+        range: ['142', '145']
       },
       {
-        'label': 'Shipwreck Alameda',
-        'temporal': [1905],
-        'range': ['145a', '148']
+        label: 'Shipwreck Alameda',
+        temporal: [1905],
+        range: ['145a', '148']
       }
     ]
   },
   {
-    'label': 'San Francisco Earthquake (p. 149-159)',
-    'temporal': [1906],
-    'range': ['149', '159'],
-    'members': [
+    label: 'San Francisco Earthquake',
+    temporal: [1906],
+    range: ['149', '159'],
+    members: [
       {
-        'label': 'News of Earthquake',
-        'temporal': [1906],
-        'range': ['149', '151']
+        label: 'News of Earthquake',
+        temporal: [1906],
+        range: ['149', '151']
       },
       {
-        'label': 'Return to San Francisco',
-        'temporal': [1906],
-        'range': ['152', '156']
+        label: 'Return to San Francisco',
+        temporal: [1906],
+        range: ['152', '156']
       },
       {
-        'label': 'Finishing Kohala Aqueduct',
-        'temporal': [1906],
-        'range': ['157', '159']
+        label: 'Finishing Kohala Aqueduct',
+        temporal: [1906],
+        range: ['157', '159']
       }
     ]
   },
   {
-    'label': 'San Diego & the Morena Dam',
-    'range': ['160', '175'],
-    'temporal': [1907, 1912],
-    'members': [
+    label: 'San Diego & the Morena Dam',
+    range: ['160', '175'],
+    temporal: [1907, 1912],
+    members: [
       {
-        'label': 'First San Diego Visit',
-        'temporal': [1907],
-        'range': ['160', '163']
+        label: 'First San Diego Visit',
+        temporal: [1907],
+        range: ['160', '163']
       },
       {
-        'label': 'The Morena Dam',
-        'temporal': [1907],
-        'range': ['164', '166']
+        label: 'The Morena Dam',
+        temporal: [1907],
+        range: ['164', '166']
       },
       {
-        'label': 'Personal contacts in San Diego',
-        'temporal': [1907],
-        'range': ['167', '171']
+        label: 'Personal contacts in San Diego',
+        temporal: [1907],
+        range: ['167', '171']
       },
       {
-        'label': 'Sale San Diego System',
-        'temporal': [1912],
-        'range': ['172', '175']
+        label: 'Sale San Diego System',
+        temporal: [1912],
+        range: ['172', '175']
       }
     ]
   }
