@@ -68,6 +68,7 @@ class TimelineTitle {
     this.breadcrumbs = $breadcrumbs;
     this.back = $breadcrumbs.querySelector('.galway-timeline__breadcrumb-back');
     this.breadcrumbContainer = $breadcrumbs.querySelector('.galway-timeline__breadcrumb-container');
+    this.subTitle = document.querySelector('.galway-timeline__sub-title');
   }
 
   onBack(func) {
@@ -88,7 +89,15 @@ class TimelineTitle {
   }
 
   render(breadcrumb) {
-    this.h1.innerText = breadcrumb.item.label;
+    if (breadcrumb.path && breadcrumb.path.length !== 0) {
+      this.$el.classList.add('galway-timeline__title--hidden');
+      this.h1.innerText = '';
+      this.subTitle.innerHTML = breadcrumb.item.label;
+    } else {
+      this.$el.classList.remove('galway-timeline__title--hidden');
+      this.h1.innerText = breadcrumb.item.label;
+      this.subTitle.innerHTML = '';
+    }
     this.span.innerText = renderTemporal(breadcrumb.item);
     if (breadcrumb.path && breadcrumb.path.length !== 0) {
       this.breadcrumbContainer.innerHTML = '';
