@@ -75,6 +75,9 @@ $transition-speed: .2s;
         //line-height: 1.2em;
       }
     }
+    @media (max-width: 40em) {
+      display: none;
+    }
   }
 
   &__breadcrumb-back {
@@ -108,7 +111,7 @@ $transition-speed: .2s;
   }
 
   &__representation {
-    background: $inactive-item;
+    background: $pallet-3-3;
     height: 15px;
     margin: 1px 1px 10px;
     flex: 100;
