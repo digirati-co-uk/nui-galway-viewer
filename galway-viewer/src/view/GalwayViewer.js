@@ -4,7 +4,7 @@ import StartScreen from "./StartScreen";
 import Header from "./Header";
 import Drawer from "./Drawer";
 import Controls from "./Controls";
-import DeepRange from "./DeepRange";
+import Timeline from './Timeline';
 
 class GalwayViewer {
 
@@ -23,9 +23,14 @@ class GalwayViewer {
     // Drawer.
     this.drawer = new Drawer($el.querySelector('.galway-drawer'));
 
-    // Deep range
-    this.deepRange = new DeepRange();
-    this.deepRange.onClickRange(item => {
+    // Timeline
+    this.timeline = new Timeline($el.querySelector('.galway-timeline'));
+    this.timeline.onClickRange(item => {
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
+    this.timeline.onClickBreadcrumb(item => {
       if (item && item.range) {
         this.goToPage(item.range[0]);
       }
@@ -122,13 +127,15 @@ class GalwayViewer {
   }
 
   render(canvasId) {
+    const fakeDepth = 0;
+
     GalwayViewer.navigateTo(canvasId);
     const canvasIndex = this.canvases.findIndexById(canvasId);
     this.currentCanvas = canvasIndex;
     const canvas = this.canvases[canvasIndex];
 
     // Render.
-    this.deepRange.render(canvasIndex, 1);
+    this.timeline.render(canvasIndex, fakeDepth);
     this.controls.setValue(canvasIndex);
 
     this.canvas.render({

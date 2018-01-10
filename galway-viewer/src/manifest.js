@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   "@context": "http://iiif.io/api/presentation/2/context.json",
   "@id": "https://iiif.library.nuigalway.ie/manifests/p135/manifest_memoir.json",
   "@type": "sc:Manifest",

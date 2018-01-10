@@ -1,6 +1,7 @@
 $subtitle-colour: #ccc !default;
 $active-item: #8BC34A !default;
 $inactive-item: #C8E6C9 !default;
+$transition-speed: .2s;
 
 .galway-timeline {
   background: #fff;
@@ -15,6 +16,7 @@ $inactive-item: #C8E6C9 !default;
       line-height: 28px;
       font-weight: normal;
       margin: 0 12px 0 0;
+      transition: all $transition-speed;
 
       @media (max-width: 40em) {
         flex: 1;
@@ -23,6 +25,7 @@ $inactive-item: #C8E6C9 !default;
       }
     }
     span {
+      display: none;
       color: $subtitle-colour;
       font-size: 12px;
       line-height: 14px;
@@ -30,17 +33,54 @@ $inactive-item: #C8E6C9 !default;
   }
 
   &__item-container {
-    padding: 15px;
+    height: 50px;
+    margin: 15px;
     display: flex;
     @media (max-width: 40em) {
-      padding: 5px 15px;
+      margin: 5px 10px;
+      height: 20px;
+      pointer-events: none;
     }
   }
 
   &__item {
     overflow: hidden;
     flex: 1;
-    transition: flex .4s;
+    transition: flex $transition-speed;
+    cursor: pointer;
+  }
+
+  &__breadcrumbs {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 15px;
+    transition: height $transition-speed;
+    height: 0;
+    overflow: hidden;
+
+    &--active {
+      height: 25px;
+
+      & ~ .galway-timeline__title h1 {
+        font-size: 1em;
+        line-height: 1.2em;
+      }
+    }
+  }
+
+  &__breadcrumb-back {
+    flex: 0 0 20px;
+  }
+  &__breadcrumb-container {
+    flex: 1;
+  }
+
+  &__breadcrumb-item {
+    flex: 1;
+    line-height: 24px;
+    padding-left: 10px;
+    cursor: pointer;
   }
 
   &__representation {
@@ -48,9 +88,29 @@ $inactive-item: #C8E6C9 !default;
     height: 15px;
     margin: 1px 1px 10px;
     flex: 100;
+    transition: opacity $transition-speed;
+    cursor: pointer;
+
+    .galway-timeline__item--children.galway-timeline__item--active:hover & {
+      animation: galway-timeline__item--pulse 1s infinite;
+
+      @at-root {
+        @keyframes galway-timeline__item--pulse {
+          0% {
+            opacity: 0.75;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
 
     .galway-timeline__item--active & {
-      background: $active-item;
+      opacity: 0.5;
     }
 
     @media (max-width: 40em) {
@@ -61,6 +121,8 @@ $inactive-item: #C8E6C9 !default;
   &__temporal {
     font-size: 12px;
     line-height: 14px;
+    white-space: nowrap;
+    cursor: pointer;
     @media (max-width: 40em) {
       display: none;
     }

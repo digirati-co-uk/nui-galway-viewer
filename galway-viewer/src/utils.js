@@ -45,7 +45,7 @@ export function setStyle($el, style) {
   return $el;
 }
 
-export function DOM(tagName, {className, style, attributes} = {}, children) {
+export function DOM(tagName, {className, onClick, style, attributes} = {}, children) {
   const $el = document.createElement(tagName);
   if (className) {
     if (Array.isArray(className)) {
@@ -53,6 +53,9 @@ export function DOM(tagName, {className, style, attributes} = {}, children) {
     } else {
       $el.classList.add(className);
     }
+  }
+  if (onClick) {
+    $el.addEventListener('click', onClick);
   }
   if (attributes) {
     Object.keys(attributes)
@@ -279,6 +282,16 @@ export function computeStyleFromItem(visibility, item) {
     return {flex: item.range[1] - item.range[0], 'flex-basis': '0px'};
   }
   return {};
+}
+
+export function renderTemporal(item) {
+  if (!item.temporal) {
+    return '';
+  }
+  if (item.temporal.length <= 2) {
+    return item.temporal.join(' - ');
+  }
+  return Math.min(item.temporal) + ' - ' + Math.max(item.temporal);
 }
 
 export function matchesRange(item, canvasIndex) {
