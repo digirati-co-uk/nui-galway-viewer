@@ -1,0 +1,35 @@
+$header-color: #ddd !default;
+
+.galway-header {
+  background: $header-color;
+  height: 45px;
+  color: #fff;
+  line-height: 45px;
+  display: flex;
+  flex-direction: row;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-left);
+
+  &__title {
+    flex-grow: 1;
+    font-size: 0.9em;
+    padding-left: 15px;
+    line-height: 45px;
+  }
+
+  &__menu,
+  &__info,
+  &__share {
+    width: 50px;
+    padding: 0;
+    line-height: 45px;
+    text-align: center;
+
+    &:focus {
+      border-radius: 0;
+      outline-offset: -4px;
+      outline: 2px solid rgba(#fff, .8);
+      background: mix(#000, $header-color, 10%);
+    }
+  }
+}
