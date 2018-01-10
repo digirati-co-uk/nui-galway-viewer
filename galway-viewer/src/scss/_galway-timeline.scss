@@ -1,6 +1,7 @@
 $subtitle-colour: #ccc !default;
 $active-item: #8BC34A !default;
 $inactive-item: #C8E6C9 !default;
+$link-color: $pallet-3-3 !default;
 $transition-speed: .2s;
 
 .galway-timeline {
@@ -55,6 +56,13 @@ $transition-speed: .2s;
     cursor: pointer;
   }
 
+  &__breadcrumb-prefix {
+    //color: $link-color;
+    color: #000;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
   &__breadcrumbs {
     clear: both;
     display: flex;
@@ -72,6 +80,9 @@ $transition-speed: .2s;
         line-height: 1.2em;
       }
     }
+    @media (max-width: 40em) {
+      display: none;
+    }
   }
 
   &__breadcrumb-back {
@@ -83,9 +94,24 @@ $transition-speed: .2s;
 
   &__breadcrumb-item {
     flex: 1;
-    line-height: 24px;
+    color: $link-color;
     padding-left: 10px;
+    font-size: 16px;
+    line-height: 26px;
     cursor: pointer;
+
+    &:hover {
+      color: darken($link-color, 10%);
+    }
+
+    &:before {
+      color: #000;
+      left: -15px;
+      position: absolute;
+      content: '\027A4';
+      font-size: 8px;
+      line-height: 20px;
+    }
   }
 
   &__representation {
@@ -131,12 +157,28 @@ $transition-speed: .2s;
   }
 
   &__temporal {
+    color: #000;
     font-size: 12px;
     line-height: 14px;
     white-space: nowrap;
     cursor: pointer;
     @media (max-width: 40em) {
       display: none;
+    }
+
+    .galway-timeline__item--active & {
+      font-weight: 600;
+    }
+
+    .galway-timeline__item--active.galway-timeline__item--children & {
+      color: $link-color;
+      &:hover {
+        color: darken($link-color, 10%);
+      }
+      &:after {
+        padding-left: 5px;
+        content: ' \25BE'
+      }
     }
   }
 }
