@@ -1,3 +1,5 @@
+$drawer-width: 340px !default;
+
 .galway-drawer {
   position: fixed;
   top: 0;
@@ -13,12 +15,15 @@
 
   &__menu {
     background: #fff;
-    width: 290px;
+    width: $drawer-width;
     z-index: 10;
+    padding: 15px;
     transition: transform .4s;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .galway-drawer--inactive & {
-      transform: translateX(-290px);
+      transform: translateX(-$drawer-width);
     }
   }
 
@@ -35,6 +40,45 @@
 
     .galway-drawer--inactive & {
       background: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__list {
+    margin: 20px 0 40px 0;
+    padding: 0 0 0 10px; // indent size
+  }
+
+  &__list-link {
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &__list-item {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    height: auto;
+    transition: height .3s;
+
+    & .galway-drawer__list-item {
+      display: none;
+      font-weight: normal;
+      border-bottom: 1px solid #ddd;
+      padding: 20px 10px;
+      font-size: 16px;
+    }
+
+    &--active .galway-drawer__list-item--active {
+      border-left: 3px solid lime;
+    }
+
+    &--active .galway-drawer__list-item {
+      display: block;
     }
   }
 }

@@ -1,5 +1,5 @@
 import Canvas from './Canvas';
-import {getDisplayRanges} from '../utils';
+import {getDisplayRanges, manifestToStructure} from '../utils';
 import StartScreen from "./StartScreen";
 import Header from "./Header";
 import Drawer from "./Drawer";
@@ -19,26 +19,6 @@ class GalwayViewer {
 
     // Header.
     this.header = new Header($el.querySelector('.galway-header'));
-
-    // Drawer.
-    this.drawer = new Drawer($el.querySelector('.galway-drawer'));
-
-    // Timeline
-    this.timeline = new Timeline($el.querySelector('.galway-timeline'));
-    this.timeline.onClickRange(item => {
-      if (item && item.range) {
-        this.goToPage(item.range[0]);
-      }
-    });
-    this.timeline.onClickBreadcrumb(item => {
-      if (item && item.range) {
-        this.goToPage(item.range[0]);
-      }
-    });
-
-    this.header.onClickMenu(() => {
-      this.drawer.openMenu();
-    });
 
     this.header.onClickInfo(() => {
       this.startScreen.openStartScreen();
@@ -98,15 +78,41 @@ class GalwayViewer {
       return null;
     }
     this.startCanvas = manifest.startCanvas || null;
-
     this.canvases = manifest.sequences[0].canvases;
-    let displayRanges = getDisplayRanges(manifest);
+    this.structure = manifestToStructure(manifest);
 
     this.controls = new Controls(this.$el.querySelector('.galway-controls'), { totalElements: this.canvases.length });
+    // Timeline
+    this.timeline = new Timeline(this.$el.querySelector('.galway-timeline'), this.structure);
+    this.timeline.onClickRange(item => {
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
+    this.timeline.onClickBreadcrumb(item => {
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
+
+    // Drawer.
+    this.drawer = new Drawer(this.$el.querySelector('.galway-drawer'), this.structure);
+
+    this.header.onClickMenu(() => {
+      this.drawer.openMenu();
+    });
 
     this.controls.onNext(() => this.nextPage());
     this.controls.onPrevious(() => this.prevPage());
     this.controls.onChangeSlider((n) => this.goToPage(n));
+
+    this.drawer.bus.listenFor('topRange:active', this.timeline.bus);
+    this.drawer.bus.listenFor('topRange:inactive', this.timeline.bus);
+    this.drawer.bus.subscribe('item:click', item => {
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
 
     // arrow keys, avoiding duplicates.
     document.addEventListener('keydown', (e) => {
@@ -137,6 +143,7 @@ class GalwayViewer {
     // Render.
     this.timeline.render(canvasIndex, fakeDepth);
     this.controls.setValue(canvasIndex);
+    this.drawer.render(canvasIndex);
 
     this.canvas.render({
       canvas,

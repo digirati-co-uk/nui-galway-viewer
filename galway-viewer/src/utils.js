@@ -1,7 +1,48 @@
+if (!Element.prototype.matches)
+  Element.prototype.matches = Element.prototype.msMatchesSelector ||
+    Element.prototype.webkitMatchesSelector;
+
+if (!Element.prototype.closest)
+  Element.prototype.closest = function(s) {
+    let el = this;
+    if (!document.documentElement.contains(el)) return null;
+    do {
+      if (el.matches(s)) return el;
+      el = el.parentElement || el.parentNode;
+    } while (el !== null && el.nodeType === 1);
+    return null;
+  };
+
 export const TEMPORAL = 'dcterms:temporal';
 
 export function dropCaseComparison(a, b) {
   return (a ? a : '').toLowerCase() === (b ? b : '').toLowerCase();
+}
+
+export class EventBus {
+
+  constructor(name) {
+    this.name = name;
+    this.events = {};
+  }
+
+  subscribe(event, func) {
+    this.events[event] = this.events[event] ? this.events[event] : [];
+    this.events[event].push(func);
+    return this;
+  }
+
+  dispatch(event, ...params) {
+    if(!this.events[event]) {
+      return;
+    }
+    this.events[event].forEach(ev => ev(...params));
+  }
+
+  listenFor(event, bus) {
+    bus.subscribe(event, (...params) => this.dispatch(event, ...params));
+  }
+
 }
 
 export function mapAnnotation(annotation) {
@@ -45,7 +86,63 @@ export function setStyle($el, style) {
   return $el;
 }
 
-export function DOM(tagName, {className, onClick, style, attributes} = {}, children) {
+export function createMap(acc, range) {
+  acc[range['@id']] = range;
+  return acc;
+}
+
+export function findTopLevel(found, range) {
+  if (!found && range.viewingHint === 'top') {
+    return range;
+  }
+  return found;
+}
+
+export function expander(mapped) {
+  return (item) => mapped[item['@id']];
+}
+
+export function enhancedStructure(expand, canvasNumMap) {
+  return (input) => {
+    const range = expand(input);
+    if (range.members) {
+      range.canvases = range.members.filter(member => member['@type'] === 'sc:Canvas').map(member => member['@id']);
+      range.members = range.members.filter(member => member['@type'] === 'sc:Range').map(enhancedStructure(expand, canvasNumMap));
+    }
+    // console.log(canvasToNumber);
+    range.canvasNumbers = range.canvases.map(i => canvasNumMap[i]);
+    range.range = range.canvasNumbers.length === 1 ? range.canvasNumbers[0] : [
+      Math.min(...range.canvasNumbers),
+      Math.max(...range.canvasNumbers),
+    ];
+    range.temporal = range['dcterms:temporal'].split('/').map(date => parseInt(date.slice(0, 4)));
+
+    const structure = {
+      id: range['@id'],
+      label: range.label,
+      temporal: range.temporal,
+      range: range.range,
+    };
+    if (range.members) {
+      structure.children = range.members;
+    }
+    return structure;
+  };
+}
+
+export function createStructure(topLevel, mapped, canvasNumMap) {
+  const expand = expander(mapped);
+  return topLevel.members.map(enhancedStructure(expand, canvasNumMap));
+}
+
+export function DOM(tagName, {
+  className,
+  onClick,
+  style,
+  attributes,
+  onMouseEnter,
+  onMouseLeave
+} = {}, children) {
   const $el = document.createElement(tagName);
   if (className) {
     if (Array.isArray(className)) {
@@ -56,6 +153,12 @@ export function DOM(tagName, {className, onClick, style, attributes} = {}, child
   }
   if (onClick) {
     $el.addEventListener('click', onClick);
+  }
+  if (onMouseEnter) {
+    $el.addEventListener('mouseenter', onMouseEnter);
+  }
+  if (onMouseLeave) {
+    $el.addEventListener('mouseleave', onMouseLeave);
   }
   if (attributes) {
     Object.keys(attributes)
@@ -158,6 +261,19 @@ export function mapCanvasIds(manifest, canvasIds) {
 }
 
 export const flatten = list => Array.prototype.concat(...list);
+
+export function manifestToStructure(manifest) {
+  const allCanvases = manifest.sequences[0].canvases;
+  const canvasNumMap = allCanvases.reduce((acc, canvas, num) => {
+    acc[canvas['@id']] = num;
+    return acc;
+  }, {});
+
+  const mapped = manifest.structures.reduce(createMap, {});
+  const topLevel = manifest.structures.reduce(findTopLevel, false);
+
+  return createStructure(topLevel, mapped, canvasNumMap);
+}
 
 export function startDurationTime(displayRanges) {
   // here we need to make the timeline div proportional to the time coverage of each range

@@ -1,13 +1,16 @@
 import DeepRange from './DeepRange';
-import {div, renderTemporal} from '../utils';
+import {div, EventBus, renderTemporal} from '../utils';
 
 export default class Timeline {
-  constructor($el, initialDepth = 0) {
+  constructor($el, structure, initialDepth = 0) {
     // .galway-timeline
     this.$el = $el;
+    this.bus = new EventBus('Timeline');
 
     // Deep range slider.
-    this.deepRange = new DeepRange($el.querySelector('.galway-timeline__item-container'));
+    this.deepRange = new DeepRange($el.querySelector('.galway-timeline__item-container'), structure);
+    this.bus.listenFor('topRange:active', this.deepRange.bus);
+    this.bus.listenFor('topRange:inactive', this.deepRange.bus);
 
     this.title = new TimelineTitle(
       $el.querySelector('.galway-timeline__title'),
@@ -48,10 +51,16 @@ export default class Timeline {
     });
   }
 
+  onChangeTopLevel(func) {
+    this.deepRange.bus.subscribe('topRange:active', func);
+    return this;
+  }
+
   render(canvasIndex) {
     this.currentCanvasIndex = canvasIndex;
     this.deepRange.render(canvasIndex, this.depth);
     const currentRange = this.deepRange.findCurrent();
+
     if (currentRange) {
       const breadCrumbs = this.deepRange.getBreadCrumbs(currentRange.item.key);
       this.title.render(breadCrumbs);
@@ -72,7 +81,9 @@ class TimelineTitle {
   }
 
   onBack(func) {
-    return this.back.addEventListener('click', func);
+    if (this.back) {
+      return this.back.addEventListener('click', func);
+    }
   }
 
   createBreadcrumb(item) {
@@ -89,15 +100,17 @@ class TimelineTitle {
   }
 
   render(breadcrumb) {
-    if (breadcrumb.path && breadcrumb.path.length !== 0) {
-      this.$el.classList.add('galway-timeline__title--hidden');
-      this.h1.innerText = '';
-      this.subTitle.innerHTML = breadcrumb.item.label;
-    } else {
-      this.$el.classList.remove('galway-timeline__title--hidden');
+    // this.subTitle.innerHTML = breadcrumb.item.label;
+      // this.$el.classList.add('galway-timeline__title--hidden');
+    // if (breadcrumb.path && breadcrumb.path.length !== 0 && false) {
+    //   this.$el.classList.add('galway-timeline__title--hidden');
+    //   this.h1.innerText = '';
+    //   this.subTitle.innerHTML = breadcrumb.item.label;
+    // } else {
+    //   this.$el.classList.remove('galway-timeline__title--hidden');
       this.h1.innerText = breadcrumb.item.label;
-      this.subTitle.innerHTML = '';
-    }
+    //   this.subTitle.innerHTML = '';
+    // }
     this.span.innerText = renderTemporal(breadcrumb.item);
     if (breadcrumb.path && breadcrumb.path.length !== 0) {
       this.breadcrumbContainer.innerHTML = '';
@@ -107,6 +120,12 @@ class TimelineTitle {
       });
       this.breadcrumbs.classList.add('galway-timeline__breadcrumbs--active');
     } else {
+      this.breadcrumbContainer.innerHTML = '';
+      this.breadcrumbContainer.appendChild(
+        div({
+          className: 'galway-timeline__breadcrumb-static',
+        }, 'Timeline')
+      );
       this.breadcrumbs.classList.remove('galway-timeline__breadcrumbs--active');
     }
   }

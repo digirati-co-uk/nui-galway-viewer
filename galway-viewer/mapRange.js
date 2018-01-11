@@ -9,7 +9,7 @@ const range = [
       {
         label: 'Living with maternal grandparents',
         temporal: [1866],
-        range: ['002', '003']
+        range: ['001', '003']
       },
       {
         label: 'Pallaskenry girls\' National School',
@@ -23,23 +23,26 @@ const range = [
       },
       {
         label: 'Childhood mischief',
-        temporal: [187],
-        range: ['006', '016']
+        temporal: [1871],
+        range: ['007', '016']
       },
       {
         label: 'Marriage of Aunt Alice',
         temporal: [1872],
-        range: ['017', '018']
+        // range: ['017', '018']
+        range: ['017', '021']
       },
       {
         label: 'Marriage of Uncle Maurice',
         temporal: [1873],
-        range: ['022', '024']
+        // range: ['022', '024']
+        range: ['022', '026']
       },
       {
         label: 'Moriarty\'s wake',
         temporal: [1873],
-        range: ['027', '028']
+        // range: ['027', '028']
+        range: ['027', '029']
       },
       {
         label: 'Escape to Kilkerin',
@@ -66,7 +69,7 @@ const range = [
   {
     label: 'University',
     temporal: [1881, 1884],
-    range: ['035', '045'],
+    range: ['038', '045'],
     members: [
       {
         temporal: [1881],
@@ -76,7 +79,7 @@ const range = [
       {
         temporal: [1882],
         label: 'Move to Queen\'s College Galway',
-        range: ['042', '044']
+        range: ['042', '045']
       }
     ],
   },
@@ -381,6 +384,11 @@ manifest.structures = [
   ...ranges
 ];
 
+console.log(
+  JSON.stringify(manifest, null, 2)
+);
+process.exit();
+
 function createMap(acc, range) {
   acc[range['@id']] = range;
   return acc;
@@ -434,6 +442,6 @@ const mapped = manifest.structures.reduce(createMap, {});
 const topLevel = manifest.structures.reduce(findTopLevel, false);
 
 const final = createStructure(topLevel, mapped);
-console.log(
-  JSON.stringify(final, null, 2)
-);
+// console.log(
+//   JSON.stringify(manifest, null, 2)
+// );

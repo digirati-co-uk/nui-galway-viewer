@@ -3,21 +3,42 @@ $active-item: #8BC34A !default;
 $inactive-item: #C8E6C9 !default;
 $link-color: $pallet-3-3 !default;
 $transition-speed: .3s;
+$hide-breadcrumbs: false !default;
+$center-titles: true !default;
 
 .galway-timeline {
   background: #fff;
-  height: 145px;
+  //height: 145px;
 
   &__title {
     display: flex;
     align-items: baseline;
-    margin: 12px 14px;
+    margin: 15px;
 
     h1 {
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 28px;
+      line-height: 24px;
       font-weight: normal;
-      margin: 0 12px 0 0;
+      @if ($center-titles) {
+        margin: 0;
+      } @else {
+        margin: 0 12px 0 0;
+      }
+
+      &.alternate {
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: normal;
+        margin: 0;
+        width: auto;
+        text-align: center;
+        position: absolute;
+        z-index: 20;
+        background: rgba(255, 255, 255, .8);
+        display: inline-block;
+        top: 166px;
+        padding: 5px 16px;
+      }
       //transition: all $transition-speed;
 
       @media (max-width: 40em) {
@@ -25,12 +46,17 @@ $transition-speed: .3s;
         font-size: 18px;
         line-height: 24px;
       }
+
+      @if ($center-titles) {
+        width: 100%;
+        text-align: center;
+      }
     }
     span {
       display: none;
       color: $subtitle-colour;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 15px;
     }
 
     &--hidden {
@@ -39,12 +65,12 @@ $transition-speed: .3s;
   }
 
   &__item-container {
-    height: 50px;
+    //height: 50px;
     margin: 15px;
     display: flex;
     @media (max-width: 40em) {
       margin: 5px 10px;
-      height: 20px;
+      height: 5px;
       pointer-events: none;
     }
   }
@@ -69,15 +95,19 @@ $transition-speed: .3s;
     flex-direction: row;
     margin: 10px 15px;
     //transition: height $transition-speed;
-    height: 0;
+    @if($hide-breadcrumbs) {
+      height: 0;
+    }
     overflow: hidden;
 
     &--active {
-      height: 25px;
+      @if($hide-breadcrumbs) {
+        height: 25px;
 
-      & ~ .galway-timeline__title h1 {
-        font-size: 1em;
-        line-height: 1.2em;
+        & ~ .galway-timeline__title h1 {
+          font-size: 1em;
+          line-height: 1.2em;
+        }
       }
     }
     @media (max-width: 40em) {
@@ -92,13 +122,26 @@ $transition-speed: .3s;
     flex: 1;
   }
 
+  &__breadcrumb-static {
+    flex: 1;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 22px;
+    @if ($center-titles) {
+      text-align: center;
+    }
+  }
+
   &__breadcrumb-item {
     flex: 1;
     color: $link-color;
     padding-left: 10px;
     font-size: 16px;
-    line-height: 26px;
+    line-height: 22px;
     cursor: pointer;
+    @if ($center-titles) {
+      text-align: center;
+    }
 
     &:hover {
       color: darken($link-color, 10%);
@@ -117,7 +160,7 @@ $transition-speed: .3s;
   &__representation {
     background: $inactive-item;
     height: 15px;
-    margin: 1px 1px 10px;
+    margin: 1px 1px 5px;
     flex: 100;
     opacity: 0.5;
     transition: opacity $transition-speed;
@@ -141,7 +184,8 @@ $transition-speed: .3s;
       }
     }
 
-    .galway-timeline__item--active & {
+    .galway-timeline__item--active &,
+    .galway-timeline__item:hover & {
       opacity: 1;
     }
 
@@ -160,7 +204,7 @@ $transition-speed: .3s;
   &__temporal {
     color: #000;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 15px;
     white-space: nowrap;
     cursor: pointer;
     transition: all $transition-speed;
@@ -181,6 +225,31 @@ $transition-speed: .3s;
         padding-left: 5px;
         content: ' \25BE'
       }
+    }
+  }
+
+  &__tooltip {
+    position: relative;
+  }
+
+  &__tooltip-float {
+    transition: opacity .2s;
+    opacity: 0;
+    bottom: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0 9px 20px 0 rgba(0, 0, 0, .3), 0 6px 16px 0 rgba(0, 0, 0, .1);
+    position: absolute;
+    color: #fff;
+    z-index: 9;
+    background: #000;
+    white-space: nowrap;
+    pointer-events: none;
+    height: 30px;
+
+    &--active {
+      pointer-events: initial;
+      opacity: 1;
     }
   }
 }
