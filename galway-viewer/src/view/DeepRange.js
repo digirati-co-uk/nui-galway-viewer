@@ -639,7 +639,16 @@ export default class DeepRange {
 
   generateColour(key) {
     const staticColoursThatWillBeChangedToSeed = [
-      '#A84796', '#C3DA34', '#6ECAE9', '#F38413'
+      '#A84796',
+      '#EC047D',
+      '#D71D1B',
+      '#DC876C',
+      '#CA8A4D',
+      '#EDB26C',
+      '#FCC31D',
+      '#F38413',
+      '#A64D3A',
+      '#CA8B7B'
     ];
     return staticColoursThatWillBeChangedToSeed[key % staticColoursThatWillBeChangedToSeed.length];
   }

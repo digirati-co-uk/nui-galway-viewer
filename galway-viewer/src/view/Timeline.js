@@ -28,7 +28,7 @@ export default class Timeline {
   onClickRange(func) {
     return this.deepRange.onClickRange((item, key, $el, e) => {
       if (
-        this.deepRange.isCurrent(item, this.currentCanvasIndex) &&
+        // this.deepRange.isCurrent(item, this.currentCanvasIndex) &&
         this.deepRange.inRange(this.depth + 1)
       ) {
         this.depth += 1;

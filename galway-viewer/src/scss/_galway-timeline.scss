@@ -2,7 +2,7 @@ $subtitle-colour: #ccc !default;
 $active-item: #8BC34A !default;
 $inactive-item: #C8E6C9 !default;
 $link-color: $pallet-3-3 !default;
-$transition-speed: .2s;
+$transition-speed: .3s;
 
 .galway-timeline {
   background: #fff;
@@ -18,7 +18,7 @@ $transition-speed: .2s;
       line-height: 28px;
       font-weight: normal;
       margin: 0 12px 0 0;
-      transition: all $transition-speed;
+      //transition: all $transition-speed;
 
       @media (max-width: 40em) {
         flex: 1;
@@ -119,6 +119,7 @@ $transition-speed: .2s;
     height: 15px;
     margin: 1px 1px 10px;
     flex: 100;
+    opacity: 0.5;
     transition: opacity $transition-speed;
     cursor: pointer;
 
@@ -141,7 +142,7 @@ $transition-speed: .2s;
     }
 
     .galway-timeline__item--active & {
-      opacity: 0.5;
+      opacity: 1;
     }
 
     @media (max-width: 40em) {
@@ -162,6 +163,7 @@ $transition-speed: .2s;
     line-height: 14px;
     white-space: nowrap;
     cursor: pointer;
+    transition: all $transition-speed;
     @media (max-width: 40em) {
       display: none;
     }
