@@ -5,7 +5,7 @@ import {
   depthOf,
   div, EventBus,
   findLevel,
-  flattenAll,
+  flattenAll, generateColour, getPalletXPosition,
   mapDepths,
   matchesRange,
   RANGE_DISPLAY_LARGE,
@@ -24,83 +24,24 @@ export default class DeepRange {
   static CSS_TEMPORAL = 'galway-timeline__temporal';
   static CSS_ITEM_CHILDREN = 'galway-timeline__item--children';
 
-  constructor($el, structure) {
-
+  constructor($el, model) {
     this.$el = $el;
-    this.structure = structure;
-    this.maxDepth = depthOf(this.structure);
-    this.depthMap = mapDepths(this.structure, this.maxDepth);
+    this.model = model;
     this.bus = new EventBus('DeepRange');
-
-    this.structure.forEach(assignNumber({num: 0}));
-    this.structure.forEach((topLevel, key) => {
-      function assignLevel(obj) {
-        obj.level = key;
-        if (obj.children) {
-          obj.children.forEach(assignLevel);
-        }
-      }
-
-      assignLevel(topLevel);
-    });
-
-
-    this.topLevelKeys = this.levelKeys(0);
-    this.flatItems = flattenAll(this.structure).sort(sortByKey);
-
     // Initial DOM elements
     this.renderInitial($el);
-  }
-
-
-  generateColour(key) {
-    const staticColoursThatWillBeChangedToSeed = [
-      '#A84796',
-      '#EC047D',
-      '#D71D1B',
-      '#DC876C',
-      '#CA8A4D',
-      '#EDB26C',
-      '#FCC31D',
-      '#F38413',
-      '#A64D3A',
-      '#CA8B7B'
-    ];
-    return staticColoursThatWillBeChangedToSeed[key % staticColoursThatWillBeChangedToSeed.length];
-  }
-
-  getBreadCrumbs(key) {
-    const reducer = (path) => (found, item) => {
-      if (found) {
-        return found;
-      }
-      if (item.key === key) {
-        return {item, path};
-      }
-      if (item.children) {
-        const childPath = [...path, item];
-        return item.children.reduce(reducer(childPath), false);
-      }
-      return found;
-    };
-
-    return this.structure.reduce(reducer([]), false);
   }
 
   onClickRange(func) {
     this.$elements.forEach(
       $el => {
         const key = this.$elements.indexOf($el);
-        const item = this.flatItems[key];
+        const item = this.model.flatItems[key];
         $el.addEventListener('click', e => {
           return func(item, key, $el, e);
         });
       }
     );
-  }
-
-  inRange(range) {
-    return this.maxDepth >= range;
   }
 
   renderInitial($el) {
@@ -112,27 +53,17 @@ export default class DeepRange {
       $tooltip.classList.remove('galway-timeline__tooltip-float--active');
     });
 
-    function getX(palletW, clientX, windowW, offset = 15) {
-      const halfPalletW = palletW / 2;
-      if (clientX - halfPalletW - offset <= 0) {
-        return offset;
-      }
-      if (clientX + halfPalletW + offset >= windowW) {
-        return windowW - palletW - offset;
-      }
-      return clientX - halfPalletW;
-    }
 
     $el.addEventListener('mousemove', (e) => {
-      const calc = getX($tooltip.getBoundingClientRect().width, e.clientX, window.innerWidth);
+      const calc = getPalletXPosition($tooltip.getBoundingClientRect().width, e.clientX, window.innerWidth);
 
       $tooltip.style.left = `${calc}px`;
     });
 
-    this.$elements = this.flatItems.map(
+    this.$elements = this.model.flatItems.map(
       (item) => {
         // Only show top level, hide the rest.
-        const visibility = this.topLevelKeys.indexOf(item.key) === -1 ? RANGE_DISPLAY_NONE : RANGE_DISPLAY_LARGE;
+        const visibility = this.model.topKeys.indexOf(item.key) === -1 ? RANGE_DISPLAY_NONE : RANGE_DISPLAY_LARGE;
         return (
           div({
             className: DeepRange.CSS_ITEM,
@@ -151,7 +82,7 @@ export default class DeepRange {
           }, [
             div({
               className: DeepRange.CSS_ITEM_REPRESENTATION, style: {
-                background: this.generateColour(item.level)
+                background: generateColour(item.level)
               }
             }),
             div({className: DeepRange.CSS_TEMPORAL}, [
@@ -168,12 +99,10 @@ export default class DeepRange {
     });
   }
 
-  levelKeys = (level) => this.depthMap[level].items.map(item => item.key);
-
-  renderTopLevel(canvasIndex) {
+  renderTopLevel(canvasIndex, model) {
     this.$elements.forEach(($element, key) => {
-      const currentLevel = this.topLevelKeys.indexOf(key);
-      const item = this.structure[currentLevel];
+      const currentLevel = model.topKeys.indexOf(key);
+      const item = model.structure[currentLevel];
 
       this.renderActive($element, item, canvasIndex);
 
@@ -186,13 +115,8 @@ export default class DeepRange {
     });
   }
 
-  isCurrent(item, canvasIndex) {
-    return matchesRange(item, canvasIndex);
-  }
-
   renderActive($element, item, canvasIndex) {
     if (matchesRange(item, canvasIndex)) {
-      this.activeRange = {$el: $element, item};
       $element.classList.add(DeepRange.CSS_ITEM_ACTIVE);
       this.bus.dispatch('item:active', item);
       if (item.children) {
@@ -205,54 +129,24 @@ export default class DeepRange {
     }
   }
 
-  findCurrent() {
-    return this.activeRange;
-  }
-
-  findCurrentTop() {
-    return this.activeTopRange;
-  }
-
-  onChangeTopLevel(func) {
-    this.onChangeTopLevelFunc = func;
-    return this;
-  }
-
-  render(canvasIndex, depth) {
-    this.currentDepth = depth;
-    const activeTopRange = this.structure.filter(range => {
-      return matchesRange(range, canvasIndex);
-    }).pop();
-    if (this.activeTopRange !== activeTopRange) {
-      if (this.activeTopRange) {
-        this.bus.dispatch('topRange:inactive', this.activeTopRange);
-      }
-      this.activeTopRange = activeTopRange;
-      this.bus.dispatch('topRange:active', activeTopRange);
-    }
-
+  render(canvasIndex, model) {
     // If we are at the top level depth, we just render as normal.
-    if (depth === 0) {
-      return this.renderTopLevel(canvasIndex);
+    if (model.depth === 0) {
+      return this.renderTopLevel(canvasIndex, model);
     }
 
     // Here we look for the current "view" which is the sub-sections expanded out.
-    const currentLevelViews = findLevel(this.structure, canvasIndex, depth);
-    if (currentLevelViews.length === 0) {
+    if (model.currentViews.length === 0) {
       // Default back to top level if we can't find a view.
-      return this.renderTopLevel(canvasIndex);
+      return this.renderTopLevel(canvasIndex, model);
     }
 
-    // Array of keys for the current level.
-    const fullLevelKeys = this.levelKeys(depth);
-    const currentLevel = new CurrentLevel(currentLevelViews, fullLevelKeys);
-
     this.$elements.forEach(($element, key) => {
-      const item = currentLevel.findCurrent(key);
+      const item = model.current.findCurrent(key);
       // Render the current item with class.
       this.renderActive($element, item, canvasIndex);
 
-      if (currentLevel.isNext(key) || currentLevel.isPrevious(key)) {
+      if (model.current.isNext(key) || model.current.isPrevious(key)) {
         setStyle($element, computeStyleFromItem(RANGE_DISPLAY_PREV_NEXT, item));
         return;
       }

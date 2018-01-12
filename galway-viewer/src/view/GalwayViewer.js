@@ -1,5 +1,8 @@
 import Canvas from './Canvas';
-import {getDisplayRanges, manifestToStructure} from '../utils';
+import {
+  CurrentLevel, DeepStructureState, depthOf, findLevel, getDisplayRanges, manifestToStructure, mapDepths,
+  matchesRange
+} from '../utils';
 import StartScreen from "./StartScreen";
 import Header from "./Header";
 import Drawer from "./Drawer";
@@ -10,8 +13,8 @@ class GalwayViewer {
 
   constructor($el) {
     this.$el = $el;
-    this.useCanvasLabel = ($el.getAttribute('data-use-canvas-labels')||'').toLowerCase() === 'true';
-    this.forceHttps = ($el.getAttribute('data-force-https')||'').toLowerCase() === 'true';
+    this.useCanvasLabel = ($el.getAttribute('data-use-canvas-labels') || '').toLowerCase() === 'true';
+    this.forceHttps = ($el.getAttribute('data-force-https') || '').toLowerCase() === 'true';
     this.currentCanvas = 0;
 
     // Start screen.
@@ -77,26 +80,41 @@ class GalwayViewer {
     if (!manifest.structures || 'top' !== manifest.structures[0].viewingHint) {
       return null;
     }
+
     this.startCanvas = manifest.startCanvas || null;
     this.canvases = manifest.sequences[0].canvases;
     this.structure = manifestToStructure(manifest);
+    this.deepStructureState = new DeepStructureState(this.structure);
 
-    this.controls = new Controls(this.$el.querySelector('.galway-controls'), { totalElements: this.canvases.length });
+    this.controls = new Controls(this.$el.querySelector('.galway-controls'), {totalElements: this.canvases.length});
+
     // Timeline
-    this.timeline = new Timeline(this.$el.querySelector('.galway-timeline'), this.structure);
-    this.timeline.onClickRange(item => {
+    this.timeline = new Timeline(this.$el.querySelector('.galway-timeline'), this.deepStructureState);
+    this.timeline.onClickRange((item) => {
+      this.deepStructureState.increaseDepth();
       if (item && item.range) {
         this.goToPage(item.range[0]);
       }
     });
     this.timeline.onClickBreadcrumb(item => {
+      this.deepStructureState.decreaseDepth();
       if (item && item.range) {
         this.goToPage(item.range[0]);
       }
     });
+    this.timeline.onBack(() => {
+      this.deepStructureState.decreaseDepth();
+      this.render(this.lastCanvasIndex);
+    });
 
     // Drawer.
     this.drawer = new Drawer(this.$el.querySelector('.galway-drawer'), this.structure);
+    this.drawer.onItemClick(item => {
+      this.deepStructureState.decreaseDepth();
+      if (item && item.range) {
+        this.goToPage(item.range[0]);
+      }
+    });
 
     this.header.onClickMenu(() => {
       this.drawer.openMenu();
@@ -105,14 +123,6 @@ class GalwayViewer {
     this.controls.onNext(() => this.nextPage());
     this.controls.onPrevious(() => this.prevPage());
     this.controls.onChangeSlider((n) => this.goToPage(n));
-
-    this.drawer.bus.listenFor('topRange:active', this.timeline.bus);
-    this.drawer.bus.listenFor('topRange:inactive', this.timeline.bus);
-    this.drawer.bus.subscribe('item:click', item => {
-      if (item && item.range) {
-        this.goToPage(item.range[0]);
-      }
-    });
 
     // arrow keys, avoiding duplicates.
     document.addEventListener('keydown', (e) => {
@@ -133,17 +143,17 @@ class GalwayViewer {
   }
 
   render(canvasId) {
-    const fakeDepth = 0;
+    const canvasIndex = this.canvases.findIndexById(canvasId);
+    const model = this.deepStructureState.getModel(canvasIndex);
 
     GalwayViewer.navigateTo(canvasId);
-    const canvasIndex = this.canvases.findIndexById(canvasId);
     this.currentCanvas = canvasIndex;
     const canvas = this.canvases[canvasIndex];
 
     // Render.
-    this.timeline.render(canvasIndex, fakeDepth);
+    this.timeline.render(canvasIndex, model);
     this.controls.setValue(canvasIndex);
-    this.drawer.render(canvasIndex);
+    this.drawer.render(canvasIndex, model);
 
     this.canvas.render({
       canvas,
@@ -151,8 +161,12 @@ class GalwayViewer {
       prevCanvas: this.canvases[canvasIndex - 1] ? this.canvases[canvasIndex - 1] : null,
       forceHttps: this.forceHttps,
     });
+
+    // Set the last index for the next time.
+    this.lastCanvasIndex = canvasIndex;
   }
 
 }
+
 
 export default GalwayViewer;

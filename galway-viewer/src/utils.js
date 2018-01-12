@@ -170,7 +170,7 @@ export function DOM(tagName, {
 
   if (children) {
     if (Array.isArray(children)) {
-      children.forEach($child => $el.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child));
+      children.filter(e => e).forEach($child => $el.appendChild(typeof $child === 'string' ? document.createTextNode($child) : $child));
     }
     if (typeof children === 'string') {
       $el.innerText = children;
@@ -318,6 +318,127 @@ if (window.NodeList && !NodeList.prototype.forEach) {
       callback.call(thisArg, this[i], i, this);
     }
   };
+}
+
+export function getPalletXPosition(palletW, clientX, windowW, offset = 15) {
+  const halfPalletW = palletW / 2;
+  if (clientX - halfPalletW - offset <= 0) {
+    return offset;
+  }
+  if (clientX + halfPalletW + offset >= windowW) {
+    return windowW - palletW - offset;
+  }
+  return clientX - halfPalletW;
+}
+
+export function generateColour(key) {
+  const staticColoursThatWillBeChangedToSeed = [
+    '#A84796',
+    '#EC047D',
+    '#D71D1B',
+    '#DC876C',
+    '#CA8A4D',
+    '#EDB26C',
+    '#FCC31D',
+    '#F38413',
+    '#A64D3A',
+    '#CA8B7B'
+  ];
+  return staticColoursThatWillBeChangedToSeed[key % staticColoursThatWillBeChangedToSeed.length];
+}
+
+export class DeepStructureState {
+
+  constructor(structure) {
+    this.structure = structure;
+    this.structure.forEach(assignNumber({num: 0}));
+    this.structure.forEach((topLevel, key) => {
+      function assignLevel(obj) {
+        obj.level = key;
+        if (obj.children) {
+          obj.children.forEach(assignLevel);
+        }
+      }
+
+      assignLevel(topLevel);
+    });
+    this.maxDepth = depthOf(this.structure);
+    this.depthMap = mapDepths(this.structure, this.maxDepth);
+    this.flatItems = flattenAll(this.structure).sort(sortByKey);
+    this.depth = 0;
+    this.topKeys = this.levelKeys(0);
+  }
+
+  setDepth(depth) {
+    this.depth = depth;
+    return this;
+  }
+
+  inRange(depth) {
+    return this.maxDepth >= depth;
+  }
+
+  increaseDepth() {
+    if (this.inRange(this.depth + 1)) {
+      this.setDepth(this.depth + 1);
+    }
+  }
+
+  decreaseDepth() {
+    if (this.depth > 0) {
+      this.setDepth(this.depth - 1);
+    }
+  }
+
+  levelKeys = (level) => this.depthMap[level].items.map(item => item.key);
+
+  getBreadCrumbs(key) {
+    const reducer = (path) => (found, item) => {
+      if (found) {
+        return found;
+      }
+      if (item.key === key) {
+        return {item, path};
+      }
+      if (item.children) {
+        const childPath = [...path, item];
+        return item.children.reduce(reducer(childPath), false);
+      }
+      return found;
+    };
+
+    return this.structure.reduce(reducer([]), false);
+  }
+
+  matchRangeReducer = (canvasIndex) => (state, item) => {
+    if(matchesRange(item, canvasIndex)) {
+      return item;
+    }
+    return state;
+  };
+
+  getModel(canvasIndex) {
+    const state = {};
+    state.structure = this.structure;
+
+    // Current level
+    state.currentViews = findLevel(this.structure, canvasIndex, this.depth);
+    state.currentKeys = this.levelKeys(this.depth);
+    state.current = new CurrentLevel(state.currentViews, state.currentKeys);
+
+    state.activeItem = state.currentViews.reduce(this.matchRangeReducer(canvasIndex));
+    state.breadcrumbs = this.getBreadCrumbs(state.activeItem.key);
+
+    // Top level
+    state.top = this.structure.filter(range => matchesRange(range, canvasIndex)).pop();
+    state.topKeys = this.topKeys;
+    state.activeItemIsTop = state.topKeys.indexOf(state.activeItem.key) !== -1;
+
+    state.depth = this.depth;
+
+    return state;
+  }
+
 }
 
 export class CurrentLevel {

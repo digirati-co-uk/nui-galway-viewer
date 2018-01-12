@@ -12,26 +12,9 @@ export default class Drawer {
     this.bus = new EventBus('Drawer');
     this.$elements = {};
 
-    this.bus.subscribe('topRange:active', (item) => {
-      if (this.$elements[item.id]) {
-        this.$elements[item.id].classList.add('galway-drawer__list-item--active');
-      }
-    });
-    this.bus.subscribe('topRange:inactive', (item) => {
-      if (this.$elements[item.id]) {
-        this.$elements[item.id].classList.remove('galway-drawer__list-item--active');
-      }
-    });
+    this.onItemClick((item, top) => (top === false ? this.closeMenu() : null));
 
-    this.bus.subscribe('item:click', (item, top) => {
-      if (top === false) {
-        this.closeMenu();
-      }
-    });
-
-    this.$lightbox.addEventListener('click', () => {
-      this.closeMenu();
-    });
+    this.$lightbox.addEventListener('click', () => this.closeMenu());
 
     this.$menu.appendChild(
       DOM(
@@ -48,25 +31,25 @@ export default class Drawer {
     }
 
     return this.createElement(item,
-      DOM('ul', { className: 'galway-drawer__list' },
+      DOM('ul', {className: 'galway-drawer__list'},
         item.children.map(item => this.itemToListItem(item))
       )
     );
   }
 
-  createElement(item, children) {
-    const label = DOM('a', {
-        className: 'galway-drawer__list-link',
-        onClick: () => this.bus.dispatch('item:click', item, !!children)
-      }, item.label);
+  onItemClick(func) {
+    this.bus.subscribe('item:click', func);
+  }
 
+  createElement(item, children) {
     this.$elements[item.id] = DOM('li', {
       className: 'galway-drawer__list-item',
-    }, children ? [
-      label,
+    }, [
+      DOM('a', {
+        className: 'galway-drawer__list-link',
+        onClick: () => this.bus.dispatch('item:click', item, !!children)
+      }, item.label),
       children
-    ] : [
-      label
     ]);
 
     return this.$elements[item.id]
@@ -90,13 +73,22 @@ export default class Drawer {
       ](Drawer.INACTIVE_CLASS);
   }
 
-  render(canvasId, depth = 0) {
-
-    if (this.topLevelRange) {
-
+  render(canvasId, model) {
+    const $currentActive = this.$el.querySelector('.galway-drawer__list-item--active');
+    if ($currentActive && model.depth === 0) {
+      $currentActive.classList.remove('galway-drawer__list-item--active');
     }
-    console.log(canvasId)
-    // Nothing yet!
+
+    Object.keys(this.$elements).forEach((id) => {
+      if (id === model.top.id) {
+        const $el = this.$elements[id];
+        // Add active class when current item is top level.
+        if ($currentActive && $currentActive !== $el) {
+          $currentActive.classList.remove('galway-drawer__list-item--active');
+        }
+        $el.classList.add('galway-drawer__list-item--active');
+      }
+    })
   }
 
 }
