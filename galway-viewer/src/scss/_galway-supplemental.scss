@@ -16,7 +16,7 @@
     right: 20px;
     left: 20px;
     position: absolute;
-    padding: 0 20px;
+    padding: 0 30px;
     @media (max-width: 40em) {
       right: 0;
       left: 0;
@@ -31,7 +31,7 @@
     background: #fff;
     display: flex;
     flex-flow: row wrap;
-    padding-right: 20px;
+    padding-right: 80px;
     @media (max-width: 40em) {
       display: flex;
       flex-direction: column;
@@ -44,6 +44,7 @@
   &__aside {
     flex: 1;
     margin: 30px;
+    padding-left: 50px;
     @media (max-width: 40em) {
       margin: 20px;
       flex: initial;
@@ -91,7 +92,6 @@
     //flex-grow: 1;
     font-size: 40px;
     margin-bottom: 30px;
-    font-weight: 300;
     @media (max-width: 40em) {
       font-weight: 500;
       font-size: 2.8vh;
@@ -133,8 +133,8 @@
 
   &__close {
     position: absolute;
-    top: 0px;
-    right: 33px;
+    top: 5px;
+    right: 53px;
     font-size: 40px;
     cursor: pointer;
     z-index: 100;

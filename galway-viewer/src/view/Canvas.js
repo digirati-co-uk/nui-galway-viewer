@@ -160,12 +160,16 @@ export default class Canvas {
         return null;
       }
 
+      if (this.$annotationOverlay && this.$el.contains(this.$annotationOverlay.$annotationOverlay)) {
+        this.imageContainer.$el.removeChild(this.$annotationOverlay.$annotationOverlay);
+      }
+
       // Annotation container.
       this.$annotationOverlay = new ImageOverlay(canvas.id);
       this.$annotationOverlay.mountTo(this.imageContainer.$el);
 
       this.$image.addEventListener('load', () => {
-        this.$annotationOverlay.render(this.$image);
+        this.$annotationOverlay.render(this.$image, canvas.id);
       });
 
       const currentAnnotationOverlay = this.$annotationOverlay;

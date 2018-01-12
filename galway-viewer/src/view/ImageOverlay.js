@@ -32,12 +32,14 @@ export default class ImageOverlay {
       return;
     }
 
+    $image.addEventListener('load', () => this.render($image, canvasId));
+
     const {width, height} = $image.getBoundingClientRect();
     const px = n => `${n}px`;
 
     const fullWidth = parseInt($image.getAttribute('data-width'), 10);
     const fullHeight = parseInt($image.getAttribute('data-height'), 10);
-    const ratio = height / fullHeight;
+    const ratio = width / fullWidth;
 
     this.$annotationOverlay.style.height = px(height);
     this.$annotationOverlay.style.width = px(width);
