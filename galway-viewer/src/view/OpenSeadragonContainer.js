@@ -45,7 +45,7 @@ export default class OpenSeadragonContainer {
       if (!toRender) {
         return;
       }
-      if (this.currentOsd) {
+      if (this.currentOsd && toRender !== this.currentOsd) {
         this.currentOsd.close(this.$el);
       }
       this.currentOsd = toRender;
