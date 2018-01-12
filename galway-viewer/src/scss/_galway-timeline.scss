@@ -5,6 +5,7 @@ $link-color: $pallet-3-3 !default;
 $transition-speed: .3s;
 $hide-breadcrumbs: false !default;
 $center-titles: true !default;
+$disable-timeline-mobile: true !default;
 
 .galway-timeline {
   background: #fff;
@@ -69,6 +70,9 @@ $center-titles: true !default;
     margin: 15px;
     display: flex;
     @media (max-width: 40em) {
+      @if($disable-timeline-mobile) {
+        display: none;
+      }
       margin: 5px 10px;
       height: 5px;
       pointer-events: none;
