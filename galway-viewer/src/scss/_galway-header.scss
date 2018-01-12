@@ -32,4 +32,7 @@ $header-color: #ddd !default;
       background: mix(#000, $header-color, 10%);
     }
   }
+  &__share {
+    display: none;
+  }
 }
