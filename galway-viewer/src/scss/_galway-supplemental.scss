@@ -1,0 +1,152 @@
+.galway-supplemental {
+  transition: all .2s;
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+
+  &__inner-content {
+    right: 20px;
+    left: 20px;
+    position: absolute;
+    padding: 0 20px;
+    @media (max-width: 40em) {
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0;
+    }
+
+  }
+
+  &__inner {
+    background: #fff;
+    display: flex;
+    flex-flow: row wrap;
+    padding-right: 20px;
+    @media (max-width: 40em) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 0;
+      height: 100vh;
+    }
+  }
+
+  &__aside {
+    flex: 1;
+    margin: 30px;
+    @media (max-width: 40em) {
+      margin: 20px;
+      flex: initial;
+      order: 2;
+    }
+  }
+
+  &__images {
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 30px;
+    flex: 1;
+    @media (max-width: 40em) {
+      order: 1;
+      max-height: inherit;
+      overflow: auto;
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100vh;
+    @media (max-width: 40em) {
+      flex: 1;
+      max-width: initial;
+      max-height: 100%;
+    }
+  }
+
+  &__lightbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+    -webkit-backdrop-filter: blur(10px);
+    display: block;
+    z-index: 0;
+  }
+
+  &__title {
+    //flex-grow: 1;
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    @media (max-width: 40em) {
+      font-weight: 500;
+      font-size: 2.8vh;
+      line-height: 4vh;
+      margin-bottom: 1vh;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 28px;
+    @media (max-width: 40em) {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 12px 60px;
+    background: $pallet-3-1;
+    cursor: pointer;
+    transition: box-shadow .3s, transform .4s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 40em) {
+      font-size: 13px;
+      padding: 10px 30px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0px;
+    right: 33px;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 100;
+    @media (max-width: 40em) {
+      top: auto;
+      bottom: 10px;
+    }
+  }
+
+  &--active {
+    pointer-events: initial;
+    opacity: 1;
+    z-index: 50;
+  }
+}

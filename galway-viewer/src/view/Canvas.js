@@ -32,7 +32,7 @@ export default class Canvas {
     this.$annotationOverlay = null;
 
     // Sub components
-    this.$supplimental = new Supplemental(document.querySelector('.supplemental'));
+    this.$supplimental = new Supplemental(document.querySelector('.galway-supplemental'));
     // this.$link = new Link(document.getElementById('linkDump'));
 
     this.$image = null;
@@ -140,7 +140,7 @@ export default class Canvas {
     this.$image = this.imageContainer.render(canvas.id, buildImage(imageUrl));
 
     // Empty previous links and supplemental
-    this.$supplimental.renderEmpty();
+    // this.$supplimental.renderEmpty();
 
     // Load current OSD, using cached preload if available.
     this.osdContainer.loadOsd(canvas);

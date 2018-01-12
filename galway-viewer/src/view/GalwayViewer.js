@@ -140,6 +140,14 @@ class GalwayViewer {
     const hash = GalwayViewer.readNavigation('canvas');
 
     this.render(hash ? hash : (this.startCanvas ? this.startCanvas : this.canvases[0].id));
+
+    window.onpopstate = (event) => {
+      const hash = GalwayViewer.readNavigation('canvas');
+      if (hash) {
+        this.render(hash);
+      }
+    };
+
   }
 
   render(canvasId) {

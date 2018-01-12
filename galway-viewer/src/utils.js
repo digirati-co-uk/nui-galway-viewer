@@ -186,13 +186,16 @@ export function https(url) {
   return `https${url.substr(4)}`;
 }
 
-export function img(src, {forceHttps, id, onLoad = null}) {
+export function img(src, {forceHttps, id, onLoad = null, className}) {
   const image = document.createElement('img');
   if (id) {
     image.id = id;
   }
   if (onLoad) {
     image.addEventListener('load', (e) => onLoad(img));
+  }
+  if (className) {
+    image.classList.add(className);
   }
   image.src = forceHttps ? https(src) : src;
   return image;
