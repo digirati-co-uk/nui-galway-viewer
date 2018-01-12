@@ -110,7 +110,7 @@ class GalwayViewer {
     // Drawer.
     this.drawer = new Drawer(this.$el.querySelector('.galway-drawer'), this.structure);
     this.drawer.onItemClick(item => {
-      this.deepStructureState.decreaseDepth();
+      this.deepStructureState.increaseDepth();
       if (item && item.range) {
         this.goToPage(item.range[0]);
       }
