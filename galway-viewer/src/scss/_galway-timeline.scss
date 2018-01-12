@@ -80,6 +80,15 @@ $center-titles: true !default;
     flex: 1;
     transition: flex $transition-speed;
     cursor: pointer;
+
+    @media (max-width: 40em) {
+      //padding-top: 5px;
+
+      &--active {
+        //margin-top: 0;
+        height: 15px;
+      }
+    }
   }
 
   &__breadcrumb-prefix {
@@ -184,13 +193,13 @@ $center-titles: true !default;
       }
     }
 
+    @media (max-width: 40em) {
+      height: 5px;
+    }
+
     .galway-timeline__item--active &,
     .galway-timeline__item:hover & {
       opacity: 1;
-    }
-
-    @media (max-width: 40em) {
-      height: 5px;
     }
   }
 

@@ -1,4 +1,4 @@
-import {div, DOM, EventBus} from '../utils';
+import {div, DOM, EventBus, renderTemporal} from '../utils';
 
 export default class Drawer {
 
@@ -48,7 +48,10 @@ export default class Drawer {
       DOM('a', {
         className: 'galway-drawer__list-link',
         onClick: () => this.bus.dispatch('item:click', item, !!children)
-      }, item.label),
+      }, [
+        item.label,
+        div({ className: 'galway-drawer__temporal' }, [renderTemporal(item)])
+      ]),
       children
     ]);
 

@@ -16,7 +16,8 @@ $drawer-width: 340px !default;
   &__menu {
     background: #fff;
     width: $drawer-width;
-    z-index: 10;
+    z-index: 120;
+    margin-right: 20px;
     padding: 15px;
     transition: transform .4s;
     overflow-y: auto;
@@ -35,7 +36,7 @@ $drawer-width: 340px !default;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 9;
+    z-index: 109;
     transition: background .4s;
 
     .galway-drawer--inactive & {
@@ -53,7 +54,14 @@ $drawer-width: 340px !default;
     cursor: pointer;
   }
 
+  &__temporal {
+    font-size: 11px;
+    line-height: 15px;
+    color: #555;
+  }
+
   &__list-item {
+    position: relative;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -69,7 +77,7 @@ $drawer-width: 340px !default;
       display: none;
       font-weight: normal;
       border-bottom: 1px solid #ddd;
-      padding: 20px 10px;
+      padding: 16px 8px;
       font-size: 16px;
     }
 
