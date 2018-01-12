@@ -22,6 +22,10 @@ $drawer-width: 340px !default;
     transition: transform .4s;
     overflow-y: auto;
     overflow-x: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-overflow-scrolling: touch;
+
+
 
     .galway-drawer--inactive & {
       transform: translateX(-$drawer-width);
