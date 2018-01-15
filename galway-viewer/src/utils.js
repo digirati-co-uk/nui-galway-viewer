@@ -204,7 +204,7 @@ export function img(src, {forceHttps, id, onLoad = null, className}) {
 export function link(href, text, onClick) {
   const link = document.createElement('a');
   link.href = href;
-  link.innerText = text;
+  link.innerHTML = text;
   link.addEventListener('click', (e) => {
     onClick(href, e);
   });

@@ -62,7 +62,7 @@ export default class Supplemental {
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
       if (repo['@id']) {
-        const url = link(repo['@id'], repo['label'] || 'View in repository');
+        const url = link(repo['@id'], `${repo['label'] || 'More info'} <i class="material-icons">launch</i>`);
         url.setAttribute('target', '_blank');
         url.classList.add('galway-supplemental__link');
         return url;

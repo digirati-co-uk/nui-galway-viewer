@@ -16,6 +16,8 @@
     right: 20px;
     left: 20px;
     position: absolute;
+    max-width: 1100px;
+    margin: auto;
     padding: 0 30px;
     @media (max-width: 40em) {
       right: 0;
@@ -24,7 +26,6 @@
       bottom: 0;
       padding: 0;
     }
-
   }
 
   &__inner {
@@ -32,7 +33,9 @@
     display: flex;
     flex-flow: row wrap;
     padding-right: 80px;
+
     @media (max-width: 40em) {
+      padding-top: 48px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -45,8 +48,12 @@
     flex: 1;
     margin: 30px;
     padding-left: 50px;
+    @media (max-width: 970px) {
+      flex: 2;
+    }
     @media (max-width: 40em) {
       margin: 20px;
+      padding-left: 0;
       flex: initial;
       order: 2;
     }
@@ -57,6 +64,10 @@
     overflow-y: auto;
     margin: 30px;
     flex: 1;
+    min-width: 120px;
+    @media (max-width: 970px) {
+      flex: 3;
+    }
     @media (max-width: 40em) {
       order: 1;
       max-height: inherit;
@@ -70,7 +81,8 @@
     max-width: 100%;
     max-height: 100vh;
     @media (max-width: 40em) {
-      flex: 1;
+      flex: 0 1;
+      margin: auto;
       max-width: initial;
       max-height: 100%;
     }
@@ -115,10 +127,19 @@
     color: #fff;
     display: inline-block;
     border-radius: 3px;
-    padding: 12px 60px;
-    background: $pallet-3-1;
+    font-size: 13px;
+    padding: 10px 20px;
+    background: $pallet-3-3;
+    text-transform: uppercase;
     cursor: pointer;
     transition: box-shadow .3s, transform .4s;
+
+    .material-icons {
+      line-height: inherit;
+      font-size: inherit;
+      transform: scale(1.4);
+      margin-left: 15px;
+    }
 
     &:hover {
       transform: translateY(-2px);
@@ -126,8 +147,9 @@
     }
 
     @media (max-width: 40em) {
+      margin: 0;
       font-size: 13px;
-      padding: 10px 30px;
+      padding: 10px 20px;
     }
   }
 
@@ -139,8 +161,8 @@
     cursor: pointer;
     z-index: 100;
     @media (max-width: 40em) {
-      top: auto;
-      bottom: 20px;
+      top: 0;
+      right: 20px;
     }
   }
 
@@ -152,8 +174,17 @@
 }
 
 // Safari hacks
-@supports (-webkit-appearance:none) {
+@media screen and (max-width: 767px) {
+  _::-webkit-full-page-media, _:future, :root .galway-supplemental__inner {
+    height: calc(100vh - 50px);
+  }
+}
+
+@media only screen
+and (device-width : 375px)
+and (device-height : 812px)
+and (-webkit-device-pixel-ratio : 3) {
   .galway-supplemental__inner {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 110px) !important;
   }
 }
