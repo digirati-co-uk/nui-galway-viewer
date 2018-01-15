@@ -1,4 +1,5 @@
 $drawer-width: 340px !default;
+$link-color: $pallet-3-3 !default;
 
 .galway-drawer {
   position: fixed;
@@ -86,9 +87,13 @@ $drawer-width: 340px !default;
     .galway-drawer__list-item {
       display: none;
       font-weight: normal;
+      color: $link-color;
       padding: 16px 8px;
       font-size: 16px;
       margin-bottom: 0;
+      &:hover {
+        color: mix(#fff, $link-color, 50%);
+      }
     }
 
     &--active .galway-drawer__list-item--active {
