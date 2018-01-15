@@ -49,7 +49,7 @@ $drawer-width: 340px !default;
   }
 
   &__list {
-    margin: 20px 0 40px 0;
+    margin: 0 0 40px 0;
     padding: 0 0 0 10px; // indent size
   }
 
@@ -59,8 +59,8 @@ $drawer-width: 340px !default;
   }
 
   &__temporal {
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 12px;
+    line-height: 18px;
     color: #555;
   }
 
@@ -71,18 +71,24 @@ $drawer-width: 340px !default;
     white-space: nowrap;
     text-overflow: ellipsis;
     list-style: none;
-    margin: 0;
+    margin-bottom: 30px;
     padding: 0;
     font-weight: bold;
     height: auto;
     transition: height .3s;
+    line-height: 24px;
 
-    & .galway-drawer__list-item {
+    .galway-drawer__list {
+      display: none;
+      margin-bottom: 0;
+    }
+
+    .galway-drawer__list-item {
       display: none;
       font-weight: normal;
-      border-bottom: 1px solid #ddd;
       padding: 16px 8px;
       font-size: 16px;
+      margin-bottom: 0;
     }
 
     &--active .galway-drawer__list-item--active {
@@ -90,6 +96,10 @@ $drawer-width: 340px !default;
     }
 
     &--active .galway-drawer__list-item {
+      display: block;
+    }
+
+    &--active .galway-drawer__list {
       display: block;
     }
   }
