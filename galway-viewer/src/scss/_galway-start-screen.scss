@@ -58,6 +58,7 @@
     background: #fff;
     padding: 60px 80px 60px 60px;
     overflow: auto;
+    max-height: 80vh;
 
     @media (max-width: 40em) {
       top: 10px;

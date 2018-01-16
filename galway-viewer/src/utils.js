@@ -448,7 +448,7 @@ export class CurrentLevel {
   constructor(currentLevelViews, fullLevelKeys) {
     this.currentLevelViews = currentLevelViews;
     this.keys = currentLevelViews.map(item => item.key);
-    this.first = fullLevelKeys.indexOf(currentLevelViews[0].key);
+    this.first = currentLevelViews[0] ? fullLevelKeys.indexOf(currentLevelViews[0].key) : null;
     this.last = fullLevelKeys.indexOf(currentLevelViews[currentLevelViews.length - 1].key);
     this.previous = this.first > 0 ? fullLevelKeys[this.first - 1] : null;
     this.next = this.last < fullLevelKeys.length ? fullLevelKeys[this.last + 1] : null;

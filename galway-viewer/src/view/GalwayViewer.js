@@ -8,6 +8,7 @@ import Header from "./Header";
 import Drawer from "./Drawer";
 import Controls from "./Controls";
 import Timeline from './Timeline';
+import Pager from "./Pager";
 
 class GalwayViewer {
 
@@ -28,6 +29,7 @@ class GalwayViewer {
     });
 
     this.canvas = new Canvas($el.querySelector('.galway-player'));
+    this.pager = new Pager($el.querySelector('.galway-paging'), { useCanvasLabel: true });
   }
 
   // Core
@@ -162,6 +164,8 @@ class GalwayViewer {
     this.timeline.render(canvasIndex, model);
     this.controls.setValue(canvasIndex);
     this.drawer.render(canvasIndex, model);
+    this.pager.render(canvas.label, canvasIndex, this.canvases.length);
+
 
     this.canvas.render({
       canvas,

@@ -83,7 +83,7 @@ export default class Drawer {
     }
 
     Object.keys(this.$elements).forEach((id) => {
-      if (id === model.top.id) {
+      if (model.top && id === model.top.id) {
         const $el = this.$elements[id];
         // Add active class when current item is top level.
         if ($currentActive && $currentActive !== $el) {

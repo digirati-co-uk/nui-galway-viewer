@@ -140,9 +140,15 @@ $disable-timeline-mobile: true !default;
     padding-left: 10px;
     font-size: 16px;
     line-height: 22px;
-    @if ($center-titles) {
-      text-align: center;
-    }
+    //@if ($center-titles) {
+    //  text-align: center;
+    //}
+  }
+
+  & .material-icons {
+    font-size: 13px;
+    transform: scale(1.6);
+    margin-right: 10px;
   }
 
   &__breadcrumb-item {
@@ -152,9 +158,9 @@ $disable-timeline-mobile: true !default;
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
-    @if ($center-titles) {
-      text-align: center;
-    }
+    //@if ($center-titles) {
+    //  text-align: center;
+    //}
 
     &:hover {
       color: darken($link-color, 10%);

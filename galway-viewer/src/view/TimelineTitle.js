@@ -23,6 +23,9 @@ export default class TimelineTitle {
       className: 'galway-timeline__breadcrumb-item',
       onClick: (e) => this.breadCrumbClickHandler ? this.breadCrumbClickHandler(item, e) : null
     }, [
+      div({
+        className: 'material-icons',
+      }, ['navigate_before']),
       item.label,
     ]);
   }

@@ -3,7 +3,6 @@ class Pager {
   constructor($el, { useCanvasLabel}) {
     this.$paging = $el;
     this.useCanvasLabel = useCanvasLabel;
-    this.$pagingPosition = this.$paging.querySelector('.paging__position');
     // this.$pagingTimeout = null;
     // this.$paging.querySelector('.paging__next').addEventListener('click', nextPage);
     // this.$paging.querySelector('.paging__previous').addEventListener('click', prevPage);
@@ -17,9 +16,9 @@ class Pager {
     // }, 2000);
     // this.$pagingPosition.style.left = `${offset}%`;
     if (this.useCanvasLabel) {
-      this.$pagingPosition.innerText = label;
+      this.$paging.innerText = label;
     } else {
-      this.$pagingPosition.innerText = `${label} ${index + 1} of ${total}`;
+      this.$paging.innerText = `${label} ${index + 1} of ${total}`;
     }
   }
 }
