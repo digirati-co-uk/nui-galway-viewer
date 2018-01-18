@@ -513,13 +513,13 @@ export const RANGE_DISPLAY_PREV_NEXT = 'RANGE_DISPLAY_PREV_NEXT';
 
 export function computeStyleFromItem(visibility, item) {
   if (visibility === RANGE_DISPLAY_NONE) {
-    return {flex: 0.0001, 'flex-basis': '0px'};
+    return {flex: 0.0001, 'flex-basis': '0px', 'transform': 'translateX(3px)'};
   }
   if (visibility === RANGE_DISPLAY_PREV_NEXT) {
-    return {flex: '0 0 80px'};
+    return {flex: '0 0 80px', 'transform': 'initial'};
   }
   if (visibility === RANGE_DISPLAY_LARGE && item) {
-    return {flex: item.range[1] - item.range[0], 'flex-basis': '0px'};
+    return {flex: item.range[1] - item.range[0], 'flex-basis': '0px', 'transform': 'initial'};
   }
   return {};
 }
