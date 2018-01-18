@@ -38,7 +38,7 @@ export default class ImageOverlay {
     const px = n => `${n}px`;
 
     const fullWidth = parseInt($image.getAttribute('data-width'), 10);
-    const fullHeight = parseInt($image.getAttribute('data-height'), 10);
+    // const fullHeight = parseInt($image.getAttribute('data-height'), 10);
     const ratio = width / fullWidth;
 
     this.$annotationOverlay.style.height = px(height);

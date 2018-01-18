@@ -19,12 +19,12 @@ const range = [
       {
         label: 'Pallaskenry boys\' National School',
         temporal: [1870],
-        range: ['005', '006']
+        range: ['006', '007']
       },
       {
         label: 'Childhood mischief',
         temporal: [1871],
-        range: ['007', '016']
+        range: ['008', '016']
       },
       {
         label: 'Marriage of Aunt Alice',
@@ -52,7 +52,7 @@ const range = [
       {
         label: 'School in Flean, near Loughill',
         temporal: [1874],
-        range: ['032']
+        range: ['031', '032']
       },
       {
         label: 'School in Mount Trenchard',
@@ -62,7 +62,7 @@ const range = [
       {
         label: 'School in Rockwell College',
         temporal: [1881],
-        range: ['034', '037']
+        range: ['035', '037']
       },
     ]
   },
@@ -96,7 +96,7 @@ const range = [
       {
         temporal: [1885],
         label: 'Arrival in San Francisco',
-        range: ['049', '051']
+        range: ['050', '051']
       },
       {
         temporal: [1886],
@@ -188,12 +188,12 @@ const range = [
       {
         label: 'Closing San Francisco Office',
         temporal: [1899],
-        range: ['115'],
+        range: ['115', '116'],
       },
       {
         label: 'Third Visit to Hawaii, sugar stock collapse',
         temporal: [1900],
-        range: ['116', '119']
+        range: ['117', '119']
       },
       {
         label: 'Fourth Visit to Hawaii, hydraulic power',

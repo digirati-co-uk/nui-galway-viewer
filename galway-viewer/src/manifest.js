@@ -291,8 +291,8 @@ module.exports = {
       "label": "Pallaskenry boys' National School",
       "dcterms:temporal": "1870-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_005.tif.json",
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_006.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_006.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_007.tif.json"
       ]
     },
     {
@@ -301,7 +301,6 @@ module.exports = {
       "label": "Childhood mischief",
       "dcterms:temporal": "1871-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_007.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_008.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_009.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_010.tif.json",
@@ -366,6 +365,7 @@ module.exports = {
       "label": "School in Flean, near Loughill",
       "dcterms:temporal": "1874-01-01",
       "canvases": [
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_031.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_032.tif.json"
       ]
     },
@@ -385,7 +385,6 @@ module.exports = {
       "label": "School in Rockwell College",
       "dcterms:temporal": "1881-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_034.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_035.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_036.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_037.tif.json"
@@ -604,7 +603,6 @@ module.exports = {
       "label": "Arrival in San Francisco",
       "dcterms:temporal": "1885-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_049.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_050.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_051.tif.json"
       ]
@@ -1232,7 +1230,8 @@ module.exports = {
       "label": "Closing San Francisco Office",
       "dcterms:temporal": "1899-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json"
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_115.tif.json",
+        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json"
       ]
     },
     {
@@ -1241,7 +1240,6 @@ module.exports = {
       "label": "Third Visit to Hawaii, sugar stock collapse",
       "dcterms:temporal": "1900-01-01",
       "canvases": [
-        "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_116.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_117.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_118.tif.json",
         "https://iiif.library.nuigalway.ie/manifests/p135/canvas/p135_memoir_119.tif.json"

@@ -117,18 +117,18 @@ export default class Canvas {
     const imageUrlNext = nextCanvas ? `${nextCanvas.images[0].resource.service.id}/full/!${max},${max}/0/default.jpg` : null;
     const imageUrlPrev = prevCanvas ? `${prevCanvas.images[0].resource.service.id}/full/!${max},${max}/0/default.jpg` : null;
 
-    const buildImage = (url) => () => {
+    const buildImage = (currentCanvas, url) => () => {
       const $image = img(url, { forceHttps });
-      $image.setAttribute('data-width', canvas.width);
-      $image.setAttribute('data-height', canvas.height);
+      $image.setAttribute('data-width', currentCanvas.width);
+      $image.setAttribute('data-height', currentCanvas.height);
       return $image;
     };
 
 
     // Preload previous and next <img/> tags.
     this.osdContainer.preloadImages({
-      next: nextCanvas ? this.imageContainer.getCachedImage(nextCanvas.id, buildImage(imageUrlNext)) : null,
-      prev: prevCanvas ? this.imageContainer.getCachedImage(prevCanvas.id, buildImage(imageUrlPrev)) : null,
+      next: nextCanvas ? this.imageContainer.getCachedImage(nextCanvas.id, buildImage(nextCanvas, imageUrlNext)) : null,
+      prev: prevCanvas ? this.imageContainer.getCachedImage(prevCanvas.id, buildImage(prevCanvas, imageUrlPrev)) : null,
     });
 
     // Reset open seadragon to default hidden view.
@@ -137,7 +137,7 @@ export default class Canvas {
     this.$controls.disable();
 
     // Add image
-    this.$image = this.imageContainer.render(canvas.id, buildImage(imageUrl));
+    this.$image = this.imageContainer.render(canvas.id, buildImage(canvas, imageUrl));
 
     // Empty previous links and supplemental
     // this.$supplimental.renderEmpty();
