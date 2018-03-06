@@ -4,9 +4,11 @@ export default class Supplemental {
 
   constructor($el) {
     this.$supplemental = $el;
-    this.$title = $el.querySelector('.supplemental__title');
-    this.$desc = $el.querySelector('.supplemental__description');
-    this.$images = $el.querySelector('.supplemental__images');
+
+    this.$title = $el.querySelector('.galway-supplemental__title');
+    this.$desc = $el.querySelector('.galway-supplemental__description');
+    this.$images = $el.querySelector('.galway-supplemental__images');
+    this.$inner = $el.querySelector('.galway-supplemental__inner');
 
     // bug fixes.
     this.$supplemental.style.removeProperty('display');
@@ -16,16 +18,17 @@ export default class Supplemental {
       }
     });
 
-    const close = this.$supplemental.querySelector('.supplemental__close');
+    const close = this.$supplemental.querySelector('.galway-supplemental__close');
     if (close) {
       close.addEventListener('click', () => {
-        this.$supplemental.classList.remove('supplemental--active');
+        console.log('close => ', close);
+        this.$supplemental.classList.remove('galway-supplemental--active');
       });
     }
-    const lightbox = this.$supplemental.querySelector('.supplemental__lightbox');
+    const lightbox = this.$supplemental.querySelector('.galway-supplemental__lightbox');
     if (lightbox) {
       lightbox.addEventListener('click', () => {
-        this.$supplemental.classList.remove('supplemental--active');
+        this.$supplemental.classList.remove('galway-supplemental--active');
       });
     }
   }
@@ -55,38 +58,82 @@ export default class Supplemental {
     }
   }
 
-  render({manifest, canvasId}) {
-    IIIF.wrap(manifest);
-    this.renderEmpty(false);
-
-
-    this.$supplemental.classList.add('supplemental--active');
-    this.$title.innerText = manifest.label;
-    const descriptions = [];
-
+  getRepositoryLink(manifest) {
     if (manifest.related) {
       const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
       if (repo['@id']) {
-        const url = link(repo['@id'], repo['label'] || 'View in repository');
+        const url = link(repo['@id'], `${repo['label'] || 'More info'} <i class="material-icons">launch</i>`);
         url.setAttribute('target', '_blank');
-        descriptions.push(
-          div({},
-            paragraph([ url ])
-          )
-        );
+        url.classList.add('galway-supplemental__link');
+        return url;
       }
     }
+  }
 
-    descriptions.push(div({}, manifest.description || '(no description)'));
+  render({manifest, canvasId}) {
+    IIIF.wrap(manifest);
 
     const canvasIndex = Supplemental.getCanvasIndex(manifest, canvasId);
     const images = manifest.sequences[0].canvases.map((canvas, index) => {
       const imageUrl = canvas.images[0].resource.service.id + '/full/!1000,1000/0/default.jpg';
       const onLoad = index === canvasIndex ? (img) => this.scrollTo(img) : null;
-      return img(imageUrl, { id: `suppcv_${index}`, onLoad });
+      return img(
+        imageUrl, {
+          className: 'galway-supplemental__image',
+          id: `supplementation-content-${index}`,
+          onLoad
+        });
     });
+    const repo = this.getRepositoryLink(manifest);
 
-    descriptions.map(description => this.$desc.appendChild(description));
-    images.map(image => this.$images.appendChild(image));
+    this.$supplemental.classList.add('galway-supplemental--active');
+    this.$inner.innerHTML = '';
+    this.$inner.appendChild(
+      div({className: 'galway-supplemental__aside'}, [
+        div({className: 'galway-supplemental__title'}, [
+          manifest.label,
+        ]),
+        div({className: 'galway-supplemental__description'}, [
+          manifest.description || '(no description)',
+        ]),
+        repo
+      ])
+    );
+
+    this.$inner.appendChild(
+      div({className: 'galway-supplemental__images'}, images)
+    );
+
+    return;
+
+    // this.renderEmpty(false);
+
+    // this.$title.innerText = manifest.label;
+    // const descriptions = [];
+    //
+    // if (manifest.related) {
+    //   const repo = manifest['related'].asArray()[0]; // todo - prefer HTML format
+    //   if (repo['@id']) {
+    //     const url = link(repo['@id'], repo['label'] || 'View in repository');
+    //     url.setAttribute('target', '_blank');
+    //     descriptions.push(
+    //       div({},
+    //         paragraph([url])
+    //       )
+    //     );
+    //   }
+    // }
+    //
+    // descriptions.push(div({}, manifest.description || '(no description)'));
+    //
+    // const canvasIndex = Supplemental.getCanvasIndex(manifest, canvasId);
+    // const images = manifest.sequences[0].canvases.map((canvas, index) => {
+    //   const imageUrl = canvas.images[0].resource.service.id + '/full/!1000,1000/0/default.jpg';
+    //   const onLoad = index === canvasIndex ? (img) => this.scrollTo(img) : null;
+    //   return img(imageUrl, {id: `suppcv_${index}`, onLoad});
+    // });
+    //
+    // descriptions.map(description => this.$desc.appendChild(description));
+    // images.map(image => this.$images.appendChild(image));
   }
 }

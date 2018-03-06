@@ -12,7 +12,7 @@ html, body {
 .dragon {
     height: 100%;
     width: 100%;
-    background: #000;
+    background: #222;
 }
 
 body {
@@ -353,97 +353,6 @@ body {
 
 /** Supplemental */
 
-.supplemental {
-    -webkit-transition: all .2s;
-    -o-transition: all .2s;
-    transition: all .2s;
-    pointer-events: none;
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    padding: 20px;
-    z-index: 1;
-}
-
-.supplemental__inner {
-    background: #fff;
-    padding: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    top: 20px;
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
-    position: absolute;
-}
-.start-screen__dismiss--lightbox,
-.supplemental__lightbox {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0,0,0,.4);
-    -webkit-backdrop-filter: blur(10px);
-    display: block;
-    z-index: 0;
-}
-
-.supplemental__title {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    font-size: 40px;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-.supplemental__images {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    width: 100%;
-    display: inline-block;
-    overflow-y: scroll;
-    text-align: center;
-}
-
-.supplemental__description {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-    margin-top: 10px;
-}
-
-.start-screen__dismiss--close,
-.supplemental__close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.supplemental--active {
-    pointer-events: initial;
-    opacity: 1;
-    z-index: 50;
-}
 
 .slider {
     position: relative;
@@ -629,33 +538,6 @@ input[type=range]:focus::-ms-fill-upper {
     .timeline {
         height: 50px;
         border: none;
-    }
-
-    .supplemental__inner {
-        top: 10px;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        padding: 10px;
-    }
-
-    .supplemental__close {
-        top: -4px;
-        right: 10px;
-    }
-
-    .supplemental__title {
-        font-size: 18px;
-        margin-bottom: 10px;
-        padding-right: 40px;
-    }
-
-    .supplemental__images {
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .supplemental__images img {
-        max-width: 100%;
     }
 
     .paging,
