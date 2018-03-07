@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import GalwayViewer from './view/GalwayViewer';
 import manifest from './manifest';
 

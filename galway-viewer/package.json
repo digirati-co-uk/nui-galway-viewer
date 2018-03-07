@@ -12,12 +12,16 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.40",
     "@material/drawer": "^0.26.0",
+    "@material/slider": "latest",
+    "autoprefixer": "^8.1.0",
     "cookies-js": "^1.2.3",
+    "cssnano": "^3.10.0",
     "jquery": "^3.2.1",
     "material-components-web": "^0.26.0",
-    "whatwg-fetch": "^2.0.3",
-    "@material/slider": "latest"
+    "precss": "^3.1.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "nwb": "0.18.x",
