@@ -17,8 +17,12 @@
     left: 20px;
     position: absolute;
     max-width: 1100px;
+    width: 100%;
     margin: auto;
     padding: 0 30px;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      top: 50px;
+    }
     @media (max-width: 40em) {
       right: 0;
       left: 0;
@@ -167,7 +171,7 @@
   }
 
   &--active {
-    pointer-events: initial;
+    pointer-events: visible;
     opacity: 1;
     z-index: 50;
   }
