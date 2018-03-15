@@ -1,74 +1,35 @@
 import Void from "./Void";
 import Dragon from "./Dragon";
 import {img} from "../utils";
+import SharedDragon from './SharedDragon';
 
 export default class OpenSeadragonContainer {
 
   constructor($el) {
     this.$el = $el;
-    this.openSeaDragonCache = {};
     this.$void = new Void(document.getElementById('void'));
-    this.currentOsd = null;
-    this.isRendering = false;
+    this.dragon = new SharedDragon();
+    this.dragon.mountTo(this.$el);
   }
 
   mountTo($parent) {
     $parent.appendChild(this.$el);
   }
 
-  loadOsd(canvas, $target = null) {
-    this.openSeaDragonCache[canvas.id] = this.openSeaDragonCache[canvas.id] ?
-      this.openSeaDragonCache[canvas.id] :
-      new Dragon(canvas);
-
-    if ($target) {
-      this.openSeaDragonCache[canvas.id].open($target);
-    }
-  }
-
   goHome(immediate = false) {
-    return this.futureOsd.then(osd => osd.goHome(immediate));
+    this.dragon.goHome(immediate);
   }
 
   reset() {
-    return this.futureOsd.then(osd => osd.reset());
+    return Promise.resolve(this.dragon.reset());
   }
 
-  renderOsd(id) {
-    let resolve;
-    const promise = new Promise((res) => resolve = res);
-    if (this.renderCycle) {
-      clearTimeout(this.renderCycle);
-    }
-    this.renderCycle = setTimeout(() => {
-      const toRender = this.openSeaDragonCache[id];
-      if (!toRender) {
-        return;
-      }
-      if (this.currentOsd && toRender !== this.currentOsd) {
-        this.currentOsd.close(this.$el);
-      }
-      this.currentOsd = toRender;
-      if (this.$void.osdNext.contains(toRender.$container)) {
-        this.$void.osdNext.removeChild(toRender.$container);
-      }
-      if (this.$void.osdPrevious.contains(toRender.$container)) {
-        this.$void.osdPrevious.removeChild(toRender.$container);
-      }
-      toRender.open(this.$el);
-      resolve(this.currentOsd);
-    }, 100);
-
-    this.futureOsd = promise;
-    return promise;
+  renderOsd(canvas) {
+    this.dragon.render(canvas);
   }
 
   addOverlay(element, props, canvasId) {
-    return this.futureOsd.then(osd => {
-      if (this.currentOsd === this.openSeaDragonCache[canvasId]) {
-        osd.addOverlay(element, props)
-      }
-    });
+    this.dragon.addOverlay(element, props, canvasId);
   }
 
   preloadImages({next, prev}) {
@@ -83,15 +44,11 @@ export default class OpenSeadragonContainer {
   }
 
   fullScreen() {
-    if (this.currentOsd) {
-      this.currentOsd.fullScreen();
-    }
+    this.dragon.fullScreen();
   }
 
   exitFullScreen() {
-    if (this.currentOsd) {
-      this.currentOsd.exitFullScreen();
-    }
+    this.dragon.exitFullScreen();
   }
 
   enable() {
@@ -103,18 +60,6 @@ export default class OpenSeadragonContainer {
   }
 
   zoomBy(by) {
-    if (this.currentOsd) {
-      this.currentOsd.zoomBy(by);
-    }
-  }
-
-  preLoadPrevious(previousCanvas) {
-    this.$void.osdPrevious.innerHTML = '';
-    this.loadOsd(previousCanvas, this.$void.osdPrevious);
-  }
-
-  preLoadNext(nextCanvas) {
-    this.$void.osdNext.innerHTML = '';
-    this.loadOsd(nextCanvas, this.$void.osdNext);
+    this.dragon.zoomBy(by);
   }
 }

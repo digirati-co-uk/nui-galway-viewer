@@ -154,10 +154,12 @@ class GalwayViewer {
 
   render(canvasId) {
     const canvasIndex = this.canvases.findIndexById(canvasId);
-    const model = this.deepStructureState.getModel(canvasIndex);
-
-    GalwayViewer.navigateTo(canvasId);
+    if (canvasIndex === this.currentCanvas) {
+      return;
+    }
     this.currentCanvas = canvasIndex;
+    const model = this.deepStructureState.getModel(canvasIndex);
+    GalwayViewer.navigateTo(canvasId);
     const canvas = this.canvases[canvasIndex];
 
     // Render.
@@ -165,7 +167,6 @@ class GalwayViewer {
     this.controls.setValue(canvasIndex);
     this.drawer.render(canvasIndex, model);
     this.pager.render(canvas.label, canvasIndex, this.canvases.length);
-
 
     this.canvas.render({
       canvas,
