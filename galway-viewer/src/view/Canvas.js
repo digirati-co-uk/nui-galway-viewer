@@ -143,16 +143,16 @@ export default class Canvas {
     // this.$supplimental.renderEmpty();
 
     // Load current OSD, using cached preload if available.
-    this.osdContainer.loadOsd(canvas);
-    this.osdContainer.renderOsd(canvas.id);
+    // this.osdContainer.loadOsd(canvas);
+    this.osdContainer.renderOsd(canvas);
 
-    // Preload previous and next OSD viewers
-    if (nextCanvas) {
-      this.osdContainer.preLoadNext(nextCanvas);
-    }
-    if (prevCanvas) {
-      this.osdContainer.preLoadPrevious(nextCanvas);
-    }
+    // // Preload previous and next OSD viewers
+    // if (nextCanvas) {
+    //   this.osdContainer.preLoadNext(nextCanvas);
+    // }
+    // if (prevCanvas) {
+    //   this.osdContainer.preLoadPrevious(nextCanvas);
+    // }
 
     // Finally render the annotations, at this point we will have OSD.
     this.getAnnotations(canvas.otherContent).then(annotations => {
@@ -173,7 +173,6 @@ export default class Canvas {
       });
 
       const currentAnnotationOverlay = this.$annotationOverlay;
-
       this.renderAnnotations(annotations, currentAnnotationOverlay, canvas.id);
     });
   }
