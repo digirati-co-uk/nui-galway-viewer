@@ -1,29 +1,19 @@
+const sassDefine = require('sass-define');
+
 module.exports = {
-  type: 'web-app',
+  type: 'react-app',
   webpack: {
-    uglify: false,
-    extra: {
-      resolve: {
-        alias: {
-          '@material/slider': '@material/slider/dist/mdc.slider',
-        }
-      }
-    },
+    publicPath: '',
     rules: {
-      postcss: {
-        plugins: [
-          require('precss'),
-          require('autoprefixer'),
-          require('cssnano')
-        ]
-      }
-    }
+      sass: {
+        data: sassDefine(require('./sassConfig')),
+      },
+    },
   },
   babel: {
     env: {
       targets: {
         browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11'],
-        useBuiltIns: 'entry',
       },
     },
   },

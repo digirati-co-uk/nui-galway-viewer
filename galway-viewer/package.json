@@ -1,31 +1,52 @@
 {
   "name": "galway-viewer",
-  "version": "1.0.0",
-  "description": "Describe galway-viewer here",
+  "version": "3.0.0",
+  "description": "NUI Galway viewer",
   "private": true,
   "scripts": {
-    "build": "nwb build-web-app",
+    "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-web-app --reload",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server",
+    "precommit": "lint-staged"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.40",
-    "@material/drawer": "^0.26.0",
-    "@material/slider": "latest",
-    "autoprefixer": "^8.1.0",
+    "@canvas-panel/core": "^0.0.8",
+    "@canvas-panel/redux": "^0.0.8",
+    "@canvas-panel/search": "^0.0.8",
+    "@canvas-panel/timeline": "^0.0.8",
+    "@fesk/bem-js": "^1.0.0",
     "cookies-js": "^1.2.3",
-    "cssnano": "^3.10.0",
-    "jquery": "^3.2.1",
-    "material-components-web": "^0.26.0",
-    "precss": "^3.1.2",
-    "whatwg-fetch": "^2.0.3"
+    "immutability-helper": "^2.6.4",
+    "manifesto.js":
+      "git://github.com/stephenwf/manifesto.git#0bd82b210d0247537c30a1d78532c00e32fa5fa1",
+    "manifold": "git://github.com/IIIF-Commons/manifold.git#v1.2.16",
+    "material-components-web": "^0.30.0",
+    "nwb-sass": "^0.8.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-rangeslider": "^2.2.0",
+    "react-redux": "^5.0.6",
+    "rheostat": "^2.1.3"
   },
   "devDependencies": {
-    "nwb": "0.18.x",
-    "nwb-sass": "^0.8.2"
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flow": "^2.29.1",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "nwb": "0.21.x",
+    "prettier": "^1.12.1",
+    "sass-define": "0.0.5"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.{js,json,scss,md}": ["prettier --write", "git add"]
   },
   "author": "",
   "license": "MIT",
