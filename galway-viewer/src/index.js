@@ -12,6 +12,14 @@ import {
 } from '@canvas-panel/search';
 import App from './App';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('@fesk/plugin-micro-site/lib/js');
+  require('css-reset-and-normalize-sass/scss/flavored-reset-and-normalize.scss');
+  require('@fesk/plugin-markdown/lib/scss/markdown.scss');
+  require('@fesk/plugin-markdown/lib/scss/prism.scss');
+  require('@fesk/plugin-micro-site/lib/scss/micro-site.scss');
+}
+
 const store = createStore(
   {
     structure: timelineReducer,
