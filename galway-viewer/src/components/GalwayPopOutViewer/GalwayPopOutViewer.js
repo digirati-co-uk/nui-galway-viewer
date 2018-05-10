@@ -14,11 +14,14 @@ class GalwayPopOutViewer extends Component {
 
   render() {
     const { isOpen } = this.state;
-    const { text, bem, ...props } = this.props;
+    const { text, bem, placeholderClassName, ...props } = this.props;
 
     return (
       <div className={bem}>
-        <span onClick={this.open} className={bem.element('trigger')}>
+        <span
+          onClick={this.open}
+          className={`${bem.element('trigger')} ${placeholderClassName}`.trim()}
+        >
           {text}
         </span>
         <div className={bem.element('viewer').modifiers({ isOpen })}>

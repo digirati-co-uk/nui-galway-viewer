@@ -69,6 +69,7 @@ function createGalwayViewerComponent($viewer) {
                 !$viewer.getAttribute('data-disable-start-screen')
               }
               drawerEnabled={!$viewer.getAttribute('data-disable-drawer')}
+              placeholderClassName={$viewer.getAttribute('data-class-name')}
             />
           </Provider>
         ) : null

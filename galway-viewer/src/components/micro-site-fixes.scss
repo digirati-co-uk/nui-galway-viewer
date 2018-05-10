@@ -24,3 +24,16 @@
     padding: 0 0 0 10px;
   }
 }
+
+.example-button {
+  display: inline-block;
+  margin: 40px 0;
+  font-size: 18px;
+  background: #68075a;
+  color: #fff;
+  padding: 20px 40px;
+  cursor: pointer;
+  &:hover {
+    background: mix(#68075a, #fff, 90%);
+  }
+}

@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: master
+publish_mode: editorial_workflow
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+display_url: https://pmc-viewer.netlify.com
+collections:
+- name: "homepage"
+  label: "Homepage"
+  folder: "src/views"
+  create: false
+  editor:
+     preview: false
+  slug: "{{slug}}"
+  fields:
+    - {label: "Name of post", name: "name", widget: "string"}
+    - {label: "Short name", name: "title", widget: "string"}
+    - label: "Hero image"
+      name: "hero"
+      widget: "object"
+      fields:
+        - {label: "Headline", name: "headline", widget: "string"}
+        - {label: "Featured Image", name: "image", widget: "image"}
+        - {label: "Body", name: "text", widget: "markdown"}
+    - {label: "Body", name: "body", widget: "markdown"}
+- name: "about"
+  label: "About pages"
+  folder: "src/views/00-about"
+  create: true
+  editor:
+     preview: false
+  slug: "{{slug}}"
+  fields:
+    - {label: "Name of post", name: "name", widget: "string"}
+    - {label: "Short name", name: "title", widget: "string"}
+    - label: "Hero image"
+      name: "hero"
+      widget: "object"
+      fields:
+        - {label: "Headline", name: "headline", widget: "string"}
+        - {label: "Featured Image", name: "image", widget: "image"}
+        - {label: "Body", name: "text", widget: "markdown"}
+    - {label: "Body", name: "body", widget: "markdown"}
+- name: "examples"
+  label: "Example pages"
+  folder: "src/views/01-examples"
+  create: true
+  editor:
+     preview: false
+  slug: "{{slug}}"
+  fields:
+    - {label: "Name of post", name: "name", widget: "string"}
+    - {label: "Short name", name: "title", widget: "string"}
+    - label: "Hero image"
+      name: "hero"
+      widget: "object"
+      fields:
+        - {label: "Headline", name: "headline", widget: "string"}
+        - {label: "Featured Image", name: "image", widget: "image"}
+        - {label: "Body", name: "text", widget: "markdown"}
+    - {label: "Body", name: "body", widget: "markdown"}
