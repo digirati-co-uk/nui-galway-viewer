@@ -9,6 +9,9 @@ title: index
 </div>
 
 <div data-element="galway-viewer-pop-out"
-     data-manifest="https://wellcomelibrary.org/iiif/b18035723/manifest">
+     data-title="Search service example"
+     data-manifest="https://wellcomelibrary.org/iiif/b18035723/manifest"
+     data-disable-start-screen="true"
+     data-disable-drawer="true">
      Search service example
 </div>

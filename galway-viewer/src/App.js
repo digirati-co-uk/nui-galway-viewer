@@ -21,6 +21,9 @@ type Props = {
   dispatch: any => void,
   onClose?: any => void,
   getRef?: any => any,
+  title: string,
+  startScreenEnabled: boolean,
+  drawerEnabled: boolean,
 };
 
 type State = {
@@ -58,31 +61,36 @@ class App extends Component<Props, State> {
   }
 
   render() {
-    const { onClose } = this.props;
+    const { onClose, title, startScreenEnabled, drawerEnabled } = this.props;
 
     return (
       <Layout>
         <Layout.Modal>
           <Supplemental />
-          <StartScreen
-            ref={startScreen =>
-              (this.startScreen = startScreen
-                ? startScreen.getWrappedInstance()
-                : null)
-            }
-          />
-          <Drawer
-            ref={drawer =>
-              (this.drawer = drawer
-                ? drawer.getWrappedInstance().getWrappedInstance()
-                : null)
-            }
-          />
+          {startScreenEnabled ? (
+            <StartScreen
+              ref={startScreen =>
+                (this.startScreen = startScreen
+                  ? startScreen.getWrappedInstance()
+                  : null)
+              }
+            />
+          ) : null}
+          {drawerEnabled ? (
+            <Drawer
+              ref={drawer =>
+                (this.drawer = drawer
+                  ? drawer.getWrappedInstance().getWrappedInstance()
+                  : null)
+              }
+            />
+          ) : null}
         </Layout.Modal>
         <Layout.Header>
           <Header
-            onClickInfo={this.openStartScreen}
-            onClickMenu={this.openMenu}
+            title={title}
+            onClickInfo={startScreenEnabled ? this.openStartScreen : null}
+            onClickMenu={startScreenEnabled ? this.openMenu : null}
             onClickClose={onClose}
           />
           <Timeline />

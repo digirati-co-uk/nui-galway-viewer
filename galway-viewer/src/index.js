@@ -62,6 +62,13 @@ function createGalwayViewerComponent($viewer) {
               {...props}
               text={innerText}
               getRef={osd => ($viewer.osd = osd)}
+              title={
+                $viewer.getAttribute('data-title') || 'O’Shaughnessy Memoirs'
+              }
+              startScreenEnabled={
+                !$viewer.getAttribute('data-disable-start-screen')
+              }
+              drawerEnabled={!$viewer.getAttribute('data-disable-drawer')}
             />
           </Provider>
         ) : null
@@ -98,7 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     render(
       <Provider store={store}>
-        <App manifest={$viewer.getAttribute('data-manifest')} />
+        <App
+          manifest={$viewer.getAttribute('data-manifest')}
+          title={$viewer.getAttribute('data-title') || 'O’Shaughnessy Memoirs'}
+          startScreenEnabled={
+            !$viewer.getAttribute('data-disable-start-screen')
+          }
+          drawerEnabled={!$viewer.getAttribute('data-disable-drawer')}
+        />
       </Provider>,
       $viewer
     );

@@ -7,6 +7,7 @@ import './Header.scss';
 
 type Props = {
   bem: any,
+  title: string,
   onClickInfo: any => void,
   onClickMenu: any => void,
   onClickClose: any => void,
@@ -17,6 +18,7 @@ class Header extends Component<Props> {
   render() {
     const {
       bem,
+      title,
       onClickInfo,
       onClickMenu,
       onClickClose,
@@ -24,26 +26,30 @@ class Header extends Component<Props> {
     } = this.props;
     return (
       <header className={bem}>
-        <button
-          onClick={onClickMenu}
-          className={`${bem.element('menu')} material-icons`}
-        >
-          menu
-        </button>
+        {onClickMenu ? (
+          <button
+            onClick={onClickMenu}
+            className={`${bem.element('menu')} material-icons`}
+          >
+            menu
+          </button>
+        ) : null}
         <span className={`${bem.element('title')} mdc-typography`}>
-          O’Shaughnessy Memoirs
+          {title}
         </span>
         {onClickShare ? (
           <button className={`${bem.element('share')} material-icons`}>
             share
           </button>
         ) : null}
-        <button
-          onClick={onClickInfo}
-          className={`${bem.element('info')} material-icons`}
-        >
-          info
-        </button>
+        {onClickInfo ? (
+          <button
+            onClick={onClickInfo}
+            className={`${bem.element('info')} material-icons`}
+          >
+            info
+          </button>
+        ) : null}
         {onClickClose ? (
           <button
             onClick={onClickClose}
