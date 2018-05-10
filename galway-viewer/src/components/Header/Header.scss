@@ -19,7 +19,8 @@ $header-color: #68075a !default;
 
   &__menu,
   &__info,
-  &__share {
+  &__share,
+  &__close {
     // from MDN
     border: none;
     background-color: transparent;
