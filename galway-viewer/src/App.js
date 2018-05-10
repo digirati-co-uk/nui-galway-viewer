@@ -17,13 +17,27 @@ import NavigationControls from './components/NavigationControls/NavigationContro
 import Supplemental from './components/Supplemental/Supplemental';
 
 type Props = {
-  manifestUri: string,
+  manifest: string,
   dispatch: any => void,
+  onClose?: any => void,
+  getRef?: any => any,
 };
 
-class App extends Component<Props> {
+type State = {
+  viewportAvailable: boolean,
+};
+
+class App extends Component<Props, State> {
   startScreen = null;
   drawer = null;
+  viewport = null;
+
+  state = { viewportAvailable: false };
+
+  setViewport = viewport => {
+    this.viewport = viewport;
+    this.setState({ viewportAvailable: true });
+  };
 
   openStartScreen = () => {
     if (this.startScreen) {
@@ -39,44 +53,49 @@ class App extends Component<Props> {
 
   componentWillMount() {
     this.props.dispatch(
-      manifestRequest(this.props.manifestUri, 'en-GB', { startCanvas: 2 })
+      manifestRequest(this.props.manifest, 'en-GB', { startCanvas: 2 })
     );
   }
 
   render() {
+    const { onClose } = this.props;
+
     return (
-      <Layout
-        header={() => (
-          <div>
-            <Supplemental />
-            <StartScreen
-              ref={startScreen =>
-                (this.startScreen = startScreen
-                  ? startScreen.getWrappedInstance()
-                  : null)
-              }
-            />
-            <Header
-              onClickInfo={this.openStartScreen}
-              onClickMenu={this.openMenu}
-            />
-            <Timeline />
-            <Drawer
-              ref={drawer =>
-                (this.drawer = drawer
-                  ? drawer.getWrappedInstance().getWrappedInstance()
-                  : null)
-              }
-            />
-          </div>
-        )}
-        content={() => <Viewer />}
-        footer={() => [
-          <SearchBox key="search" />,
-          <RangeSlider key="range" />,
-          <NavigationControls key="nav" />,
-        ]}
-      />
+      <Layout>
+        <Layout.Modal>
+          <Supplemental />
+          <StartScreen
+            ref={startScreen =>
+              (this.startScreen = startScreen
+                ? startScreen.getWrappedInstance()
+                : null)
+            }
+          />
+          <Drawer
+            ref={drawer =>
+              (this.drawer = drawer
+                ? drawer.getWrappedInstance().getWrappedInstance()
+                : null)
+            }
+          />
+        </Layout.Modal>
+        <Layout.Header>
+          <Header
+            onClickInfo={this.openStartScreen}
+            onClickMenu={this.openMenu}
+            onClickClose={onClose}
+          />
+          <Timeline />
+        </Layout.Header>
+        <Layout.Main>
+          <Viewer setViewport={this.setViewport} />
+        </Layout.Main>
+        <Layout.Footer>
+          <SearchBox key="search" />
+          <RangeSlider key="range" />
+          <NavigationControls key="nav" />
+        </Layout.Footer>
+      </Layout>
     );
   }
 }

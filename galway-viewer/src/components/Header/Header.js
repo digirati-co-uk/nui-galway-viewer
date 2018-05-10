@@ -9,11 +9,19 @@ type Props = {
   bem: any,
   onClickInfo: any => void,
   onClickMenu: any => void,
+  onClickClose: any => void,
+  onClickShare: any => void,
 };
 
 class Header extends Component<Props> {
   render() {
-    const { bem, onClickInfo, onClickMenu } = this.props;
+    const {
+      bem,
+      onClickInfo,
+      onClickMenu,
+      onClickClose,
+      onClickShare,
+    } = this.props;
     return (
       <header className={bem}>
         <button
@@ -25,15 +33,25 @@ class Header extends Component<Props> {
         <span className={`${bem.element('title')} mdc-typography`}>
           O’Shaughnessy Memoirs
         </span>
-        <button className={`${bem.element('share')} material-icons`}>
-          share
-        </button>
+        {onClickShare ? (
+          <button className={`${bem.element('share')} material-icons`}>
+            share
+          </button>
+        ) : null}
         <button
           onClick={onClickInfo}
           className={`${bem.element('info')} material-icons`}
         >
           info
         </button>
+        {onClickClose ? (
+          <button
+            onClick={onClickClose}
+            className={`${bem.element('close')} material-icons`}
+          >
+            close
+          </button>
+        ) : null}
       </header>
     );
   }

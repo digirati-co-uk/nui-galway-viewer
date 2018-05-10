@@ -21,7 +21,12 @@ import ViewerControls from '../ViewerControls/ViewerControls';
 import './Viewer.scss';
 
 class Viewer extends Component {
-  setViewport = viewport => (this.viewport = viewport);
+  setViewport = viewport => {
+    this.viewport = viewport;
+    if (this.props.setViewport) {
+      this.props.setViewport(viewport);
+    }
+  };
 
   zoomIn = () => {
     if (this.viewport) {

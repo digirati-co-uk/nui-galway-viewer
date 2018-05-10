@@ -1,29 +1,34 @@
-/**
- * @flow
- */
 import React, { Component } from 'react';
 import { withBemClass } from '@canvas-panel/core';
 import './Layout.scss';
 
-type Props = {
-  bem: any,
-  header: void => any,
-  content: void => any,
-  footer: void => any,
-};
-
-class Layout extends Component<Props> {
+class Layout extends Component {
   render() {
-    const { bem, header, content, footer, ...props } = this.props;
-
+    const { bem, children, ...props } = this.props;
     return (
       <main className={bem} {...props}>
-        <header className={bem.element('header')}>{header()}</header>
-        <section className={bem.element('content')}>{content()}</section>
-        <footer className={bem.element('footer')}>{footer()}</footer>
+        {children}
       </main>
     );
   }
 }
 
-export default withBemClass('layout')(Layout);
+const StyledLayout = withBemClass('layout')(Layout);
+
+StyledLayout.Header = withBemClass('layout')(({ children, bem }) => (
+  <header className={bem.element('header')}>{children}</header>
+));
+
+StyledLayout.Main = withBemClass('layout')(({ children, bem }) => (
+  <article className={bem.element('main')}>{children}</article>
+));
+
+StyledLayout.Footer = withBemClass('layout')(({ children, bem }) => (
+  <footer className={bem.element('footer')}>{children}</footer>
+));
+
+StyledLayout.Modal = withBemClass('layout')(({ children, bem }) => (
+  <div className={bem.element('modal')}>{children}</div>
+));
+
+export default StyledLayout;

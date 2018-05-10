@@ -10,7 +10,9 @@ import {
   reducer as searchReducer,
   saga as searchSaga,
 } from '@canvas-panel/search';
+import { htmlElementObserver, ObservableElement } from '@canvas-panel/core';
 import App from './App';
+import GalwayPopOutViewer from './components/GalwayPopOutViewer/GalwayPopOutViewer';
 
 if (process.env.NODE_ENV !== 'production') {
   require('@fesk/plugin-micro-site/lib/js');
@@ -18,26 +20,87 @@ if (process.env.NODE_ENV !== 'production') {
   require('@fesk/plugin-markdown/lib/scss/markdown.scss');
   require('@fesk/plugin-markdown/lib/scss/prism.scss');
   require('@fesk/plugin-micro-site/lib/scss/micro-site.scss');
+  require('./components/micro-site-fixes.scss');
 }
 
-const store = createStore(
-  {
-    structure: timelineReducer,
-    search: searchReducer,
-  },
-  [],
-  [timelineSaga, searchSaga]
-);
+const storeCache = {};
+function getStoreFromCache(manifestId) {
+  if (!storeCache[manifestId]) {
+    storeCache[manifestId] = createStore(
+      {
+        structure: timelineReducer,
+        search: searchReducer,
+      },
+      [],
+      [timelineSaga, searchSaga]
+    );
+  }
+  return storeCache[manifestId];
+}
 
-render(
-  <Provider store={store}>
-    <App
-      manifestUri={
-        window.location.hash.substr(1) ||
-        'https://gist.githubusercontent.com/stephenwf/8c417a212866a21f48bd3ce9182e2f28/raw/cbfc217bd4c2f9311438a881db9a43fd015481cb/raw.json'
+function isValidElement($el) {
+  const manifest = $el.getAttribute('data-manifest');
+  return !!manifest.trim();
+}
+
+function createGalwayViewerComponent($viewer) {
+  if (!isValidElement($viewer)) {
+    return null;
+  }
+  const initialProps = { ...$viewer.dataset };
+  const innerText = $viewer.innerText;
+  const store = getStoreFromCache(initialProps.manifest);
+
+  render(
+    <ObservableElement
+      observer={htmlElementObserver($viewer)}
+      initialProps={initialProps}
+      render={props =>
+        props.manifest ? (
+          <Provider store={store}>
+            <GalwayPopOutViewer
+              {...props}
+              text={innerText}
+              getRef={osd => ($viewer.osd = osd)}
+            />
+          </Provider>
+        ) : null
       }
-    />
-  </Provider>,
-  // <App manifestUri="https://wellcomelibrary.org/iiif/b18035723/manifest" />,
-  document.querySelector('#app')
-);
+    />,
+    $viewer
+  );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = Array.from(
+    document.querySelectorAll('[data-element="galway-viewer-pop-out"]')
+  );
+
+  popup.forEach($popOut => {
+    try {
+      createGalwayViewerComponent($popOut);
+    } catch (e) {
+      console.warn('Unable to render viewer', e);
+    }
+  });
+
+  const viewers = Array.from(
+    document.querySelectorAll('[data-element="galway-viewer"]')
+  );
+
+  viewers.forEach($viewer => {
+    if (!isValidElement($viewer)) {
+      return null;
+    }
+    const manifest = $viewer.getAttribute('data-manifest');
+    console.log(manifest);
+    const store = getStoreFromCache(manifest);
+
+    render(
+      <Provider store={store}>
+        <App manifest={$viewer.getAttribute('data-manifest')} />
+      </Provider>,
+      $viewer
+    );
+  });
+});
