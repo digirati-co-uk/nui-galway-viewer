@@ -12,25 +12,7 @@ import {
   OpenSeadragonViewport,
 } from '@canvas-panel/core';
 import { deselectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
-
-function getManifestData(annotation) {
-  const jsonLd = annotation.annotation.__jsonld;
-  if (
-    jsonLd &&
-    (jsonLd.resource['@type'] || '').toLowerCase() === 'sc:canvas'
-  ) {
-    if (
-      (jsonLd.resource.within['@type'] || '').toLowerCase() === 'sc:manifest'
-    ) {
-      return {
-        label: jsonLd.resource.within.label,
-        manifest: jsonLd.resource.within['@id'],
-        description: jsonLd.resource.within.description,
-        canvasId: jsonLd.resource['@id'],
-      };
-    }
-  }
-}
+import { getManifestData } from '../../utils';
 
 class Supplemental extends Component {
   state = {
@@ -59,11 +41,10 @@ class Supplemental extends Component {
   }
 
   setAnnotation(annotation) {
-    console.log('setting annotation', annotation);
     if (!annotation) {
       return;
     }
-    const manifestData = getManifestData(annotation);
+    const manifestData = getManifestData(annotation.annotation);
     if (manifestData) {
       this.setState({
         loading: true,

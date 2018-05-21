@@ -19,6 +19,7 @@ import { selectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
 import Paging from '../Paging/Paging';
 import ViewerControls from '../ViewerControls/ViewerControls';
 import './Viewer.scss';
+import { hasManifestData } from '../../utils';
 
 class Viewer extends Component {
   setViewport = viewport => {
@@ -133,6 +134,7 @@ class Viewer extends Component {
                               selected:
                                 annotation.id &&
                                 annotation.id === currentAnnotation,
+                              linking: hasManifestData(annotation),
                             })}
                             onClickAnnotation={annotation =>
                               dispatch(
