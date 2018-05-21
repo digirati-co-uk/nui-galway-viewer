@@ -15,20 +15,40 @@ class Layout extends Component {
 
 const StyledLayout = withBemClass('layout')(Layout);
 
-StyledLayout.Header = withBemClass('layout')(({ children, bem }) => (
-  <header className={bem.element('header')}>{children}</header>
-));
+StyledLayout.Header = withBemClass('layout')(
+  class LayoutHeader extends Component {
+    render() {
+      const { children, bem } = this.props;
+      return <header className={bem.element('header')}>{children}</header>;
+    }
+  }
+);
 
-StyledLayout.Main = withBemClass('layout')(({ children, bem }) => (
-  <article className={bem.element('main')}>{children}</article>
-));
+StyledLayout.Main = withBemClass('layout')(
+  class LayouMain extends Component {
+    render() {
+      const { children, bem } = this.props;
+      return <article className={bem.element('main')}>{children}</article>;
+    }
+  }
+);
 
-StyledLayout.Footer = withBemClass('layout')(({ children, bem }) => (
-  <footer className={bem.element('footer')}>{children}</footer>
-));
+StyledLayout.Footer = withBemClass('layout')(
+  class LayoutFooter extends Component {
+    render() {
+      const { children, bem } = this.props;
+      return <footer className={bem.element('footer')}>{children}</footer>;
+    }
+  }
+);
 
-StyledLayout.Modal = withBemClass('layout')(({ children, bem }) => (
-  <div className={bem.element('modal')}>{children}</div>
-));
+StyledLayout.Modal = withBemClass('layout')(
+  class LayoutModal extends Component {
+    render() {
+      const { children, bem } = this.props;
+      return <div className={bem.element('modal')}>{children}</div>;
+    }
+  }
+);
 
 export default StyledLayout;
