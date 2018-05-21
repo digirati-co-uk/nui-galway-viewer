@@ -25,7 +25,7 @@ StyledLayout.Header = withBemClass('layout')(
 );
 
 StyledLayout.Main = withBemClass('layout')(
-  class LayouMain extends Component {
+  class LayoutMain extends Component {
     render() {
       const { children, bem } = this.props;
       return <article className={bem.element('main')}>{children}</article>;
