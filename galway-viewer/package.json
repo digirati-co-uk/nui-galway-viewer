@@ -21,10 +21,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.0.8",
-    "@canvas-panel/redux": "^0.0.8",
-    "@canvas-panel/search": "^0.0.8",
-    "@canvas-panel/timeline": "^0.0.8",
+    "@canvas-panel/core": "^0.0.9",
+    "@canvas-panel/redux": "^0.0.9",
+    "@canvas-panel/search": "^0.0.9",
+    "@canvas-panel/timeline": "^0.0.9",
     "@fesk/bem-js": "^1.0.0",
     "cookies-js": "^1.2.3",
     "immutability-helper": "^2.6.4",
