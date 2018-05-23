@@ -1,6 +1,6 @@
 {
   "name": "galway-viewer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "NUI Galway viewer",
   "files": ["umd", "lib", "sassConfig.js"],
   "scripts": {
