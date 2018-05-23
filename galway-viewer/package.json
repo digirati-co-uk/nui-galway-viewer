@@ -2,7 +2,6 @@
   "name": "galway-viewer",
   "version": "3.0.0",
   "description": "NUI Galway viewer",
-  "private": true,
   "scripts": {
     "build":
       "NODE_ENV=development npm-run-all build-templates build-assets build-admin build-public",
