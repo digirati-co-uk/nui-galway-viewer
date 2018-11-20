@@ -1,3 +1,9 @@
+$range-colour: #018786 !default;
+$range-background: rgba($range-colour, 0.25) !default;
+$range-border: #d8d8d8 !default;
+$range-handle-background: #fff !default;
+$range-handle-colour: #dadfe8 !default;
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html,
