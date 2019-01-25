@@ -91,12 +91,16 @@ $link-color: $pallet-3-3 !default;
       display: none;
       font-weight: normal;
       color: $link-color;
-      padding: 16px 8px;
+      padding: 8px 8px;
       font-size: 16px;
       margin-bottom: 0;
       &:hover {
         color: mix(#fff, $link-color, 50%);
       }
+    }
+
+    &--active {
+      margin-bottom: 10px;
     }
 
     &--active .drawer__list-item--active {
