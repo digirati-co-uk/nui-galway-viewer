@@ -15,6 +15,13 @@ he was awarded his degree by the Royal University of Ireland. [Read more](/about
      Click to see the O’Shaughnessy Memoirs
 </div>
 
+<div data-element="galway-viewer-pop-out"
+     data-manifest="https://iiif.library.nuigalway.ie/manifests/p135/memoir-hawaii-manifest.json"
+     data-class-name="example-button"
+ >
+     O'Shaughnessy Memoirs, Reminiscences of Hawaii 1920
+</div>
+
 ---
 
 ## Wellcome example

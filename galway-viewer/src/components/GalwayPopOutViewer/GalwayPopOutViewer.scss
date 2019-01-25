@@ -13,8 +13,6 @@
 
     .viewer {
       pointer-events: none;
-      transform: scale(0.95);
-      transition: transform 0.3s;
     }
     .layout__footer {
       transform: translateY(100px);
@@ -30,7 +28,6 @@
       opacity: 1;
       .viewer {
         pointer-events: visible;
-        transform: scale(1);
       }
       .layout__footer {
         transform: translateY(0);
