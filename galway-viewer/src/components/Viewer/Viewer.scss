@@ -124,6 +124,7 @@
   outline: none;
   background: rgba(#fff, 0.2);
   pointer-events: none;
+  transition: background 0.2s;
 
   &--linking {
     border: none;
@@ -131,11 +132,45 @@
     background: rgba(#fff, 0.3);
     cursor: pointer;
     pointer-events: visible;
+
+    &:hover {
+      outline: 2px solid rgba(#fff, 0.8);
+      z-index: 11;
+    }
   }
 
   &--search {
     border: none;
     background: rgba(#00aeb2, 0.3);
     outline: 1px solid #00aeb2;
+  }
+
+  &:hover {
+    background: rgba(#fff, 0);
+  }
+
+  &:hover .annotation__label {
+    opacity: 1;
+    pointer-events: visible;
+    box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 16px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &__label {
+    transition: opacity 0.2s;
+    opacity: 0;
+    font-size: 12px;
+    position: absolute;
+    bottom: -24px;
+    left: -2px;
+    z-index: 10;
+    //height: 20px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-align: left;
+    pointer-events: none;
   }
 }

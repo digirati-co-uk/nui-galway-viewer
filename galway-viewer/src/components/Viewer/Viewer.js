@@ -136,6 +136,21 @@ class Viewer extends Component {
                             annotation.id === currentAnnotation,
                           linking: hasManifestData(annotation),
                         })}
+                        annotationContent={(annotation, b) => {
+                          if (
+                            annotation &&
+                            annotation.__jsonld &&
+                            annotation.__jsonld.resource &&
+                            annotation.__jsonld.resource.within &&
+                            annotation.__jsonld.resource.within.label
+                          ) {
+                            return (
+                              <div className={b.element('label')}>
+                                {annotation.__jsonld.resource.within.label}
+                              </div>
+                            );
+                          }
+                        }}
                         onClickAnnotation={annotation =>
                           dispatch(
                             selectAnnotation(annotation.id, 'otherContent')
