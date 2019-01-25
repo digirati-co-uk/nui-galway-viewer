@@ -22,10 +22,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@canvas-panel/core": "^0.2.0-pr.1813322e",
-    "@canvas-panel/redux": "^0.2.0-pr.1813322e",
-    "@canvas-panel/search": "^0.2.0-pr.1813322e",
-    "@canvas-panel/timeline": "^0.2.0-pr.1813322e",
+    "@canvas-panel/core": "^0.2.0-pr.a7742a20",
+    "@canvas-panel/redux": "^0.2.0-pr.a7742a20",
+    "@canvas-panel/search": "^0.2.0-pr.a7742a20",
+    "@canvas-panel/timeline": "^0.2.0-pr.a7742a20",
     "@fesk/bem-js": "^1.0.0",
     "@iiif/manifold": "^1.2.19",
     "@stephenwf-forks/manifesto.js": "2.2.25",
