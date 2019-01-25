@@ -69,9 +69,27 @@ class Supplemental extends Component {
     this.props.dispatch(deselectAnnotation());
   };
 
+  getRepositoryLink = () => {
+    const { manifest } = this.state;
+    if (manifest && manifest.related) {
+      const repo = Array.isArray(manifest.related)
+        ? manifest.related[0]
+        : manifest.related;
+      if (repo.id || repo['@id']) {
+        return {
+          url: repo.id || repo['@id'],
+          label: repo.label || 'More info',
+        };
+      }
+    }
+
+    return null;
+  };
+
   render() {
     const { manifest, loading, active } = this.state;
     const { annotation, bem } = this.props;
+    const repository = this.getRepositoryLink();
     return (
       <div className={bem.modifiers({ active })}>
         <div onClick={this.close} className={bem.element('lightbox')} />
@@ -86,7 +104,15 @@ class Supplemental extends Component {
                 <div className={bem.element('description')}>
                   {manifest.description || '(no description)'}
                 </div>
-                {/* Render repository link */}
+                {repository ? (
+                  <a
+                    className={bem.element('link')}
+                    target="_blank"
+                    href={repository.url}
+                  >
+                    {repository.label} <i className="material-icons">launch</i>
+                  </a>
+                ) : null}
               </div>
               <div className={bem.element('images')}>
                 <Manifest jsonLd={manifest}>
