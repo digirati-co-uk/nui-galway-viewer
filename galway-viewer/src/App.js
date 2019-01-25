@@ -90,7 +90,7 @@ class App extends Component<Props, State> {
           <Header
             title={title}
             onClickInfo={startScreenEnabled ? this.openStartScreen : null}
-            onClickMenu={startScreenEnabled ? this.openMenu : null}
+            onClickMenu={drawerEnabled ? this.openMenu : null}
             onClickClose={onClose}
           />
           <Timeline />

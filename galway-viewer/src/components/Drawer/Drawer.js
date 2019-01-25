@@ -29,7 +29,11 @@ class Drawer extends Component {
 
     dispatch(increaseStructureDepth());
     if (item && item.range) {
-      dispatch(manifestSetCanvas(item.range[0]));
+      dispatch(
+        manifestSetCanvas(
+          typeof item.range === 'number' ? item.range : item.range[0]
+        )
+      );
     }
 
     if (!item.children) {
