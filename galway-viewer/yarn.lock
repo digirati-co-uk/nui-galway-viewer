@@ -110,10 +110,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@0.2.0-pr.a7742a20":
-  version "0.2.0-pr.a7742a20"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.2.0-pr.a7742a20.tgz#f188fd59f4f099e610d25ccd66e9cd0cc1a9bcb9"
-  integrity sha512-reNZy4Gr/jmHC6R1rt5T3aNnr4ohBGoeUBPI0oczIakOnlV+muYZTFBZRXFc/N1elYXynqe5MKXvq4IAXOFgcA==
+"@canvas-panel/core@0.2.0-pr.c31770f8":
+  version "0.2.0-pr.c31770f8"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.2.0-pr.c31770f8.tgz#e81fb6cab0577746edd29c6c7aef339f3094bf99"
+  integrity sha512-7HQuIYBkq+HpuC0W7A5Th38FrnoihfmvyFJ5OUDoU+jVlKurKXBV5BrfqbWXaJaQD8OaU7IaTs69xYe1X9nONQ==
   dependencies:
     "@fesk/bem-js" "^1.0.0"
     "@iiif/manifold" "^1.2.19"
@@ -130,24 +130,24 @@
     screenfull "^3.3.2"
     whatwg-fetch "^3.0.0"
 
-"@canvas-panel/redux@0.2.0-pr.a7742a20":
-  version "0.2.0-pr.a7742a20"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/redux/-/redux-0.2.0-pr.a7742a20.tgz#3e381c2ff2d492a3417a12af2b9bdefff93cbba6"
-  integrity sha512-MrDfaY1ACak/FXOfzOy316qGSTLlLbng0Ht259mfzc6vSULfWrAuPtHK0zpgsLFcDxlAnspUr59oK5EDPRYWEA==
+"@canvas-panel/redux@0.2.0-pr.c31770f8":
+  version "0.2.0-pr.c31770f8"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/redux/-/redux-0.2.0-pr.c31770f8.tgz#70440d58f11e6060d60d061708e03a32545930ae"
+  integrity sha512-9u4Gvtv6tVs/Zu8MYZWm834qVSfyA/h/ZcZOAn23YyOwzccMRZwtUk6cV6688AlqY2ELvmh3Nnrao7ZmIbQ1bg==
   dependencies:
-    "@canvas-panel/core" "0.2.0-pr.a7742a20"
+    "@canvas-panel/core" "0.2.0-pr.c31770f8"
     immutability-helper "^3.0.0"
     redux "^4.0.0"
     redux-actions "^2.2.1"
     redux-saga "^0.16.0"
 
-"@canvas-panel/search@0.2.0-pr.a7742a20":
-  version "0.2.0-pr.a7742a20"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/search/-/search-0.2.0-pr.a7742a20.tgz#f5b81fa8e7f821e2c1807ff59af331a077ddacb5"
-  integrity sha512-1F4M/eOdQOQyTTNWCIsUv8MaPxNkEWZhjEv48KRxAmestPD7MKWkpl0wWTun2rn9MRhyU79BZXGe37bjKmr7Fw==
+"@canvas-panel/search@0.2.0-pr.c31770f8":
+  version "0.2.0-pr.c31770f8"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/search/-/search-0.2.0-pr.c31770f8.tgz#6a2d5cfce1420035b763d448db8d7022136bdb02"
+  integrity sha512-x10tfzfX0l7eBRlnOtpLDLRE5JH+u+FhTiG7yt4eMqs9WyvlUhFtFluy99rbPnVLvsiD1O5BXV+Gk60Dc4zMGw==
   dependencies:
-    "@canvas-panel/core" "0.2.0-pr.a7742a20"
-    "@canvas-panel/redux" "0.2.0-pr.a7742a20"
+    "@canvas-panel/core" "0.2.0-pr.c31770f8"
+    "@canvas-panel/redux" "0.2.0-pr.c31770f8"
     "@fesk/bem-js" "^1.0.0"
     immutability-helper "^3.0.0"
     manifesto.js "https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3"
@@ -155,10 +155,10 @@
     material-components-web "^0.43.0"
     rheostat "^3.0.0"
 
-"@canvas-panel/timeline@0.2.0-pr.a7742a20":
-  version "0.2.0-pr.a7742a20"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/timeline/-/timeline-0.2.0-pr.a7742a20.tgz#7fad3c1c2a625bb4238bac59ebb3b433cbfe1544"
-  integrity sha512-NSzQa4oJ9Kcj7w/spTTNZCQvFA55b4kqOOvYLEIfCgxNFzyF4XAzIIKPURI+q8/xTmirLBqgK7oLVSUIDzarmQ==
+"@canvas-panel/timeline@0.2.0-pr.c31770f8":
+  version "0.2.0-pr.c31770f8"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/timeline/-/timeline-0.2.0-pr.c31770f8.tgz#58496798518fd333bdaffdabb07b1cfde16a196c"
+  integrity sha512-8BnF4mj5zKjwjJtBAeyIIW1v5ORJg/mRU06GTxYMsmhjN/duEVXazA7z+6yoKAXWZCXG9xSpI5T6aXRECiPEBw==
 
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
@@ -11848,15 +11848,7 @@ ret@~0.1.10:
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
-rheostat@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/rheostat/-/rheostat-2.1.3.tgz#c3606c605cdf4d5306aa59b40198ba8205676a24"
-  integrity sha512-hrdZBkjWu8oSNOVKFMuHg7kquRdoDkefa5kSuTP9DwcLhFtoXwDGYooL3bDtV7KgFpbQEM/rsyzjeGsoG1g7pQ==
-  dependencies:
-    object.assign "^4.1.0"
-    prop-types "^15.6.0"
-
-rheostat@^3.0.0:
+rheostat@^3.0.0, rheostat@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/rheostat/-/rheostat-3.0.2.tgz#051fe0b3c7c84cf1af0c0b84a69f6bd7dbcf6e73"
   integrity sha512-oeUEbJFIc0cSD4HBp3i/ORs59Higi9wvXpEhxb1KoV4KfhfVS4opCv5JlNI0dDMQUFcjgIIbm9ljvgoBZgRzTA==

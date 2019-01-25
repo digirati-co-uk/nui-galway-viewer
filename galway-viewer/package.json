@@ -22,10 +22,10 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@canvas-panel/core": "0.2.0-pr.a7742a20",
-    "@canvas-panel/redux": "0.2.0-pr.a7742a20",
-    "@canvas-panel/search": "0.2.0-pr.a7742a20",
-    "@canvas-panel/timeline": "0.2.0-pr.a7742a20",
+    "@canvas-panel/core": "0.2.0-pr.c31770f8",
+    "@canvas-panel/redux": "0.2.0-pr.c31770f8",
+    "@canvas-panel/search": "0.2.0-pr.c31770f8",
+    "@canvas-panel/timeline": "0.2.0-pr.c31770f8",
     "@fesk/bem-js": "^1.0.0",
     "@iiif/manifold": "^1.2.19",
     "@stephenwf-forks/manifesto.js": "2.2.25",
@@ -38,7 +38,7 @@
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.6",
     "react-with-styles": "^3.2.1",
-    "rheostat": "^2.1.3"
+    "rheostat": "^3.0.2"
   },
   "devDependencies": {
     "@fesk/live-server-plugin": "0.0.1",
