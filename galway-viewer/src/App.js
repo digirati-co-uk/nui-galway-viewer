@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from '@canvas-panel/timeline';
 import { SearchBox, RangeSlider } from '@canvas-panel/search';
+import { Fullscreen } from '@canvas-panel/core';
 import StartScreen from './components/StartScreen/StartScreen';
 import Header from './components/Header/Header';
 import './components/main.scss';
@@ -61,51 +62,79 @@ class App extends Component<Props, State> {
   }
 
   render() {
-    const { onClose, title, startScreenEnabled, drawerEnabled } = this.props;
+    const {
+      onClose,
+      title,
+      startScreenEnabled,
+      startScreenText,
+      drawerEnabled,
+    } = this.props;
 
     return (
-      <Layout>
-        <Layout.Modal>
-          <Supplemental />
-          {startScreenEnabled ? (
-            <StartScreen
-              ref={startScreen =>
-                (this.startScreen = startScreen
-                  ? startScreen.getWrappedInstance()
-                  : null)
-              }
-            />
-          ) : null}
-          {drawerEnabled ? (
-            <Drawer
-              ref={drawer =>
-                (this.drawer = drawer
-                  ? drawer.getWrappedInstance().getWrappedInstance()
-                  : null)
-              }
-            />
-          ) : null}
-        </Layout.Modal>
-        <Layout.Header>
-          <Header
-            title={title}
-            onClickInfo={startScreenEnabled ? this.openStartScreen : null}
-            onClickMenu={drawerEnabled ? this.openMenu : null}
-            onClickClose={onClose}
-          />
-          <Timeline />
-        </Layout.Header>
-        <Layout.Main>
-          <Viewer setViewport={this.setViewport} />
-        </Layout.Main>
-        <Layout.Footer>
-          <SearchBox key="search" />
-          <RangeSlider key="range" />
-          <NavigationControls key="nav" />
-        </Layout.Footer>
-      </Layout>
+      <Fullscreen>
+        {({ isFullscreen, exitFullscreen, goFullscreen, ref }) => (
+          <Layout ref={ref}>
+            <Layout.Modal>
+              <Supplemental />
+              {startScreenEnabled ? (
+                <StartScreen
+                  ref={startScreen =>
+                    (this.startScreen = startScreen
+                      ? startScreen.getWrappedInstance()
+                      : null)
+                  }
+                  title={title}
+                  text={startScreenText}
+                />
+              ) : null}
+              {drawerEnabled ? (
+                <Drawer
+                  ref={drawer =>
+                    (this.drawer = drawer
+                      ? drawer.getWrappedInstance().getWrappedInstance()
+                      : null)
+                  }
+                />
+              ) : null}
+            </Layout.Modal>
+            <Layout.Header>
+              <Header
+                title={title}
+                onClickInfo={startScreenEnabled ? this.openStartScreen : null}
+                onClickMenu={drawerEnabled ? this.openMenu : null}
+                onClickClose={onClose}
+              />
+              <Timeline />
+            </Layout.Header>
+            <Layout.Main>
+              <Viewer
+                setViewport={this.setViewport}
+                isFullscreen={isFullscreen}
+                exitFullscreen={exitFullscreen}
+                goFullscreen={goFullscreen}
+              />
+            </Layout.Main>
+            <Layout.Footer>
+              <SearchBox key="search" />
+              <RangeSlider key="range" />
+              <NavigationControls key="nav" />
+            </Layout.Footer>
+          </Layout>
+        )}
+      </Fullscreen>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps(state, props) {
+  const label = state.manifest.jsonLd ? state.manifest.jsonLd.label : '';
+  const startScreen = state.manifest.jsonLd
+    ? state.manifest.jsonLd['nuig:startScreen']
+    : '';
+  return {
+    title: props.title || label,
+    startScreenText: startScreen,
+  };
+}
+
+export default connect(mapStateToProps)(App);

@@ -45,9 +45,42 @@ class StartScreen extends Component {
     return this.hasCookieBoolean;
   }
 
+  renderDefaultText() {
+    return (
+      <span>
+        <p>
+          Navigate the O'Shaughnessy's memoir by using the timeline (at the top)
+          or by paging (next or previous). The timeline is categorised by key
+          sections of the memoir.
+        </p>
+        <p>
+          Pages have links that display additional contextual information from
+          the digital archive.
+        </p>
+        <p>
+          This memoir presents a digitised copy of O'Shaughnessy's unpublished
+          memoir, Engineering Experiences: From Honolulu to Hetch Hetchy which
+          describes his life from childhood until 1912, shortly before his
+          appointment as City Engineer of San Francisco.
+        </p>
+        <p>
+          This work follows the specifications of the{' '}
+          <a target="_blank" href="http://iiif.io">
+            International Image Interoperability Framework (IIIF)
+          </a>
+          , with a new and innovative timeline navigation application. The IIIF
+          suite of specifications facilitates interoperability between
+          applications that serve, display, and manipulate images. IIIF helps
+          further sharing of images between cultural heritage institutions who
+          provide access to complementary digital resources.
+        </p>
+      </span>
+    );
+  }
+
   render() {
     const { hidden } = this.state;
-    const { bem } = this.props;
+    const { bem, text, title } = this.props;
 
     return (
       <section className={bem.modifiers({ hidden })}>
@@ -63,41 +96,19 @@ class StartScreen extends Component {
             &times;
           </div>
           <div className={bem.element('title')}>
-            O'Shaughnessy's Memoir "Engineering Experiences: From Honolulu to
-            Hetch Hetchy"
+            {title ||
+              `O'Shaughnessy's Memoir "Engineering Experiences: From Honolulu to Hetch Hetchy"`}
           </div>
           <div className={bem.element('body')}>
             <div className={bem.element('content')}>
-              <p>
-                Navigate the O'Shaughnessy's memoir by using the timeline (at
-                the top) or by paging (next or previous). The timeline is
-                categorised by key sections of the memoir.
-              </p>
-              <p>
-                Pages have links that display additional contextual information
-                from the digital archive.
-              </p>
-              <p>
-                This memoir presents a digitised copy of O'Shaughnessy's
-                unpublished memoir, Engineering Experiences: From Honolulu to
-                Hetch Hetchy which describes his life from childhood until 1912,
-                shortly before his appointment as City Engineer of San
-                Francisco.
-              </p>
-              <p>
-                This work follows the specifications of the{' '}
-                <a target="_blank" href="http://iiif.io">
-                  International Image Interoperability Framework (IIIF)
-                </a>, with a new and innovative timeline navigation application.
-                The IIIF suite of specifications facilitates interoperability
-                between applications that serve, display, and manipulate images.
-                IIIF helps further sharing of images between cultural heritage
-                institutions who provide access to complementary digital
-                resources.
-              </p>
+              {text ? (
+                <div dangerouslySetInnerHTML={{ __html: text }} />
+              ) : (
+                this.renderDefaultText()
+              )}
               <p>
                 This version of the 'Galway Viewer' is a beta version, released
-                11 October 2017. Issues can be logged at
+                11 October 2017. Issues can be logged at{' '}
                 <a
                   target="_blank"
                   href="https://github.com/digirati-co-uk/nui-galway-viewer/issues"
@@ -107,7 +118,7 @@ class StartScreen extends Component {
                 or by contacting the{' '}
                 <a href="mailto:digitallibrary@nuigalway.ie">
                   Digital Publishing and Innovation team
-                </a>
+                </a>{' '}
                 at the NUI Galway Library.
               </p>
             </div>

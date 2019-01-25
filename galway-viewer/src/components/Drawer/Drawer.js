@@ -102,6 +102,9 @@ class Drawer extends Component {
   }
 }
 
-export default connect(mapStateToProps, null, null, { withRef: true })(
-  withBemClass('drawer')(Drawer)
-);
+export default connect(
+  mapStateToProps,
+  null,
+  null,
+  { withRef: true }
+)(withBemClass('drawer')(Drawer));

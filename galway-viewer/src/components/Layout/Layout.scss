@@ -1,6 +1,7 @@
 .layout {
   display: flex;
   flex-direction: column;
+  background: #fff;
 
   &__header {
     padding-left: env(safe-area-inset-left);

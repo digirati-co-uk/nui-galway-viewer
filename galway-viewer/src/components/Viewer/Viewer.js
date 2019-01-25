@@ -9,7 +9,6 @@ import {
   OpenSeadragonViewport,
   FullPageViewport,
   AnnotationRepresentation,
-  Fullscreen,
 } from '@canvas-panel/core';
 import {
   manifestNextCanvas,
@@ -73,6 +72,9 @@ class Viewer extends Component {
       searchAvailable,
       currentAnnotation,
       search,
+      isFullscreen,
+      exitFullscreen,
+      goFullscreen,
     } = this.props;
 
     if (error) {
@@ -84,74 +86,70 @@ class Viewer extends Component {
     }
 
     return (
-      <Fullscreen>
-        {({ isFullscreen, exitFullscreen, goFullscreen }) => (
-          <div className={bem} onKeyDown={this.pressArrows}>
-            <ViewerControls
-              onZoomIn={this.zoomIn}
-              onZoomOut={this.zoomOut}
-              isFullscreen={isFullscreen}
-              onFullscreen={isFullscreen ? exitFullscreen : goFullscreen}
-            />
-            <Manifest jsonLd={manifest}>
-              <CanvasProvider currentCanvas={currentCanvas}>
-                {props => (
-                  <div>
-                    <Paging canvas={props.canvas} />
-                    <div className={bem.element('osd')}>
-                      <FullPageViewport
-                        interactive={true}
-                        position="relative"
-                        setRef={this.setViewport}
-                        {...props}
-                      >
-                        <SingleTileSource viewportController={true}>
-                          <OpenSeadragonViewport viewportController={true}>
-                            <OpenSeadragonViewer
-                              useMaxDimensions={true}
-                              osdOptions={{
-                                visibilityRatio: 1,
-                                constrainDuringPan: true,
-                                showNavigator: false,
-                                // immediateRender: false,
-                              }}
-                            />
-                          </OpenSeadragonViewport>
-                        </SingleTileSource>
-                        {searchAvailable ? (
-                          <AnnotationRepresentation
-                            annotations={search.annotations || []}
-                            ratio={0.1}
-                            growthStyle="fixed"
-                            bemModifiers={() => ({ search: true })}
-                          />
-                        ) : (
-                          <AnnotationRepresentation
-                            annotations={annotations || []}
-                            ratio={0.1}
-                            growthStyle="fixed"
-                            bemModifiers={annotation => ({
-                              selected:
-                                annotation.id &&
-                                annotation.id === currentAnnotation,
-                              linking: hasManifestData(annotation),
-                            })}
-                            onClickAnnotation={annotation =>
-                              dispatch(
-                                selectAnnotation(annotation.id, 'otherContent')
-                              )
-                            }
-                          />
-                        )}
-                      </FullPageViewport>
-                    </div>
-                  </div>
-                )}
-              </CanvasProvider>
-            </Manifest>
-          </div>
-        )}
-      </Fullscreen>
+      <div className={bem} onKeyDown={this.pressArrows}>
+        <ViewerControls
+          onZoomIn={this.zoomIn}
+          onZoomOut={this.zoomOut}
+          isFullscreen={isFullscreen}
+          onFullscreen={isFullscreen ? exitFullscreen : goFullscreen}
+        />
+        <Manifest jsonLd={manifest}>
+          <CanvasProvider currentCanvas={currentCanvas}>
+            {props => (
+              <div>
+                <Paging canvas={props.canvas} />
+                <div className={bem.element('osd')}>
+                  <FullPageViewport
+                    interactive={true}
+                    position="relative"
+                    setRef={this.setViewport}
+                    {...props}
+                  >
+                    <SingleTileSource viewportController={true}>
+                      <OpenSeadragonViewport viewportController={true}>
+                        <OpenSeadragonViewer
+                          useMaxDimensions={true}
+                          osdOptions={{
+                            visibilityRatio: 1,
+                            constrainDuringPan: true,
+                            showNavigator: false,
+                            // immediateRender: false,
+                          }}
+                        />
+                      </OpenSeadragonViewport>
+                    </SingleTileSource>
+                    {searchAvailable ? (
+                      <AnnotationRepresentation
+                        annotations={search.annotations || []}
+                        ratio={0.1}
+                        growthStyle="fixed"
+                        bemModifiers={() => ({ search: true })}
+                      />
+                    ) : (
+                      <AnnotationRepresentation
+                        annotations={annotations || []}
+                        ratio={0.1}
+                        growthStyle="fixed"
+                        bemModifiers={annotation => ({
+                          selected:
+                            annotation.id &&
+                            annotation.id === currentAnnotation,
+                          linking: hasManifestData(annotation),
+                        })}
+                        onClickAnnotation={annotation =>
+                          dispatch(
+                            selectAnnotation(annotation.id, 'otherContent')
+                          )
+                        }
+                      />
+                    )}
+                  </FullPageViewport>
+                </div>
+              </div>
+            )}
+          </CanvasProvider>
+        </Manifest>
+      </div>
     );
   }
 }
