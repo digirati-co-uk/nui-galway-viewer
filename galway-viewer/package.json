@@ -1,33 +1,94 @@
 {
   "name": "galway-viewer",
-  "version": "1.0.0",
-  "description": "Describe galway-viewer here",
-  "private": true,
+  "version": "3.1.0",
+  "description": "NUI Galway viewer",
+  "files": ["umd", "lib", "sassConfig.js"],
   "scripts": {
-    "build": "nwb build-web-app",
-    "clean": "nwb clean-app",
-    "start": "nwb serve-web-app --reload",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "build":
+      "NODE_ENV=development npm-run-all build-templates build-assets build-admin build-public",
+    "build-assets": "MICRO_SITE=true nwb build-web-app src dist/assets --color",
+    "build-templates": "fesk-metalsmith micro-site --color",
+    "build-admin": "cp -r ./admin ./dist/admin",
+    "build-public": "cp -r ./public/** ./dist",
+    "start": "run-p watch serve",
+    "serve": "fesk-live-server",
+    "watch": "NODE_ENV=development npm-watch",
+    "build-module":
+      "rm -rf .babelrc && NODE_ENV=production nwb build-react-component --no-demo",
+    "clean": "nwb clean-app src dist/assets",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server",
+    "prepublish": "npm run build-module",
+    "precommit": "lint-staged"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.40",
-    "@material/drawer": "^0.26.0",
-    "@material/slider": "latest",
-    "autoprefixer": "^8.1.0",
+    "@canvas-panel/core": "0.2.0-pr.c31770f8",
+    "@canvas-panel/redux": "0.2.0-pr.c31770f8",
+    "@canvas-panel/search": "0.2.0-pr.c31770f8",
+    "@canvas-panel/timeline": "0.2.0-pr.c31770f8",
+    "@fesk/bem-js": "^1.0.0",
+    "@iiif/manifold": "^1.2.19",
+    "@stephenwf-forks/manifesto.js": "2.2.25",
     "cookies-js": "^1.2.3",
-    "cssnano": "^3.10.0",
-    "jquery": "^3.2.1",
-    "material-components-web": "^0.26.0",
-    "precss": "^3.1.2",
-    "whatwg-fetch": "^2.0.3"
+    "immutability-helper": "^2.6.4",
+    "material-components-web": "^0.30.0",
+    "nwb-sass": "^0.8.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-rangeslider": "^2.2.0",
+    "react-redux": "^5.0.6",
+    "react-with-styles": "^3.2.1",
+    "rheostat": "^3.0.2"
   },
   "devDependencies": {
-    "nwb": "0.18.x",
-    "nwb-sass": "^0.8.2"
+    "@fesk/live-server-plugin": "0.0.1",
+    "@fesk/plugin-markdown": "0.0.1",
+    "@fesk/plugin-metalsmith": "0.0.1",
+    "@fesk/plugin-micro-site": "0.0.1",
+    "babel-eslint": "^8.2.3",
+    "css-reset-and-normalize-sass": "^0.1.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flow": "^2.29.1",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.1.0",
+    "npm-run-all": "^4.1.3",
+    "npm-watch": "^0.3.0",
+    "nwb": "0.22.0",
+    "prettier": "^1.12.1",
+    "sass-define": "0.0.5",
+    "webpack-manifest-plugin": "^2.0.2"
   },
-  "author": "",
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.{js,json,scss,md}": ["prettier --write", "git add"]
+  },
+  "watch": {
+    "build-public": {
+      "patterns": ["public"]
+    },
+    "build-admin": {
+      "patterns": ["admin"],
+      "extensions": "yml,html"
+    },
+    "build-templates": {
+      "patterns": ["src"],
+      "extensions": "md,html,twig"
+    },
+    "build-assets": {
+      "patterns": ["src"],
+      "extensions": "js,scss"
+    }
+  },
+  "fesk": {
+    "metalsmith": {
+      "source": "src/views",
+      "root": true
+    }
+  },
+  "author": "Digirati",
   "license": "MIT",
   "repository": ""
 }

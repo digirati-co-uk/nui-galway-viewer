@@ -1,0 +1,37 @@
+{% extends '@fesk/plugin-micro-site/lib/layouts/micrositeLayout.twig' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        [data-element] .footer {
+            background: transparent;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+    <a class="primary-logo-link primary-logo-link--text" href="/">
+        Galway Viewer
+    </a>
+{% endblock %}
+{% block footerAssets %}
+    {% if assets.runtime %}
+        <script src="{{ assets.runtime.url }}"></script>
+    {% endif %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+{% endblock %}
+{% set siteName = 'Galway Viewer' %}
+{% set menuMap = {
+    'welcome': 'Welcome'
+} %}

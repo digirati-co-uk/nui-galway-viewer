@@ -1,0 +1,40 @@
+.galway-pop-out-viewer {
+  &__viewer {
+    z-index: 49;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: opacity 0.3s;
+    background: #222;
+
+    .viewer {
+      pointer-events: none;
+    }
+    .layout__footer {
+      transform: translateY(100px);
+      transition: transform 0.3s;
+    }
+    .layout__header {
+      transform: translateY(-100px);
+      transition: transform 0.3s;
+      background: #fff;
+    }
+    &--isOpen {
+      pointer-events: visible;
+      opacity: 1;
+      .viewer {
+        pointer-events: visible;
+      }
+      .layout__footer {
+        transform: translateY(0);
+      }
+      .layout__header {
+        transform: translateY(0);
+      }
+    }
+  }
+}
