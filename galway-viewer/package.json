@@ -1,6 +1,6 @@
 {
   "name": "galway-viewer",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "NUI Galway viewer",
   "files": ["umd", "lib", "sassConfig.js"],
   "scripts": {
@@ -18,7 +18,7 @@
     "clean": "nwb clean-app src dist/assets",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "prepublish": "npm run build-module",
+    "prepublish": "npm run build",
     "precommit": "lint-staged"
   },
   "dependencies": {
