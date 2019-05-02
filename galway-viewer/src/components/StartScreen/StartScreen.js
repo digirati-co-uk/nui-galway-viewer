@@ -107,8 +107,10 @@ class StartScreen extends Component {
                 this.renderDefaultText()
               )}
               <p>
-                This version of the 'Galway Viewer' is a beta version, released
-                11 October 2017. Issues can be logged at{' '}
+                This version of the{' '}
+                <a target="_blank" href="https://galway-viewer.digirati.com">
+                  'Galway Viewer'
+                </a>. Issues can be logged at{' '}
                 <a
                   target="_blank"
                   href="https://github.com/digirati-co-uk/nui-galway-viewer/issues"
@@ -121,14 +123,10 @@ class StartScreen extends Component {
                 </a>{' '}
                 at the NUI Galway Library.
               </p>
-            </div>
-            <div className={bem.element('image')}>
-              <img
-                src="https://iiif.library.nuigalway.ie/loris/p135/memoir-callouts/p135_4_8.tif/full/!500,500/0/default.jpg"
-                alt=""
-              />
+
               <div
                 className={bem.element('dismiss').modifier('start')}
+                style={{ float: 'right' }}
                 onClick={this.closeStartScreen}
               >
                 Start
