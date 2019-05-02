@@ -5,7 +5,7 @@
   "files": ["umd", "lib", "sassConfig.js"],
   "scripts": {
     "build":
-      "NODE_ENV=development npm-run-all build-templates build-assets build-admin build-public",
+      "NODE_ENV=development npm-run-all build-templates build-assets build-admin build-public build-module",
     "build-assets": "MICRO_SITE=true nwb build-web-app src dist/assets --color",
     "build-templates": "fesk-metalsmith micro-site --color",
     "build-admin": "cp -r ./admin ./dist/admin",

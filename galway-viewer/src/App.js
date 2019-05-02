@@ -131,8 +131,9 @@ function mapStateToProps(state, props) {
   const startScreen = state.manifest.jsonLd
     ? state.manifest.jsonLd['nuig:startScreen']
     : '';
+
   return {
-    title: props.title || label,
+    title: props.title || label || 'Galway viewer',
     startScreenText: startScreen,
   };
 }

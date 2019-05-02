@@ -102,7 +102,7 @@ class StartScreen extends Component {
           <div className={bem.element('body')}>
             <div className={bem.element('content')}>
               {text ? (
-                <div dangerouslySetInnerHTML={{ __html: text }} />
+                <p dangerouslySetInnerHTML={{ __html: text }} />
               ) : (
                 this.renderDefaultText()
               )}

@@ -20,6 +20,9 @@ module.exports = {
         data: sassDefine(require('./sassConfig')),
       },
     },
+    extractCSS: {
+      filename: '[name].css',
+    },
     publicPath: '',
     extra: {
       plugins:
