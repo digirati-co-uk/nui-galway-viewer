@@ -56,9 +56,7 @@ class App extends Component<Props, State> {
   };
 
   componentWillMount() {
-    this.props.dispatch(
-      manifestRequest(this.props.manifest, 'en-GB', { startCanvas: 2 })
-    );
+    this.props.dispatch(manifestRequest(this.props.manifest, 'en-GB', {}));
   }
 
   render() {

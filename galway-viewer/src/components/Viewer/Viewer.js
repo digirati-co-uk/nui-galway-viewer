@@ -15,6 +15,7 @@ import {
   manifestPrevCanvas,
 } from '@canvas-panel/redux/es/spaces/manifest';
 import { selectAnnotation } from '@canvas-panel/redux/es/spaces/annotations';
+import { manifestSetCanvas } from '@canvas-panel/redux/es/spaces/manifest';
 import Paging from '../Paging/Paging';
 import ViewerControls from '../ViewerControls/ViewerControls';
 import './Viewer.scss';
@@ -58,6 +59,16 @@ class Viewer extends Component {
       this.zoomIn();
     }
   };
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (
+      this.props.isPending === true &&
+      nextProps.isPending === false &&
+      nextProps.startCanvas
+    ) {
+      this.props.dispatch(manifestSetCanvas(nextProps.startCanvas));
+    }
+  }
 
   render() {
     const {
@@ -190,6 +201,11 @@ function mapSearchState(state, currentCanvas) {
 }
 
 function mapStateToProps(state) {
+  const startCanvas = state.manifest.manifesto
+    ? state.manifest.manifesto
+        .getSequenceByIndex(0)
+        .getCanvasIndexById(state.manifest.manifesto.__jsonld.startCanvas)
+    : 0;
   const currentCanvasIndex = state.manifest.currentCanvas;
   const currentCanvas = state.manifest.manifesto
     ? state.manifest.manifesto
@@ -210,6 +226,7 @@ function mapStateToProps(state) {
     isPending: state.manifest.isPending,
     error: state.manifest.errorMessage,
     currentCanvas: state.manifest.currentCanvas,
+    startCanvas,
     currentAnnotation: state.annotations.selected
       ? state.annotations.selected.id
       : null,
