@@ -15,7 +15,7 @@
     "@babel/polyfill": "^7.0.0-beta.40",
     "@material/drawer": "^0.26.0",
     "@material/slider": "latest",
-    "autoprefixer": "^8.1.0",
+    "autoprefixer": "^9.0.0",
     "cookies-js": "^1.2.3",
     "cssnano": "^4.0.0",
     "jquery": "^3.4.0",
